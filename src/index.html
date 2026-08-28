@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Part 2 應答練習</title>
+<meta name="theme-color" content="#1b1f2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Part 2">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#f4f5f7; --card:#fff; --fg:#1b1f2a; --dim:#697086; --line:#e2e5ec;
+  --accent:#2f5bd7; --ok:#1a7f4b; --okbg:#e6f4ec; --no:#c0392b; --nobg:#fdecea;
+  --btn:#fff; --shadow:0 1px 3px rgba(20,25,40,.10),0 6px 20px rgba(20,25,40,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#12151c; --card:#1b1f2a; --fg:#e8eaf0; --dim:#9aa3b8; --line:#2b3140;
+  --accent:#6d92f0; --ok:#4cc38a; --okbg:#12301f; --no:#f07167; --nobg:#331714;
+  --btn:#232838; --shadow:0 1px 3px rgba(0,0,0,.4);
+}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{
+  background:var(--bg); color:var(--fg);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  display:flex; flex-direction:column;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  overscroll-behavior:none;
+}
+header{
+  display:flex; align-items:center; gap:12px; padding:12px 16px;
+  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:5;
+}
+header h1{font-size:15px;margin:0;font-weight:650;letter-spacing:.01em}
+header .sp{flex:1}
+.pill{font-size:12px;color:var(--dim);background:var(--bg);border:1px solid var(--line);
+  border-radius:99px;padding:3px 10px;white-space:nowrap}
+main{flex:1;overflow-y:auto;padding:16px;padding-bottom:88px;-webkit-overflow-scrolling:touch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+h2{font-size:17px;margin:0 0 10px}
+p.lead{color:var(--dim);margin:0 0 14px;font-size:14px}
+button{font:inherit;color:inherit;cursor:pointer;border-radius:12px;border:1px solid var(--line);background:var(--btn);padding:12px 16px}
+button:active{transform:scale(.985)}
+button:disabled{opacity:.45;cursor:default}
+.primary{background:var(--accent);color:#fff;border-color:transparent;font-weight:650;width:100%;padding:15px;font-size:16px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>*{flex:1;min-width:0}
+
+/* 播放 */
+.play{width:100%;padding:0;height:120px;border-radius:18px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border-color:transparent}
+.play .big{font-size:32px;line-height:1}
+.play .sub{font-size:13px;opacity:.9}
+.play.playing{background:var(--card);color:var(--fg);border:1px solid var(--line)}
+.seg{display:flex;gap:4px;margin:14px 0 4px}
+.seg i{flex:1;height:5px;border-radius:99px;background:var(--line);transition:background .15s}
+.seg i.on{background:var(--accent)}
+.seg i.done{background:var(--dim)}
+
+/* 選項 */
+.opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.opt{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:14px 16px;line-height:1.5}
+.opt .k{font-weight:700;width:22px;flex:none;color:var(--dim)}
+.opt .t{flex:1;min-width:0}
+.opt.correct{background:var(--okbg);border-color:var(--ok)}
+.opt.correct .k{color:var(--ok)}
+.opt.chosen-wrong{background:var(--nobg);border-color:var(--no)}
+.opt.chosen-wrong .k{color:var(--no)}
+.opt .re{flex:none;font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:transparent}
+
+.verdict{font-weight:700;margin:16px 0 8px;font-size:16px}
+.verdict.ok{color:var(--ok)} .verdict.no{color:var(--no)}
+.note{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14.5px;margin-top:4px}
+.tag{display:inline-block;font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-bottom:8px}
+
+footer{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:5}
+footer button{flex:1;border:0;border-radius:0;background:transparent;padding:11px 4px 13px;
+  font-size:11px;color:var(--dim);display:flex;flex-direction:column;align-items:center;gap:3px}
+footer button .ic{font-size:19px;line-height:1}
+footer button.on{color:var(--accent);font-weight:650}
+
+.stat{display:flex;gap:10px;margin:-4px 0 14px}
+.stat div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center}
+.stat b{display:block;font-size:22px;line-height:1.25}
+.stat span{font-size:11.5px;color:var(--dim)}
+.wrong-item{border-top:1px solid var(--line);padding:12px 0}
+.wrong-item:first-of-type{border-top:0}
+.wrong-item .q{font-size:14.5px}
+.wrong-item .m{font-size:12px;color:var(--dim);margin-top:3px}
+label.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+label.sw:first-of-type{border-top:0}
+label.sw span small{display:block;color:var(--dim);font-size:12.5px;font-weight:400;line-height:1.45;margin-top:2px}
+label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
+.seg-ctl{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex:none}
+.seg-ctl button{border:0;border-radius:0;padding:8px 14px;font-size:14px;background:transparent}
+.seg-ctl button.on{background:var(--accent);color:#fff}
+.bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin:10px 0 6px}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}
+.hide{display:none!important}
+.muted{color:var(--dim);font-size:13.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Part 2 應答練習</h1><div class="sp"></div>
+  <div class="pill" id="hpill">—</div>
+</header>
+
+<main>
+  <!-- 練習首頁 -->
+  <section id="v-home">
+    <div class="stat">
+      <div><b id="s-done">0</b><span>做過的題</span></div>
+      <div><b id="s-acc">—</b><span>正確率</span></div>
+      <div><b id="s-wrong">0</b><span>錯題待複習</span></div>
+    </div>
+    <div class="card">
+      <h2>開始練習</h2>
+      <p class="lead">每題約 8 秒，聽完直接選。建議一次 25 題，跟正式考試的 Part 2 一樣長。</p>
+      <button class="primary" data-start="random25">隨機 25 題</button>
+      <div class="row" style="margin-top:10px">
+        <button data-start="wrong">只練錯題</button>
+        <button data-start="unseen">只練沒做過的</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>依題型練</h2>
+      <p class="lead">哪一類最常錯就練哪一類。括號內是「錯／做過」。</p>
+      <div id="types" class="row" style="flex-direction:column"></div>
+    </div>
+  </section>
+
+  <!-- 作答 -->
+  <section id="v-quiz" class="hide">
+    <div class="card">
+      <div class="tag" id="q-tag">—</div>
+      <button class="play" id="q-play">
+        <span class="big" id="q-icon">▶</span>
+        <span class="sub" id="q-sub">播放題目</span>
+      </button>
+      <div class="seg"><i></i><i></i><i></i><i></i></div>
+      <div class="opts" id="q-opts"></div>
+      <div id="q-after" class="hide">
+        <div class="verdict" id="q-verdict"></div>
+        <div class="note" id="q-note"></div>
+        <button class="primary" id="q-next" style="margin-top:14px">下一題</button>
+      </div>
+      <button id="q-quit" style="width:100%;margin-top:12px;background:transparent;border:0;color:var(--dim);font-size:13px">結束這一輪</button>
+    </div>
+  </section>
+
+  <!-- 結算 -->
+  <section id="v-done" class="hide">
+    <div class="card">
+      <h2 id="d-title">這一輪結束</h2>
+      <p class="lead" id="d-sub"></p>
+      <div class="bar"><i id="d-bar"></i></div>
+      <div id="d-list"></div>
+      <button class="primary" id="d-again" style="margin-top:14px">再來一輪</button>
+      <button id="d-copy" style="width:100%;margin-top:10px">複製這輪錯題</button>
+    </div>
+  </section>
+
+  <!-- 錯題本 -->
+  <section id="v-wrong" class="hide">
+    <div class="card">
+      <h2>錯題本</h2>
+      <p class="lead">連續答對兩次就會自動移出。</p>
+      <div id="w-list"></div>
+    </div>
+    <div class="card">
+      <h2>帶回劃記本</h2>
+      <p class="lead">複製後貼進劃記本的錯題本。音檔留在這裡，紀錄回到那邊統一管理。</p>
+      <button class="primary" id="w-copy">複製全部錯題</button>
+    </div>
+  </section>
+
+  <!-- 設定 -->
+  <section id="v-set" class="hide">
+    <div class="card">
+      <h2>作答方式</h2>
+      <label class="sw"><span>顯示選項文字<small>關閉時只看得到 A／B／C 按鈕，跟正式考試一樣。看著文字選會練成閱讀測驗，建議保持關閉。</small></span><input type="checkbox" id="o-show"></label>
+      <label class="sw"><span>答完自動下一題<small>答對後停留 1.2 秒直接進下一題；答錯一律停下來看解析。</small></span><input type="checkbox" id="o-auto"></label>
+      <label class="sw"><span>進入題目自動播放<small>不用每題都按播放。</small></span><input type="checkbox" id="o-autoplay"></label>
+      <label class="sw"><span>播放速度<div class="seg-ctl" id="o-speed" style="margin-top:8px">
+        <button data-sp="0.8">0.8×</button><button data-sp="1" class="on">1×</button><button data-sp="1.15">1.15×</button>
+      </div></span></label>
+    </div>
+    <div class="card">
+      <h2>離線使用</h2>
+      <p class="lead" id="dl-info">把音檔存進手機，之後沒網路也能練。</p>
+      <div class="bar hide" id="dl-bar"><i></i></div>
+      <button class="primary" id="dl-go">下載全部音檔</button>
+    </div>
+    <div class="card">
+      <h2>紀錄</h2>
+      <p class="lead">紀錄存在這台裝置的瀏覽器裡，不會自動同步到別台。要跨裝置就用「複製錯題」帶去劃記本。</p>
+      <button id="o-reset" style="width:100%;color:var(--no)">清空所有練習紀錄</button>
+    </div>
+    <p class="muted" style="text-align:center;padding:4px 0 20px">
+      題目與語音皆為本專案自製（語音以 Edge-TTS 合成），不含任何第三方測驗版權素材。
+    </p>
+  </section>
+</main>
+
+<footer>
+  <button data-tab="home" class="on"><span class="ic">🎧</span>練習</button>
+  <button data-tab="wrong"><span class="ic">📕</span>錯題本</button>
+  <button data-tab="set"><span class="ic">⚙️</span>設定</button>
+</footer>
+
+<script>
+'use strict';
+var LS_H='p2.hist.v1', LS_O='p2.opt.v1';
+var DATA=null, hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
+var session=null, audio=new Audio(), stopAt=null, playingSeg=-1;
+
+function load(k,d){try{var r=localStorage.getItem(k);return r?JSON.parse(r):d;}catch(e){return d;}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function $(s){return document.querySelector(s);}
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+var EMPTY={n:0,ok:0,streak:0,wrong:false};
+// rec() 會建立紀錄，只在「作答」時用；純讀取一律走 get()，
+// 否則光是渲染首頁就會替全部題目寫進空紀錄，把 localStorage 灌滿假資料。
+function rec(id){return hist[id]||(hist[id]={n:0,ok:0,streak:0,wrong:false});}
+function get(id){return hist[id]||EMPTY;}
+
+/* ---------- 播放 ---------- */
+audio.preload='auto';
+audio.addEventListener('timeupdate',function(){
+  if(stopAt!=null && audio.currentTime>=stopAt){audio.pause();stopAt=null;markSeg(-1);setPlayUI(false);}
+  else if(session && playingSeg===-2){ // 整題播放：跟著標記推進進度條
+    var m=cur().marks,i=0;
+    for(var k=0;k<m.length;k++) if(audio.currentTime>=m[k].start) i=k;
+    markSeg(i,true);
+  }
+});
+audio.addEventListener('ended',function(){stopAt=null;markSeg(-1);setPlayUI(false);});
+
+function playSeg(i){
+  var it=cur(); if(!it) return;
+  audio.playbackRate=opt.speed;
+  if(i==null){audio.currentTime=0;stopAt=null;playingSeg=-2;markSeg(0,true);}
+  else{var m=it.marks[i];audio.currentTime=m.start;stopAt=m.start+m.len;playingSeg=i;markSeg(i);}
+  audio.play().then(function(){setPlayUI(true);}).catch(function(){setPlayUI(false);});
+}
+function setPlayUI(on){
+  $('#q-play').classList.toggle('playing',on);
+  $('#q-icon').textContent=on?'❚❚':'▶';
+  $('#q-sub').textContent=on?'播放中，點一下停':(session&&session.answered?'重聽整題':'播放題目');
+}
+function markSeg(i,prog){
+  var s=document.querySelectorAll('.seg i');
+  for(var k=0;k<s.length;k++){
+    s[k].classList.toggle('on',k===i);
+    s[k].classList.toggle('done',prog?k<i:false);
+  }
+}
+
+/* ---------- 出題 ---------- */
+function cur(){return session?session.list[session.i]:null;}
+function pickList(mode,type){
+  var all=DATA.items.slice(), out;
+  if(mode==='wrong') out=all.filter(function(x){return get(x.id).wrong;});
+  else if(mode==='unseen') out=all.filter(function(x){return !get(x.id).n;});
+  else if(mode==='type') out=all.filter(function(x){return x.type===type;});
+  else out=all;
+  if(!out.length) out=all;
+  for(var i=out.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=out[i];out[i]=out[j];out[j]=t;}
+  return (mode==='random25')?out.slice(0,25):out;
+}
+function start(mode,type){
+  var list=pickList(mode,type);
+  if(!list.length){alert('沒有符合的題目。');return;}
+  session={list:list,i:0,answered:false,wrong:[],right:0,mode:mode,type:type};
+  show('quiz'); render();
+}
+function render(){
+  var it=cur(); session.answered=false;
+  $('#hpill').textContent=(session.i+1)+' / '+session.list.length;
+  $('#q-tag').textContent=it.type;
+  $('#q-after').classList.add('hide');
+  $('#q-quit').classList.remove('hide');
+  markSeg(-1); setPlayUI(false);
+  audio.src='audio/'+it.id+'.mp3';
+
+  var box=$('#q-opts'); box.innerHTML='';
+  ['A','B','C'].forEach(function(k,n){
+    var b=el('button','opt');
+    b.appendChild(el('span','k',k));
+    b.appendChild(el('span','t',opt.show?it.choices[n]:'　'));
+    b.onclick=function(){answer(n);};
+    box.appendChild(b);
+  });
+  if(opt.autoplay) setTimeout(function(){playSeg(null);},250);
+}
+function answer(n){
+  if(session.answered) return;
+  session.answered=true; audio.pause(); stopAt=null; setPlayUI(false);
+  var it=cur(), ok=(n===it.answer), r=rec(it.id);
+  r.n++; if(ok){r.ok++; r.streak++; if(r.streak>=2) r.wrong=false;} else {r.streak=0; r.wrong=true;}
+  save(LS_H,hist);
+  if(ok) session.right++; else session.wrong.push(it.id);
+
+  var btns=$('#q-opts').children;
+  for(var k=0;k<3;k++){
+    btns[k].querySelector('.t').textContent=it.choices[k];
+    btns[k].onclick=null;
+    if(k===it.answer) btns[k].classList.add('correct');
+    if(k===n && !ok) btns[k].classList.add('chosen-wrong');
+    var re=el('button','re','重聽'); re.dataset.i=k+1;
+    re.onclick=function(e){e.stopPropagation();playSeg(+this.dataset.i);};
+    btns[k].appendChild(re);
+  }
+  $('#q-verdict').className='verdict '+(ok?'ok':'no');
+  $('#q-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABC'[it.answer];
+  $('#q-note').innerHTML='';
+  var q=el('div','',''); q.innerHTML='<b>題目：</b>'+esc(it.prompt);
+  $('#q-note').appendChild(q);
+  $('#q-note').appendChild(el('div','',it.note));
+  $('#q-note').lastChild.style.marginTop='8px';
+  $('#q-after').classList.remove('hide');
+  $('#q-quit').classList.add('hide');
+  setPlayUI(false);
+  if(ok && opt.auto) setTimeout(next,1200);
+}
+function next(){
+  if(!session||!session.answered) return;
+  if(session.i+1>=session.list.length) finish();
+  else {session.i++; render(); $('main').scrollTop=0;}
+}
+function finish(){
+  audio.pause();
+  var n=session.list.length, r=session.right, pct=Math.round(r/n*100);
+  $('#d-title').textContent=pct>=80?'這輪表現不錯':'這輪有得練';
+  // 只有題數不是 25 時才換算成正式考試的尺度；本來就 25 題還講一次是廢話
+  $('#d-sub').textContent=n+' 題答對 '+r+' 題（'+pct+'%）'
+    +(n!==25?'　—　換算成正式考試的 25 題 Part 2，大約是 '+Math.round(pct*0.25)+' / 25。':'');
+  $('#d-bar').style.width=pct+'%';
+  var box=$('#d-list'); box.innerHTML='';
+  if(!session.wrong.length) box.appendChild(el('p','muted','全對，沒有錯題。'));
+  session.wrong.forEach(function(id){box.appendChild(wrongRow(byId(id)));});
+  show('done'); refreshHome();
+}
+function byId(id){for(var i=0;i<DATA.items.length;i++) if(DATA.items[i].id===id) return DATA.items[i];}
+function wrongRow(it){
+  var d=el('div','wrong-item');
+  d.appendChild(el('div','q',it.prompt));
+  var r=get(it.id);
+  d.appendChild(el('div','m',it.type+'　·　正解 '+'ABC'[it.answer]+'：'+it.choices[it.answer]+'　·　做過 '+r.n+' 次錯 '+(r.n-r.ok)+' 次'));
+  return d;
+}
+function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+
+/* ---------- 錯題匯出 ---------- */
+function wrongIds(){return DATA.items.filter(function(x){return get(x.id).wrong;}).map(function(x){return x.id;});}
+function exportText(ids){
+  var lines=['TOEIC-P2-WRONG v1','匯出時間 '+new Date().toLocaleString('zh-TW'),''];
+  ids.forEach(function(id){
+    var it=byId(id), r=get(id);
+    lines.push('['+it.type+'] '+it.prompt);
+    lines.push('　正解 '+'ABC'[it.answer]+'：'+it.choices[it.answer]);
+    lines.push('　'+it.note);
+    lines.push('　#'+id+' 做過'+r.n+'錯'+(r.n-r.ok));
+    lines.push('');
+  });
+  return lines.join('\n');
+}
+function copy(text,btn){
+  var done=function(){var t=btn.textContent;btn.textContent='已複製 ✓';setTimeout(function(){btn.textContent=t;},1600);};
+  if(navigator.clipboard&&window.isSecureContext) navigator.clipboard.writeText(text).then(done,fallback);
+  else fallback();
+  function fallback(){
+    var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity=0;
+    document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){alert('複製失敗，請長按選取。');}
+    document.body.removeChild(ta);
+  }
+}
+
+/* ---------- 畫面切換 ---------- */
+function show(v){
+  ['home','quiz','done','wrong','set'].forEach(function(k){
+    $('#v-'+k).classList.toggle('hide',k!==v);
+  });
+  var tab=(v==='quiz'||v==='done')?'home':v;
+  document.querySelectorAll('footer button').forEach(function(b){b.classList.toggle('on',b.dataset.tab===tab);});
+  if(v!=='quiz'&&v!=='done'){audio.pause();$('#hpill').textContent=DATA?DATA.items.length+' 題':'—';}
+  if(v==='wrong') renderWrong();
+  $('main').scrollTop=0;
+}
+function refreshHome(){
+  var seen=0,ok=0,tot=0;
+  DATA.items.forEach(function(x){var r=hist[x.id];if(r&&r.n){seen++;ok+=r.ok;tot+=r.n;}});
+  $('#s-done').textContent=seen;
+  $('#s-acc').textContent=tot?Math.round(ok/tot*100)+'%':'—';
+  $('#s-wrong').textContent=wrongIds().length;
+
+  var types={},box=$('#types');box.innerHTML='';
+  DATA.items.forEach(function(x){
+    var t=types[x.type]||(types[x.type]={n:0,seen:0,bad:0});
+    t.n++; var r=hist[x.id]; if(r&&r.n){t.seen++; if(r.wrong)t.bad++;}
+  });
+  Object.keys(types).forEach(function(k){
+    var t=types[k], b=el('button','');
+    b.textContent=k+'（'+t.bad+'／'+t.seen+'，共 '+t.n+' 題）';
+    b.style.textAlign='left';
+    b.onclick=function(){start('type',k);};
+    box.appendChild(b);
+  });
+}
+function renderWrong(){
+  var ids=wrongIds(), box=$('#w-list'); box.innerHTML='';
+  if(!ids.length){box.appendChild(el('p','muted','目前沒有錯題。'));return;}
+  ids.forEach(function(id){box.appendChild(wrongRow(byId(id)));});
+}
+
+/* ---------- 離線下載 ---------- */
+function download(){
+  if(!('caches' in window)){$('#dl-info').textContent='這個瀏覽器不支援離線快取。';return;}
+  var btn=$('#dl-go'), bar=$('#dl-bar'), fill=bar.querySelector('i');
+  btn.disabled=true; bar.classList.remove('hide');
+  caches.open('p2-audio-v1').then(function(c){
+    var list=DATA.items.map(function(x){return 'audio/'+x.id+'.mp3';}), done=0, fail=0;
+    function step(){
+      if(!list.length){
+        btn.disabled=false; btn.textContent='下載全部音檔';
+        $('#dl-info').textContent=fail?('完成 '+done+' 個，失敗 '+fail+' 個。連線穩定時再按一次補齊。')
+                                      :('已存好 '+done+' 個音檔，現在沒網路也能練。');
+        return;
+      }
+      var u=list.shift();
+      c.add(u).then(function(){done++;},function(){fail++;}).then(function(){
+        fill.style.width=Math.round(done/DATA.items.length*100)+'%';
+        btn.textContent='下載中 '+done+' / '+DATA.items.length;
+        step();
+      });
+    }
+    step();
+  });
+}
+
+/* ---------- 綁定 ---------- */
+document.querySelectorAll('[data-start]').forEach(function(b){
+  b.onclick=function(){start(b.dataset.start);};
+});
+document.querySelectorAll('footer button').forEach(function(b){
+  b.onclick=function(){show(b.dataset.tab);};
+});
+$('#q-play').onclick=function(){
+  if(!audio.paused){audio.pause();setPlayUI(false);return;}
+  playSeg(null);
+};
+$('#q-next').onclick=next;
+$('#q-quit').onclick=function(){if(session.i>0||session.answered)finish();else{audio.pause();show('home');}};
+$('#d-again').onclick=function(){start(session.mode,session.type);};
+$('#d-copy').onclick=function(){
+  if(!session.wrong.length){alert('這輪沒有錯題。');return;}
+  copy(exportText(session.wrong),this);
+};
+$('#w-copy').onclick=function(){
+  var ids=wrongIds(); if(!ids.length){alert('目前沒有錯題。');return;}
+  copy(exportText(ids),this);
+};
+$('#o-show').onchange=function(){opt.show=this.checked;save(LS_O,opt);};
+$('#o-auto').onchange=function(){opt.auto=this.checked;save(LS_O,opt);};
+$('#o-autoplay').onchange=function(){opt.autoplay=this.checked;save(LS_O,opt);};
+document.querySelectorAll('#o-speed button').forEach(function(b){
+  b.onclick=function(){
+    opt.speed=parseFloat(b.dataset.sp); save(LS_O,opt); audio.playbackRate=opt.speed;
+    document.querySelectorAll('#o-speed button').forEach(function(x){x.classList.toggle('on',x===b);});
+  };
+});
+$('#o-reset').onclick=function(){
+  if(confirm('清空所有練習紀錄？錯題本也會一起清掉，這個動作無法復原。')){
+    hist={}; save(LS_H,hist); refreshHome(); renderWrong(); alert('已清空。');
+  }
+};
+$('#dl-go').onclick=download;
+
+/* ---------- 啟動 ---------- */
+$('#o-show').checked=opt.show; $('#o-auto').checked=opt.auto; $('#o-autoplay').checked=opt.autoplay;
+document.querySelectorAll('#o-speed button').forEach(function(x){
+  x.classList.toggle('on',parseFloat(x.dataset.sp)===opt.speed);
+});
+fetch('items.json').then(function(r){return r.json();}).then(function(d){
+  DATA=d; $('#hpill').textContent=d.items.length+' 題'; refreshHome();
+}).catch(function(){
+  $('#hpill').textContent='載入失敗';
+  $('#v-home').innerHTML='<div class="card"><h2>題庫載入失敗</h2><p class="lead">請確認網路，或重新整理。</p></div>';
+});
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
