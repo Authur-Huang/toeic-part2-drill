@@ -1,0 +1,283 @@
+[
+{
+  "id": "p3-011", "part": 3, "scene": "檔案室・借閱舊圖面",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"I'm looking for the original floor plans for the Bellamy building. The system says they're held here."},
+    {"s":1,"t":"Anything before two thousand is still on paper in the basement. Do you have the project number?"},
+    {"s":0,"t":"I have the address but not the number. Is that enough to find them?"},
+    {"s":1,"t":"It'll take longer, but yes. I can pull them by tomorrow afternoon. They can't leave the building, though — you'd have to scan what you need here."},
+    {"s":0,"t":"That's fine. I only need the second floor."}
+  ],
+  "questions": [
+    {"q":"What does the man want to obtain?","choices":["Building plans.","A project budget.","A scanning device.","A security pass."],"answer":0,"note":"目的題。floor plans ＝ building plans。"},
+    {"q":"What does the woman ask for?","choices":["A project number.","A written request.","A supervisor's approval.","A deposit."],"answer":0,"note":"細節題。Do you have the project number?"},
+    {"q":"What restriction does the woman mention?","choices":["The documents cannot be removed.","The basement closes at noon.","Only staff may enter.","Copies cost extra."],"answer":0,"note":"★ 限制題。They can't leave the building —— 聽到 though、however、but 之後常接限制條件，那通常就是考點。"}
+  ]
+},
+{
+  "id": "p3-012", "part": 3, "scene": "銀行・公司帳戶",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"I'd like to add a second signatory to our company account. Our new finance manager starts Monday."},
+    {"s":1,"t":"Certainly. We'll need her identification and a board resolution authorising the change."},
+    {"s":0,"t":"A board resolution? Our last bank just needed a form."},
+    {"s":1,"t":"Requirements changed last year for business accounts. I can email you a template — most companies get it signed the same week."},
+    {"s":0,"t":"Send it over and I'll get it on the agenda for Wednesday."}
+  ],
+  "questions": [
+    {"q":"What does the woman want to do?","choices":["Authorise an additional account user.","Open a new business account.","Increase a credit limit.","Close an old account."],"answer":0,"note":"目的題。add a second signatory ＝ 增加有權簽章的人。"},
+    {"q":"Why is the woman surprised?","choices":["A different bank had simpler requirements.","The fee is higher than expected.","The process takes several weeks.","Her manager has not started yet."],"answer":0,"note":"★ 情緒／反應題。Our last bank just needed a form 就是驚訝的來源。"},
+    {"q":"What does the man offer to send?","choices":["A document template.","An application fee waiver.","A list of branches.","A replacement card."],"answer":0,"note":"細節題。I can email you a template。"}
+  ]
+},
+{
+  "id": "p3-013", "part": 3, "scene": "房仲・看辦公空間",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"This is the unit I mentioned. Four hundred square metres, and the lease starts in November."},
+    {"s":1,"t":"It's brighter than the last one. But I count only twelve parking spaces for a team of thirty."},
+    {"s":0,"t":"There's a public garage across the road. Many tenants here buy monthly passes for their staff."},
+    {"s":1,"t":"That's an extra cost we hadn't budgeted. Can the landlord include a few more spaces in the lease?"},
+    {"s":0,"t":"I can ask. It would probably mean a slightly higher rent, but it's worth putting the question."}
+  ],
+  "questions": [
+    {"q":"What are the speakers looking at?","choices":["An office space for rent.","A parking garage.","A warehouse for sale.","A newly built home."],"answer":0,"note":"地點題。the lease starts in November ＝ 租約。(C) 是 for sale，與 lease 矛盾。"},
+    {"q":"What concern does the woman raise?","choices":["There is not enough parking.","The space is too dark.","The rent is too high.","The location is inconvenient."],"answer":0,"note":"細節題。(B) 正好相反——她說 It's brighter than the last one。★ 拿對話裡明講的反面設陷阱，是 Part 3 最常見的手法。"},
+    {"q":"What does the man say he will do?","choices":["Ask the landlord about the request.","Show her another unit.","Lower the asking price.","Arrange a second viewing."],"answer":0,"note":"下一步題。I can ask。"}
+  ]
+},
+{
+  "id": "p3-014", "part": 3, "scene": "印刷廠・型錄校稿",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"I've reviewed the catalogue proof. The colours are good, but page eleven still shows last season's prices."},
+    {"s":1,"t":"That's the file we received on the fourth. Did someone send an updated version after that?"},
+    {"s":0,"t":"Our marketing team sent one on the seventh. It may have gone to the wrong address."},
+    {"s":1,"t":"Let's not chase it. Send it straight to me now and I'll swap that page. We're not on press until Thursday."},
+    {"s":0,"t":"Sending it now. And could you send a fresh proof of just that page before you print?"}
+  ],
+  "questions": [
+    {"q":"What problem does the woman identify?","choices":["Outdated pricing appears in the proof.","The colours printed incorrectly.","A page is missing.","The delivery was late."],"answer":0,"note":"問題題。(B) 相反——她說顏色沒問題。"},
+    {"q":"What does the man mean when he says, \"Let's not chase it\"?","choices":["He prefers to fix the issue directly.","He thinks the file is unimportant.","He wants to cancel the job.","He will investigate the error later."],"answer":0,"note":"★ 意圖題。不去追究檔案跑到哪，直接叫對方重寄。重點是「省時間」，不是「不在乎」。"},
+    {"q":"What does the woman request?","choices":["A new proof of one page.","A discount on the order.","An earlier print date.","A larger print run."],"answer":0,"note":"要求題，答案在最後一句。★ 注意是「只有那一頁」的新校樣，不是整份。"}
+  ]
+},
+{
+  "id": "p3-015", "part": 3, "scene": "診所・預約改期",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"I have an appointment with Dr. Reyes on Tuesday at four, but I've been asked to cover a shift."},
+    {"s":1,"t":"Let me see what else she has. There's Thursday at eight-thirty in the morning, or the following Monday at two."},
+    {"s":0,"t":"Thursday morning would mean going in before work. Actually, that suits me better than the afternoon."},
+    {"s":1,"t":"I'll move you to Thursday. Please arrive ten minutes early — the forms have changed since your last visit."},
+    {"s":0,"t":"Understood. Do I need to bring anything else?"}
+  ],
+  "questions": [
+    {"q":"Why does the man want to change his appointment?","choices":["He has to work.","He will be travelling.","He is feeling better.","He forgot the date."],"answer":0,"note":"原因題。I've been asked to cover a shift ＝ 要代班。"},
+    {"q":"When will the man now see the doctor?","choices":["Thursday morning.","Tuesday afternoon.","Monday afternoon.","Thursday afternoon."],"answer":0,"note":"★ 三個時間選項全部在對話裡出現過，只有一個是他最後選的。這種題一定要聽到最後才作答。"},
+    {"q":"What is the man asked to do?","choices":["Arrive earlier than usual.","Bring a referral letter.","Pay in advance.","Call the day before."],"answer":0,"note":"指示題。arrive ten minutes early。"}
+  ]
+},
+{
+  "id": "p3-016", "part": 3, "scene": "三人對話・專案進度",
+  "speakers": ["W", "M", "M2"],
+  "lines": [
+    {"s":0,"t":"Before we finish, where are we on the Vasquez rollout? We promised them a date this week."},
+    {"s":1,"t":"Development is done. We finished testing on Friday and there's nothing outstanding on my side."},
+    {"s":2,"t":"Training is the hold-up. I still have two of their five sites unscheduled, and one of them is on an island."},
+    {"s":0,"t":"Can the island site be done remotely?"},
+    {"s":2,"t":"It could, but their internet has been unreliable. I'd rather go in person than have it fail halfway."},
+    {"s":1,"t":"If it helps, I can join that session by phone as backup."}
+  ],
+  "questions": [
+    {"q":"What is delaying the project?","choices":["Training has not been scheduled everywhere.","Development is incomplete.","Testing revealed problems.","The client changed the requirements."],"answer":0,"note":"問題題。(B)(C) 都被第二位說話者明確排除：Development is done、nothing outstanding。★ 三人對話要分清楚哪句話是誰說的。"},
+    {"q":"Why does the third speaker prefer to travel?","choices":["The site's internet is unreliable.","The client requested it.","It is cheaper than remote training.","He has other business there."],"answer":0,"note":"原因題。their internet has been unreliable。"},
+    {"q":"What does the second speaker offer?","choices":["To provide backup support by phone.","To reschedule the session.","To travel to the island.","To extend the deadline."],"answer":0,"note":"★ 提議題。I can join that session by phone as backup。(C) 去島上的是第三位，不是他——三人對話最愛考「張冠李戴」。"}
+  ]
+},
+{
+  "id": "p3-017", "part": 3, "scene": "汽車保養廠・估價",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"We've had a look at your van. The brakes are fine, but the timing belt is due and one tyre is below the legal tread."},
+    {"s":1,"t":"How much are we talking about altogether?"},
+    {"s":0,"t":"Around six hundred with the tyre. The belt is the bigger part of that, but if it goes it can damage the engine."},
+    {"s":1,"t":"The van's on the road every day, so I can't risk that. Can you do it today?"},
+    {"s":0,"t":"If you leave it with us, yes. We close at six."}
+  ],
+  "questions": [
+    {"q":"What does the woman say about the brakes?","choices":["They do not need work.","They must be replaced today.","They are unsafe.","They are still under warranty."],"answer":0,"note":"★ 細節題，考的是「沒問題」的那一項。The brakes are fine —— 選項刻意把三個部位混在一起，要聽清楚哪個對應哪個。"},
+    {"q":"Why does the man agree to the repair?","choices":["He depends on the vehicle daily.","The price is lower than expected.","He has a warranty.","A tyre has already failed."],"answer":0,"note":"原因題。The van's on the road every day, so I can't risk that。"},
+    {"q":"What does the woman require?","choices":["That the vehicle be left at the garage.","Payment in advance.","A booking for next week.","A signed estimate."],"answer":0,"note":"條件題。If you leave it with us, yes —— 條件句常常就是答案。"}
+  ]
+},
+{
+  "id": "p3-018", "part": 3, "scene": "三人對話・展場攤位",
+  "speakers": ["M", "W", "W2"],
+  "lines": [
+    {"s":0,"t":"The organisers have given us stand forty-two. It's the same size as last year but near the back."},
+    {"s":1,"t":"The back isn't necessarily bad. Last year the corner stands got more traffic than the ones by the entrance."},
+    {"s":2,"t":"That matches what I saw. People walk past the entrance stands on their way in and stop later."},
+    {"s":0,"t":"Then I won't ask to move. What I would like is a second screen, so two demonstrations can run at once."},
+    {"s":1,"t":"The rental list is on the portal. I'll book one this afternoon before they run out."}
+  ],
+  "questions": [
+    {"q":"What are the speakers mainly discussing?","choices":["Arrangements for a trade show stand.","A new product demonstration.","A change of venue.","A marketing budget."],"answer":0,"note":"主旨題。(B) 示範只是他們想加螢幕的用途。"},
+    {"q":"What do the second and third speakers agree about?","choices":["Rear stands can attract more visitors.","The stand is too small.","The entrance is the best position.","The event is poorly organised."],"answer":0,"note":"★ 三人對話特有的「兩人共識」題。(C) 正好是他們一起否定的說法。"},
+    {"q":"What will the second speaker do?","choices":["Reserve additional equipment.","Contact the organisers.","Redesign the stand.","Cancel the booking."],"answer":0,"note":"下一步題。I'll book one this afternoon。"}
+  ]
+},
+{
+  "id": "p3-019", "part": 3, "scene": "保險・理賠進度",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"I'm calling about claim number four-four-one-nine. It's been three weeks and I haven't heard anything."},
+    {"s":1,"t":"Let me pull it up... I see the assessor's report came in, but we're waiting on the repair invoice from the workshop."},
+    {"s":0,"t":"The workshop told me they sent it a fortnight ago."},
+    {"s":1,"t":"It's possible it went to the old claims address. I'll call them myself today and confirm. Once we have it, payment usually takes four working days."},
+    {"s":0,"t":"Please do. And could you note my mobile on the file? I'm rarely at the office number."}
+  ],
+  "questions": [
+    {"q":"Why is the man calling?","choices":["To ask about the status of a claim.","To report new damage.","To cancel a policy.","To dispute a payment amount."],"answer":0,"note":"目的題。I haven't heard anything ＝ 問進度。"},
+    {"q":"What is the claim waiting for?","choices":["An invoice from the repairer.","An assessor's report.","A police statement.","The man's signature."],"answer":0,"note":"★ 細節題。(B) 是**已經收到**的那一份——把「已完成」和「還在等」對調是高頻陷阱。"},
+    {"q":"What does the man ask the woman to do?","choices":["Update his contact details.","Send a written confirmation.","Speed up the payment.","Transfer him to a manager."],"answer":0,"note":"要求題，在最後一句：could you note my mobile on the file。"}
+  ]
+},
+{
+  "id": "p3-020", "part": 3, "scene": "新人到職・第一天",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"Welcome aboard. Your laptop is set up, but IT couldn't create your email until your contract was countersigned."},
+    {"s":1,"t":"I signed it last Thursday. Should I chase someone?"},
+    {"s":0,"t":"No, it came back yesterday. Your account should be live by this afternoon. In the meantime, spend the morning on the onboarding modules."},
+    {"s":1,"t":"How long do those take? I was hoping to sit in on the client call at eleven."},
+    {"s":0,"t":"Go to the call — that'll teach you more than the modules will. You can do those any time this week."}
+  ],
+  "questions": [
+    {"q":"Who most likely is the woman?","choices":["The man's new colleague or manager.","A client of the company.","An IT contractor.","A job applicant."],"answer":0,"note":"身分題。Welcome aboard ＋ 交代第一天要做什麼。"},
+    {"q":"Why is the man's email account not ready?","choices":["Paperwork was completed only recently.","His laptop has not arrived.","He has not chosen a password.","IT is short-staffed."],"answer":0,"note":"原因題。until your contract was countersigned，昨天才回來。"},
+    {"q":"What does the woman mean when she says, \"Go to the call\"?","choices":["She thinks the meeting is more valuable.","She wants him out of the office.","The modules have been cancelled.","The call is compulsory."],"answer":0,"note":"★ 意圖題。她補了一句 that'll teach you more than the modules will，說明她認為會議比線上課程有價值。(D) 錯在她沒說是強制的。"}
+  ]
+},
+{
+  "id": "p4-008", "part": 4, "scene": "博物館・語音導覽",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"You are now standing in the east wing, in front of the museum's oldest holding — a merchant's ledger from fourteen ninety-two."},
+    {"s":0,"t":"What makes the ledger remarkable is not its age but its detail. It records the price of every item the merchant traded, giving historians a rare picture of daily life."},
+    {"s":0,"t":"The case is kept dark because the ink fades under strong light. Please do not use flash photography anywhere in this room."},
+    {"s":0,"t":"When you are ready, continue to your left for the textiles gallery, or press three to hear more about how the ledger was recovered."}
+  ],
+  "questions": [
+    {"q":"What is the speaker describing?","choices":["A historical document.","A painting.","A piece of furniture.","A textile collection."],"answer":0,"note":"主旨題。ledger ＝ 帳冊。就算不認得這個字，from fourteen ninety-two 與 records the price 也指向文件。"},
+    {"q":"According to the speaker, why is the item significant?","choices":["It records everyday transactions in detail.","It is the oldest object ever found.","It was written by a famous historian.","It is made from rare material."],"answer":0,"note":"★ 細節題。not its age but its detail —— not A but B 的句型，答案永遠在 but 後面。"},
+    {"q":"What are listeners asked not to do?","choices":["Use a camera flash.","Touch the display case.","Speak loudly.","Bring bags into the room."],"answer":0,"note":"禁止題。do not use flash photography。"}
+  ]
+},
+{
+  "id": "p4-009", "part": 4, "scene": "廣播・路況與天氣",
+  "speakers": ["M"],
+  "lines": [
+    {"s":0,"t":"And now your drive-time update. Heavy rain overnight has left standing water on the coastal road between Marsden and Fairview."},
+    {"s":0,"t":"Crews are pumping the worst section clear, but one lane remains closed and delays of around twenty-five minutes are being reported."},
+    {"s":0,"t":"If you are heading north, the inland route through Weatherby is longer in distance but currently running normally."},
+    {"s":0,"t":"The rain is expected to ease by mid-morning, with clearer conditions for the evening commute."}
+  ],
+  "questions": [
+    {"q":"What is causing the delays?","choices":["Water on the road.","A traffic accident.","Roadworks.","A closed bridge."],"answer":0,"note":"原因題。standing water ＝ 積水。"},
+    {"q":"What does the speaker recommend for drivers heading north?","choices":["Taking a longer inland route.","Waiting until mid-morning.","Avoiding travel entirely.","Using public transport."],"answer":0,"note":"★ 建議題。longer in distance but currently running normally —— 雖然遠但是通的。(B) 是天氣預報，不是給北上駕駛的建議。"},
+    {"q":"What does the speaker say about the evening?","choices":["Conditions should improve.","More rain is expected.","Roads will be closed.","Delays will worsen."],"answer":0,"note":"預測題。clearer conditions for the evening commute。"}
+  ]
+},
+{
+  "id": "p4-010", "part": 4, "scene": "頒獎・年度員工表揚",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"Before we move on to dessert, I'd like to take a moment for this year's service award."},
+    {"s":0,"t":"The recipient joined us as a temporary warehouse assistant eleven years ago and now runs our entire distribution network across three countries."},
+    {"s":0,"t":"What the committee kept coming back to was not the promotions, but the number of colleagues who named him as the person who trained them."},
+    {"s":0,"t":"Please join me in congratulating Tomas Bergeron. Tomas, come up and say a few words — and yes, we have timed you."}
+  ],
+  "questions": [
+    {"q":"Where is the talk most likely taking place?","choices":["At a company dinner.","At a training workshop.","At a warehouse opening.","At a job fair."],"answer":0,"note":"地點題。before we move on to dessert ＝ 正在用餐。"},
+    {"q":"Why was the award recipient chosen?","choices":["He trained many of his colleagues.","He was promoted the most times.","He has the longest service record.","He opened three new offices."],"answer":0,"note":"★ not the promotions, but the number of colleagues who named him —— 又是 not A but B。(B) 正是被否定的那個。"},
+    {"q":"What does the speaker imply when she says, \"we have timed you\"?","choices":["His speech should be brief.","He arrived late.","He will be recorded.","He has won before."],"answer":0,"note":"★ 意圖題，帶玩笑語氣。「我們計時了」＝ 請講短一點。"}
+  ]
+},
+{
+  "id": "p4-011", "part": 4, "scene": "公告・產品召回",
+  "speakers": ["M"],
+  "lines": [
+    {"s":0,"t":"This is an important safety notice from Halden Appliances regarding our model T-forty kettle."},
+    {"s":0,"t":"A small number of units manufactured between March and May may have a faulty base connector, which can cause the kettle to overheat."},
+    {"s":0,"t":"The affected batch codes are printed underneath the unit and listed on our website. If your code appears, stop using the kettle immediately."},
+    {"s":0,"t":"Return it to any stockist for a full refund or a free replacement. You do not need a receipt, but please do not attempt to repair the unit yourself."}
+  ],
+  "questions": [
+    {"q":"What is the purpose of the announcement?","choices":["To warn customers about a defective product.","To launch a new appliance.","To advertise a sale.","To announce a store opening."],"answer":0,"note":"目的題。safety notice ＋ faulty connector。"},
+    {"q":"How can customers check whether their kettle is affected?","choices":["By looking at the batch code on the base.","By calling a service line.","By checking the purchase date.","By returning it to the factory."],"answer":0,"note":"細節題。batch codes are printed underneath the unit。"},
+    {"q":"What are customers told they do NOT need?","choices":["A receipt.","The original packaging.","Proof of address.","An appointment."],"answer":0,"note":"★ 否定題。You do not need a receipt —— 題目問「不需要什麼」，聽到 do not need 要立刻記下。"}
+  ]
+},
+{
+  "id": "p4-012", "part": 4, "scene": "車站廣播・列車延誤",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"Attention passengers waiting on platform four for the ten-fifteen service to Crestwood."},
+    {"s":0,"t":"Because of a signalling fault south of Danforth, this service is delayed by approximately forty minutes. It will now depart at around ten fifty-five."},
+    {"s":0,"t":"Passengers travelling only as far as Danforth may wish to take the eleven o'clock bus from outside the main entrance, which will arrive sooner."},
+    {"s":0,"t":"Refreshment vouchers are available from the ticket office for anyone holding a ticket for the delayed service."}
+  ],
+  "questions": [
+    {"q":"What has caused the delay?","choices":["A signalling problem.","Bad weather.","A staff shortage.","An earlier accident."],"answer":0,"note":"原因題。a signalling fault south of Danforth。"},
+    {"q":"What alternative is suggested for some passengers?","choices":["A bus service.","A later train.","A taxi share.","A different platform."],"answer":0,"note":"★ 注意限定條件：只有 travelling only as far as Danforth 的人適用，不是所有人。"},
+    {"q":"What is available at the ticket office?","choices":["Vouchers for refreshments.","Full refunds.","Seat reservations.","Luggage storage."],"answer":0,"note":"細節題。Refreshment vouchers。(B) 沒提到退費，是想當然耳的陷阱。"}
+  ]
+},
+{
+  "id": "p4-013", "part": 4, "scene": "課程開場・客服訓練",
+  "speakers": ["M"],
+  "lines": [
+    {"s":0,"t":"Good morning, and welcome to the customer response workshop. I'm Elias, and I've been running these for about six years."},
+    {"s":0,"t":"We'll spend the first hour on written replies and the second on difficult phone calls. There's a break at half past ten."},
+    {"s":0,"t":"I should say up front that this is not a lecture. You'll be working in pairs on real complaints from our own inbox, with the names removed."},
+    {"s":0,"t":"If you'd rather not read your work aloud, that's completely fine — just let me know when we get to that part."}
+  ],
+  "questions": [
+    {"q":"What is the workshop about?","choices":["Responding to customers.","Writing marketing copy.","Managing a team.","Using new software."],"answer":0,"note":"主旨題。customer response workshop。"},
+    {"q":"What will participants do during the session?","choices":["Work in pairs on real cases.","Watch a demonstration.","Take a written test.","Listen to recorded calls."],"answer":0,"note":"★ this is not a lecture 是關鍵——說話者刻意否定「聽講」的形式。(B)(D) 都是被排除的被動形式。"},
+    {"q":"What does the speaker say participants may choose to avoid?","choices":["Reading their work aloud.","Attending the second hour.","Working with a partner.","Using the complaints inbox."],"answer":0,"note":"細節題。If you'd rather not read your work aloud, that's completely fine。"}
+  ]
+},
+{
+  "id": "p4-014", "part": 4, "scene": "廣告・結束營業出清",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"After thirty-two years on Harbour Street, Penrose Books will be closing its doors at the end of next month."},
+    {"s":0,"t":"From this Friday, everything in the shop is reduced — forty percent off all books, and sixty percent off maps, prints and stationery."},
+    {"s":0,"t":"Gift cards must be used before the final day. After that we will not be able to honour them, so please do bring them in."},
+    {"s":0,"t":"We're open the usual hours, and we'd love to see the faces we've served over the years one last time."}
+  ],
+  "questions": [
+    {"q":"What is the main purpose of the advertisement?","choices":["To announce a closing-down sale.","To promote a new branch.","To advertise a book launch.","To recruit staff."],"answer":0,"note":"目的題。closing its doors ＋ everything reduced。"},
+    {"q":"Which items have the largest discount?","choices":["Maps and stationery.","All books.","Gift cards.","Second-hand items."],"answer":0,"note":"★ 比較題。書 40%、地圖文具 60% —— 兩個百分比同時出現時，一定會考哪個比較多。"},
+    {"q":"What are listeners urged to do with gift cards?","choices":["Use them before the shop closes.","Exchange them for cash.","Transfer them to another store.","Return them for a refund."],"answer":0,"note":"★ must be used before the final day，而且明說之後無法兌現。(B)(D) 都與「無法兌現」矛盾。"}
+  ]
+},
+{
+  "id": "p4-015", "part": 4, "scene": "語音留言・面試邀約",
+  "speakers": ["M"],
+  "lines": [
+    {"s":0,"t":"Hello, this message is for Priya Raman. My name is Colin Voss, calling from Aldermoor Logistics about your application for the operations coordinator role."},
+    {"s":0,"t":"We'd like to invite you to an interview. It would be with two people — myself and the warehouse director — and would last around forty-five minutes."},
+    {"s":0,"t":"We can offer Tuesday morning or Wednesday afternoon of next week. If neither works, we do have some flexibility the following week."},
+    {"s":0,"t":"Please reply to the email I've just sent rather than calling back, as I'm travelling and won't pick up. Thank you, and we look forward to meeting you."}
+  ],
+  "questions": [
+    {"q":"Why is the speaker calling?","choices":["To arrange an interview.","To offer a job.","To request references.","To confirm a start date."],"answer":0,"note":"★ 目的題。invite you to an interview —— (B) 是還沒發生的下一步，別跳太快。"},
+    {"q":"What does the speaker say about the interview?","choices":["Two people will conduct it.","It will be held online.","It will take two hours.","It requires a presentation."],"answer":0,"note":"細節題。It would be with two people。(C) 拿 two 這個數字誤導到時間長度。"},
+    {"q":"How does the speaker want the listener to respond?","choices":["By email.","By returning his call.","By text message.","By visiting the office."],"answer":0,"note":"★ reply to the email rather than calling back —— rather than 之後的是被排除的做法，正好是最誘人的錯誤選項。"}
+  ]
+}
+]

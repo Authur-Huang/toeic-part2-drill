@@ -475,7 +475,7 @@ function toReview(){
   var box=$('#t-script'); box.innerHTML='';
   it.lines.forEach(function(ln,i){
     var d=el('div','ln');
-    d.appendChild(el('span','who',it.part===3?('AB'[ln.s]||'A'):'▸'));
+    d.appendChild(el('span','who',it.part===3?('ABC'[ln.s]||'A'):'▸'));
     d.appendChild(el('span','tx',ln.t));
     var b=el('button','pl','▶');
     b.onclick=function(){var m=it.lineMarks[i];playRange(m.start,m.start+m.len);};

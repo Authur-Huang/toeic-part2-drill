@@ -26,6 +26,10 @@ GAP_Q = 0.6                                # 題目之間
 # 每題兩位（或一位）說話者，口音與性別都錯開，貼近實際考試
 PAIRS = [("us-f", "gb-m"), ("gb-f", "us-m"), ("ca-f", "au-m"), ("au-f", "ca-m"),
          ("us-m", "ca-f"), ("gb-m", "au-f"), ("ca-m", "us-f"), ("au-m", "gb-f")]
+# 正式考試有三人對話。三個人必須是三個不同的聲音，
+# 否則第三位會跟第一位共用同一個聲音，聽起來像同一個人自問自答。
+TRIPLES = [("us-f", "gb-m", "ca-m"), ("gb-f", "us-m", "au-f"),
+           ("ca-f", "au-m", "us-m"), ("au-f", "ca-m", "gb-f")]
 SOLO = ["us-m", "gb-f", "ca-m", "au-f", "us-f", "gb-m", "ca-f", "au-m"]
 
 PERMS4 = list(itertools.permutations(range(4)))
@@ -83,9 +87,16 @@ def main():
         jobs, plan = [], []
         for idx, it in enumerate(items):
             if it["part"] == 3:
-                vk = list(PAIRS[idx % len(PAIRS)])
+                ns = len(it.get("speakers") or ["W", "M"])
+                vk = list(TRIPLES[idx % len(TRIPLES)] if ns >= 3
+                          else PAIRS[idx % len(PAIRS)])
             else:
                 vk = [SOLO[idx % len(SOLO)]]
+            # 說話者編號不得超出配到的聲音數，否則會悄悄繞回第一個人
+            top = max(ln["s"] for ln in it["lines"])
+            if top >= len(vk):
+                raise SystemExit(u"{}：有 {} 位說話者但只配到 {} 個聲音".format(
+                    it["id"], top + 1, len(vk)))
             segs = []
 
             def add(text, voice, tag):
