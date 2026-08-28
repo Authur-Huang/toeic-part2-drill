@@ -1,0 +1,189 @@
+[
+{
+  "id": "p3-004", "part": 3, "scene": "餐廳・訂位出錯",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"Good evening. I booked a table for eight under Whitfield, but the person at the door says there's nothing under that name."},
+    {"s":1,"t":"Let me have a look. I do see a Whitfield, but it's for eight o'clock, not for eight people."},
+    {"s":0,"t":"Oh no. Whoever took the call must have misheard me. There are eight of us and everyone's already parked."},
+    {"s":1,"t":"Don't worry, we can push two tables together by the window. It'll take about ten minutes to set up."},
+    {"s":0,"t":"Ten minutes is nothing. We were expecting to be turned away."}
+  ],
+  "questions": [
+    {"q":"What is the problem?","choices":["A reservation was recorded incorrectly.","A restaurant is closing early.","A customer arrived late.","A table was double-booked."],"answer":0,"note":"問題題。★ 陷阱在 eight 這個字被用了兩次意思不同：八點 vs 八個人。數字重複出現時要聽清楚它修飾什麼。"},
+    {"q":"What does the man offer to do?","choices":["Combine two tables.","Give a discount.","Call another branch.","Extend the booking."],"answer":0,"note":"提議題。push two tables together 被改寫成 combine two tables —— 正解幾乎都會換字。"},
+    {"q":"What does the woman mean when she says, \"Ten minutes is nothing\"?","choices":["She is willing to wait.","She thinks the wait is too long.","She has only ten minutes.","She wants to reschedule."],"answer":0,"note":"★ 意圖題（新制特色）。字面是「十分鐘不算什麼」，實際在表達願意等。這類題不能只翻譯字面，要看前後文——她下一句說本來以為會被趕走。"}
+  ]
+},
+{
+  "id": "p3-005", "part": 3, "scene": "資訊部・電腦故障",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"Hi, I put in a ticket this morning about my laptop shutting itself down. Has anyone had a chance to look at it?"},
+    {"s":1,"t":"I saw it come through. It's probably the battery — we've had four of the same model do that this month."},
+    {"s":0,"t":"Four? That's reassuring. Can it be swapped today? I'm presenting to the board on Thursday."},
+    {"s":1,"t":"We keep spares for that model, so yes. Bring it down after lunch and I'll do it while you wait."},
+    {"s":0,"t":"Perfect. I'll come by around one."}
+  ],
+  "questions": [
+    {"q":"Why is the man contacting the woman?","choices":["To follow up on a repair request.","To order new equipment.","To report a security issue.","To schedule a presentation."],"answer":0,"note":"目的題。put in a ticket ＝ 報修單。(D) 週四的簡報只是他急的理由，不是他找對方的目的。"},
+    {"q":"What does the woman suggest is causing the problem?","choices":["A faulty battery.","A software update.","A damaged cable.","An overheated room."],"answer":0,"note":"細節題。It's probably the battery。"},
+    {"q":"What does the man mean when he says, \"Four? That's reassuring\"?","choices":["He is relieved the fault is a known one.","He is worried about the other laptops.","He thinks four is too few.","He wants a different model."],"answer":0,"note":"★ 意圖題。表面在講數字，實際是「原來是常見故障，那就好辦」。★ 注意這裡不是反話——他接著就問能不能今天換，語氣是放心的。"}
+  ]
+},
+{
+  "id": "p3-006", "part": 3, "scene": "採購・供應商報價",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"I've gone through the three quotes for the packaging contract. Kesler came in lowest, but their lead time is six weeks."},
+    {"s":1,"t":"Six weeks won't work for the spring launch. What about the second one?"},
+    {"s":0,"t":"Ardmore is about twelve percent higher, but they can deliver in three weeks and they're twenty minutes from the plant."},
+    {"s":1,"t":"Being close matters more than people think. If something's wrong with a batch, we can drive over the same day."},
+    {"s":0,"t":"That's what I thought too. I'll draft a recommendation for Ardmore and send it round before Friday."}
+  ],
+  "questions": [
+    {"q":"What are the speakers discussing?","choices":["Choosing a packaging supplier.","Launching a new product line.","Relocating a factory.","Renegotiating a lease."],"answer":0,"note":"主旨題。(B) 春季上市只是限制條件；(C) 距離工廠很近是選擇理由，不是要搬廠。"},
+    {"q":"What is the main drawback of the lowest quote?","choices":["It takes too long to deliver.","The quality is inconsistent.","The supplier is too far away.","The price may increase."],"answer":0,"note":"細節題。Kesler 最便宜但 lead time is six weeks。(C) 距離遠是拿另一家的優點反過來設的陷阱。"},
+    {"q":"What will the woman do next?","choices":["Write a recommendation.","Visit the supplier.","Request a new quote.","Cancel the contract."],"answer":0,"note":"★ 下一步題。答案幾乎永遠在最後一兩句：I'll draft a recommendation。"}
+  ]
+},
+{
+  "id": "p3-007", "part": 3, "scene": "人資・教育訓練報名",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"I'd like to sign up for the data analysis course, but the sign-up sheet says it's full."},
+    {"s":1,"t":"It filled up in two days. We're running a second session in October if you can wait."},
+    {"s":0,"t":"My performance review is in September, and I listed that course as one of my goals."},
+    {"s":1,"t":"In that case, let me add you to the waiting list and note the reason. People do drop out — usually two or three each time."},
+    {"s":0,"t":"I'd appreciate that. Should I email you the details, or is the list already open?"}
+  ],
+  "questions": [
+    {"q":"What does the man want to do?","choices":["Enrol in a training course.","Postpone his review.","Teach a class.","Change departments."],"answer":0,"note":"目的題。sign up for ＝ enrol in，換字改寫。"},
+    {"q":"Why does the man mention his performance review?","choices":["To explain why the timing matters.","To ask for a promotion.","To complain about his manager.","To request a day off."],"answer":0,"note":"★ 「為什麼提到某件事」是高頻題型，考的是**功能**不是內容。他提考核是為了說明為何不能等到十月。"},
+    {"q":"What does the woman say about the waiting list?","choices":["Spots often open up.","It is currently closed.","It costs extra to join.","Only managers may join."],"answer":0,"note":"細節題。People do drop out — usually two or three each time，改寫成 spots often open up。"}
+  ]
+},
+{
+  "id": "p3-008", "part": 3, "scene": "辦公室搬遷・座位安排",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"The movers arrive Saturday morning. Have you decided where the design team is going?"},
+    {"s":1,"t":"I was going to put them on the north side, but they've asked to be near the print room."},
+    {"s":0,"t":"That's the noisiest corner of the floor. Are they sure?"},
+    {"s":1,"t":"They said they'd rather have the noise than walk the length of the building twenty times a day."},
+    {"s":0,"t":"Fair enough. Just make sure it's in writing so nobody complains about it in three months."}
+  ],
+  "questions": [
+    {"q":"What is scheduled for Saturday?","choices":["An office move.","A team meeting.","A building inspection.","A print job."],"answer":0,"note":"細節題。The movers arrive Saturday morning。★ 聽到星期就要抓，Part 3 很愛考。"},
+    {"q":"Why does the design team want the location near the print room?","choices":["To avoid walking a long distance.","Because it is quieter.","Because it has more light.","To be closer to management."],"answer":0,"note":"細節題。(B) 正好相反——那裡是最吵的角落，是拿對話裡明講的反面設陷阱。"},
+    {"q":"What does the woman recommend?","choices":["Documenting the decision.","Delaying the move.","Consulting the whole floor.","Reducing the noise."],"answer":0,"note":"★ 建議題，答案在最後一句 make sure it's in writing。documenting 是 in writing 的換字。"}
+  ]
+},
+{
+  "id": "p3-009", "part": 3, "scene": "機場・班機改降",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"Excuse me, the board says my flight to Denver is delayed, but it doesn't give a new time."},
+    {"s":1,"t":"There's weather moving through Denver. The aircraft is still on the ground in Phoenix, so we're looking at three hours at least."},
+    {"s":0,"t":"Three hours. Is there anything going through Salt Lake City instead?"},
+    {"s":1,"t":"There is, but it leaves in forty minutes and you'd have to check in again at the far end of the terminal."},
+    {"s":0,"t":"I only have a carry-on. Put me on it and I'll run."}
+  ],
+  "questions": [
+    {"q":"Where does this conversation most likely take place?","choices":["At an airport service desk.","On board an aircraft.","At a train station.","At a travel agency."],"answer":0,"note":"地點題。the board、terminal、check in again 三個線索。(D) 旅行社不會有航班顯示板與航廈。"},
+    {"q":"What is causing the delay?","choices":["Poor weather at the destination.","A mechanical fault.","A staff shortage.","A security alert."],"answer":0,"note":"細節題。There's weather moving through Denver。"},
+    {"q":"What does the man decide to do?","choices":["Take a different route.","Wait for the original flight.","Book a hotel.","Request a refund."],"answer":0,"note":"★ 決定題。Put me on it ＝ 幫我劃那班。經 Salt Lake City 轉機就是 a different route。"}
+  ]
+},
+{
+  "id": "p3-010", "part": 3, "scene": "客服・退換貨",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"I ordered two office chairs on the fourteenth and only one arrived. The invoice shows both."},
+    {"s":1,"t":"I'm sorry about that. Let me check the shipment... it looks like the second chair went out from a different warehouse."},
+    {"s":0,"t":"So it's on its way? Nobody told me it would be split."},
+    {"s":1,"t":"It should reach you Wednesday. I'll email you the tracking number now, and I'll add a note so you're not charged for the second delivery."},
+    {"s":0,"t":"Thank you. As long as it's here before the new staff start on Monday, we're fine."}
+  ],
+  "questions": [
+    {"q":"Why is the woman calling?","choices":["Part of her order is missing.","She was charged twice.","A product was damaged.","She wants to cancel an order."],"answer":0,"note":"目的題。only one arrived。(B) 費用是男子後面主動提的，不是她打來的原因。"},
+    {"q":"What does the man say he will do?","choices":["Send tracking information.","Issue a full refund.","Dispatch a replacement.","Contact the warehouse manager."],"answer":0,"note":"細節題。I'll email you the tracking number now。(C) 是陷阱——第二張椅子不是補寄，本來就在路上。"},
+    {"q":"What does the woman imply about Monday?","choices":["New employees will begin work.","The office will be closed.","She will be away.","A delivery is scheduled."],"answer":0,"note":"★ 推論題。before the new staff start on Monday。(D) 送達是週三不是週一，把兩個日期混在一起是常見失分點。"}
+  ]
+},
+{
+  "id": "p4-003", "part": 4, "scene": "工廠導覽・參觀說明",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"Welcome to the Ridgeway bottling facility. My name is Anna and I'll be taking you through the plant this morning."},
+    {"s":0,"t":"Before we go in, a few points about safety. Everyone must wear the vest and glasses you were given at reception, and please stay behind the yellow line at all times."},
+    {"s":0,"t":"The tour runs about fifty minutes. We'll start at the filling line, move through quality control, and finish in the warehouse."},
+    {"s":0,"t":"Photography is permitted everywhere except quality control, where the equipment is still under a supplier agreement. I'll remind you when we get there."}
+  ],
+  "questions": [
+    {"q":"Who most likely is the speaker?","choices":["A tour guide at a factory.","A safety inspector.","A production manager.","A supplier representative."],"answer":0,"note":"身分題。I'll be taking you through the plant ＝ 帶導覽。(C) 廠長不會這樣自我介紹。"},
+    {"q":"What are listeners required to do?","choices":["Wear protective equipment.","Leave their bags at reception.","Sign a visitor agreement.","Stay with a partner."],"answer":0,"note":"細節題。must wear the vest and glasses，改寫成 protective equipment。"},
+    {"q":"Where are listeners not allowed to take photographs?","choices":["In quality control.","In the warehouse.","At the filling line.","At reception."],"answer":0,"note":"★ 例外題。everywhere except quality control —— 聽到 except 就要立刻標記，那通常就是題目要問的。"}
+  ]
+},
+{
+  "id": "p4-004", "part": 4, "scene": "機場廣播・登機門更改",
+  "speakers": ["M"],
+  "lines": [
+    {"s":0,"t":"Attention passengers on Coastal Air flight two-one-four to Halifax. This is a gate change announcement."},
+    {"s":0,"t":"Your flight will now depart from gate C-nineteen rather than B-seven. C-nineteen is in the adjoining concourse, reachable by the shuttle train on the lower level."},
+    {"s":0,"t":"Because of the distance, boarding has been pushed back by twenty minutes. Passengers requiring assistance should speak to an agent at the B-seven desk before moving."},
+    {"s":0,"t":"We apologise for the inconvenience and thank you for your patience."}
+  ],
+  "questions": [
+    {"q":"What is the announcement mainly about?","choices":["A change of departure gate.","A cancelled flight.","A baggage delay.","A boarding procedure for families."],"answer":0,"note":"主旨題。★ 第二句就明講 This is a gate change announcement —— Part 4 開頭兩句是最貴的資訊。"},
+    {"q":"How can passengers reach the new gate?","choices":["By taking a shuttle train.","By walking through security again.","By using a courtesy bus.","By taking a lift to the roof."],"answer":0,"note":"細節題。reachable by the shuttle train on the lower level。"},
+    {"q":"What should passengers who need help do?","choices":["Speak to an agent before leaving.","Wait at the new gate.","Call the airline.","Board first."],"answer":0,"note":"★ 指示題。before moving 是關鍵——要先找地勤再過去，不是到了新登機門再說。"}
+  ]
+},
+{
+  "id": "p4-005", "part": 4, "scene": "會議開場・新請假制度",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"Thanks for coming in early, everyone. I'll keep this short because I know several of you have client calls at nine."},
+    {"s":0,"t":"From the first of next month, all leave requests move to the new online system. Paper forms will no longer be accepted, even for a single day."},
+    {"s":0,"t":"The change is mainly for the managers, who currently have to chase signatures across three floors. Requests will now go straight to your supervisor's queue."},
+    {"s":0,"t":"Training is optional, but I'd strongly suggest the twenty-minute session on Thursday. Those who skipped the expenses training last year are still emailing me every week."}
+  ],
+  "questions": [
+    {"q":"What is the purpose of the talk?","choices":["To introduce a new leave request system.","To announce a change in working hours.","To review last year's performance.","To schedule client calls."],"answer":0,"note":"目的題。(D) 九點的客戶電話只是她長話短說的理由。"},
+    {"q":"According to the speaker, who benefits most from the change?","choices":["Managers.","New employees.","Clients.","The training team."],"answer":0,"note":"細節題。mainly for the managers, who currently have to chase signatures。"},
+    {"q":"What does the speaker imply about the training session?","choices":["Attending it will save trouble later.","It is required for all staff.","It has been cancelled.","It lasts a full day."],"answer":0,"note":"★ 意圖題。她說訓練是自由參加，卻舉去年沒去上課的人「到現在每週都在寄信問我」——這是在暗示不去會後悔。(B) 錯在她明說 optional。"}
+  ]
+},
+{
+  "id": "p4-006", "part": 4, "scene": "廣播廣告・健身房開幕",
+  "speakers": ["M"],
+  "lines": [
+    {"s":0,"t":"Tired of driving across town just to get on a treadmill? Corbin Fitness opens its third location this Saturday, right on Maple Street."},
+    {"s":0,"t":"The new club has everything our members already love — the pool, the climbing wall, and classes running from five in the morning until ten at night."},
+    {"s":0,"t":"Join during opening week and we'll waive the registration fee, normally sixty dollars. Existing members can use the new location at no extra cost."},
+    {"s":0,"t":"Visit corbinfitness dot com to book a free trial session. No card details required."}
+  ],
+  "questions": [
+    {"q":"What is being advertised?","choices":["A new branch of a fitness club.","A swimming competition.","A discounted personal trainer.","A fitness equipment sale."],"answer":0,"note":"主旨題。opens its third location ＝ 新分店。(D) 器材只是設施描述。"},
+    {"q":"What is offered during the opening week?","choices":["A waived registration fee.","A free month of membership.","A discount on classes.","A free piece of equipment."],"answer":0,"note":"細節題。waive the registration fee。★ waive（免除）這個字在廣告型 Part 4 幾乎必考。"},
+    {"q":"What does the speaker say about existing members?","choices":["They may use the new site for free.","They must renew their membership.","They get priority booking.","They will receive a refund."],"answer":0,"note":"細節題。at no extra cost ＝ for free。"}
+  ]
+},
+{
+  "id": "p4-007", "part": 4, "scene": "電話語音選單・營業時間",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"Thank you for calling Larkin Dental. Our office is currently closed."},
+    {"s":0,"t":"We are open Monday through Thursday from eight to five, and on Friday from eight until noon. We are closed on weekends and public holidays."},
+    {"s":0,"t":"If this is a dental emergency, please hang up and call our on-call line at five-five-five, zero-one-nine-two. That line is answered around the clock."},
+    {"s":0,"t":"To request an appointment, leave your name, number, and preferred day after the tone, and a member of our team will return your call on the next working day."}
+  ],
+  "questions": [
+    {"q":"When does the office close on Fridays?","choices":["At noon.","At five o'clock.","At eight o'clock.","It is closed all day."],"answer":0,"note":"★ 細節題，陷阱在同一句話裡有兩組時間。Friday from eight until noon —— 五點是週一到週四的。"},
+    {"q":"What should a caller with an emergency do?","choices":["Call a different number.","Leave a message.","Visit the office directly.","Wait for the next working day."],"answer":0,"note":"細節題。hang up and call our on-call line。(B) 留言是預約用的，不是急診用的。"},
+    {"q":"When will the office return an appointment call?","choices":["On the next working day.","Within one hour.","On the same evening.","At the weekend."],"answer":0,"note":"★ 最後一句。(D) 直接與前面「週末不營業」矛盾——Part 4 常在不同段落埋互相牴觸的線索。"}
+  ]
+}
+]

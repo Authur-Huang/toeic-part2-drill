@@ -1,8 +1,17 @@
-# Part 2 應答練習
+# 多益聽力練習
 
-多益 Part 2（應答問題）的手機練習 App。可安裝到主畫面、可離線使用。
+多益 **Part 2（應答問題）** 與 **Part 3／4（對話與獨白）** 的手機練習 App。
+可安裝到主畫面、可離線使用。
 
 **題目與語音全部為本專案自製**，不含任何第三方測驗的版權素材。
+
+| 部分 | 形式 | 選項 | 選項文字 |
+|---|---|---|---|
+| Part 2 | 一句問答，約 8 秒 | 三選一 | **預設不顯示**（正式考試不印在題本） |
+| Part 3／4 | 30–50 秒對話或獨白＋三題 | 四選一 | **顯示**（正式考試印在題本） |
+
+錯題會依 **1／3／7 天**自動排回來複習，連續答對三次才移出錯題本。
+音檔依 Part 分包下載，可以只帶走現在要練的部分。
 
 ---
 
@@ -45,10 +54,12 @@
 ## 目錄
 
 ```
-items/        題庫原始資料（JSON，手寫）
+items/        Part 2 題庫（JSON，手寫）
+items34/      Part 3／4 題庫（JSON，手寫）
 build/
-  gen_audio.py   題庫 → Edge-TTS 合成 → 串接 → docs/audio/*.mp3 + docs/items.json
-  build_site.py  src/ → docs/，並產生圖示、檢查音檔齊全
+  gen_audio.py    Part 2   → docs/audio/*.mp3   + docs/items.json
+  gen_audio34.py  Part 3／4 → docs/audio34/*.mp3 + docs/items34.json
+  build_site.py   src/ → docs/，產生圖示並檢查
 src/          App 原始碼（改這裡，不要改 docs/）
 docs/         GitHub Pages 發布目錄（build 產物）
 ```
@@ -56,9 +67,11 @@ docs/         GitHub Pages 發布目錄（build 產物）
 ## 重新建置
 
 ```bash
-python build/gen_audio.py          # 只在題庫變動時才需要跑（會呼叫 Edge-TTS）
-python build/gen_audio.py p2-051   # 只補這個題號之後的新題
-python build/build_site.py         # 複製 App 檔案、產生圖示、檢查
+python build/gen_audio.py            # Part 2 全部重生
+python build/gen_audio.py p2-051     # 只補這個題號之後的
+python build/gen_audio34.py          # Part 3／4 全部重生
+python build/gen_audio34.py p3-004   # 只補這個題號之後的
+python build/build_site.py           # 複製 App 檔案、產生圖示、檢查
 ```
 
 需要 `edge-tts`、`Pillow`，以及本機的 `ffmpeg`／`ffprobe`（路徑寫在 `gen_audio.py` 開頭）。
@@ -70,3 +83,8 @@ python build/build_site.py         # 複製 App 檔案、產生圖示、檢查
 - **Edge-TTS 每段前後自帶約 0.5 秒靜音**，不修掉的話選項間隔會變成設定值的三倍，
   聽起來比正式考試鬆很多。已用 `silenceremove` 濾掉。
 - **紀錄只存在本機瀏覽器**，不跨裝置。跨裝置請用「複製錯題」帶去劃記本。
+- **音檔快取名稱必須兩邊一致**：`index.html` 的 `download()` 寫入 `p2-audio-v1`／`p34-audio-v1`，
+  `sw.js` 的 `audioCacheFor()` 必須讀同樣的名字。曾經因為 SW 只讀其中一個，
+  導致下載好的 Part 3／4 音檔在離線時讀不到；`activate` 的舊快取清理也要同時保留這兩個名字。
+- **Part 3／4 一段有三題**，紀錄的鍵是 `<段號>#<第幾題>`（例 `p3-001#2`），
+  Part 2 則直接用題號。錯題複習時，Part 3／4 是整段重聽而非只出那一題。
