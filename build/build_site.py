@@ -50,11 +50,27 @@ def main():
     items = os.path.join(OUT, "items.json")
     if os.path.exists(items):
         d = json.load(io.open(items, encoding="utf-8"))
+        n = len(d["items"])
         missing = [x["id"] for x in d["items"]
                    if not os.path.exists(os.path.join(OUT, "audio", x["id"] + ".mp3"))]
         if missing:
             raise SystemExit(u"缺少音檔：{}".format(missing[:5]))
-        print(u"檢查通過：{} 題，音檔齊全".format(len(d["items"])))
+
+        # 正解若集中在同一個位置，使用者不用聽也能全對，整套題庫等於作廢。
+        # 這件事曾經真的發生過（題庫一律把正解寫在 choices[0]，忘了打散），所以在這裡擋。
+        dist = [0, 0, 0]
+        for x in d["items"]:
+            dist[x["answer"]] += 1
+        worst = max(dist) / float(n) if n else 0
+        if n >= 30 and worst > 0.5:
+            raise SystemExit(
+                u"正解分佈失衡：A/B/C = {}，最高佔 {:.0%}。".format(dist, worst)
+                + u"請確認 gen_audio.py 的 shuffle_item 有生效。")
+
+        ids = [x["id"] for x in d["items"]]
+        if len(set(ids)) != n:
+            raise SystemExit(u"題號重複")
+        print(u"檢查通過：{} 題，音檔齊全，正解分佈 A/B/C = {}".format(n, dist))
     else:
         print(u"⚠ 還沒有 items.json，請先跑 build/gen_audio.py")
 

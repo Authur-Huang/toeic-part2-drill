@@ -2,7 +2,7 @@
    殼層（HTML/JSON/圖示）用 stale-while-revalidate：離線一定開得起來，有網路時背景更新。
    音檔用 cache-first：檔案內容不會變，抓過就永久沿用，省流量。
    音檔快取由設定頁的「下載全部音檔」預先填滿，這裡只負責讀。 */
-var SHELL = 'p2-shell-v3';
+var SHELL = 'p2-shell-v4';
 var AUDIO = 'p2-audio-v1';
 var SHELL_FILES = [
   './', './index.html', './items.json', './manifest.webmanifest',
@@ -52,8 +52,20 @@ self.addEventListener('fetch', function (e) {
     return;
   }
 
+  // 題庫會持續增加題目，不能用「先給快取」——那會讓新題晚一次開啟才出現。
+  // 改成先問網路、失敗才回快取：有網路一定是最新，沒網路照樣能練。
+  var isData = url.pathname.indexOf('items.json') !== -1;
+
   e.respondWith(
     caches.open(SHELL).then(function (c) {
+      if (isData) {
+        return fetch(req).then(function (res) {
+          if (res && res.ok) c.put(req, res.clone());
+          return res;
+        }).catch(function () {
+          return c.match(req, { ignoreSearch: true });
+        });
+      }
       return c.match(req, { ignoreSearch: true }).then(function (hit) {
         var net = fetch(req).then(function (res) {
           if (res && res.ok) c.put(req, res.clone());

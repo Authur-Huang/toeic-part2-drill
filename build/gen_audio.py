@@ -96,6 +96,32 @@ async def synth_all(jobs, workers=6):
     await asyncio.gather(*(one(*j) for j in jobs))
 
 
+# 題庫為了好寫，一律把正解放在 choices[0]。若照原順序出題，正解會永遠是 A，
+# 練幾輪就會發現「都選 A 就對」，整套題庫作廢。這裡在建置時打散。
+# 用題號雜湊而不是亂數：重跑建置不會改變順序，使用者的作答紀錄才不會對不上。
+PERMS = [(0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0)]
+
+
+def shuffle_item(it):
+    """回傳選項已重排、answer 與解析標號都同步更新的題目。"""
+    import hashlib
+    h = int(hashlib.md5(it["id"].encode("utf-8")).hexdigest(), 16)
+    perm = PERMS[h % len(PERMS)]          # perm[新位置] = 原位置
+    out = dict(it)
+    out["choices"] = [it["choices"][p] for p in perm]
+    out["answer"] = perm.index(it["answer"])
+    # 解析裡寫的 (A)(B)(C) 指的是原順序，要一起換掉，否則解析會指錯選項。
+    # 必須單次替換：連續 replace 會把換過的再換一次。
+    import re
+    old2new = {}
+    for new_pos, old_pos in enumerate(perm):
+        old2new["ABC"[old_pos]] = "ABC"[new_pos]
+    out["note"] = re.sub(u"\\(([ABC])\\)",
+                         lambda m: u"({})".format(old2new[m.group(1)]),
+                         it["note"])
+    return out
+
+
 def load_items():
     items, seen = [], set()
     for path in sorted(glob.glob(os.path.join(ITEMS_DIR, "*.json"))):
@@ -105,7 +131,7 @@ def load_items():
             seen.add(it["id"])
             assert len(it["choices"]) == 3, it["id"]
             assert it["answer"] in (0, 1, 2), it["id"]
-            items.append(it)
+            items.append(shuffle_item(it))
     return items
 
 
@@ -188,10 +214,23 @@ def main():
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
-    with io.open(os.path.join(OUT_DIR, "items.json"), "w", encoding="utf-8") as f:
-        json.dump({"version": 1, "items": out_items}, f,
+    # 只補部分題號時，必須跟既有的 items.json 合併。
+    # 直接覆寫會把沒重跑的題目從 App 裡整批消失，而且不會有任何錯誤訊息。
+    out_path = os.path.join(OUT_DIR, "items.json")
+    merged = {}
+    if only and os.path.exists(out_path):
+        for x in json.load(io.open(out_path, encoding="utf-8"))["items"]:
+            merged[x["id"]] = x
+    for x in out_items:
+        merged[x["id"]] = x
+    order = [i["id"] for i in load_items()]          # 依題庫原始順序排列
+    final = [merged[i] for i in order if i in merged]
+
+    with io.open(out_path, "w", encoding="utf-8") as f:
+        json.dump({"version": 1, "items": final}, f,
                   ensure_ascii=False, separators=(",", ":"))
-    print(u"\n完成：{} 題，音檔共 {:.1f} MB".format(len(out_items), total_bytes / 1048576.0))
+    print(u"\n本次產生 {} 題，items.json 共 {} 題，新音檔 {:.1f} MB".format(
+        len(out_items), len(final), total_bytes / 1048576.0))
 
 
 if __name__ == "__main__":
