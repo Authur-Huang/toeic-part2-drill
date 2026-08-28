@@ -1,0 +1,80 @@
+[
+{
+  "id": "p3-001", "part": 3, "scene": "辦公室・出貨延誤",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"Daniel, do you have a minute? The Henderson order still hasn't shipped, and they've called twice this morning."},
+    {"s":1,"t":"I know. The warehouse says two of the items are on back order until the eighth."},
+    {"s":0,"t":"That's almost two weeks out. Can we send what we have now and ship the rest later?"},
+    {"s":1,"t":"We could, but they'd be charged for two deliveries. Let me call their purchasing manager and see if they'd rather wait."},
+    {"s":0,"t":"Good idea. If they do agree to wait, please put it in writing so we have a record."}
+  ],
+  "questions": [
+    {"q":"What is the problem?","choices":["An order has not been sent out.","A customer was overcharged.","A delivery arrived damaged.","A manager is unavailable."],"answer":0,"note":"主旨題。整段都在講 Henderson 的訂單還沒出貨。(B) 費用是後面才提到的枝節，不是問題本身。"},
+    {"q":"What does the man say he will do?","choices":["Contact the customer.","Visit the warehouse.","Cancel the order.","Issue a refund."],"answer":0,"note":"細節題。男子說 Let me call their purchasing manager —— 選項用 contact 換掉 call，這是正解常見的改寫方式。"},
+    {"q":"What does the woman ask the man to do?","choices":["Get the agreement in writing.","Call her back tomorrow.","Speak with the warehouse.","Offer a discount."],"answer":0,"note":"最後一句 put it in writing。★ Part 3 的第三題通常對應對話的最後幾句，聽到尾聲要特別集中。"}
+  ]
+},
+{
+  "id": "p3-002", "part": 3, "scene": "飯店櫃檯・提早入住",
+  "speakers": ["M", "W"],
+  "lines": [
+    {"s":0,"t":"Good morning. I have a reservation under Okafor, but I know I'm quite early. Is there any chance the room is ready?"},
+    {"s":1,"t":"Let me check. I'm afraid housekeeping is still on that floor. Check-in is normally at three."},
+    {"s":0,"t":"That's a problem. I have a client meeting at one and I was hoping to change first."},
+    {"s":1,"t":"There's a fitness centre on the second floor with changing rooms and showers. You're welcome to use those, and we'll store your luggage at the desk."},
+    {"s":0,"t":"That would work perfectly. Thank you."}
+  ],
+  "questions": [
+    {"q":"Where most likely are the speakers?","choices":["At a hotel.","At an airport.","At a fitness club.","At a conference centre."],"answer":0,"note":"地點題。reservation、check-in、housekeeping 三個詞合起來只指向飯店。(C) 健身中心只是飯店裡的設施，是陷阱。"},
+    {"q":"Why is the man concerned?","choices":["He needs to change before an appointment.","His reservation was cancelled.","His luggage was lost.","The fitness centre is closed."],"answer":0,"note":"細節題。男子說 I have a client meeting at one and I was hoping to change first。"},
+    {"q":"What does the woman offer?","choices":["Use of the changing facilities.","A discounted room rate.","A later checkout time.","A ride to his meeting."],"answer":0,"note":"★ 提議題。Part 3 幾乎每組都有一題問「某人提議什麼」，聽到 You're welcome to... 就是答案所在。"}
+  ]
+},
+{
+  "id": "p3-003", "part": 3, "scene": "人資・面試安排",
+  "speakers": ["W", "M"],
+  "lines": [
+    {"s":0,"t":"We've narrowed the applicants down to four. I'd like to get the interviews done before the end of next week."},
+    {"s":1,"t":"That's tight. I'm at the Osaka office Monday and Tuesday, so that leaves Wednesday through Friday."},
+    {"s":0,"t":"Three days for four people is fine. Would you mind if we did the first one by video while you're away?"},
+    {"s":1,"t":"Not at all, as long as someone sends me the candidate's portfolio beforehand. I'd rather not read it on my phone at the airport."},
+    {"s":0,"t":"I'll email everything tonight so you have it before you fly out."}
+  ],
+  "questions": [
+    {"q":"What are the speakers mainly discussing?","choices":["Scheduling job interviews.","Planning a business trip.","Reviewing a portfolio.","Hiring a video crew."],"answer":0,"note":"主旨題。(B) 大阪出差只是限制條件，不是主題——把限制條件誤當主題是主旨題最常見的錯法。"},
+    {"q":"Why is the man unavailable early in the week?","choices":["He will be at another office.","He has a medical appointment.","He is finishing a report.","He is on vacation."],"answer":0,"note":"細節題。I'm at the Osaka office Monday and Tuesday。"},
+    {"q":"What does the man request?","choices":["Materials sent in advance.","A change of location.","An extra interviewer.","More time to decide."],"answer":0,"note":"★ 男子答應時附了條件：as long as someone sends me the candidate's portfolio beforehand。條件句常常就是答案。"}
+  ]
+},
+{
+  "id": "p4-001", "part": 4, "scene": "電話語音留言・維修改期",
+  "speakers": ["M"],
+  "lines": [
+    {"s":0,"t":"Hello, this is Ray Delgado from Brightline Facilities calling for Ms. Chen. I'm following up about the air-conditioning service we scheduled for Thursday morning."},
+    {"s":0,"t":"Unfortunately, the replacement compressor we ordered won't reach our depot until Thursday afternoon, so our technician wouldn't be able to complete the work in one visit."},
+    {"s":0,"t":"Rather than have him come twice, I'd like to move the appointment to Friday at nine. He'd then have everything he needs on site."},
+    {"s":0,"t":"If Friday doesn't suit you, please call me back on extension four-one-two before end of day tomorrow and we'll find another slot. Otherwise I'll assume Friday is fine. Thank you."}
+  ],
+  "questions": [
+    {"q":"What is the purpose of the message?","choices":["To reschedule a service appointment.","To confirm a payment.","To advertise a new service.","To report a completed repair."],"answer":0,"note":"目的題。★ Part 4 的第一題幾乎都問目的，而答案幾乎都在**前兩句**——開頭沒聽到就很難補回來。"},
+    {"q":"Why does the speaker suggest a change?","choices":["A part will arrive late.","A technician is ill.","The building will be closed.","The cost has increased."],"answer":0,"note":"細節題。the replacement compressor won't reach our depot until Thursday afternoon。part 是 compressor 的上位詞改寫。"},
+    {"q":"What does the speaker ask the listener to do if the new time is inconvenient?","choices":["Return his call by tomorrow.","Send an email.","Contact the technician directly.","Visit the depot."],"answer":0,"note":"★ 條件式指示：please call me back... before end of day tomorrow。注意題目問的是「不方便時」該做什麼。"}
+  ]
+},
+{
+  "id": "p4-002", "part": 4, "scene": "賣場廣播・整修公告",
+  "speakers": ["W"],
+  "lines": [
+    {"s":0,"t":"Attention shoppers. Thank you for visiting Marlow's Home and Garden this afternoon."},
+    {"s":0,"t":"Please note that beginning this Monday, our second-floor lighting department will close for four weeks of renovation. During that time, lighting products will be available in the temporary section at the rear of the ground floor."},
+    {"s":0,"t":"Customers who have already placed special orders will be contacted by phone, so there is no need to check with the service desk."},
+    {"s":0,"t":"And as a thank-you for your patience, anyone spending over fifty dollars this weekend will receive a ten-dollar voucher toward their next visit."}
+  ],
+  "questions": [
+    {"q":"Where is the announcement being made?","choices":["At a home goods store.","At a hardware trade show.","At a lighting factory.","At a furniture warehouse."],"answer":0,"note":"地點題。Marlow's Home and Garden ＋ shoppers ＋ service desk。(C) 拿 lighting 當陷阱。"},
+    {"q":"What will happen on Monday?","choices":["A department will close temporarily.","A new store will open.","Prices will increase.","A sale will end."],"answer":0,"note":"細節題。★ 聽到日期或星期就要提高警覺，Part 4 很愛拿時間點出題。"},
+    {"q":"What are customers with special orders told?","choices":["They will be called.","They should visit the service desk.","Their orders will be delayed.","They will receive a refund."],"answer":0,"note":"★ 陷阱在 there is no need to check with the service desk —— (B) 正好是廣播明講「不需要做」的事。否定敘述常被改寫成錯誤選項。"}
+  ]
+}
+]

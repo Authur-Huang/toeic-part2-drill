@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Part 2 應答練習</title>
+<title>多益聽力練習</title>
 <meta name="theme-color" content="#1b1f2a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Part 2">
+<meta name="apple-mobile-web-app-title" content="多益聽力">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
@@ -30,11 +30,9 @@ body{
   padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   overscroll-behavior:none;
 }
-header{
-  display:flex; align-items:center; gap:12px; padding:12px 16px;
-  border-bottom:1px solid var(--line); background:var(--card); position:sticky; top:0; z-index:5;
-}
-header h1{font-size:15px;margin:0;font-weight:650;letter-spacing:.01em}
+header{display:flex;align-items:center;gap:12px;padding:12px 16px;
+  border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:5}
+header h1{font-size:15px;margin:0;font-weight:650}
 header .sp{flex:1}
 .pill{font-size:12px;color:var(--dim);background:var(--bg);border:1px solid var(--line);
   border-radius:99px;padding:3px 10px;white-space:nowrap}
@@ -49,18 +47,16 @@ button:disabled{opacity:.45;cursor:default}
 .row{display:flex;gap:10px;flex-wrap:wrap}
 .row>*{flex:1;min-width:0}
 
-/* 播放 */
-.play{width:100%;padding:0;height:120px;border-radius:18px;display:flex;flex-direction:column;
+.play{width:100%;padding:0;height:112px;border-radius:18px;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border-color:transparent}
-.play .big{font-size:32px;line-height:1}
-.play .sub{font-size:13px;opacity:.9}
+.play .big{font-size:30px;line-height:1}
+.play .sub{font-size:13px;opacity:.92}
 .play.playing{background:var(--card);color:var(--fg);border:1px solid var(--line)}
 .seg{display:flex;gap:4px;margin:14px 0 4px}
 .seg i{flex:1;height:5px;border-radius:99px;background:var(--line);transition:background .15s}
 .seg i.on{background:var(--accent)}
 .seg i.done{background:var(--dim)}
 
-/* 選項 */
 .opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
 .opt{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:14px 16px;line-height:1.5}
 .opt .k{font-weight:700;width:22px;flex:none;color:var(--dim)}
@@ -75,6 +71,14 @@ button:disabled{opacity:.45;cursor:default}
 .verdict.ok{color:var(--ok)} .verdict.no{color:var(--no)}
 .note{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14.5px;margin-top:4px}
 .tag{display:inline-block;font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-bottom:8px}
+.qtext{font-size:16.5px;font-weight:600;margin:4px 0 2px;line-height:1.5}
+
+.script{margin-top:6px}
+.script .ln{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}
+.script .ln:first-child{border-top:0}
+.script .who{flex:none;width:26px;font-weight:700;color:var(--dim);font-size:12.5px;padding-top:2px}
+.script .tx{flex:1;min-width:0}
+.script .pl{flex:none;background:transparent;border:1px solid var(--line);border-radius:8px;padding:3px 8px;font-size:12px;color:var(--dim)}
 
 footer{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);
   border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:5}
@@ -84,7 +88,7 @@ footer button .ic{font-size:19px;line-height:1}
 footer button.on{color:var(--accent);font-weight:650}
 
 .stat{display:flex;gap:10px;margin:-4px 0 14px}
-.stat div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center}
+.stat div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
 .stat b{display:block;font-size:22px;line-height:1.25}
 .stat span{font-size:11.5px;color:var(--dim)}
 .wrong-item{border-top:1px solid var(--line);padding:12px 0}
@@ -102,46 +106,56 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}
 .hide{display:none!important}
 .muted{color:var(--dim);font-size:13.5px}
+.due{background:var(--okbg);border-color:var(--ok)}
 </style>
 </head>
 <body>
 <header>
-  <h1>Part 2 應答練習</h1><div class="sp"></div>
+  <h1>多益聽力練習</h1><div class="sp"></div>
   <div class="pill" id="hpill">—</div>
 </header>
 
 <main>
-  <!-- 練習首頁 -->
   <section id="v-home">
     <div class="stat">
       <div><b id="s-done">0</b><span>做過的題</span></div>
       <div><b id="s-acc">—</b><span>正確率</span></div>
-      <div><b id="s-wrong">0</b><span>錯題待複習</span></div>
+      <div><b id="s-due">0</b><span>今天該複習</span></div>
     </div>
+
+    <div class="card hide" id="c-due">
+      <h2>今天該複習</h2>
+      <p class="lead" id="due-lead">錯過的題會在 1／3／7 天後自動回來。</p>
+      <button class="primary due" data-start="due">開始複習</button>
+    </div>
+
     <div class="card">
-      <h2>開始練習</h2>
-      <p class="lead">每題約 8 秒，聽完直接選。建議一次 25 題，跟正式考試的 Part 2 一樣長。</p>
-      <button class="primary" data-start="random25">隨機 25 題</button>
+      <h2>Part 3・4　對話與獨白</h2>
+      <p class="lead">先聽一段 30–50 秒的對話或獨白，再答三題（四選一）。這兩部分在正式考試佔 <b>69 題</b>，是聽力最大的一塊。</p>
+      <button class="primary" data-start="p34-mix">隨機 5 段</button>
       <div class="row" style="margin-top:10px">
-        <button data-start="wrong">只練錯題</button>
-        <button data-start="unseen">只練沒做過的</button>
+        <button data-start="p34-3">只練 Part 3 對話</button>
+        <button data-start="p34-4">只練 Part 4 獨白</button>
       </div>
     </div>
+
     <div class="card">
-      <h2>依題型練</h2>
-      <p class="lead">哪一類最常錯就練哪一類。括號內是「錯／做過」。</p>
-      <div id="types" class="row" style="flex-direction:column"></div>
+      <h2>Part 2　應答問題</h2>
+      <p class="lead">每題約 8 秒，聽完直接選。預設不顯示選項文字，跟正式考試一樣。</p>
+      <button class="primary" data-start="p2-25">隨機 25 題</button>
+      <div class="row" style="margin-top:10px">
+        <button data-start="p2-unseen">只練沒做過的</button>
+        <button data-start="p2-types">依題型練</button>
+      </div>
+      <div id="types" class="row hide" style="flex-direction:column;margin-top:10px"></div>
     </div>
   </section>
 
-  <!-- 作答 -->
-  <section id="v-quiz" class="hide">
+  <!-- Part 2 作答 -->
+  <section id="v-quiz2" class="hide">
     <div class="card">
       <div class="tag" id="q-tag">—</div>
-      <button class="play" id="q-play">
-        <span class="big" id="q-icon">▶</span>
-        <span class="sub" id="q-sub">播放題目</span>
-      </button>
+      <button class="play" id="q-play"><span class="big" id="q-icon">▶</span><span class="sub" id="q-sub">播放題目</span></button>
       <div class="seg"><i></i><i></i><i></i><i></i></div>
       <div class="opts" id="q-opts"></div>
       <div id="q-after" class="hide">
@@ -149,11 +163,43 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
         <div class="note" id="q-note"></div>
         <button class="primary" id="q-next" style="margin-top:14px">下一題</button>
       </div>
-      <button id="q-quit" style="width:100%;margin-top:12px;background:transparent;border:0;color:var(--dim);font-size:13px">結束這一輪</button>
+      <button id="q-quit" class="quit">結束這一輪</button>
     </div>
   </section>
 
-  <!-- 結算 -->
+  <!-- Part 3/4 作答 -->
+  <section id="v-quiz34" class="hide">
+    <div class="card">
+      <div class="tag" id="t-tag">—</div>
+
+      <div id="t-listen">
+        <button class="play" id="t-play"><span class="big" id="t-icon">▶</span><span class="sub" id="t-sub">播放對話</span></button>
+        <p class="lead" style="margin:14px 0 0;text-align:center">聽完再作答。可以重聽，但正式考試只播一次。</p>
+        <button class="primary" id="t-go" style="margin-top:12px">開始作答</button>
+      </div>
+
+      <div id="t-answer" class="hide">
+        <div class="qtext" id="t-qtext"></div>
+        <button id="t-qplay" style="margin-top:8px;font-size:13px;padding:8px 14px">🔊 重聽題目</button>
+        <div class="opts" id="t-opts"></div>
+        <div id="t-after" class="hide">
+          <div class="verdict" id="t-verdict"></div>
+          <div class="note" id="t-note"></div>
+          <button class="primary" id="t-next" style="margin-top:14px">下一題</button>
+        </div>
+      </div>
+
+      <div id="t-review" class="hide">
+        <h2 style="margin-top:4px">逐字稿</h2>
+        <p class="lead">點右邊的 ▶ 可以單句重聽。聽不懂的那一句，通常就是失分的那一句。</p>
+        <div class="script" id="t-script"></div>
+        <button class="primary" id="t-nextitem" style="margin-top:16px">下一段</button>
+      </div>
+
+      <button id="t-quit" class="quit">結束這一輪</button>
+    </div>
+  </section>
+
   <section id="v-done" class="hide">
     <div class="card">
       <h2 id="d-title">這一輪結束</h2>
@@ -165,11 +211,10 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
     </div>
   </section>
 
-  <!-- 錯題本 -->
   <section id="v-wrong" class="hide">
     <div class="card">
       <h2>錯題本</h2>
-      <p class="lead">連續答對兩次就會自動移出。</p>
+      <p class="lead">錯過的題會在 <b>1／3／7 天</b>後自動排回來，連續答對三次才移出。</p>
       <div id="w-list"></div>
     </div>
     <div class="card">
@@ -179,12 +224,11 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
     </div>
   </section>
 
-  <!-- 設定 -->
   <section id="v-set" class="hide">
     <div class="card">
       <h2>作答方式</h2>
-      <label class="sw"><span>顯示選項文字<small>關閉時只看得到 A／B／C 按鈕，跟正式考試一樣。看著文字選會練成閱讀測驗，建議保持關閉。</small></span><input type="checkbox" id="o-show"></label>
-      <label class="sw"><span>答完自動下一題<small>答對後停留 1.2 秒直接進下一題；答錯一律停下來看解析。</small></span><input type="checkbox" id="o-auto"></label>
+      <label class="sw"><span>Part 2 顯示選項文字<small>關閉時只看得到 A／B／C 按鈕，跟正式考試一樣。Part 3／4 的選項一律顯示，因為正式考試就是印在題本上的。</small></span><input type="checkbox" id="o-show"></label>
+      <label class="sw"><span>答對自動下一題<small>答錯一律停下來看解析。</small></span><input type="checkbox" id="o-auto"></label>
       <label class="sw"><span>進入題目自動播放<small>不用每題都按播放。</small></span><input type="checkbox" id="o-autoplay"></label>
       <label class="sw"><span>播放速度<div class="seg-ctl" id="o-speed" style="margin-top:8px">
         <button data-sp="0.8">0.8×</button><button data-sp="1" class="on">1×</button><button data-sp="1.15">1.15×</button>
@@ -192,9 +236,11 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
     </div>
     <div class="card">
       <h2>離線使用</h2>
-      <p class="lead" id="dl-info">把音檔存進手機，之後沒網路也能練。</p>
+      <p class="lead">分開下載，可以只帶走現在要練的部分。存過的音檔不會重複下載。</p>
       <div class="bar hide" id="dl-bar"><i></i></div>
-      <button class="primary" id="dl-go">下載全部音檔</button>
+      <p class="muted" id="dl-info" style="margin:0 0 10px"></p>
+      <button class="primary" id="dl-p2">下載 Part 2 音檔</button>
+      <button class="primary" id="dl-p34" style="margin-top:10px">下載 Part 3・4 音檔</button>
     </div>
     <div class="card">
       <h2>紀錄</h2>
@@ -213,231 +259,377 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
   <button data-tab="set"><span class="ic">⚙️</span>設定</button>
 </footer>
 
+<style>.quit{width:100%;margin-top:12px;background:transparent;border:0;color:var(--dim);font-size:13px}</style>
 <script>
 'use strict';
 var LS_H='p2.hist.v1', LS_O='p2.opt.v1';
-var DATA=null, hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
-var session=null, audio=new Audio(), stopAt=null, playingSeg=-1;
+var D2=[], D34=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
+var session=null, audio=new Audio(), stopAt=null;
+var DAY=86400000, STEPS=[1,3,7];          // 間隔重複：錯了之後 1、3、7 天各回來一次
 
 function load(k,d){try{var r=localStorage.getItem(k);return r?JSON.parse(r):d;}catch(e){return d;}}
 function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 function $(s){return document.querySelector(s);}
 function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
-var EMPTY={n:0,ok:0,streak:0,wrong:false};
-// rec() 會建立紀錄，只在「作答」時用；純讀取一律走 get()，
-// 否則光是渲染首頁就會替全部題目寫進空紀錄，把 localStorage 灌滿假資料。
-function rec(id){return hist[id]||(hist[id]={n:0,ok:0,streak:0,wrong:false});}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+var EMPTY={n:0,ok:0,stage:0,wrong:false,due:0};
+// rec() 會建立紀錄，只在作答時用；純讀取一律 get()，否則光渲染首頁就會寫進一堆空紀錄
+function rec(id){return hist[id]||(hist[id]={n:0,ok:0,stage:0,wrong:false,due:0});}
 function get(id){return hist[id]||EMPTY;}
+
+/* ---------- 題目索引 ---------- */
+// Part 2 一題就是一個 id；Part 3／4 一段有三題，用 <段號>#<第幾題> 當 id
+function allQ(){
+  var out=[];
+  D2.forEach(function(it){out.push({qid:it.id,part:2,item:it});});
+  D34.forEach(function(it){it.questions.forEach(function(q,i){
+    out.push({qid:it.id+'#'+i,part:it.part,item:it,qi:i});});});
+  return out;
+}
+function isDue(qid,now){var r=get(qid);return r.wrong&&r.due<=now;}
+function dueList(){var now=Date.now();return allQ().filter(function(x){return isDue(x.qid,now);});}
+function wrongList(){return allQ().filter(function(x){return get(x.qid).wrong;});}
 
 /* ---------- 播放 ---------- */
 audio.preload='auto';
 audio.addEventListener('timeupdate',function(){
-  if(stopAt!=null && audio.currentTime>=stopAt){audio.pause();stopAt=null;markSeg(-1);setPlayUI(false);}
-  else if(session && playingSeg===-2){ // 整題播放：跟著標記推進進度條
-    var m=cur().marks,i=0;
-    for(var k=0;k<m.length;k++) if(audio.currentTime>=m[k].start) i=k;
-    markSeg(i,true);
-  }
+  if(stopAt!=null&&audio.currentTime>=stopAt){audio.pause();stopAt=null;setPlay(false);segMark(-1);}
 });
-audio.addEventListener('ended',function(){stopAt=null;markSeg(-1);setPlayUI(false);});
-
-function playSeg(i){
-  var it=cur(); if(!it) return;
+audio.addEventListener('ended',function(){stopAt=null;setPlay(false);segMark(-1);});
+function playRange(start,end){
   audio.playbackRate=opt.speed;
-  if(i==null){audio.currentTime=0;stopAt=null;playingSeg=-2;markSeg(0,true);}
-  else{var m=it.marks[i];audio.currentTime=m.start;stopAt=m.start+m.len;playingSeg=i;markSeg(i);}
-  audio.play().then(function(){setPlayUI(true);}).catch(function(){setPlayUI(false);});
+  try{audio.currentTime=start;}catch(e){}
+  stopAt=(end==null?null:end);
+  audio.play().then(function(){setPlay(true);}).catch(function(){setPlay(false);});
 }
-function setPlayUI(on){
-  $('#q-play').classList.toggle('playing',on);
-  $('#q-icon').textContent=on?'❚❚':'▶';
-  $('#q-sub').textContent=on?'播放中，點一下停':(session&&session.answered?'重聽整題':'播放題目');
+function setPlay(on){
+  var p2=(session&&session.kind==='p2');
+  var btn=p2?$('#q-play'):$('#t-play'), ic=p2?$('#q-icon'):$('#t-icon'), sub=p2?$('#q-sub'):$('#t-sub');
+  if(!btn) return;
+  btn.classList.toggle('playing',on);
+  ic.textContent=on?'❚❚':'▶';
+  if(p2) sub.textContent=on?'播放中，點一下停':(session&&session.answered?'重聽整題':'播放題目');
+  else sub.textContent=on?'播放中，點一下停':'重聽對話';
 }
-function markSeg(i,prog){
-  var s=document.querySelectorAll('.seg i');
-  for(var k=0;k<s.length;k++){
-    s[k].classList.toggle('on',k===i);
-    s[k].classList.toggle('done',prog?k<i:false);
+function segMark(i,prog){
+  var s=document.querySelectorAll('#v-quiz2 .seg i');
+  for(var k=0;k<s.length;k++){s[k].classList.toggle('on',k===i);s[k].classList.toggle('done',prog?k<i:false);}
+}
+
+/* ---------- 開始一輪 ---------- */
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function start(mode,arg){
+  var cards=[];
+  if(mode==='due'){
+    var due=dueList(), seen={};
+    due.forEach(function(x){
+      if(x.part===2) cards.push({kind:'p2',item:x.item});
+      else if(!seen[x.item.id]){seen[x.item.id]=1;cards.push({kind:'p34',item:x.item});}
+    });
+    shuffle(cards);
+  }else if(mode==='p2-25'||mode==='p2-unseen'||mode==='p2-type'){
+    var pool=D2.slice();
+    if(mode==='p2-unseen') pool=pool.filter(function(x){return !get(x.id).n;});
+    if(mode==='p2-type') pool=pool.filter(function(x){return x.type===arg;});
+    if(!pool.length) pool=D2.slice();
+    shuffle(pool);
+    if(mode==='p2-25') pool=pool.slice(0,25);
+    cards=pool.map(function(it){return {kind:'p2',item:it};});
+  }else{
+    var p34=D34.slice();
+    if(mode==='p34-3') p34=p34.filter(function(x){return x.part===3;});
+    if(mode==='p34-4') p34=p34.filter(function(x){return x.part===4;});
+    if(!p34.length) p34=D34.slice();
+    shuffle(p34);
+    if(mode==='p34-mix') p34=p34.slice(0,5);
+    cards=p34.map(function(it){return {kind:'p34',item:it};});
   }
+  if(!cards.length){alert('沒有符合的題目。');return;}
+  session={cards:cards,i:0,mode:mode,arg:arg,right:0,total:0,wrong:[],kind:cards[0].kind};
+  renderCard();
+}
+function card(){return session?session.cards[session.i]:null;}
+
+function renderCard(){
+  var c=card(); session.kind=c.kind;
+  $('#hpill').textContent=(session.i+1)+' / '+session.cards.length;
+  if(c.kind==='p2'){show('quiz2');render2();}
+  else{show('quiz34');render34();}
+  $('main').scrollTop=0;
+}
+function nextCard(){
+  if(session.i+1>=session.cards.length) finish();
+  else{session.i++;renderCard();}
 }
 
-/* ---------- 出題 ---------- */
-function cur(){return session?session.list[session.i]:null;}
-function pickList(mode,type){
-  var all=DATA.items.slice(), out;
-  if(mode==='wrong') out=all.filter(function(x){return get(x.id).wrong;});
-  else if(mode==='unseen') out=all.filter(function(x){return !get(x.id).n;});
-  else if(mode==='type') out=all.filter(function(x){return x.type===type;});
-  else out=all;
-  if(!out.length) out=all;
-  for(var i=out.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=out[i];out[i]=out[j];out[j]=t;}
-  return (mode==='random25')?out.slice(0,25):out;
-}
-function start(mode,type){
-  var list=pickList(mode,type);
-  if(!list.length){alert('沒有符合的題目。');return;}
-  session={list:list,i:0,answered:false,wrong:[],right:0,mode:mode,type:type};
-  show('quiz'); render();
-}
-function render(){
-  var it=cur(); session.answered=false;
-  $('#hpill').textContent=(session.i+1)+' / '+session.list.length;
-  $('#q-tag').textContent=it.type;
-  $('#q-after').classList.add('hide');
-  $('#q-quit').classList.remove('hide');
-  markSeg(-1); setPlayUI(false);
+/* ---------- Part 2 ---------- */
+function render2(){
+  var it=card().item; session.answered=false;
+  $('#q-tag').textContent='Part 2　'+it.type;
+  $('#q-after').classList.add('hide'); $('#q-quit').classList.remove('hide');
+  segMark(-1); setPlay(false);
   audio.src='audio/'+it.id+'.mp3';
-
   var box=$('#q-opts'); box.innerHTML='';
   ['A','B','C'].forEach(function(k,n){
     var b=el('button','opt');
     b.appendChild(el('span','k',k));
     b.appendChild(el('span','t',opt.show?it.choices[n]:'　'));
-    b.onclick=function(){answer(n);};
+    b.onclick=function(){answer2(n);};
     box.appendChild(b);
   });
-  if(opt.autoplay) setTimeout(function(){playSeg(null);},250);
+  if(opt.autoplay) setTimeout(function(){playRange(0,null);segMark(0,true);},250);
 }
-function answer(n){
+function answer2(n){
   if(session.answered) return;
-  session.answered=true; audio.pause(); stopAt=null; setPlayUI(false);
-  var it=cur(), ok=(n===it.answer), r=rec(it.id);
-  r.n++; if(ok){r.ok++; r.streak++; if(r.streak>=2) r.wrong=false;} else {r.streak=0; r.wrong=true;}
-  save(LS_H,hist);
-  if(ok) session.right++; else session.wrong.push(it.id);
-
+  session.answered=true; audio.pause(); stopAt=null; setPlay(false);
+  var it=card().item, ok=(n===it.answer);
+  grade(it.id,ok);
+  session.total++; if(ok) session.right++; else session.wrong.push(it.id);
   var btns=$('#q-opts').children;
   for(var k=0;k<3;k++){
     btns[k].querySelector('.t').textContent=it.choices[k];
     btns[k].onclick=null;
     if(k===it.answer) btns[k].classList.add('correct');
-    if(k===n && !ok) btns[k].classList.add('chosen-wrong');
+    if(k===n&&!ok) btns[k].classList.add('chosen-wrong');
     var re=el('button','re','重聽'); re.dataset.i=k+1;
-    re.onclick=function(e){e.stopPropagation();playSeg(+this.dataset.i);};
+    re.onclick=function(e){e.stopPropagation();var m=it.marks[+this.dataset.i];playRange(m.start,m.start+m.len);};
     btns[k].appendChild(re);
   }
   $('#q-verdict').className='verdict '+(ok?'ok':'no');
   $('#q-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABC'[it.answer];
-  $('#q-note').innerHTML='';
-  var q=el('div','',''); q.innerHTML='<b>題目：</b>'+esc(it.prompt);
-  $('#q-note').appendChild(q);
-  $('#q-note').appendChild(el('div','',it.note));
-  $('#q-note').lastChild.style.marginTop='8px';
-  $('#q-after').classList.remove('hide');
-  $('#q-quit').classList.add('hide');
-  setPlayUI(false);
-  if(ok && opt.auto) setTimeout(next,1200);
+  $('#q-note').innerHTML='<b>題目：</b>'+esc(it.prompt)+'<div style="margin-top:8px">'+esc(it.note)+'</div>';
+  $('#q-after').classList.remove('hide'); $('#q-quit').classList.add('hide');
+  if(ok&&opt.auto) setTimeout(nextCard,1200);
 }
-function next(){
-  if(!session||!session.answered) return;
-  if(session.i+1>=session.list.length) finish();
-  else {session.i++; render(); $('main').scrollTop=0;}
+
+/* ---------- Part 3 / 4 ---------- */
+function render34(){
+  var it=card().item;
+  session.qi=0; session.answered=false;
+  $('#t-tag').textContent='Part '+it.part+'　'+it.scene;
+  $('#t-listen').classList.remove('hide');
+  $('#t-answer').classList.add('hide');
+  $('#t-review').classList.add('hide');
+  $('#t-quit').classList.remove('hide');
+  setPlay(false);
+  audio.src='audio34/'+it.id+'.mp3';
+  $('#t-sub').textContent='播放對話';
+  if(opt.autoplay) setTimeout(playConvo,300);
 }
+function playConvo(){
+  var it=card().item;
+  playRange(it.intro.start,it.convo.start+it.convo.len);
+}
+function toAnswer(){
+  audio.pause(); stopAt=null; setPlay(false);
+  $('#t-listen').classList.add('hide');
+  $('#t-answer').classList.remove('hide');
+  renderQ34();
+}
+function renderQ34(){
+  var it=card().item, q=it.questions[session.qi];
+  session.answered=false;
+  $('#t-tag').textContent='Part '+it.part+'　'+it.scene+'　第 '+(session.qi+1)+' / 3 題';
+  $('#t-qtext').textContent=q.q;
+  $('#t-after').classList.add('hide');
+  var box=$('#t-opts'); box.innerHTML='';
+  ['A','B','C','D'].forEach(function(k,n){
+    var b=el('button','opt');
+    b.appendChild(el('span','k',k));
+    b.appendChild(el('span','t',q.choices[n]));
+    b.onclick=function(){answer34(n);};
+    box.appendChild(b);
+  });
+  $('main').scrollTop=0;
+}
+function answer34(n){
+  if(session.answered) return;
+  session.answered=true; audio.pause(); stopAt=null;
+  var it=card().item, q=it.questions[session.qi], ok=(n===q.answer);
+  grade(it.id+'#'+session.qi,ok);
+  session.total++; if(ok) session.right++; else session.wrong.push(it.id+'#'+session.qi);
+  var btns=$('#t-opts').children;
+  for(var k=0;k<4;k++){
+    btns[k].onclick=null;
+    if(k===q.answer) btns[k].classList.add('correct');
+    if(k===n&&!ok) btns[k].classList.add('chosen-wrong');
+  }
+  $('#t-verdict').className='verdict '+(ok?'ok':'no');
+  $('#t-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[q.answer];
+  $('#t-note').textContent=q.note;
+  $('#t-after').classList.remove('hide');
+  $('#t-next').textContent=(session.qi>=2)?'看逐字稿':'下一題';
+  if(ok&&opt.auto) setTimeout(next34,1200);
+}
+function next34(){
+  if(!session.answered) return;
+  if(session.qi>=2) toReview();
+  else{session.qi++;renderQ34();}
+}
+function toReview(){
+  var it=card().item;
+  $('#t-answer').classList.add('hide');
+  $('#t-review').classList.remove('hide');
+  $('#t-quit').classList.add('hide');
+  var box=$('#t-script'); box.innerHTML='';
+  it.lines.forEach(function(ln,i){
+    var d=el('div','ln');
+    d.appendChild(el('span','who',it.part===3?('AB'[ln.s]||'A'):'▸'));
+    d.appendChild(el('span','tx',ln.t));
+    var b=el('button','pl','▶');
+    b.onclick=function(){var m=it.lineMarks[i];playRange(m.start,m.start+m.len);};
+    d.appendChild(b);
+    box.appendChild(d);
+  });
+  $('main').scrollTop=0;
+}
+
+/* ---------- 計分與間隔重複 ---------- */
+function grade(qid,ok){
+  var r=rec(qid), now=Date.now();
+  r.n++;
+  if(ok){
+    r.ok++;
+    if(r.wrong){
+      r.stage++;
+      if(r.stage>=STEPS.length){r.wrong=false;r.due=0;}   // 連續答對三次才移出錯題本
+      else r.due=now+STEPS[r.stage]*DAY;
+    }
+  }else{
+    r.wrong=true; r.stage=0; r.due=now+STEPS[0]*DAY;
+  }
+  save(LS_H,hist);
+}
+
+/* ---------- 結算 ---------- */
 function finish(){
   audio.pause();
-  var n=session.list.length, r=session.right, pct=Math.round(r/n*100);
-  $('#d-title').textContent=pct>=80?'這輪表現不錯':'這輪有得練';
-  // 只有題數不是 25 時才換算成正式考試的尺度；本來就 25 題還講一次是廢話
-  $('#d-sub').textContent=n+' 題答對 '+r+' 題（'+pct+'%）'
-    +(n!==25?'　—　換算成正式考試的 25 題 Part 2，大約是 '+Math.round(pct*0.25)+' / 25。':'');
+  var n=session.total,r=session.right,pct=n?Math.round(r/n*100):0;
+  $('#d-title').textContent=pct>=75?'這輪表現不錯':'這輪有得練';
+  $('#d-sub').textContent=n+' 題答對 '+r+' 題（'+pct+'%）';
   $('#d-bar').style.width=pct+'%';
   var box=$('#d-list'); box.innerHTML='';
   if(!session.wrong.length) box.appendChild(el('p','muted','全對，沒有錯題。'));
-  session.wrong.forEach(function(id){box.appendChild(wrongRow(byId(id)));});
+  session.wrong.forEach(function(qid){box.appendChild(wrongRow(qid));});
   show('done'); refreshHome();
 }
-function byId(id){for(var i=0;i<DATA.items.length;i++) if(DATA.items[i].id===id) return DATA.items[i];}
-function wrongRow(it){
-  var d=el('div','wrong-item');
-  d.appendChild(el('div','q',it.prompt));
-  var r=get(it.id);
-  d.appendChild(el('div','m',it.type+'　·　正解 '+'ABC'[it.answer]+'：'+it.choices[it.answer]+'　·　做過 '+r.n+' 次錯 '+(r.n-r.ok)+' 次'));
+function byQid(qid){
+  var p=qid.split('#');
+  if(p.length===1){
+    var it=D2.filter(function(x){return x.id===qid;})[0];
+    return it?{part:2,item:it,q:{q:it.prompt,choices:it.choices,answer:it.answer,note:it.note}}:null;
+  }
+  var t=D34.filter(function(x){return x.id===p[0];})[0];
+  return t?{part:t.part,item:t,q:t.questions[+p[1]],qi:+p[1]}:null;
+}
+function wrongRow(qid){
+  var o=byQid(qid), d=el('div','wrong-item');
+  if(!o) return d;
+  var r=get(qid), L=(o.part===2?'ABC':'ABCD');
+  d.appendChild(el('div','q',(o.part===2?o.q.q:o.item.scene+'　'+o.q.q)));
+  var when=r.wrong&&r.due?('　·　'+fmtDue(r.due)):'';
+  d.appendChild(el('div','m','Part '+o.part+'　·　正解 '+L[o.q.answer]+'：'+o.q.choices[o.q.answer]
+    +'　·　做過 '+r.n+' 次錯 '+(r.n-r.ok)+' 次'+when));
   return d;
 }
-function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+function fmtDue(due){
+  var dd=Math.ceil((due-Date.now())/DAY);
+  return dd<=0?'今天該複習':('再 '+dd+' 天複習');
+}
 
-/* ---------- 錯題匯出 ---------- */
-function wrongIds(){return DATA.items.filter(function(x){return get(x.id).wrong;}).map(function(x){return x.id;});}
-function exportText(ids){
+/* ---------- 匯出 ---------- */
+function exportText(qids){
   var lines=['TOEIC-P2-WRONG v1','匯出時間 '+new Date().toLocaleString('zh-TW'),''];
-  ids.forEach(function(id){
-    var it=byId(id), r=get(id);
-    lines.push('['+it.type+'] '+it.prompt);
-    lines.push('　正解 '+'ABC'[it.answer]+'：'+it.choices[it.answer]);
-    lines.push('　'+it.note);
-    lines.push('　#'+id+' 做過'+r.n+'錯'+(r.n-r.ok));
+  qids.forEach(function(qid){
+    var o=byQid(qid); if(!o) return;
+    var r=get(qid), L=(o.part===2?'ABC':'ABCD');
+    lines.push('[Part '+o.part+(o.part===2?'・'+o.item.type:'・'+o.item.scene)+'] '+o.q.q);
+    lines.push('　正解 '+L[o.q.answer]+'：'+o.q.choices[o.q.answer]);
+    lines.push('　'+o.q.note);
+    lines.push('　#'+qid+' 做過'+r.n+'錯'+(r.n-r.ok));
     lines.push('');
   });
   return lines.join('\n');
 }
 function copy(text,btn){
-  var done=function(){var t=btn.textContent;btn.textContent='已複製 ✓';setTimeout(function(){btn.textContent=t;},1600);};
-  if(navigator.clipboard&&window.isSecureContext) navigator.clipboard.writeText(text).then(done,fallback);
-  else fallback();
-  function fallback(){
+  var t0=btn.textContent;
+  var done=function(){btn.textContent='已複製 ✓';setTimeout(function(){btn.textContent=t0;},1600);};
+  function fb(){
     var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity=0;
-    document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){alert('複製失敗，請長按選取。');}
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');done();}catch(e){alert('複製失敗，請長按選取。');}
     document.body.removeChild(ta);
   }
+  if(navigator.clipboard&&window.isSecureContext) navigator.clipboard.writeText(text).then(done,fb);
+  else fb();
 }
 
-/* ---------- 畫面切換 ---------- */
+/* ---------- 畫面 ---------- */
 function show(v){
-  ['home','quiz','done','wrong','set'].forEach(function(k){
+  ['home','quiz2','quiz34','done','wrong','set'].forEach(function(k){
     $('#v-'+k).classList.toggle('hide',k!==v);
   });
-  var tab=(v==='quiz'||v==='done')?'home':v;
+  var tab=(v==='quiz2'||v==='quiz34'||v==='done')?'home':v;
   document.querySelectorAll('footer button').forEach(function(b){b.classList.toggle('on',b.dataset.tab===tab);});
-  if(v!=='quiz'&&v!=='done'){audio.pause();$('#hpill').textContent=DATA?DATA.items.length+' 題':'—';}
+  if(v!=='quiz2'&&v!=='quiz34'){audio.pause();stopAt=null;}
+  if(v==='home'||v==='wrong'||v==='set') $('#hpill').textContent=(D2.length+D34.length*3)+' 題';
   if(v==='wrong') renderWrong();
   $('main').scrollTop=0;
 }
 function refreshHome(){
-  var seen=0,ok=0,tot=0;
-  DATA.items.forEach(function(x){var r=hist[x.id];if(r&&r.n){seen++;ok+=r.ok;tot+=r.n;}});
+  var qs=allQ(),seen=0,ok=0,tot=0;
+  qs.forEach(function(x){var r=hist[x.qid];if(r&&r.n){seen++;ok+=r.ok;tot+=r.n;}});
   $('#s-done').textContent=seen;
   $('#s-acc').textContent=tot?Math.round(ok/tot*100)+'%':'—';
-  $('#s-wrong').textContent=wrongIds().length;
+  var due=dueList();
+  $('#s-due').textContent=due.length;
+  $('#c-due').classList.toggle('hide',!due.length);
+  if(due.length) $('#due-lead').textContent='有 '+due.length+' 題到了該複習的時間。錯過的題會在 1／3／7 天後自動回來，連續答對三次才移出。';
 
   var types={},box=$('#types');box.innerHTML='';
-  DATA.items.forEach(function(x){
+  D2.forEach(function(x){
     var t=types[x.type]||(types[x.type]={n:0,seen:0,bad:0});
     t.n++; var r=hist[x.id]; if(r&&r.n){t.seen++; if(r.wrong)t.bad++;}
   });
   Object.keys(types).forEach(function(k){
-    var t=types[k], b=el('button','');
-    b.textContent=k+'（'+t.bad+'／'+t.seen+'，共 '+t.n+' 題）';
+    var t=types[k],b=el('button','',k+'（'+t.bad+'／'+t.seen+'，共 '+t.n+' 題）');
     b.style.textAlign='left';
-    b.onclick=function(){start('type',k);};
+    b.onclick=function(){start('p2-type',k);};
     box.appendChild(b);
   });
 }
 function renderWrong(){
-  var ids=wrongIds(), box=$('#w-list'); box.innerHTML='';
-  if(!ids.length){box.appendChild(el('p','muted','目前沒有錯題。'));return;}
-  ids.forEach(function(id){box.appendChild(wrongRow(byId(id)));});
+  var ws=wrongList(),box=$('#w-list');box.innerHTML='';
+  if(!ws.length){box.appendChild(el('p','muted','目前沒有錯題。'));return;}
+  ws.sort(function(a,b){return get(a.qid).due-get(b.qid).due;});
+  ws.forEach(function(x){box.appendChild(wrongRow(x.qid));});
 }
 
 /* ---------- 離線下載 ---------- */
-function download(){
+function download(which,btn){
   if(!('caches' in window)){$('#dl-info').textContent='這個瀏覽器不支援離線快取。';return;}
-  var btn=$('#dl-go'), bar=$('#dl-bar'), fill=bar.querySelector('i');
+  var urls=(which==='p2')?D2.map(function(x){return 'audio/'+x.id+'.mp3';})
+                         :D34.map(function(x){return 'audio34/'+x.id+'.mp3';});
+  if(!urls.length){$('#dl-info').textContent='這個部分還沒有音檔。';return;}
+  var bar=$('#dl-bar'),fill=bar.querySelector('i'),t0=btn.textContent,total=urls.length,done=0,fail=0;
   btn.disabled=true; bar.classList.remove('hide');
-  caches.open('p2-audio-v1').then(function(c){
-    var list=DATA.items.map(function(x){return 'audio/'+x.id+'.mp3';}), done=0, fail=0;
+  caches.open(which==='p2'?'p2-audio-v1':'p34-audio-v1').then(function(c){
     function step(){
-      if(!list.length){
-        btn.disabled=false; btn.textContent='下載全部音檔';
+      if(!urls.length){
+        btn.disabled=false; btn.textContent=t0; fill.style.width='100%';
         $('#dl-info').textContent=fail?('完成 '+done+' 個，失敗 '+fail+' 個。連線穩定時再按一次補齊。')
                                       :('已存好 '+done+' 個音檔，現在沒網路也能練。');
         return;
       }
-      var u=list.shift();
-      c.add(u).then(function(){done++;},function(){fail++;}).then(function(){
-        fill.style.width=Math.round(done/DATA.items.length*100)+'%';
-        btn.textContent='下載中 '+done+' / '+DATA.items.length;
-        step();
-      });
+      var u=urls.shift();
+      c.match(u).then(function(hit){return hit?'skip':c.add(u);})
+       .then(function(){done++;},function(){fail++;})
+       .then(function(){
+         fill.style.width=Math.round(done/total*100)+'%';
+         btn.textContent='下載中 '+done+' / '+total;
+         step();
+       });
     }
     step();
   });
@@ -445,52 +637,59 @@ function download(){
 
 /* ---------- 綁定 ---------- */
 document.querySelectorAll('[data-start]').forEach(function(b){
-  b.onclick=function(){start(b.dataset.start);};
+  b.onclick=function(){
+    if(b.dataset.start==='p2-types'){$('#types').classList.toggle('hide');return;}
+    start(b.dataset.start);
+  };
 });
-document.querySelectorAll('footer button').forEach(function(b){
-  b.onclick=function(){show(b.dataset.tab);};
-});
-$('#q-play').onclick=function(){
-  if(!audio.paused){audio.pause();setPlayUI(false);return;}
-  playSeg(null);
-};
-$('#q-next').onclick=next;
-$('#q-quit').onclick=function(){if(session.i>0||session.answered)finish();else{audio.pause();show('home');}};
-$('#d-again').onclick=function(){start(session.mode,session.type);};
-$('#d-copy').onclick=function(){
-  if(!session.wrong.length){alert('這輪沒有錯題。');return;}
-  copy(exportText(session.wrong),this);
-};
+document.querySelectorAll('footer button').forEach(function(b){b.onclick=function(){show(b.dataset.tab);};});
+$('#q-play').onclick=function(){if(!audio.paused){audio.pause();setPlay(false);return;}playRange(0,null);segMark(0,true);};
+$('#q-next').onclick=nextCard;
+$('#q-quit').onclick=function(){if(session.total)finish();else{audio.pause();show('home');}};
+$('#t-play').onclick=function(){if(!audio.paused){audio.pause();setPlay(false);return;}playConvo();};
+$('#t-go').onclick=toAnswer;
+$('#t-qplay').onclick=function(){var q=card().item.questions[session.qi];playRange(q.mark.start,q.mark.start+q.mark.len);};
+$('#t-next').onclick=next34;
+$('#t-nextitem').onclick=nextCard;
+$('#t-quit').onclick=function(){if(session.total)finish();else{audio.pause();show('home');}};
+$('#d-again').onclick=function(){start(session.mode,session.arg);};
+$('#d-copy').onclick=function(){if(!session.wrong.length){alert('這輪沒有錯題。');return;}copy(exportText(session.wrong),this);};
 $('#w-copy').onclick=function(){
-  var ids=wrongIds(); if(!ids.length){alert('目前沒有錯題。');return;}
-  copy(exportText(ids),this);
+  var ws=wrongList(); if(!ws.length){alert('目前沒有錯題。');return;}
+  copy(exportText(ws.map(function(x){return x.qid;})),this);
 };
 $('#o-show').onchange=function(){opt.show=this.checked;save(LS_O,opt);};
 $('#o-auto').onchange=function(){opt.auto=this.checked;save(LS_O,opt);};
 $('#o-autoplay').onchange=function(){opt.autoplay=this.checked;save(LS_O,opt);};
 document.querySelectorAll('#o-speed button').forEach(function(b){
   b.onclick=function(){
-    opt.speed=parseFloat(b.dataset.sp); save(LS_O,opt); audio.playbackRate=opt.speed;
+    opt.speed=parseFloat(b.dataset.sp);save(LS_O,opt);audio.playbackRate=opt.speed;
     document.querySelectorAll('#o-speed button').forEach(function(x){x.classList.toggle('on',x===b);});
   };
 });
 $('#o-reset').onclick=function(){
-  if(confirm('清空所有練習紀錄？錯題本也會一起清掉，這個動作無法復原。')){
-    hist={}; save(LS_H,hist); refreshHome(); renderWrong(); alert('已清空。');
+  if(confirm('清空所有練習紀錄？錯題本與複習排程都會一起清掉，無法復原。')){
+    hist={};save(LS_H,hist);refreshHome();renderWrong();alert('已清空。');
   }
 };
-$('#dl-go').onclick=download;
+$('#dl-p2').onclick=function(){download('p2',this);};
+$('#dl-p34').onclick=function(){download('p34',this);};
 
 /* ---------- 啟動 ---------- */
 $('#o-show').checked=opt.show; $('#o-auto').checked=opt.auto; $('#o-autoplay').checked=opt.autoplay;
 document.querySelectorAll('#o-speed button').forEach(function(x){
   x.classList.toggle('on',parseFloat(x.dataset.sp)===opt.speed);
 });
-fetch('items.json').then(function(r){return r.json();}).then(function(d){
-  DATA=d; $('#hpill').textContent=d.items.length+' 題'; refreshHome();
-}).catch(function(){
-  $('#hpill').textContent='載入失敗';
-  $('#v-home').innerHTML='<div class="card"><h2>題庫載入失敗</h2><p class="lead">請確認網路，或重新整理。</p></div>';
+function grab(u){return fetch(u).then(function(r){return r.ok?r.json():{items:[]};}).catch(function(){return {items:[]};});}
+Promise.all([grab('items.json'),grab('items34.json')]).then(function(res){
+  D2=res[0].items||[]; D34=res[1].items||[];
+  if(!D2.length&&!D34.length){
+    $('#hpill').textContent='載入失敗';
+    $('#v-home').innerHTML='<div class="card"><h2>題庫載入失敗</h2><p class="lead">請確認網路，或重新整理。</p></div>';
+    return;
+  }
+  $('#hpill').textContent=(D2.length+D34.length*3)+' 題';
+  refreshHome();
 });
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>

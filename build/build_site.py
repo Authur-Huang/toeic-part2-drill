@@ -70,7 +70,35 @@ def main():
         ids = [x["id"] for x in d["items"]]
         if len(set(ids)) != n:
             raise SystemExit(u"題號重複")
-        print(u"檢查通過：{} 題，音檔齊全，正解分佈 A/B/C = {}".format(n, dist))
+        print(u"Part 2 檢查通過：{} 題，音檔齊全，正解分佈 A/B/C = {}".format(n, dist))
+
+    items34 = os.path.join(OUT, "items34.json")
+    if os.path.exists(items34):
+        d = json.load(io.open(items34, encoding="utf-8"))
+        segs = d["items"]
+        missing = [x["id"] for x in segs
+                   if not os.path.exists(os.path.join(OUT, "audio34", x["id"] + ".mp3"))]
+        if missing:
+            raise SystemExit(u"缺少 Part 3/4 音檔：{}".format(missing[:5]))
+
+        dist4 = [0, 0, 0, 0]
+        nq = 0
+        for x in segs:
+            for q in x["questions"]:
+                dist4[q["answer"]] += 1
+                nq += 1
+        worst = max(dist4) / float(nq) if nq else 0
+        if nq >= 40 and worst > 0.4:
+            raise SystemExit(
+                u"Part 3/4 正解分佈失衡：A/B/C/D = {}，最高佔 {:.0%}".format(dist4, worst))
+
+        # 標記若超出音檔總長，App 會播不到那一段而看似當掉
+        for x in segs:
+            last = x["questions"][-1]["mark"]
+            if last["start"] + last["len"] > x["total"] + 0.5:
+                raise SystemExit(u"{} 的題目標記超出音檔長度".format(x["id"]))
+        print(u"Part 3/4 檢查通過：{} 段（{} 題），音檔齊全，正解分佈 A/B/C/D = {}".format(
+            len(segs), nq, dist4))
     else:
         print(u"⚠ 還沒有 items.json，請先跑 build/gen_audio.py")
 
