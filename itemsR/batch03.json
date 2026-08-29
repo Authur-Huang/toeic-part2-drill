@@ -1,0 +1,136 @@
+[
+{
+ "id":"p6-001","part":6,"scene":"公告・停車場整修",
+ "passage":[
+  "NOTICE TO ALL EMPLOYEES",
+  "The east parking lot ___(1)___ from Monday, April 8, through Friday, April 19, while the surface is repaved. During this period, please use the visitor lot on Chestnut Street.",
+  "___(2)___ the visitor lot has fewer spaces than usual, we encourage staff to carpool or take public transit whenever possible.",
+  "___(3)___ Employees who normally hold reserved spaces will be assigned temporary ones by the facilities office.",
+  "We ___(4)___ your patience during the work. Questions may be directed to facilities@brightonlogistics.com."
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["will be closed","closes","has closed","was closing"],"answer":0,"note":"from April 8 through April 19 是未來期間，停車場是被關閉的 → 未來式被動。"},
+  {"q":"空格 (2)","choices":["Because","Despite","However","Therefore"],"answer":0,"note":"後面接完整子句且是原因 → 連接詞 Because。★ Despite 是介系詞，However 與 Therefore 是副詞，都不能直接連子句。"},
+  {"q":"空格 (3)　選出最適合放這裡的句子","choices":["Shuttle service will run every fifteen minutes between the visitor lot and the main entrance.","The cafeteria will introduce a new seasonal menu next month.","All company vehicles were serviced earlier this year.","Parking fees will increase beginning in January."],"answer":0,"note":"插入句題。★ 前後都在談停車與交通，只有接駁車那句接得上。其餘三句主題正確但跟這段的邏輯無關 —— 這正是插入句題最常見的陷阱：看起來像公司公告，但接不上前後文。"},
+  {"q":"空格 (4)","choices":["appreciate","appreciation","appreciative","appreciating"],"answer":0,"note":"We ___ your patience 需要動詞。★ appreciate your patience 是公告收尾的固定說法。"}
+ ]
+},
+{
+ "id":"p6-002","part":6,"scene":"電子郵件・出貨延遲",
+ "passage":[
+  "Dear Ms. Halvorsen,",
+  "Thank you for your order placed on March 3. I am writing to let you know that two items in your order are currently ___(1)___ and will not ship with the rest of your shipment.",
+  "___(2)___ we expect the remaining items to arrive at our warehouse by March 20, we can send the available items immediately at no additional shipping cost.",
+  "Please reply to this message to let us know which option you ___(3)___. ___(4)___",
+  "Sincerely,",
+  "Devon Achebe, Customer Service"
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["out of stock","out of order","out of date","out of place"],"answer":0,"note":"商品缺貨 = out of stock。★ out of order 是機器故障，out of date 是過期，三個片語長得像但用途完全不同。"},
+  {"q":"空格 (2)","choices":["Since","Despite","Whether","Unless"],"answer":0,"note":"Since = 既然（原因），後面接子句。★ 語意上「既然預計 3/20 到貨，我們可以先寄已備妥的」。"},
+  {"q":"空格 (3)","choices":["prefer","prefers","preferring","preferred"],"answer":0,"note":"主詞是 you → 原形 prefer。"},
+  {"q":"空格 (4)　選出最適合放這裡的句子","choices":["If we do not hear from you by March 10, we will hold the entire order until all items are available.","Our retail location on Fifth Avenue is open until eight in the evening.","We have recently updated the design of our packaging.","Please note that the warranty period begins on the date of purchase."],"answer":0,"note":"插入句題。★ 前一句要對方回覆，接下來合理的是「沒回覆會怎樣」。其餘三句都是通用的客服語句，跟這封信的處理流程無關。"}
+ ]
+},
+{
+ "id":"p6-003","part":6,"scene":"廣告・健身中心",
+ "passage":[
+  "SUMMIT FITNESS — NOW OPEN ON RIVERSIDE DRIVE",
+  "Our newest location offers more than eighty pieces of equipment, four studio rooms, and a heated pool. Members enjoy ___(1)___ access to all six of our city branches at no extra charge.",
+  "Join before May 31 and your first month is free. ___(2)___",
+  "Not sure yet? Stop by for a free trial session. Our staff will design a program ___(3)___ to your goals and current fitness level.",
+  "Visit summitfitness.example or call the front desk to ___(4)___ an appointment."
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["unlimited","unlimitedly","limitless of","limitation"],"answer":0,"note":"名詞 access 前面要形容詞。★ unlimited access 是固定搭配。"},
+  {"q":"空格 (2)　選出最適合放這裡的句子","choices":["No enrollment fee is required, and the offer applies to both individual and family plans.","Parking on Riverside Drive is limited to two hours.","The building was originally constructed as a textile factory.","Our corporate office relocated to Denver last year."],"answer":0,"note":"插入句題。★ 前一句在講優惠，接著補充優惠細節最順。歷史沿革與辦公室搬遷跟促銷無關。"},
+  {"q":"空格 (3)","choices":["tailored","tailoring","tailor","to tailor"],"answer":0,"note":"program 是被量身設計的 → 過去分詞 tailored。★ tailored to = 針對…量身打造。"},
+  {"q":"空格 (4)","choices":["schedule","scheduling","scheduled","schedules"],"answer":0,"note":"to + 原形動詞。"}
+ ]
+},
+{
+ "id":"p6-004","part":6,"scene":"內部通知・系統上線",
+ "passage":[
+  "MEMO",
+  "To: All Department Heads",
+  "From: IT Operations",
+  "Beginning next Monday, all expense reports must be submitted through the new online portal. The paper form ___(1)___ accepted after June 1.",
+  "Training sessions will be held on Wednesday and Thursday at ten in the morning. Attendance is not mandatory, ___(2)___ we strongly recommend it for anyone who processes reports regularly.",
+  "___(3)___ If you encounter difficulty logging in, contact the help desk at extension 4400.",
+  "We expect the transition to ___(4)___ processing time by roughly three days per report."
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["will no longer be","is no longer being","has no longer been","was no longer"],"answer":0,"note":"after June 1 是未來 → 未來式被動。★ 紙本表格是被接受的一方。"},
+  {"q":"空格 (2)","choices":["but","so","because","therefore"],"answer":0,"note":"前後是轉折（不強制 vs 強烈建議）→ but。★ therefore 是副詞，不能連接兩個子句。"},
+  {"q":"空格 (3)　選出最適合放這裡的句子","choices":["Login credentials will be emailed to each department head by Friday afternoon.","The cafeteria will close early on the last Friday of every month.","Our annual charity drive raised over twelve thousand dollars.","Printer toner should be ordered through the supplies request form."],"answer":0,"note":"插入句題。★ 後一句講「登入有困難就找 help desk」，前面必須先提到登入帳密。這題的線索在後面不在前面 —— 插入句要前後都讀。"},
+  {"q":"空格 (4)","choices":["reduce","reduction","reducing","reduced"],"answer":0,"note":"expect + 受詞 + to + 原形動詞。"}
+ ]
+},
+{
+ "id":"p6-005","part":6,"scene":"書信・面試通知",
+ "passage":[
+  "Dear Mr. Vasquez,",
+  "Thank you for applying for the position of logistics coordinator at Northgate Freight. After reviewing your application, we ___(1)___ to invite you to an interview.",
+  "The interview will take place on Tuesday, September 12, at two in the afternoon in our Oakwood office. Please allow approximately ninety minutes. ___(2)___",
+  "Kindly confirm your ___(3)___ by replying to this email no later than Friday.",
+  "If the proposed time is not convenient, please suggest two alternative slots and we ___(4)___ our best to accommodate you.",
+  "Best regards,",
+  "Priya Raghunathan, Human Resources"
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["would like","would liking","are liking","have liked"],"answer":0,"note":"would like to = 想要，正式書信的禮貌說法。"},
+  {"q":"空格 (2)　選出最適合放這裡的句子","choices":["You will meet with the department manager and two members of the operations team.","Our company was founded more than forty years ago.","Free parking is available at all of our warehouse locations.","The position was advertised in several regional newspapers."],"answer":0,"note":"插入句題。★ 前一句說「請預留九十分鐘」，接著說明這段時間要做什麼最合理。公司歷史與刊登管道都不解釋為什麼要九十分鐘。"},
+  {"q":"空格 (3)","choices":["attendance","attendant","attending to","attended"],"answer":0,"note":"your + 名詞。★ attendant 是「服務員」（人），意思完全不同。"},
+  {"q":"空格 (4)","choices":["will do","did","have done","are doing"],"answer":0,"note":"條件句：if 子句用現在式（is not），主句用未來式。"}
+ ]
+},
+{
+ "id":"p6-006","part":6,"scene":"公告・產品召回",
+ "passage":[
+  "IMPORTANT SAFETY NOTICE",
+  "Larkfield Appliances is ___(1)___ a voluntary recall of the model KT-220 electric kettle manufactured between January and March of this year.",
+  "In a small number of units, the automatic shut-off may fail to activate. ___(2)___ no injuries have been reported, we are asking all owners to stop using the product immediately.",
+  "To determine ___(3)___ your kettle is affected, locate the serial number on the base of the unit and enter it at larkfield.example/recall.",
+  "___(4)___ Customers will receive either a replacement unit or a full refund, whichever they prefer."
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["issuing","issued","issue","issues"],"answer":0,"note":"is + 現在分詞 = 現在進行式。"},
+  {"q":"空格 (2)","choices":["Although","Because","Since","Unless"],"answer":0,"note":"轉折：雖然沒有傷亡通報，但仍請停用。★ Because 與 Since 都是原因，語意接不上。"},
+  {"q":"空格 (3)","choices":["whether","that","if it is","what"],"answer":0,"note":"determine whether = 判斷是否。★ 陷阱：if 雖然也能表「是否」，但 if it is 加了多餘的主詞與動詞。"},
+  {"q":"空格 (4)　選出最適合放這裡的句子","choices":["Affected kettles may be returned to any retail location or shipped to us using a prepaid label.","The company expanded its product line to include coffee grinders in 2019.","Our customer service hours are Monday through Friday.","Recycling programs are available in most municipalities."],"answer":0,"note":"插入句題。★ 後一句講「顧客會拿到替換品或退款」，前面必須先講怎麼把東西退回來。★ 召回通知的邏輯順序是：問題→確認是否受影響→怎麼退→退了會得到什麼。"}
+ ]
+},
+{
+ "id":"p6-007","part":6,"scene":"說明・咖啡機使用",
+ "passage":[
+  "BREAK ROOM COFFEE MACHINE — QUICK GUIDE",
+  "Before brewing, make sure the water tank is filled to the line marked MAX. The machine ___(1)___ if the tank is empty.",
+  "Place a filter in the basket and add one scoop of grounds ___(2)___ cup. Close the lid firmly until it clicks.",
+  "Press the green button once. The indicator light will blink ___(3)___ brewing and turn solid when the pot is ready.",
+  "___(4)___ Please rinse the carafe before returning it to the warming plate."
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["will not start","is not starting","has not started","did not start"],"answer":0,"note":"條件下的必然結果 → 未來式。★ 說明書描述的是「如果…就會…」。"},
+  {"q":"空格 (2)","choices":["per","by","for each of","among"],"answer":0,"note":"per cup = 每一杯。★ one scoop per cup 是說明書的標準寫法。"},
+  {"q":"空格 (3)","choices":["during","while","despite","among"],"answer":0,"note":"during + 名詞 brewing。★ 陷阱：while 是連接詞，後面要接子句。"},
+  {"q":"空格 (4)　選出最適合放這裡的句子","choices":["Turn the machine off if you take the last cup.","The vending machine accepts both coins and cards.","Employees may store personal items in the lockers provided.","Our supplier delivers fresh beans every other Tuesday."],"answer":0,"note":"插入句題。★ 這一段是「用完之後」的收尾動作，接的是關機與沖洗壺。其餘三句都在休息室的範圍內，但不是操作步驟 —— 主題相關不等於邏輯接得上。"}
+ ]
+},
+{
+ "id":"p6-008","part":6,"scene":"報導・公司搬遷",
+ "passage":[
+  "Meridian Design Group will move its headquarters to the renovated Halstead Building in October, the firm announced on Tuesday.",
+  "The new space is nearly twice as large as the current office and ___(1)___ room for the company's growing engineering team.",
+  "\"We had been looking for a location with better transit access for some time,\" said chief operating officer Ingrid Solberg. \"___(2)___\"",
+  "The Halstead Building, which ___(3)___ vacant since 2021, has been fitted with new heating and ventilation systems.",
+  "Meridian expects the relocation to be complete ___(4)___ the end of the year."
+ ],
+ "questions":[
+  {"q":"空格 (1)","choices":["will provide","providing","to provide","provided"],
+   "note":"and 連接前面的 is，要對稱的動詞形式；搬遷在十月是未來 → will provide。","answer":0},
+  {"q":"空格 (2)　選出最適合放這裡的句子","choices":["The Halstead Building is a five-minute walk from two subway lines.","Our design awards have doubled in the past three years.","We plan to release a new mobile application this winter.","The firm currently employs about sixty people."],"answer":0,"note":"插入句題。★ 引號前一句說「一直在找交通更方便的地點」，引號裡自然要說明新地點交通如何方便。其餘三句都是公司的真實資訊，但沒有回應前一句。"},
+  {"q":"空格 (3)","choices":["has been","is","was being","had been"],"answer":0,"note":"since 2021 → 現在完成式。★ 到現在仍空置。"},
+  {"q":"空格 (4)","choices":["by","until","during","within of"],"answer":0,"note":"by the end of the year = 在年底前完成。★ complete 是完成動作，配 by 不配 until。"}
+ ]
+}
+]

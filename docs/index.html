@@ -401,7 +401,7 @@ function start(mode,arg){
     var pr=DR.slice();
     if(mode==='r-unseen') pr=pr.filter(function(x){
       return x.questions.some(function(q,i){return !get(x.id+'#'+i).n;});});
-    if(mode==='r-topic') pr=pr.filter(function(x){return (x.topic||x.scene)===arg;});
+    if(mode==='r-topic') pr=pr.filter(function(x){return rGroup(x)===arg;});
     if(!pr.length) pr=DR.slice();
     shuffle(pr);
     if(mode==='r-30') pr=pr.slice(0,30);
@@ -777,11 +777,14 @@ function refreshHome(){
     box.appendChild(b);
   });
 }
+function rGroup(x){
+  return x.topic||(x.part===6?'Part 6　短文填空':'Part 7　閱讀測驗');
+}
 function renderRTopics(){
   var box=$('#rtopics'); box.innerHTML='';
   var tp={};
   DR.forEach(function(x){
-    var k=x.topic||x.scene||('Part '+x.part);
+    var k=rGroup(x);
     var t=tp[k]||(tp[k]={n:0,seen:0,bad:0});
     x.questions.forEach(function(q,i){
       t.n++; var r=hist[x.id+'#'+i]; if(r&&r.n){t.seen++; if(r.wrong)t.bad++;}
