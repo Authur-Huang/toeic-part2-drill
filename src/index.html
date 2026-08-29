@@ -815,7 +815,7 @@ var GROUPS=[
      +'是聽力最大的一塊。',
   acts:[['p34-mix','隨機 5 段',1],['p34-3','只練 Part 3',0],['p34-4','只練 Part 4',0],
         ['p34-graphic','只練圖表題',0]]},
- {k:'r',nm:'閱讀',sub:'Part 5・6・7',pick:function(x){return x.part>=5;},
+ {k:'r',nm:'Part 5・6・7',sub:'閱讀',pick:function(x){return x.part>=5;},
   tip:'純文字，不用戴耳機也能練。閱讀在正式考試佔 100 題，其中 Part 5＋6 就有 46 題，'
      +'是最容易靠規則拿分的一段。',
   acts:[['r-30','隨機 30 題',1],['r-unseen','只練沒做過的',0],['@rtopics','依題型練',0]]}
@@ -905,11 +905,12 @@ function renderTypes(){
     var t=types[x.type]||(types[x.type]={n:0,seen:0,bad:0});
     t.n++; var r=hist[x.id]; if(r&&r.n){t.seen++; if(r.wrong)t.bad++;}
   });
-  Object.keys(types).forEach(function(k){
-    var t=types[k],b=el('button','',k+'（錯 '+t.bad+'／做過 '+t.seen+'，共 '+t.n+' 題）');
-    b.onclick=function(){start('p2-type',k);};
-    box.appendChild(b);
-  });
+  Object.keys(types).sort(function(a,b){return types[b].n-types[a].n;})
+    .forEach(function(k){
+      var t=types[k],b=el('button','',k+'（錯 '+t.bad+'／做過 '+t.seen+'，共 '+t.n+' 題）');
+      b.onclick=function(){start('p2-type',k);};
+      box.appendChild(b);
+    });
 }
 function rGroup(x){
   return x.topic||(x.part===6?'Part 6　短文填空':'Part 7　閱讀測驗');
@@ -924,12 +925,17 @@ function renderRTopics(){
       t.n++; var r=hist[x.id+'#'+i]; if(r&&r.n){t.seen++; if(r.wrong)t.bad++;}
     });
   });
-  Object.keys(tp).forEach(function(k){
-    var t=tp[k],b=el('button','',k+'（錯 '+t.bad+'／做過 '+t.seen+'，共 '+t.n+' 題）');
-    b.style.textAlign='left';
-    b.onclick=function(){start('r-topic',k);};
-    box.appendChild(b);
-  });
+  Object.keys(tp).sort(function(a,b){
+      // Part 5 的考點沒有編號，排在最前面；Part 6／7 依編號在後
+      var pa=/^Part (\d)/.exec(a), pb=/^Part (\d)/.exec(b);
+      var na=pa?+pa[1]:5, nb=pb?+pb[1]:5;
+      if(na!==nb) return na-nb;
+      return tp[b].n-tp[a].n;
+    }).forEach(function(k){
+      var t=tp[k],b=el('button','',k+'（錯 '+t.bad+'／做過 '+t.seen+'，共 '+t.n+' 題）');
+      b.onclick=function(){start('r-topic',k);};
+      box.appendChild(b);
+    });
 }
 function renderWrong(){
   var ws=wrongList(),box=$('#w-list');box.innerHTML='';
