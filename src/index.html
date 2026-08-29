@@ -1025,6 +1025,10 @@ Promise.all([grab('items.json'),grab('items34.json'),grab('itemsR.json'),
   }
   $('#hpill').textContent=totalQ()+' 題';
   refreshHome();
+  // 劃記本的今日任務會用 #p1 / #p2 / #p34 / #r 直接把人帶到對的部分
+  var h=(location.hash||'').replace('#','');
+  if(GROUPS.some(function(g){return g.k===h;})) openGroup(h);
+  else if(h==='due'&&dueList().length) start('due');
 });
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 </script>
