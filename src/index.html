@@ -684,7 +684,7 @@ function download(which,btn){
   if(!urls.length){$('#dl-info').textContent='這個部分還沒有音檔。';return;}
   var bar=$('#dl-bar'),fill=bar.querySelector('i'),t0=btn.textContent,total=urls.length,done=0,fail=0;
   btn.disabled=true; bar.classList.remove('hide');
-  caches.open(which==='p2'?'p2-audio-v1':'p34-audio-v1').then(function(c){
+  caches.open(which==='p2'?'p2-audio-v2':'p34-audio-v2').then(function(c){
     function step(){
       if(!urls.length){
         btn.disabled=false; btn.textContent=t0; fill.style.width='100%';

@@ -1,13 +1,18 @@
 /* Part 2 應答練習 — Service Worker
    殼層（HTML/JSON/圖示）用 stale-while-revalidate：離線一定開得起來，有網路時背景更新。
-   音檔用 cache-first：檔案內容不會變，抓過就永久沿用，省流量。
+   音檔用 cache-first 且不重驗，抓過就沿用，省流量。
+   🔴 代價：音檔內容一改，舊裝置會永遠播舊檔。所以**只要重生過音檔，
+      就必須把 AUDIO2／AUDIO34 的版本號加一**，activate 才會清掉舊快取。
+      漏了這一步是靜默錯誤：items.json 是 network-first 會更新成新時間軸，
+      音檔卻還是舊的，「重聽某一句」會對不準而畫面看不出異常。
    音檔快取由設定頁的「下載全部音檔」預先填滿，這裡只負責讀。 */
-var SHELL = 'p2-shell-v5';
+var SHELL = 'p2-shell-v6';
 // 兩個音檔快取分開，對應設定頁的分包下載。
 // ⚠ 這裡的名稱必須與 index.html 的 download() 寫入的名稱一致，
 //    否則下載好的檔案 SW 讀不到，離線就會失效。
-var AUDIO2 = 'p2-audio-v1';
-var AUDIO34 = 'p34-audio-v1';
+// v2：2026-08-29 全量重生音檔（加報題號），必須換名才會重抓。
+var AUDIO2 = 'p2-audio-v2';
+var AUDIO34 = 'p34-audio-v2';
 function audioCacheFor(pathname) {
   return /\/audio34\//.test(pathname) ? AUDIO34 : AUDIO2;
 }
