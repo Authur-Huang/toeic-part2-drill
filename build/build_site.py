@@ -81,6 +81,24 @@ def main():
         if missing:
             raise SystemExit(u"缺少 Part 3/4 音檔：{}".format(missing[:5]))
 
+        # 圖表題的正解若在對話原文裡念得出來，它就只是普通細節題，圖表變裝飾。
+        # 這是圖表題唯一的出題鐵律，寫錯了整題失去意義，所以在這裡擋死。
+        ngraphic = 0
+        for x in segs:
+            body = u" ".join(l["t"] for l in x["lines"]).lower()
+            gq = [q for q in x["questions"] if q.get("graphic")]
+            if len(gq) > 1:
+                raise SystemExit(u"{}：一組最多一題圖表題".format(x["id"]))
+            for q in gq:
+                ngraphic += 1
+                if not x.get("graphic"):
+                    raise SystemExit(u"{}：標了圖表題卻沒有圖表".format(x["id"]))
+                ans = q["choices"][q["answer"]].lower()
+                if ans in body:
+                    raise SystemExit(
+                        u"{}：圖表題的正解「{}」直接出現在對話原文裡，"
+                        u"這樣只是細節題不是圖表題".format(x["id"], q["choices"][q["answer"]]))
+
         dist4 = [0, 0, 0, 0]
         nq = 0
         for x in segs:
@@ -91,6 +109,7 @@ def main():
         if nq >= 40 and worst > 0.4:
             raise SystemExit(
                 u"Part 3/4 正解分佈失衡：A/B/C/D = {}，最高佔 {:.0%}".format(dist4, worst))
+        print(u"圖表題檢查通過：{} 題，正解均未出現在對話原文".format(ngraphic))
 
         # 標記若超出音檔總長，App 會播不到那一段而看似當掉
         for x in segs:

@@ -12,12 +12,11 @@ import asyncio, io, json, os, subprocess, sys, tempfile, shutil, glob, hashlib, 
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_audio import (FFMPEG, dur, encode, silence, synth_all, VOICES,
-                       ROOT, OUT_DIR)
+                       ROOT, OUT_DIR, NARRATOR)
 
 ITEMS_DIR = os.path.join(ROOT, "items34")
 AUDIO_DIR = os.path.join(OUT_DIR, "audio34")
 
-NARRATOR = "en-US-ChristopherNeural"      # 旁白固定一個聲音，跟對話者區隔開
 GAP_INTRO = 0.6                            # 旁白開場之後
 GAP_LINE = 0.25                            # 對話句之間，短一點才像真的在對話
 GAP_BEFORE_Q = 0.9                         # 對話結束到第一題
@@ -62,16 +61,38 @@ def load_items():
             for q in it["questions"]:
                 assert len(q["choices"]) == 4, it["id"]
                 assert q["answer"] in (0, 1, 2, 3), it["id"]
+            gq = [q for q in it["questions"] if q.get("graphic")]
+            # 正式考試一組最多一題圖表題。多寫了通常是出題時複製貼上忘了改。
+            if len(gq) > 1:
+                raise SystemExit(u"{}：一組最多一題圖表題".format(it["id"]))
+            if gq and not it.get("graphic"):
+                raise SystemExit(u"{}：標了圖表題卻沒有 graphic 圖表".format(it["id"]))
+            if it.get("graphic") and not gq:
+                raise SystemExit(u"{}：有圖表卻沒有任何一題標 graphic".format(it["id"]))
             out = dict(it)
             out["questions"] = [shuffle_q(it["id"], i, q)
                                 for i, q in enumerate(it["questions"])]
             items.append(out)
+    # 正式考試 Part 3 是第 32-70 題、Part 4 是第 71-100 題，各三題一組。
+    # 報題號時照這個範圍給，聽起來才像真的考試。
+    seq = {3: 0, 4: 0}
+    for it in items:
+        n = seq[it["part"]]
+        seq[it["part"]] += 1
+        it["_base"] = 32 + 3 * (n % 13) if it["part"] == 3 else 71 + 3 * (n % 10)
     return items
 
 
 def intro_text(it):
-    return (u"Listen to the following conversation."
-            if it["part"] == 3 else u"Listen to the following talk.")
+    """正式考試的開場白，含題號範圍。三人對話有專屬講法。"""
+    if it["part"] == 4:
+        kind = u"talk"
+    elif len(it.get("speakers") or []) >= 3:
+        kind = u"conversation with three speakers"
+    else:
+        kind = u"conversation"
+    return u"Questions {} through {} refer to the following {}.".format(
+        it["_base"], it["_base"] + 2, kind)
 
 
 def main():
@@ -107,8 +128,10 @@ def main():
             add(intro_text(it), NARRATOR, "intro")
             for ln in it["lines"]:
                 add(ln["t"], VOICES[vk[ln["s"] % len(vk)]], "line")
-            for q in it["questions"]:
-                add(q["q"], NARRATOR, "q")
+            # 選項不唸——正式考試 Part 3/4 的選項是印在題本上的。
+            for qi, q in enumerate(it["questions"]):
+                add(u"Number {}. {}".format(it["_base"] + qi, q["q"]),
+                    NARRATOR, "q")
             plan.append((it, vk, segs))
 
         print(u"開始合成 {} 段語音…".format(len(jobs)))
@@ -172,6 +195,7 @@ def main():
             out_items.append({
                 "id": it["id"], "part": it["part"], "scene": it["scene"],
                 "lines": it["lines"], "voices": vk,
+                "graphic": it.get("graphic"), "base": it["_base"],
                 "intro": marks[0], "lineMarks": lm, "convo": convo,
                 "questions": [dict(q, mark=qm[i]) for i, q in enumerate(it["questions"])],
                 "total": round(real, 2),

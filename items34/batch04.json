@@ -1,0 +1,477 @@
+[
+ {
+  "id": "p3-g01",
+  "part": 3,
+  "scene": "研討會・場次變更",
+  "speakers": [
+   "W",
+   "M"
+  ],
+  "graphic": {
+   "type": "table",
+   "title": "Annual Sales Conference — Sessions",
+   "head": [
+    "Time",
+    "Session",
+    "Room"
+   ],
+   "rows": [
+    [
+     "11:00 A.M.",
+     "Digital Tools",
+     "Room 305"
+    ],
+    [
+     "1:30 P.M.",
+     "Team Leadership",
+     "Room 118"
+    ],
+    [
+     "3:00 P.M.",
+     "Customer Service",
+     "Room 402"
+    ],
+    [
+     "4:30 P.M.",
+     "Market Trends",
+     "Room 201"
+    ]
+   ]
+  },
+  "lines": [
+   {
+    "s": 0,
+    "t": "Have you decided which afternoon session you're going to, Kenji? I signed up for the one at three o'clock."
+   },
+   {
+    "s": 1,
+    "t": "I was going to do that one with you, actually, but my manager asked me to take the leadership session instead."
+   },
+   {
+    "s": 0,
+    "t": "Oh, that's the earlier slot. You'll have to skip the group lunch, then. It doesn't finish until one thirty."
+   },
+   {
+    "s": 1,
+    "t": "I'll grab something quick beforehand. Could you save me a seat at the reception tonight?"
+   },
+   {
+    "s": 0,
+    "t": "Of course. It starts at six in the lobby."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Why did the man change his plans?",
+    "choices": [
+     "His manager gave him a different assignment.",
+     "A session was cancelled.",
+     "He had a conflict with a client.",
+     "A room was too small."
+    ],
+    "answer": 0,
+    "note": "細節題。my manager asked me to take the leadership session instead。"
+   },
+   {
+    "q": "Look at the graphic. Which room will the man go to?",
+    "choices": [
+     "Room 118",
+     "Room 305",
+     "Room 402",
+     "Room 201"
+    ],
+    "answer": 0,
+    "graphic": true,
+    "note": "圖表題。★ 男子從頭到尾沒說過任何房號 —— 他只說了 leadership，房號要自己從表上查。\n★ 陷阱：唯一被念出來的時間是 three o'clock，那是女子的場次。只抓數字不查表就會中招。\n★ 通則：聽到的是「一欄」，要答的是「另一欄」。"
+   },
+   {
+    "q": "What does the woman agree to do?",
+    "choices": [
+     "Save a seat for the man.",
+     "Reschedule a meeting.",
+     "Bring lunch to the office.",
+     "Email the program."
+    ],
+    "answer": 0,
+    "note": "最後兩句。Part 3 第三題通常落在對話結尾。"
+   }
+  ]
+ },
+ {
+  "id": "p3-g02",
+  "part": 3,
+  "scene": "影印店・報價級距",
+  "speakers": [
+   "W",
+   "M"
+  ],
+  "graphic": {
+   "type": "table",
+   "title": "Booklet Printing — Price List",
+   "head": [
+    "Quantity",
+    "Price per copy"
+   ],
+   "rows": [
+    [
+     "1 – 99",
+     "$0.40"
+    ],
+    [
+     "100 – 249",
+     "$0.32"
+    ],
+    [
+     "250 – 499",
+     "$0.25"
+    ],
+    [
+     "500 or more",
+     "$0.18"
+    ]
+   ]
+  },
+  "lines": [
+   {
+    "s": 0,
+    "t": "Hi, I'd like to have some training booklets printed. I originally planned on eighty copies."
+   },
+   {
+    "s": 1,
+    "t": "Sure, we can handle that. Has the number changed?"
+   },
+   {
+    "s": 0,
+    "t": "It has. The operations department is joining the session now, so I'll need a hundred and twenty."
+   },
+   {
+    "s": 1,
+    "t": "Good news, actually. That moves you into a better rate. When do you need them by?"
+   },
+   {
+    "s": 0,
+    "t": "Thursday morning if possible. The workshop starts at nine."
+   },
+   {
+    "s": 1,
+    "t": "We can have them ready Wednesday afternoon. I'll email you a confirmation once your file uploads."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What does the woman want to have printed?",
+    "choices": [
+     "Training booklets",
+     "Business cards",
+     "Event posters",
+     "Name badges"
+    ],
+    "answer": 0,
+    "note": "開頭第一句。Part 3 第一題常是「主旨／來意」，答案幾乎都在前兩句。"
+   },
+   {
+    "q": "Look at the graphic. How much will the woman pay per copy?",
+    "choices": [
+     "$0.32",
+     "$0.40",
+     "$0.25",
+     "$0.18"
+    ],
+    "answer": 0,
+    "graphic": true,
+    "note": "圖表題。★ 對話裡沒有出現任何金額，只出現數量。\n★ 陷阱：先講的 eighty 落在 1–99 那列（$0.40），但她隨即改成 a hundred and twenty。\n★ 圖表題很愛「先講一個數字再改掉」，要聽到最後一個確定的數字才動手查表。"
+   },
+   {
+    "q": "What does the man say he will do?",
+    "choices": [
+     "Send a confirmation by email.",
+     "Deliver the order in person.",
+     "Offer a full refund.",
+     "Call another branch."
+    ],
+    "answer": 0,
+    "note": "最後一句 I'll email you a confirmation。"
+   }
+  ]
+ },
+ {
+  "id": "p3-g03",
+  "part": 3,
+  "scene": "辦公室・找會議室",
+  "speakers": [
+   "W",
+   "M"
+  ],
+  "graphic": {
+   "type": "svg",
+   "title": "Third Floor — Office Layout",
+   "svg": "<svg viewBox=\"0 0 420 210\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Office floor plan\">\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".85\">\n<rect x=\"8\" y=\"8\" width=\"134\" height=\"62\" rx=\"3\"/><rect x=\"142\" y=\"8\" width=\"134\" height=\"62\" rx=\"3\"/><rect x=\"276\" y=\"8\" width=\"136\" height=\"62\" rx=\"3\"/>\n<rect x=\"8\" y=\"130\" width=\"134\" height=\"72\" rx=\"3\"/><rect x=\"142\" y=\"130\" width=\"134\" height=\"72\" rx=\"3\"/><rect x=\"276\" y=\"130\" width=\"136\" height=\"72\" rx=\"3\"/>\n</g>\n<rect x=\"8\" y=\"70\" width=\"404\" height=\"60\" fill=\"currentColor\" opacity=\".06\"/>\n<g font-size=\"13\" fill=\"currentColor\" text-anchor=\"middle\" font-family=\"inherit\">\n<text x=\"75\" y=\"44\">Storage</text><text x=\"209\" y=\"44\">Break Room</text><text x=\"344\" y=\"44\">Reception</text>\n<text x=\"75\" y=\"163\">Copy Room</text><text x=\"209\" y=\"160\">Meeting</text><text x=\"209\" y=\"176\">Room B</text><text x=\"344\" y=\"163\">Server Room</text>\n</g>\n<text x=\"210\" y=\"105\" font-size=\"12\" fill=\"currentColor\" opacity=\".65\" text-anchor=\"middle\" font-family=\"inherit\">Main Hallway</text>\n<text x=\"344\" y=\"196\" font-size=\"11\" fill=\"currentColor\" opacity=\".55\" text-anchor=\"middle\" font-family=\"inherit\">&#9650; Entrance</text>\n</svg>"
+  },
+  "lines": [
+   {
+    "s": 0,
+    "t": "Sorry to bother you. I'm supposed to meet the design team at ten, but I can't find the right room."
+   },
+   {
+    "s": 1,
+    "t": "They moved last week. It's not the big conference room anymore. Go down the main hallway and it's the office directly across from the break room."
+   },
+   {
+    "s": 0,
+    "t": "Directly across from the break room. Is that anywhere near the copier?"
+   },
+   {
+    "s": 1,
+    "t": "Right next to it. And if you need to print the agenda, the copier was finally repaired yesterday."
+   },
+   {
+    "s": 0,
+    "t": "That's a relief. I'll head over now, thanks."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Why does the woman speak to the man?",
+    "choices": [
+     "She cannot find a room.",
+     "She needs a document signed.",
+     "She is late for a flight.",
+     "She wants to borrow a laptop."
+    ],
+    "answer": 0,
+    "note": "來意題。I can't find the right room。"
+   },
+   {
+    "q": "Look at the graphic. Where will the woman go?",
+    "choices": [
+     "Meeting Room B",
+     "Storage",
+     "Copy Room",
+     "Server Room"
+    ],
+    "answer": 0,
+    "graphic": true,
+    "note": "圖表題。★ 房間名稱一次都沒被念出來，只給了「位置關係」：across from the break room。\n★ 陷阱：copier（Copy Room）被念了兩次，但那是「隔壁」不是「對面」。\n★ 平面圖題的關鍵字就那幾個：across from（對面）、next to（隔壁）、between（中間）、at the end of（走廊底）。先把它們聽熟。"
+   },
+   {
+    "q": "What does the man say about the copier?",
+    "choices": [
+     "It has been repaired.",
+     "It will be replaced.",
+     "It is out of paper.",
+     "It is on another floor."
+    ],
+    "answer": 0,
+    "note": "the copier was finally repaired yesterday。"
+   }
+  ]
+ },
+ {
+  "id": "p3-g04",
+  "part": 3,
+  "scene": "辦公室・補貨清單",
+  "speakers": [
+   "M",
+   "W"
+  ],
+  "graphic": {
+   "type": "table",
+   "title": "Warehouse Inventory — Furniture",
+   "head": [
+    "Item No.",
+    "Product",
+    "In Stock"
+   ],
+   "rows": [
+    [
+     "A-12",
+     "Desk lamps",
+     "4"
+    ],
+    [
+     "B-07",
+     "Office chairs",
+     "0"
+    ],
+    [
+     "C-33",
+     "Filing cabinets",
+     "18"
+    ],
+    [
+     "D-51",
+     "Whiteboards",
+     "9"
+    ]
+   ]
+  },
+  "lines": [
+   {
+    "s": 0,
+    "t": "I'm putting together the supply order for the new branch. Is there anything urgent?"
+   },
+   {
+    "s": 1,
+    "t": "Take a look at the inventory sheet. There's one product we're completely out of, and that has to go in today's order."
+   },
+   {
+    "s": 0,
+    "t": "I see it. Everything else we still have at least a few of."
+   },
+   {
+    "s": 1,
+    "t": "The lamps are getting low as well, but those can wait until next month."
+   },
+   {
+    "s": 0,
+    "t": "Understood. I'll submit the urgent one now and flag the lamps for December."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What is the man preparing?",
+    "choices": [
+     "A supply order",
+     "A budget report",
+     "A staff schedule",
+     "A floor plan"
+    ],
+    "answer": 0,
+    "note": "第一句 the supply order for the new branch。"
+   },
+   {
+    "q": "Look at the graphic. Which product will the man order today?",
+    "choices": [
+     "Office chairs",
+     "Desk lamps",
+     "Filing cabinets",
+     "Whiteboards"
+    ],
+    "answer": 0,
+    "graphic": true,
+    "note": "圖表題。★ 正解的產品名整段沒被念出來 —— 線索是 completely out of（庫存 0）。\n★ 陷阱：lamps 被明確念出來兩次，但女子說 those can wait，是「不急」的那一項。\n★ 庫存表最常考的三種說法：out of stock（0）、running low（數量最小但非 0）、fully stocked（數量最大）。"
+   },
+   {
+    "q": "What will the man do about the desk lamps?",
+    "choices": [
+     "Include them in a later order.",
+     "Return them to the supplier.",
+     "Move them to another branch.",
+     "Ask for a discount on them."
+    ],
+    "answer": 0,
+    "note": "flag the lamps for December —— 選項用 a later order 改寫 December。"
+   }
+  ]
+ },
+ {
+  "id": "p4-g01",
+  "part": 4,
+  "scene": "接駁車・車上廣播",
+  "speakers": [
+   "M"
+  ],
+  "graphic": {
+   "type": "svg",
+   "title": "Airport Shuttle — Route 5",
+   "svg": "<svg viewBox=\"0 0 460 96\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Shuttle route\">\n<line x1=\"40\" y1=\"34\" x2=\"420\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\".55\"/>\n<g fill=\"currentColor\">\n<circle cx=\"40\" cy=\"34\" r=\"7\"/><circle cx=\"167\" cy=\"34\" r=\"7\"/><circle cx=\"294\" cy=\"34\" r=\"7\"/><circle cx=\"420\" cy=\"34\" r=\"7\"/>\n</g>\n<g font-size=\"12\" fill=\"currentColor\" text-anchor=\"middle\" font-family=\"inherit\">\n<text x=\"40\" y=\"60\">Main</text><text x=\"40\" y=\"75\">Terminal</text>\n<text x=\"167\" y=\"60\">Parking</text><text x=\"167\" y=\"75\">Lot C</text>\n<text x=\"294\" y=\"60\">Conference</text><text x=\"294\" y=\"75\">Center</text>\n<text x=\"420\" y=\"60\">Riverside</text><text x=\"420\" y=\"75\">Hotel</text>\n</g>\n<text x=\"230\" y=\"16\" font-size=\"11\" fill=\"currentColor\" opacity=\".6\" text-anchor=\"middle\" font-family=\"inherit\">Route 5 &#8594; (one way)</text>\n</svg>"
+  },
+  "lines": [
+   {
+    "s": 0,
+    "t": "Good afternoon, everyone, and welcome aboard the airport shuttle. We've just departed the conference center, so our next stop will be the final stop on this route. Please remain seated until the vehicle comes to a complete stop. One quick note for anyone attending tomorrow's trade show: the morning shuttle will run every fifteen minutes instead of every half hour, beginning at seven A.M. And if you left a bag in the overhead rack on an earlier trip, our lost and found desk is inside the main terminal and stays open until nine tonight."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Look at the graphic. Where will the shuttle stop next?",
+    "choices": [
+     "Riverside Hotel",
+     "Conference Center",
+     "Parking Lot C",
+     "Main Terminal"
+    ],
+    "answer": 0,
+    "graphic": true,
+    "note": "圖表題。★ 正解的站名沒被念出來，線索是 the final stop on this route（路線圖最後一站）。\n★ 雙陷阱：conference center 是「剛離開」的站，main terminal 是失物招領的位置 —— 兩個都被念出來了。\n★ 路線圖題常用的位置詞：next stop、final/last stop、the stop before、two stops from here。"
+   },
+   {
+    "q": "What change will take place tomorrow morning?",
+    "choices": [
+     "Shuttles will run more frequently.",
+     "A route will be closed.",
+     "Fares will increase.",
+     "A new terminal will open."
+    ],
+    "answer": 0,
+    "note": "every fifteen minutes instead of every half hour —— 選項用 more frequently 概括，這是 Part 4 最典型的改寫。"
+   },
+   {
+    "q": "What does the speaker say about the lost and found desk?",
+    "choices": [
+     "It is located in the main terminal.",
+     "It has moved to a new floor.",
+     "It is closed on weekends.",
+     "It charges a storage fee."
+    ],
+    "answer": 0,
+    "note": "最後一句。Part 4 第三題多半落在獨白結尾。"
+   }
+  ]
+ },
+ {
+  "id": "p4-g02",
+  "part": 4,
+  "scene": "季報會議・業績檢討",
+  "speakers": [
+   "W"
+  ],
+  "graphic": {
+   "type": "svg",
+   "title": "Third Quarter Sales by Region",
+   "svg": "<svg viewBox=\"0 0 420 224\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Sales by region bar chart\">\n<line x1=\"46\" y1=\"176\" x2=\"404\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/>\n<line x1=\"46\" y1=\"24\" x2=\"46\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/>\n<g fill=\"currentColor\" opacity=\".72\">\n<rect x=\"70\" y=\"78\" width=\"58\" height=\"98\"/><rect x=\"158\" y=\"26\" width=\"58\" height=\"150\"/>\n<rect x=\"246\" y=\"95\" width=\"58\" height=\"81\"/><rect x=\"334\" y=\"46\" width=\"58\" height=\"130\"/>\n</g>\n<g font-size=\"12\" fill=\"currentColor\" text-anchor=\"middle\" font-family=\"inherit\">\n<text x=\"99\" y=\"72\">340</text><text x=\"187\" y=\"20\">520</text><text x=\"275\" y=\"89\">280</text><text x=\"363\" y=\"40\">450</text>\n<text x=\"99\" y=\"194\">North</text><text x=\"187\" y=\"194\">South</text><text x=\"275\" y=\"194\">East</text><text x=\"363\" y=\"194\">West</text>\n</g>\n<text x=\"225\" y=\"216\" font-size=\"11\" fill=\"currentColor\" opacity=\".6\" text-anchor=\"middle\" font-family=\"inherit\">Units sold (in thousands)</text>\n</svg>"
+  },
+  "lines": [
+   {
+    "s": 0,
+    "t": "Thanks for joining this quarter's review. Before we turn to next year's targets, I want to spend a few minutes on the region that came in lowest this quarter. I want to be clear that this is not a staffing problem — that team is fully hired. What happened is that two of our largest accounts there postponed their orders until January, which pulled the whole figure down. I'd expect a strong rebound next quarter. The south region, by contrast, had its best three months on record, and I've asked their director to walk us through what worked. That will be right after the break."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Look at the graphic. Which region will the speaker discuss first?",
+    "choices": [
+     "East",
+     "South",
+     "North",
+     "West"
+    ],
+    "answer": 0,
+    "graphic": true,
+    "note": "圖表題。★ 正解的地區名沒被念出來，線索是 came in lowest（長條圖最矮的一根）。\n★ 陷阱：south region 被明確念出來，但那是「表現最好」的對照組，而且排在 after the break。\n★ 長條圖題八成問這四種：highest、lowest、second highest、the one that increased/decreased。聽到最高級就立刻回圖上找。"
+   },
+   {
+    "q": "According to the speaker, what caused the decline?",
+    "choices": [
+     "Some orders were delayed.",
+     "A store was closed.",
+     "Prices were raised.",
+     "Several employees resigned."
+    ],
+    "answer": 0,
+    "note": "postponed their orders until January。★ 注意她特地否認了 staffing problem —— 那正是錯誤選項「員工離職」的來源。"
+   },
+   {
+    "q": "What will happen after the break?",
+    "choices": [
+     "A director will give a presentation.",
+     "A budget will be approved.",
+     "A tour will begin.",
+     "New targets will be announced."
+    ],
+    "answer": 0,
+    "note": "I've asked their director to walk us through what worked。"
+   }
+  ]
+ }
+]

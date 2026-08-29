@@ -17,6 +17,7 @@ BIN = (u"C:/Users/USER/AppData/Local/Microsoft/WinGet/Packages/"
        u"ffmpeg-N-125365-g9a01c1cb6a-win64-gpl/bin/")
 FFMPEG, FFPROBE = BIN + u"ffmpeg.exe", BIN + u"ffprobe.exe"
 
+NARRATOR = "en-US-ChristopherNeural"   # 報題號的旁白，與說話者區隔開
 BITRATE, RATE = "48k", "32000"          # 單聲道語音；跟舊專案同一組參數，實測夠清楚
 GAP_AFTER_PROMPT = 0.7                  # 題目唸完到第一個選項的空檔（秒）
 GAP_BETWEEN = 0.45                      # 選項之間的空檔（秒）
@@ -132,6 +133,9 @@ def load_items():
             assert len(it["choices"]) == 3, it["id"]
             assert it["answer"] in (0, 1, 2), it["id"]
             items.append(shuffle_item(it))
+    # 正式考試 Part 2 是第 7-31 題。報題號時照這個範圍給，聽起來才像真的考試。
+    for i, it in enumerate(items):
+        it["_num"] = 7 + (i % 25)
     return items
 
 
@@ -149,13 +153,17 @@ def main():
         jobs, plan = [], []
         for idx, it in enumerate(items):
             ask, ans = PAIRS[idx % len(PAIRS)]
+            # 報題號另成一段、用旁白聲音，且**不列入 marks**——marks 的四個位置
+            # 對應 prompt/A/B/C，App 靠索引重聽，多塞一格會讓全部重聽點位移。
+            pnum = os.path.join(tmp, u"{}_n.mp3".format(it["id"]))
+            jobs.append((u"Number {}.".format(it["_num"]), NARRATOR, pnum))
             segs = []
             for n, (text, vkey) in enumerate(
                     [(it["prompt"], ask)] + [(c, ans) for c in it["choices"]]):
                 p = os.path.join(tmp, u"{}_{}.mp3".format(it["id"], n))
                 jobs.append((text, VOICES[vkey], p))
                 segs.append(p)
-            plan.append((it, ask, ans, segs))
+            plan.append((it, ask, ans, segs, pnum))
 
         print(u"開始合成 {} 段語音…".format(len(jobs)))
         asyncio.run(synth_all(jobs))
@@ -168,14 +176,17 @@ def main():
         ga, gb = dur(gap_a), dur(gap_b)
 
         out_items, total_bytes = [], 0
-        for it, ask, ans, segs in plan:
+        for it, ask, ans, segs, pnum in plan:
             enc = []
             for n, s in enumerate(segs):
                 e = os.path.join(tmp, u"{}_{}_e.mp3".format(it["id"], n))
                 encode(s, e)
                 enc.append(e)
 
-            seq, marks, acc = [], [], 0.0
+            enum_ = os.path.join(tmp, u"{}_n_e.mp3".format(it["id"]))
+            encode(pnum, enum_)
+            seq, marks, acc = [enum_], [], dur(enum_)
+            seq.append(gap_a); acc += ga
             for n, e in enumerate(enc):
                 if n == 1:
                     seq.append(gap_a); acc += ga
@@ -206,7 +217,7 @@ def main():
             out_items.append({
                 "id": it["id"], "type": it["type"], "prompt": it["prompt"],
                 "choices": it["choices"], "answer": it["answer"], "note": it["note"],
-                "askVoice": ask, "ansVoice": ans,
+                "askVoice": ask, "ansVoice": ans, "num": it["_num"],
                 "total": round(real, 2), "marks": marks,
             })
             print(u"  {} {:.1f}s {:.0f}KB".format(

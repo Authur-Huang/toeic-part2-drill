@@ -107,6 +107,16 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 .hide{display:none!important}
 .muted{color:var(--dim);font-size:13.5px}
 .due{background:var(--okbg);border-color:var(--ok)}
+/* 圖表題。表格與 SVG 都用 currentColor，跟著深淺色主題走。 */
+.gfx{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;margin:2px 0 14px;overflow-x:auto}
+.gfx h3{margin:0 0 8px;font-size:12.5px;font-weight:600;color:var(--dim)}
+.gfx table{border-collapse:collapse;width:100%;font-size:14px}
+.gfx th,.gfx td{border:1px solid var(--line);padding:7px 9px;text-align:left;white-space:nowrap}
+.gfx th{background:var(--card);font-weight:600;font-size:13px;color:var(--dim)}
+.gfx svg{display:block;width:100%;max-width:460px;height:auto;margin:0 auto;color:var(--fg)}
+.gfx-hint{font-size:13px;color:var(--dim);margin:9px 0 0;line-height:1.55}
+.rv2{display:grid;gap:14px}
+@media(min-width:720px){.rv2{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}}
 </style>
 </head>
 <body>
@@ -137,6 +147,10 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
         <button data-start="p34-3">只練 Part 3 對話</button>
         <button data-start="p34-4">只練 Part 4 獨白</button>
       </div>
+      <div class="row" style="margin-top:10px">
+        <button data-start="p34-graphic">只練圖表題的段落</button>
+      </div>
+      <p class="lead" id="gfx-stat" style="margin-bottom:0"></p>
     </div>
 
     <div class="card">
@@ -171,6 +185,7 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
   <section id="v-quiz34" class="hide">
     <div class="card">
       <div class="tag" id="t-tag">—</div>
+      <div class="gfx hide" id="t-graphic"></div>
 
       <div id="t-listen">
         <button class="play" id="t-play"><span class="big" id="t-icon">▶</span><span class="sub" id="t-sub">播放對話</span></button>
@@ -192,7 +207,10 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
       <div id="t-review" class="hide">
         <h2 style="margin-top:4px">逐字稿</h2>
         <p class="lead">點右邊的 ▶ 可以單句重聽。聽不懂的那一句，通常就是失分的那一句。</p>
-        <div class="script" id="t-script"></div>
+        <div class="rv2">
+          <div class="gfx hide" id="t-rgraphic"></div>
+          <div class="script" id="t-script"></div>
+        </div>
         <button class="primary" id="t-nextitem" style="margin-top:16px">下一段</button>
       </div>
 
@@ -340,6 +358,8 @@ function start(mode,arg){
     var p34=D34.slice();
     if(mode==='p34-3') p34=p34.filter(function(x){return x.part===3;});
     if(mode==='p34-4') p34=p34.filter(function(x){return x.part===4;});
+    if(mode==='p34-graphic') p34=p34.filter(function(x){
+      return x.questions.some(function(q){return q.graphic;});});
     if(!p34.length) p34=D34.slice();
     shuffle(p34);
     if(mode==='p34-mix') p34=p34.slice(0,5);
@@ -403,11 +423,50 @@ function answer2(n){
   if(ok&&opt.auto) setTimeout(nextCard,1200);
 }
 
+/* ---------- 圖表題 ---------- */
+function gfxHint(it){
+  var g=it.graphic;
+  if(g&&g.type==='table'&&g.head&&g.head.length>1)
+    return '★ 這張表有「'+g.head.join('／')+'」共 '+g.head.length+' 欄。'
+      +'對話裡念出來的是其中一欄，要你答的是另一欄——回頭找找你聽到的那個字在表上的哪一格。';
+  return '★ 圖表題的線索是「位置」或「大小」，不是數字本身：'
+    +'across from（對面）、next to（隔壁）、final stop（最後一站）、'
+    +'lowest／highest（最少／最多）。聽到這類詞就立刻回圖上找。';
+}
+function showGraphic(it,id,withHint){
+  var box=$('#'+id), g=it.graphic;
+  box.innerHTML='';
+  if(!g){box.classList.add('hide');return;}
+  if(g.title) box.appendChild(el('h3','',g.title));
+  if(g.type==='table'){
+    var t=document.createElement('table');
+    if(g.head){
+      var tr=document.createElement('tr');
+      g.head.forEach(function(h){var th=document.createElement('th');th.textContent=h;tr.appendChild(th);});
+      t.appendChild(tr);
+    }
+    (g.rows||[]).forEach(function(r){
+      var tr=document.createElement('tr');
+      r.forEach(function(c){var td=document.createElement('td');td.textContent=c;tr.appendChild(td);});
+      t.appendChild(tr);
+    });
+    box.appendChild(t);
+  }else if(g.type==='svg'){
+    var d=document.createElement('div');
+    d.innerHTML=g.svg;                 // 圖檔是本專案自己寫的，沒有外來字串
+    box.appendChild(d);
+  }
+  if(withHint) box.appendChild(el('p','gfx-hint',gfxHint(it)));
+  box.classList.remove('hide');
+}
+
 /* ---------- Part 3 / 4 ---------- */
 function render34(){
   var it=card().item;
   session.qi=0; session.answered=false;
   $('#t-tag').textContent='Part '+it.part+'　'+it.scene;
+  showGraphic(it,'t-graphic',false);
+  $('#t-rgraphic').classList.add('hide');
   $('#t-listen').classList.remove('hide');
   $('#t-answer').classList.add('hide');
   $('#t-review').classList.add('hide');
@@ -471,6 +530,9 @@ function toReview(){
   var it=card().item;
   $('#t-answer').classList.add('hide');
   $('#t-review').classList.remove('hide');
+  // 檢討時圖表移到逐字稿旁邊（窄螢幕改成上下排），才對得起來哪一句對應哪一格
+  $('#t-graphic').classList.add('hide');
+  showGraphic(it,'t-rgraphic',true);
   $('#t-quit').classList.add('hide');
   var box=$('#t-script'); box.innerHTML='';
   it.lines.forEach(function(ln,i){
@@ -582,6 +644,14 @@ function refreshHome(){
   qs.forEach(function(x){var r=hist[x.qid];if(r&&r.n){seen++;ok+=r.ok;tot+=r.n;}});
   $('#s-done').textContent=seen;
   $('#s-acc').textContent=tot?Math.round(ok/tot*100)+'%':'—';
+  var gq=allQ().filter(function(x){
+    return x.qi!=null&&x.item.questions[x.qi].graphic;});
+  var gok=0,gtot=0;
+  gq.forEach(function(x){var r=hist[x.qid];if(r&&r.n){gok+=r.ok;gtot+=r.n;}});
+  $('#gfx-stat').textContent=gq.length
+    ?('圖表題共 '+gq.length+' 題'+(gtot?('，你的正確率 '+Math.round(gok/gtot*100)+'%')
+      :'，還沒開始練'))
+    :'';
   var due=dueList();
   $('#s-due').textContent=due.length;
   $('#c-due').classList.toggle('hide',!due.length);
