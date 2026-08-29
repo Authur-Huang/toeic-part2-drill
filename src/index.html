@@ -107,6 +107,29 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 .hide{display:none!important}
 .muted{color:var(--dim);font-size:13.5px}
 .due{background:var(--okbg);border-color:var(--ok)}
+/* 首頁：一眼看完的 2x2 磚。點一塊才展開該部分的選項，不用一直往下滾。 */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:13px 12px;text-align:left;box-shadow:var(--shadow)}
+.tile.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.t-nm{font-size:15px;font-weight:700;line-height:1.25}
+.t-sub{font-size:12px;color:var(--dim);margin-top:2px}
+.t-n{font-size:12.5px;color:var(--dim);margin-top:9px}
+.t-bar{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:6px}
+.t-bar i{display:block;height:100%;background:var(--accent);width:0}
+.t-pct{font-size:11.5px;color:var(--dim);margin-top:5px}
+.duebar{display:flex;align-items:center;gap:10px;width:100%;background:var(--okbg);
+  border:1px solid var(--ok);border-radius:14px;padding:14px;margin-bottom:12px;
+  color:var(--ok);font-weight:700;font-size:15px}
+.duebar .go{margin-left:auto;font-size:13px}
+.sumline{font-size:12.5px;color:var(--dim);margin:0 0 12px}
+.pn-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pn-acts button{flex:1 1 46%}
+.pn-acts button.primary{flex:1 1 100%}
+.pn-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.pn-list button{text-align:left}
+/* 🔴 沒有 wrap 的話，兩顆按鈕擠不下就會衝出畫面（首頁原本就是這樣壞的） */
+.row{flex-wrap:wrap}
 /* 圖表題。表格與 SVG 都用 currentColor，跟著深淺色主題走。 */
 .gfx{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;margin:2px 0 14px;overflow-x:auto}
 .gfx h3{margin:0 0 8px;font-size:12.5px;font-weight:600;color:var(--dim)}
@@ -137,65 +160,18 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 
 <main>
   <section id="v-home">
-    <div class="stat">
-      <div><b id="s-done">0</b><span>做過的題</span></div>
-      <div><b id="s-acc">—</b><span>正確率</span></div>
-      <div><b id="s-due">0</b><span>今天該複習</span></div>
-    </div>
+    <button class="duebar hide" id="c-due">
+      <span id="due-n">今天該複習</span><span class="go">開始 →</span>
+    </button>
 
-    <div class="card hide" id="c-due">
-      <h2>今天該複習</h2>
-      <p class="lead" id="due-lead">錯過的題會在 1／3／7 天後自動回來。</p>
-      <button class="primary due" data-start="due">開始複習</button>
-    </div>
+    <p class="sumline" id="sumline">—</p>
+    <div class="tiles" id="tiles"></div>
 
-    <div class="card">
-      <h2>Part 3・4　對話與獨白</h2>
-      <p class="lead">先聽一段 30–50 秒的對話或獨白，再答三題（四選一）。這兩部分在正式考試佔 <b>69 題</b>，是聽力最大的一塊。</p>
-      <button class="primary" data-start="p34-mix">隨機 5 段</button>
-      <div class="row" style="margin-top:10px">
-        <button data-start="p34-3">只練 Part 3 對話</button>
-        <button data-start="p34-4">只練 Part 4 獨白</button>
-      </div>
-      <div class="row" style="margin-top:10px">
-        <button data-start="p34-graphic">只練圖表題的段落</button>
-      </div>
-      <p class="lead" id="gfx-stat" style="margin-bottom:0"></p>
-    </div>
-
-    <div class="card">
-      <h2>Part 1　照片描述</h2>
-      <p class="lead">看圖，聽四句敘述選最貼切的。正式考試只有 <b>6 題</b>，但
-      <b>is being V-ed 與 have been V-ed 的分辨</b>是這一段的主要失分點，練起來很快。</p>
-      <p class="lead" style="margin-top:-4px"><b>⚠ 這裡的圖是自己畫的示意圖，不是照片。</b>
-      練的是文法反射，不是真實照片的判讀 —— 那個留給官方試題。</p>
-      <button class="primary" data-start="p1-all">全部 24 題</button>
-      <div class="row" style="margin-top:10px">
-        <button data-start="p1-unseen">只練沒做過的</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Part 2　應答問題</h2>
-      <p class="lead">每題約 8 秒，聽完直接選。預設不顯示選項文字，跟正式考試一樣。</p>
-      <button class="primary" data-start="p2-25">隨機 25 題</button>
-      <div class="row" style="margin-top:10px">
-        <button data-start="p2-unseen">只練沒做過的</button>
-        <button data-start="p2-types">依題型練</button>
-      </div>
-      <div id="types" class="row hide" style="flex-direction:column;margin-top:10px"></div>
-    </div>
-
-    <div class="card">
-      <h2>閱讀　Part 5・6・7</h2>
-      <p class="lead">純文字，不用戴耳機也能練。閱讀在正式考試佔 <b>100 題</b>，
-      其中 Part 5＋6 就有 46 題，是最容易靠規則拿分的一段。</p>
-      <button class="primary" data-start="r-30">隨機 30 題</button>
-      <div class="row" style="margin-top:10px">
-        <button data-start="r-unseen">只練沒做過的</button>
-        <button data-start="r-topics">依題型練</button>
-      </div>
-      <div id="rtopics" class="row hide" style="flex-direction:column;margin-top:10px"></div>
+    <div class="card hide" id="panel">
+      <h2 id="pn-title">—</h2>
+      <p class="lead" id="pn-tip"></p>
+      <div class="pn-acts" id="pn-acts"></div>
+      <div class="pn-list hide" id="pn-list"></div>
     </div>
   </section>
 
@@ -824,6 +800,81 @@ function copy(text,btn){
   else fb();
 }
 
+/* ---------- 首頁：磚 + 展開面板 ---------- */
+var GROUPS=[
+ {k:'p1',nm:'Part 1',sub:'照片描述',pick:function(x){return x.part===1;},
+  tip:'看圖，聽四句敘述選最貼切的。正式考試只有 6 題，但 is being V-ed 與 '
+     +'have been V-ed 的分辨是這一段的主要失分點。⚠ 這裡的圖是自己畫的示意圖，'
+     +'不是照片——練的是文法反射，真實照片的判讀留給官方試題。',
+  acts:[['p1-all','全部題目',1],['p1-unseen','只練沒做過的',0]]},
+ {k:'p2',nm:'Part 2',sub:'應答問題',pick:function(x){return x.part===2;},
+  tip:'每題約 8 秒，聽完直接選。預設不顯示選項文字，跟正式考試一樣。',
+  acts:[['p2-25','隨機 25 題',1],['p2-unseen','只練沒做過的',0],['@types','依題型練',0]]},
+ {k:'p34',nm:'Part 3・4',sub:'對話與獨白',pick:function(x){return x.part===3||x.part===4;},
+  tip:'先聽一段 30–50 秒的對話或獨白，再答三題。這兩部分在正式考試佔 69 題，'
+     +'是聽力最大的一塊。',
+  acts:[['p34-mix','隨機 5 段',1],['p34-3','只練 Part 3',0],['p34-4','只練 Part 4',0],
+        ['p34-graphic','只練圖表題',0]]},
+ {k:'r',nm:'閱讀',sub:'Part 5・6・7',pick:function(x){return x.part>=5;},
+  tip:'純文字，不用戴耳機也能練。閱讀在正式考試佔 100 題，其中 Part 5＋6 就有 46 題，'
+     +'是最容易靠規則拿分的一段。',
+  acts:[['r-30','隨機 30 題',1],['r-unseen','只練沒做過的',0],['@rtopics','依題型練',0]]}
+];
+var curG=null;
+function groupStat(g){
+  var qs=allQ().filter(g.pick),seen=0,ok=0,tot=0;
+  qs.forEach(function(x){var r=hist[x.qid];if(r&&r.n){seen++;ok+=r.ok;tot+=r.n;}});
+  return {n:qs.length,seen:seen,acc:tot?Math.round(ok/tot*100):null};
+}
+function renderTiles(){
+  var box=$('#tiles'); box.innerHTML='';
+  GROUPS.forEach(function(g){
+    var st=groupStat(g);
+    var b=el('button','tile'+(curG===g.k?' on':''));
+    b.setAttribute('aria-pressed',curG===g.k?'true':'false');
+    b.appendChild(el('div','t-nm',g.nm));
+    b.appendChild(el('div','t-sub',g.sub));
+    b.appendChild(el('div','t-n',st.n+' 題'));
+    var bar=el('div','t-bar'),fill=el('i');
+    fill.style.width=(st.n?Math.round(st.seen/st.n*100):0)+'%';
+    bar.appendChild(fill); b.appendChild(bar);
+    b.appendChild(el('div','t-pct',st.seen
+      ?('做過 '+st.seen+'　正確率 '+st.acc+'%'):'還沒開始'));
+    b.onclick=function(){ openGroup(curG===g.k?null:g.k); };
+    box.appendChild(b);
+  });
+}
+function openGroup(k){
+  curG=k; renderTiles();
+  var p=$('#panel'), lst=$('#pn-list');
+  lst.classList.add('hide'); lst.innerHTML='';
+  if(!k){ p.classList.add('hide'); return; }
+  var g=GROUPS.filter(function(x){return x.k===k;})[0];
+  $('#pn-title').textContent=g.nm+'　'+g.sub;
+  var tip=g.tip;
+  if(k==='p34'){
+    var gq=allQ().filter(function(x){
+      return x.qi!=null&&x.item.questions&&x.item.questions[x.qi].graphic;});
+    var gok=0,gtot=0;
+    gq.forEach(function(x){var r=hist[x.qid];if(r&&r.n){gok+=r.ok;gtot+=r.n;}});
+    if(gq.length) tip+='　圖表題共 '+gq.length+' 題'
+      +(gtot?('，你的正確率 '+Math.round(gok/gtot*100)+'%'):'，還沒開始練')+'。';
+  }
+  $('#pn-tip').textContent=tip;
+  var box=$('#pn-acts'); box.innerHTML='';
+  g.acts.forEach(function(a){
+    var b=el('button',a[2]?'primary':'',a[1]);
+    b.onclick=function(){
+      if(a[0]==='@types'){ renderTypes(); lst.classList.remove('hide'); return; }
+      if(a[0]==='@rtopics'){ renderRTopics(); lst.classList.remove('hide'); return; }
+      start(a[0]);
+    };
+    box.appendChild(b);
+  });
+  p.classList.remove('hide');
+  p.scrollIntoView({block:'nearest'});
+}
+
 /* ---------- 畫面 ---------- */
 function show(v){
   ['home','quiz1','quiz2','quiz34','quizR','done','wrong','set'].forEach(function(k){
@@ -839,29 +890,23 @@ function show(v){
 function refreshHome(){
   var qs=allQ(),seen=0,ok=0,tot=0;
   qs.forEach(function(x){var r=hist[x.qid];if(r&&r.n){seen++;ok+=r.ok;tot+=r.n;}});
-  $('#s-done').textContent=seen;
-  $('#s-acc').textContent=tot?Math.round(ok/tot*100)+'%':'—';
-  var gq=allQ().filter(function(x){
-    return x.qi!=null&&x.item.questions[x.qi].graphic;});
-  var gok=0,gtot=0;
-  gq.forEach(function(x){var r=hist[x.qid];if(r&&r.n){gok+=r.ok;gtot+=r.n;}});
-  $('#gfx-stat').textContent=gq.length
-    ?('圖表題共 '+gq.length+' 題'+(gtot?('，你的正確率 '+Math.round(gok/gtot*100)+'%')
-      :'，還沒開始練'))
-    :'';
+  $('#sumline').textContent=seen
+    ?('已做過 '+seen+' 題　正確率 '+Math.round(ok/tot*100)+'%')
+    :'點一塊開始練，錯過的題會自動排回來複習';
   var due=dueList();
-  $('#s-due').textContent=due.length;
   $('#c-due').classList.toggle('hide',!due.length);
-  if(due.length) $('#due-lead').textContent='有 '+due.length+' 題到了該複習的時間。錯過的題會在 1／3／7 天後自動回來，連續答對三次才移出。';
-
-  var types={},box=$('#types');box.innerHTML='';
+  $('#due-n').textContent='今天該複習 '+due.length+' 題';
+  renderTiles();
+  if(curG) openGroup(curG);
+}
+function renderTypes(){
+  var types={},box=$('#pn-list');box.innerHTML='';
   D2.forEach(function(x){
     var t=types[x.type]||(types[x.type]={n:0,seen:0,bad:0});
     t.n++; var r=hist[x.id]; if(r&&r.n){t.seen++; if(r.wrong)t.bad++;}
   });
   Object.keys(types).forEach(function(k){
-    var t=types[k],b=el('button','',k+'（'+t.bad+'／'+t.seen+'，共 '+t.n+' 題）');
-    b.style.textAlign='left';
+    var t=types[k],b=el('button','',k+'（錯 '+t.bad+'／做過 '+t.seen+'，共 '+t.n+' 題）');
     b.onclick=function(){start('p2-type',k);};
     box.appendChild(b);
   });
@@ -870,7 +915,7 @@ function rGroup(x){
   return x.topic||(x.part===6?'Part 6　短文填空':'Part 7　閱讀測驗');
 }
 function renderRTopics(){
-  var box=$('#rtopics'); box.innerHTML='';
+  var box=$('#pn-list'); box.innerHTML='';
   var tp={};
   DR.forEach(function(x){
     var k=rGroup(x);
@@ -880,7 +925,7 @@ function renderRTopics(){
     });
   });
   Object.keys(tp).forEach(function(k){
-    var t=tp[k],b=el('button','',k+'（'+t.bad+'／'+t.seen+'，共 '+t.n+' 題）');
+    var t=tp[k],b=el('button','',k+'（錯 '+t.bad+'／做過 '+t.seen+'，共 '+t.n+' 題）');
     b.style.textAlign='left';
     b.onclick=function(){start('r-topic',k);};
     box.appendChild(b);
@@ -924,13 +969,7 @@ function download(which,btn){
 }
 
 /* ---------- 綁定 ---------- */
-document.querySelectorAll('[data-start]').forEach(function(b){
-  b.onclick=function(){
-    if(b.dataset.start==='p2-types'){$('#types').classList.toggle('hide');return;}
-    if(b.dataset.start==='r-topics'){renderRTopics();$('#rtopics').classList.toggle('hide');return;}
-    start(b.dataset.start);
-  };
-});
+$('#c-due').onclick=function(){start('due');};
 document.querySelectorAll('footer button').forEach(function(b){b.onclick=function(){show(b.dataset.tab);};});
 $('#q-play').onclick=function(){if(!audio.paused){audio.pause();setPlay(false);return;}playRange(0,null);segMark(0,true);};
 $('#q-next').onclick=nextCard;
