@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>多益聽力練習</title>
+<title>多益練習</title>
 <meta name="theme-color" content="#1b1f2a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -115,13 +115,17 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 .gfx th{background:var(--card);font-weight:600;font-size:13px;color:var(--dim)}
 .gfx svg{display:block;width:100%;max-width:460px;height:auto;margin:0 auto;color:var(--fg)}
 .gfx-hint{font-size:13px;color:var(--dim);margin:9px 0 0;line-height:1.55}
+/* 閱讀文章。Part 6/7 的文章要能長，行距放寬一點才讀得下去。 */
+.psg{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:2px 0 14px;font-size:15px;line-height:1.75}
+.psg p{margin:0 0 10px}
+.psg p:last-child{margin-bottom:0}
 .rv2{display:grid;gap:14px}
 @media(min-width:720px){.rv2{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}}
 </style>
 </head>
 <body>
 <header>
-  <h1>多益聽力練習</h1><div class="sp"></div>
+  <h1>多益練習</h1><div class="sp"></div>
   <div class="pill" id="hpill">—</div>
 </header>
 
@@ -162,6 +166,34 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
         <button data-start="p2-types">依題型練</button>
       </div>
       <div id="types" class="row hide" style="flex-direction:column;margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <h2>閱讀　Part 5・6・7</h2>
+      <p class="lead">純文字，不用戴耳機也能練。閱讀在正式考試佔 <b>100 題</b>，
+      其中 Part 5＋6 就有 46 題，是最容易靠規則拿分的一段。</p>
+      <button class="primary" data-start="r-30">隨機 30 題</button>
+      <div class="row" style="margin-top:10px">
+        <button data-start="r-unseen">只練沒做過的</button>
+        <button data-start="r-topics">依題型練</button>
+      </div>
+      <div id="rtopics" class="row hide" style="flex-direction:column;margin-top:10px"></div>
+    </div>
+  </section>
+
+  <!-- 閱讀作答 -->
+  <section id="v-quizR" class="hide">
+    <div class="card">
+      <div class="tag" id="r-tag">—</div>
+      <div class="psg hide" id="r-psg"></div>
+      <div class="qtext" id="r-qtext"></div>
+      <div class="opts" id="r-opts"></div>
+      <div id="r-after" class="hide">
+        <div class="verdict" id="r-verdict"></div>
+        <div class="note" id="r-note"></div>
+        <button class="primary" id="r-next" style="margin-top:14px">下一題</button>
+      </div>
+      <button id="r-quit" class="quit">結束這一輪</button>
     </div>
   </section>
 
@@ -281,7 +313,7 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 <script>
 'use strict';
 var LS_H='p2.hist.v1', LS_O='p2.opt.v1';
-var D2=[], D34=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
+var D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
 var session=null, audio=new Audio(), stopAt=null;
 var DAY=86400000, STEPS=[1,3,7];          // 間隔重複：錯了之後 1、3、7 天各回來一次
 
@@ -302,7 +334,15 @@ function allQ(){
   D2.forEach(function(it){out.push({qid:it.id,part:2,item:it});});
   D34.forEach(function(it){it.questions.forEach(function(q,i){
     out.push({qid:it.id+'#'+i,part:it.part,item:it,qi:i});});});
+  DR.forEach(function(it){it.questions.forEach(function(q,i){
+    out.push({qid:it.id+'#'+i,part:it.part,item:it,qi:i});});});
   return out;
+}
+function totalQ(){
+  var n=D2.length;
+  D34.forEach(function(x){n+=x.questions.length;});
+  DR.forEach(function(x){n+=x.questions.length;});
+  return n;
 }
 function isDue(qid,now){var r=get(qid);return r.wrong&&r.due<=now;}
 function dueList(){var now=Date.now();return allQ().filter(function(x){return isDue(x.qid,now);});}
@@ -342,8 +382,11 @@ function start(mode,arg){
   if(mode==='due'){
     var due=dueList(), seen={};
     due.forEach(function(x){
-      if(x.part===2) cards.push({kind:'p2',item:x.item});
-      else if(!seen[x.item.id]){seen[x.item.id]=1;cards.push({kind:'p34',item:x.item});}
+      if(x.part===2){cards.push({kind:'p2',item:x.item});return;}
+      // Part 3/4 與閱讀的長文都是整組重做，同一組只排一次
+      if(seen[x.item.id]) return;
+      seen[x.item.id]=1;
+      cards.push({kind:(x.part>=5?'r':'p34'),item:x.item});
     });
     shuffle(cards);
   }else if(mode==='p2-25'||mode==='p2-unseen'||mode==='p2-type'){
@@ -354,6 +397,15 @@ function start(mode,arg){
     shuffle(pool);
     if(mode==='p2-25') pool=pool.slice(0,25);
     cards=pool.map(function(it){return {kind:'p2',item:it};});
+  }else if(mode==='r-30'||mode==='r-unseen'||mode==='r-topic'){
+    var pr=DR.slice();
+    if(mode==='r-unseen') pr=pr.filter(function(x){
+      return x.questions.some(function(q,i){return !get(x.id+'#'+i).n;});});
+    if(mode==='r-topic') pr=pr.filter(function(x){return (x.topic||x.scene)===arg;});
+    if(!pr.length) pr=DR.slice();
+    shuffle(pr);
+    if(mode==='r-30') pr=pr.slice(0,30);
+    cards=pr.map(function(it){return {kind:'r',item:it};});
   }else{
     var p34=D34.slice();
     if(mode==='p34-3') p34=p34.filter(function(x){return x.part===3;});
@@ -375,6 +427,7 @@ function renderCard(){
   var c=card(); session.kind=c.kind;
   $('#hpill').textContent=(session.i+1)+' / '+session.cards.length;
   if(c.kind==='p2'){show('quiz2');render2();}
+  else if(c.kind==='r'){session.qi=0;show('quizR');renderR();}
   else{show('quiz34');render34();}
   $('main').scrollTop=0;
 }
@@ -547,6 +600,57 @@ function toReview(){
   $('main').scrollTop=0;
 }
 
+/* ---------- 閱讀 Part 5/6/7 ---------- */
+/* 跟 Part 3/4 同一套流程，只是沒有音檔：Part 5 一組一題，Part 6/7 一篇文章配數題。 */
+function renderR(){
+  var it=card().item, q=it.questions[session.qi];
+  session.answered=false;
+  $('#r-tag').textContent='Part '+it.part+'　'+(it.topic||it.scene||'')
+    +(it.questions.length>1?('　第 '+(session.qi+1)+' / '+it.questions.length+' 題'):'');
+  var psg=$('#r-psg'); psg.innerHTML='';
+  if(it.passage&&it.passage.length){
+    it.passage.forEach(function(p){psg.appendChild(el('p','',p));});
+    psg.classList.remove('hide');
+  }else psg.classList.add('hide');
+  $('#r-qtext').textContent=q.q;
+  $('#r-after').classList.add('hide');
+  $('#r-quit').classList.remove('hide');
+  var box=$('#r-opts'); box.innerHTML='';
+  ['A','B','C','D'].forEach(function(k,n){
+    var b=el('button','opt');
+    b.appendChild(el('span','k',k));
+    b.appendChild(el('span','t',q.choices[n]));
+    b.onclick=function(){answerR(n);};
+    box.appendChild(b);
+  });
+  $('main').scrollTop=0;
+}
+function answerR(n){
+  if(session.answered) return;
+  session.answered=true;
+  var it=card().item, q=it.questions[session.qi], ok=(n===q.answer);
+  grade(it.id+'#'+session.qi,ok);
+  session.total++; if(ok) session.right++; else session.wrong.push(it.id+'#'+session.qi);
+  var btns=$('#r-opts').children;
+  for(var k=0;k<4;k++){
+    btns[k].onclick=null;
+    if(k===q.answer) btns[k].classList.add('correct');
+    if(k===n&&!ok) btns[k].classList.add('chosen-wrong');
+  }
+  $('#r-verdict').className='verdict '+(ok?'ok':'no');
+  $('#r-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[q.answer];
+  $('#r-note').textContent=q.note;
+  $('#r-after').classList.remove('hide');
+  $('#r-next').textContent=(session.qi+1>=it.questions.length)?'下一題':'同一篇下一小題';
+  if(ok&&opt.auto) setTimeout(nextR,1200);
+}
+function nextR(){
+  if(!session.answered) return;
+  var it=card().item;
+  if(session.qi+1>=it.questions.length) nextCard();
+  else{session.qi++;renderR();}
+}
+
 /* ---------- 計分與間隔重複 ---------- */
 function grade(qid,ok){
   var r=rec(qid), now=Date.now();
@@ -583,13 +687,16 @@ function byQid(qid){
     return it?{part:2,item:it,q:{q:it.prompt,choices:it.choices,answer:it.answer,note:it.note}}:null;
   }
   var t=D34.filter(function(x){return x.id===p[0];})[0];
-  return t?{part:t.part,item:t,q:t.questions[+p[1]],qi:+p[1]}:null;
+  if(t) return {part:t.part,item:t,q:t.questions[+p[1]],qi:+p[1]};
+  var r=DR.filter(function(x){return x.id===p[0];})[0];
+  return r?{part:r.part,item:r,q:r.questions[+p[1]],qi:+p[1]}:null;
 }
 function wrongRow(qid){
   var o=byQid(qid), d=el('div','wrong-item');
   if(!o) return d;
   var r=get(qid), L=(o.part===2?'ABC':'ABCD');
-  d.appendChild(el('div','q',(o.part===2?o.q.q:o.item.scene+'　'+o.q.q)));
+  var head=(o.item.scene||o.item.topic||'');
+  d.appendChild(el('div','q',(o.part===2||!head)?o.q.q:(head+'　'+o.q.q)));
   var when=r.wrong&&r.due?('　·　'+fmtDue(r.due)):'';
   d.appendChild(el('div','m','Part '+o.part+'　·　正解 '+L[o.q.answer]+'：'+o.q.choices[o.q.answer]
     +'　·　做過 '+r.n+' 次錯 '+(r.n-r.ok)+' 次'+when));
@@ -606,7 +713,8 @@ function exportText(qids){
   qids.forEach(function(qid){
     var o=byQid(qid); if(!o) return;
     var r=get(qid), L=(o.part===2?'ABC':'ABCD');
-    lines.push('[Part '+o.part+(o.part===2?'・'+o.item.type:'・'+o.item.scene)+'] '+o.q.q);
+    var head=(o.part===2?o.item.type:(o.item.scene||o.item.topic||''));
+    lines.push('[Part '+o.part+(head?('・'+head):'')+'] '+o.q.q);
     lines.push('　正解 '+L[o.q.answer]+'：'+o.q.choices[o.q.answer]);
     lines.push('　'+o.q.note);
     lines.push('　#'+qid+' 做過'+r.n+'錯'+(r.n-r.ok));
@@ -629,13 +737,13 @@ function copy(text,btn){
 
 /* ---------- 畫面 ---------- */
 function show(v){
-  ['home','quiz2','quiz34','done','wrong','set'].forEach(function(k){
+  ['home','quiz2','quiz34','quizR','done','wrong','set'].forEach(function(k){
     $('#v-'+k).classList.toggle('hide',k!==v);
   });
-  var tab=(v==='quiz2'||v==='quiz34'||v==='done')?'home':v;
+  var tab=(v==='quiz2'||v==='quiz34'||v==='quizR'||v==='done')?'home':v;
   document.querySelectorAll('footer button').forEach(function(b){b.classList.toggle('on',b.dataset.tab===tab);});
   if(v!=='quiz2'&&v!=='quiz34'){audio.pause();stopAt=null;}
-  if(v==='home'||v==='wrong'||v==='set') $('#hpill').textContent=(D2.length+D34.length*3)+' 題';
+  if(v==='home'||v==='wrong'||v==='set') $('#hpill').textContent=totalQ()+' 題';
   if(v==='wrong') renderWrong();
   $('main').scrollTop=0;
 }
@@ -666,6 +774,23 @@ function refreshHome(){
     var t=types[k],b=el('button','',k+'（'+t.bad+'／'+t.seen+'，共 '+t.n+' 題）');
     b.style.textAlign='left';
     b.onclick=function(){start('p2-type',k);};
+    box.appendChild(b);
+  });
+}
+function renderRTopics(){
+  var box=$('#rtopics'); box.innerHTML='';
+  var tp={};
+  DR.forEach(function(x){
+    var k=x.topic||x.scene||('Part '+x.part);
+    var t=tp[k]||(tp[k]={n:0,seen:0,bad:0});
+    x.questions.forEach(function(q,i){
+      t.n++; var r=hist[x.id+'#'+i]; if(r&&r.n){t.seen++; if(r.wrong)t.bad++;}
+    });
+  });
+  Object.keys(tp).forEach(function(k){
+    var t=tp[k],b=el('button','',k+'（'+t.bad+'／'+t.seen+'，共 '+t.n+' 題）');
+    b.style.textAlign='left';
+    b.onclick=function(){start('r-topic',k);};
     box.appendChild(b);
   });
 }
@@ -709,12 +834,15 @@ function download(which,btn){
 document.querySelectorAll('[data-start]').forEach(function(b){
   b.onclick=function(){
     if(b.dataset.start==='p2-types'){$('#types').classList.toggle('hide');return;}
+    if(b.dataset.start==='r-topics'){renderRTopics();$('#rtopics').classList.toggle('hide');return;}
     start(b.dataset.start);
   };
 });
 document.querySelectorAll('footer button').forEach(function(b){b.onclick=function(){show(b.dataset.tab);};});
 $('#q-play').onclick=function(){if(!audio.paused){audio.pause();setPlay(false);return;}playRange(0,null);segMark(0,true);};
 $('#q-next').onclick=nextCard;
+$('#r-next').onclick=nextR;
+$('#r-quit').onclick=function(){if(session.total)finish();else show('home');};
 $('#q-quit').onclick=function(){if(session.total)finish();else{audio.pause();show('home');}};
 $('#t-play').onclick=function(){if(!audio.paused){audio.pause();setPlay(false);return;}playConvo();};
 $('#t-go').onclick=toAnswer;
@@ -751,14 +879,14 @@ document.querySelectorAll('#o-speed button').forEach(function(x){
   x.classList.toggle('on',parseFloat(x.dataset.sp)===opt.speed);
 });
 function grab(u){return fetch(u).then(function(r){return r.ok?r.json():{items:[]};}).catch(function(){return {items:[]};});}
-Promise.all([grab('items.json'),grab('items34.json')]).then(function(res){
-  D2=res[0].items||[]; D34=res[1].items||[];
-  if(!D2.length&&!D34.length){
+Promise.all([grab('items.json'),grab('items34.json'),grab('itemsR.json')]).then(function(res){
+  D2=res[0].items||[]; D34=res[1].items||[]; DR=res[2].items||[];
+  if(!D2.length&&!D34.length&&!DR.length){
     $('#hpill').textContent='載入失敗';
     $('#v-home').innerHTML='<div class="card"><h2>題庫載入失敗</h2><p class="lead">請確認網路，或重新整理。</p></div>';
     return;
   }
-  $('#hpill').textContent=(D2.length+D34.length*3)+' 題';
+  $('#hpill').textContent=totalQ()+' 題';
   refreshHome();
 });
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');

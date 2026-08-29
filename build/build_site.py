@@ -121,6 +121,30 @@ def main():
     else:
         print(u"⚠ 還沒有 items.json，請先跑 build/gen_audio.py")
 
+    # 閱讀題庫：純文字、沒有音檔，只確認題號不重複與正解分佈
+    rd = os.path.join(OUT, "itemsR.json")
+    if os.path.exists(rd):
+        d = json.load(io.open(rd, encoding="utf-8"))
+        items = d["items"]
+        ids = [x["id"] for x in items]
+        if len(set(ids)) != len(ids):
+            raise SystemExit(u"閱讀題號重複")
+        distR = [0, 0, 0, 0]
+        nr = 0
+        by = {}
+        for x in items:
+            by[x["part"]] = by.get(x["part"], 0) + len(x["questions"])
+            for q in x["questions"]:
+                distR[q["answer"]] += 1
+                nr += 1
+        worst = max(distR) / float(nr) if nr else 0
+        if nr >= 40 and worst > 0.4:
+            raise SystemExit(
+                u"閱讀正解分佈失衡：A/B/C/D = {}，最高佔 {:.0%}".format(distR, worst))
+        print(u"閱讀檢查通過：{}，共 {} 題，正解分佈 A/B/C/D = {}".format(
+            u"／".join(u"Part {} {} 題".format(p, n) for p, n in sorted(by.items())),
+            nr, distR))
+
 
 if __name__ == "__main__":
     main()

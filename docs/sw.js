@@ -17,7 +17,8 @@ function audioCacheFor(pathname) {
   return /\/audio34\//.test(pathname) ? AUDIO34 : AUDIO2;
 }
 var SHELL_FILES = [
-  './', './index.html', './items.json', './items34.json', './manifest.webmanifest',
+  './', './index.html', './items.json', './items34.json', './itemsR.json',
+  './manifest.webmanifest',
   './icon-192.png', './icon-512.png'
 ];
 
@@ -67,7 +68,7 @@ self.addEventListener('fetch', function (e) {
 
   // 題庫會持續增加題目，不能用「先給快取」——那會讓新題晚一次開啟才出現。
   // 改成先問網路、失敗才回快取：有網路一定是最新，沒網路照樣能練。
-  var isData = /items(34)?\.json/.test(url.pathname);
+  var isData = /items(34|R)?\.json/.test(url.pathname);
 
   e.respondWith(
     caches.open(SHELL).then(function (c) {
