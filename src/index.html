@@ -119,6 +119,9 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 .psg{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:2px 0 14px;font-size:15px;line-height:1.75}
 .psg p{margin:0 0 10px}
 .psg p:last-child{margin-bottom:0}
+/* 【文件一】這類標記是 Part 7 雙篇／三篇的文件分隔，要一眼看得出來 */
+.psg .dochead{font-weight:700;font-size:12.5px;color:var(--dim);margin:16px 0 8px;letter-spacing:.04em}
+.psg .dochead:first-child{margin-top:0}
 .rv2{display:grid;gap:14px}
 @media(min-width:720px){.rv2{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}}
 </style>
@@ -609,7 +612,9 @@ function renderR(){
     +(it.questions.length>1?('　第 '+(session.qi+1)+' / '+it.questions.length+' 題'):'');
   var psg=$('#r-psg'); psg.innerHTML='';
   if(it.passage&&it.passage.length){
-    it.passage.forEach(function(p){psg.appendChild(el('p','',p));});
+    it.passage.forEach(function(p){
+      psg.appendChild(el('p',/^【/.test(p)?'dochead':'',p));
+    });
     psg.classList.remove('hide');
   }else psg.classList.add('hide');
   $('#r-qtext').textContent=q.q;

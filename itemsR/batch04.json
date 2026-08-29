@@ -1,0 +1,852 @@
+[
+ {
+  "id": "p7-001",
+  "part": 7,
+  "scene": "單篇・詢價信",
+  "passage": [
+   "【文件】電子郵件",
+   "To: sales@vantagepackaging.example",
+   "From: r.mbeki@ferngrovefoods.example",
+   "Subject: Bulk pricing inquiry",
+   "Dear Sir or Madam,",
+   "I am the purchasing manager at Ferngrove Foods, a regional producer of jams and preserves. We currently order roughly four thousand glass jars per month from a supplier in another province, but rising freight costs have led us to look for a partner closer to our facility in Kelmore.",
+   "Could you send me your bulk pricing for 250-milliliter jars with metal lids, along with your minimum order quantity and typical lead time? If you offer samples, I would also like to request two or three so that our production team can confirm the lids seal correctly on our equipment.",
+   "One further point: our labels are applied by machine, so the jars must have a smooth, unembossed surface. Please confirm whether your standard product meets that requirement before quoting.",
+   "I would appreciate a reply by Friday, as we are reviewing three suppliers this month.",
+   "Regards,",
+   "Rethabile Mbeki, Purchasing Manager"
+  ],
+  "questions": [
+   {
+    "q": "Why is Ferngrove Foods looking for a new supplier?",
+    "choices": [
+     "Shipping expenses have gone up.",
+     "Its current supplier closed.",
+     "Its production has been paused.",
+     "It received damaged goods."
+    ],
+    "answer": 0,
+    "note": "第二段 rising freight costs have led us to look for a partner closer。★ 正解把 freight costs 改寫成 shipping expenses —— Part 7 的正解幾乎都是改寫，原字重複的反而常是陷阱。"
+   },
+   {
+    "q": "What does Ms. Mbeki ask the company to confirm before quoting?",
+    "choices": [
+     "Whether the jars have a smooth surface",
+     "Whether delivery is free",
+     "Whether samples are refundable",
+     "Whether the lids are recyclable"
+    ],
+    "answer": 0,
+    "note": "第三段 the jars must have a smooth, unembossed surface. Please confirm... before quoting。★ 題目問 before quoting，直接鎖定出現這個詞的那一句。"
+   },
+   {
+    "q": "What is indicated about Ferngrove Foods?",
+    "choices": [
+     "It is comparing multiple suppliers.",
+     "It has recently expanded its factory.",
+     "It sells its products internationally.",
+     "It applies labels by hand."
+    ],
+    "answer": 0,
+    "note": "最後 we are reviewing three suppliers this month。★ 推論題：文章沒說 comparing，但 reviewing three suppliers 就是比較。(D) 是反的——文中說 labels are applied by machine。"
+   }
+  ]
+ },
+ {
+  "id": "p7-002",
+  "part": 7,
+  "scene": "單篇・圖書館公告",
+  "passage": [
+   "【文件】公告",
+   "HARBORVIEW PUBLIC LIBRARY — SERVICE CHANGES",
+   "Beginning Monday, 6 May, the second floor of the library will be closed for the installation of new shelving and study carrels. Work is expected to take six weeks.",
+   "During the closure, the reference collection will be relocated to the ground floor reading room. Materials from the local history archive will not be available for browsing, but items may still be requested at the front desk with at least one day's notice.",
+   "Group study rooms on the second floor will be unavailable. As an alternative, the community room in the annex may be booked in two-hour blocks through our website.",
+   "Story time for children and all evening lecture programs will continue on their normal schedule in the ground floor auditorium.",
+   "We apologize for the inconvenience and look forward to showing you the improved space in late June."
+  ],
+  "questions": [
+   {
+    "q": "What is the purpose of the notice?",
+    "choices": [
+     "To inform patrons about a temporary closure",
+     "To announce a change in membership fees",
+     "To advertise a new branch location",
+     "To recruit volunteers for an event"
+    ],
+    "answer": 0,
+    "note": "主旨題。★ 整篇都在講二樓封閉期間的替代安排。Part 7 的主旨題答案幾乎都在第一段。"
+   },
+   {
+    "q": "How can patrons access local history materials during the closure?",
+    "choices": [
+     "By requesting them a day in advance",
+     "By visiting the annex",
+     "By booking a study room",
+     "By using the library website"
+    ],
+    "answer": 0,
+    "note": "第二段 may still be requested at the front desk with at least one day's notice。"
+   },
+   {
+    "q": "What will NOT be affected by the work?",
+    "choices": [
+     "Evening lectures",
+     "Group study rooms",
+     "The reference collection",
+     "Access to the second floor"
+    ],
+    "answer": 0,
+    "note": "NOT 題：第四段說 evening lecture programs will continue on their normal schedule。★ NOT 題要一個一個消去，其餘三項文中都明說受影響。"
+   }
+  ]
+ },
+ {
+  "id": "p7-003",
+  "part": 7,
+  "scene": "單篇・共享辦公室廣告",
+  "passage": [
+   "【文件】廣告",
+   "THE LOOM — WORKSPACE FOR SMALL TEAMS",
+   "Located three blocks from Rosewood Station, The Loom offers flexible workspace for freelancers and teams of up to twelve.",
+   "DAY PASS — 25 dollars. Access to open desks, 8 A.M. to 8 P.M., includes coffee and high-speed internet.",
+   "MONTHLY DESK — 240 dollars. A reserved desk, 24-hour access, mail handling, and four hours of meeting room time each month.",
+   "PRIVATE OFFICE — from 900 dollars. A lockable room for two to twelve people, unlimited meeting room booking, and a listed business address.",
+   "All plans include use of the kitchen, phone booths, and printing (first 200 pages each month at no charge).",
+   "New members who sign up for six months receive their seventh month at half price. Tours are available weekdays at 11 A.M. — no appointment necessary."
+  ],
+  "questions": [
+   {
+    "q": "What is included with every plan?",
+    "choices": [
+     "Limited free printing",
+     "A reserved desk",
+     "Twenty-four hour access",
+     "A business address"
+    ],
+    "answer": 0,
+    "note": "All plans include... printing (first 200 pages each month at no charge)。★ 其餘三項都只屬於特定方案 —— 廣告題最愛考「哪一項是全部都有的」。"
+   },
+   {
+    "q": "What is suggested about the day pass?",
+    "choices": [
+     "It does not allow overnight access.",
+     "It requires a six-month commitment.",
+     "It includes meeting room time.",
+     "It must be booked online."
+    ],
+    "answer": 0,
+    "note": "推論題。★ 日票寫 8 A.M. to 8 P.M.，月租才寫 24-hour access —— 兩者對照就能推出日票不能過夜。"
+   },
+   {
+    "q": "How can someone visit the facility?",
+    "choices": [
+     "By arriving at 11 A.M. on a weekday",
+     "By reserving a slot online",
+     "By calling the front desk",
+     "By signing up for a day pass"
+    ],
+    "answer": 0,
+    "note": "最後一句 Tours are available weekdays at 11 A.M. — no appointment necessary。★ 破折號後面那句直接否定了 (B)。"
+   }
+  ]
+ },
+ {
+  "id": "p7-004",
+  "part": 7,
+  "scene": "單篇・簡訊對話（意圖題）",
+  "passage": [
+   "【文件】即時訊息",
+   "Nadia Farouk  (9:52 A.M.)  Morning. The projector in Conference Room B isn't picking up my laptop. Client presentation is at ten thirty.",
+   "Tomas Lindqvist  (9:54 A.M.)  Have you tried the second cable? The one taped to the underside of the table.",
+   "Nadia Farouk  (9:56 A.M.)  Just did. Same result. The bulb light is green, so I don't think it's the projector itself.",
+   "Priya Anand  (9:58 A.M.)  Room D is free until noon and that projector was replaced last month.",
+   "Nadia Farouk  (9:59 A.M.)  That could work, but I've already sent the room number to the client's driver.",
+   "Priya Anand  (10:01 A.M.)  I'll take care of it.",
+   "Nadia Farouk  (10:02 A.M.)  Thank you. I'll move the materials over now.",
+   "Tomas Lindqvist  (10:03 A.M.)  I'll file a ticket for Room B so facilities looks at it this afternoon."
+  ],
+  "questions": [
+   {
+    "q": "At 10:01 A.M., what does Ms. Anand most likely mean when she writes, \"I'll take care of it\"?",
+    "choices": [
+     "She will inform the client's driver of the new room.",
+     "She will repair the projector herself.",
+     "She will reschedule the presentation.",
+     "She will bring a replacement cable."
+    ],
+    "answer": 0,
+    "note": "意圖題。★ 關鍵是**前一句**：Nadia 說已經把房號給司機了。所以 it 指的是那個尚未解決的問題。★ 意圖題永遠往前一兩句找 it／that 指的是什麼，不要看字面。"
+   },
+   {
+    "q": "What does Ms. Farouk conclude about the equipment?",
+    "choices": [
+     "The projector is probably working.",
+     "The laptop needs to be replaced.",
+     "The room is too small.",
+     "The cable is missing."
+    ],
+    "answer": 0,
+    "note": "9:56 the bulb light is green, so I don't think it's the projector itself。"
+   },
+   {
+    "q": "What will Mr. Lindqvist do?",
+    "choices": [
+     "Report the problem to the facilities team",
+     "Attend the client presentation",
+     "Move the materials to Room D",
+     "Order a new projector"
+    ],
+    "answer": 0,
+    "note": "最後一句 I'll file a ticket for Room B so facilities looks at it。"
+   }
+  ]
+ },
+ {
+  "id": "p7-005",
+  "part": 7,
+  "scene": "單篇・報導（含同義字題）",
+  "passage": [
+   "【文件】報導",
+   "KELMORE — The city council voted on Tuesday to extend the number 7 tram line by four kilometres, connecting the riverside district to the industrial park east of the highway.",
+   "The project, estimated at 62 million dollars, will be funded jointly by the city and the provincial transport authority. Construction is scheduled to begin next spring and to finish within three years.",
+   "Supporters argue the extension will ease pressure on the two bus routes that currently serve the area, both of which regularly run above capacity during morning hours. Roughly nine thousand people commute into the industrial park each weekday.",
+   "Not everyone welcomed the decision. Several business owners along Chandler Street said the construction would obstruct access to their shops for extended periods. Council member Ida Brennan responded that the city would offer a rent subsidy to affected ground-floor businesses during the work.",
+   "A detailed route map will be published on the city website next month."
+  ],
+  "questions": [
+   {
+    "q": "What is the main topic of the article?",
+    "choices": [
+     "An approved public transit expansion",
+     "A change to city parking rules",
+     "The opening of a new industrial park",
+     "A dispute over property taxes"
+    ],
+    "answer": 0,
+    "note": "主旨題，第一段就給了：council voted to extend the tram line。"
+   },
+   {
+    "q": "The word \"ease\" in paragraph 3 is closest in meaning to",
+    "choices": [
+     "reduce",
+     "comfort",
+     "simplify",
+     "delay"
+    ],
+    "answer": 0,
+    "note": "同義字題。★ 一定要回原句看用法：ease pressure on the bus routes = 減輕壓力，所以是 reduce。★ ease 最常見的意思是「舒適、容易」，但這裡是動詞「減輕」——同義字題考的就是這種一字多義。"
+   },
+   {
+    "q": "Why do some business owners oppose the project?",
+    "choices": [
+     "They expect customers will have trouble reaching them.",
+     "They believe the cost is too high.",
+     "They prefer an expanded bus service.",
+     "They were not consulted in advance."
+    ],
+    "answer": 0,
+    "note": "第四段 the construction would obstruct access to their shops。★ (B) 的金額文中有提到，但沒有人以此反對 —— 這是典型的「數字有出現但不是理由」陷阱。"
+   },
+   {
+    "q": "What does Ms. Brennan say the city will provide?",
+    "choices": [
+     "Financial assistance with rent",
+     "Free parking permits",
+     "Temporary storage space",
+     "An earlier completion date"
+    ],
+    "answer": 0,
+    "note": "第四段末 a rent subsidy to affected ground-floor businesses。"
+   }
+  ]
+ },
+ {
+  "id": "p7-006",
+  "part": 7,
+  "scene": "單篇・錄取通知",
+  "passage": [
+   "【文件】書信",
+   "Dear Ms. Ibarra,",
+   "On behalf of Coastline Analytics, I am pleased to offer you the position of data quality specialist, reporting to Ravi Krishnan in our Bellhaven office.",
+   "Your starting salary will be 68,000 dollars annually, reviewed after the first twelve months. Benefits begin on your first day and include health coverage, twenty days of paid leave, and a monthly transit allowance.",
+   "We would like you to begin on Monday, 15 July. Should you need a later start date, please let me know by 28 June so that we can adjust the onboarding schedule for your group.",
+   "Please sign and return the enclosed agreement within ten business days. Once we receive it, our operations team will contact you about equipment and building access.",
+   "Congratulations, and we look forward to working with you.",
+   "Sincerely,",
+   "Malia Tuiasosopo, Director of People Operations"
+  ],
+  "questions": [
+   {
+    "q": "What is Ms. Ibarra asked to do?",
+    "choices": [
+     "Return a signed document",
+     "Schedule a second interview",
+     "Provide professional references",
+     "Complete an online assessment"
+    ],
+    "answer": 0,
+    "note": "Please sign and return the enclosed agreement。"
+   },
+   {
+    "q": "What will happen after the company receives Ms. Ibarra's response?",
+    "choices": [
+     "She will be contacted about equipment.",
+     "Her salary will be reviewed.",
+     "Her benefits will begin.",
+     "She will meet Mr. Krishnan."
+    ],
+    "answer": 0,
+    "note": "Once we receive it, our operations team will contact you about equipment and building access。★ 注意 (C) 是陷阱：福利是從到職日開始，不是收到回覆後。"
+   },
+   {
+    "q": "What is indicated about the start date?",
+    "choices": [
+     "It can be changed if requested in time.",
+     "It is the same for all new employees.",
+     "It cannot be negotiated.",
+     "It depends on a background check."
+    ],
+    "answer": 0,
+    "note": "Should you need a later start date, please let me know by 28 June。★ Should 開頭的倒裝條件句 = If you need，這在 Part 5 也是考點。"
+   }
+  ]
+ },
+ {
+  "id": "p7-007",
+  "part": 7,
+  "scene": "單篇・產品評論",
+  "passage": [
+   "【文件】網路評論",
+   "Reviewed by: G. Achterberg   ★★★☆☆   Verified purchase",
+   "Product: Kestrel 4L Insulated Lunch Carrier",
+   "I bought this to replace a cheaper bag that fell apart after one winter, and on durability the Kestrel is a clear step up. The outer fabric has held up to daily use for four months with no fraying at the seams, and the zipper still runs smoothly.",
+   "Insulation is where it gets mixed. A cold pack keeps things properly chilled for about five hours, which covers a normal workday. The manufacturer claims eight, and I have not come close to that even in a cool office.",
+   "The shoulder strap is the part I would change. It is not padded and digs in once the bag is full. I ended up using the side handle instead, which defeats the purpose of buying a bag with a strap.",
+   "Would I buy it again? Probably yes, but at a sale price rather than full price."
+  ],
+  "questions": [
+   {
+    "q": "What does the reviewer praise about the product?",
+    "choices": [
+     "Its construction quality",
+     "Its shoulder strap",
+     "Its cooling performance",
+     "Its low price"
+    ],
+    "answer": 0,
+    "note": "第三段 no fraying at the seams, zipper still runs smoothly = 做工紮實。★ 另外三項在文中都是被批評或未提及的。"
+   },
+   {
+    "q": "What does the reviewer suggest about the manufacturer's claim?",
+    "choices": [
+     "It overstates how long the bag stays cold.",
+     "It applies only to certain models.",
+     "It was recently corrected.",
+     "It matches his experience."
+    ],
+    "answer": 0,
+    "note": "The manufacturer claims eight, and I have not come close to that。★ 推論題：實測五小時 vs 宣稱八小時 → 誇大。"
+   },
+   {
+    "q": "Why does the reviewer use the side handle?",
+    "choices": [
+     "The strap becomes uncomfortable.",
+     "The strap is too short.",
+     "The handle is easier to clean.",
+     "The bag is too heavy to carry."
+    ],
+    "answer": 0,
+    "note": "It is not padded and digs in once the bag is full。"
+   }
+  ]
+ },
+ {
+  "id": "p7-008",
+  "part": 7,
+  "scene": "單篇・差旅新規",
+  "passage": [
+   "【文件】內部通知",
+   "MEMO — Travel Policy Update",
+   "To: All Staff    From: Finance    Effective: 1 September",
+   "Three changes take effect next month.",
+   "First, all flights must be booked through the Corvia travel portal rather than directly with airlines. The portal applies our negotiated rates automatically. Bookings made outside the portal will not be reimbursed unless approved in advance by a department head.",
+   "Second, the daily meal allowance rises from 45 to 55 dollars for domestic travel and from 60 to 75 dollars for international travel. Receipts are no longer required for individual meals under 20 dollars, though a daily summary must still be submitted.",
+   "Third, travel requests must be filed at least fourteen days before departure. Requests submitted with less notice will require written justification.",
+   "The full policy document is on the intranet under Finance > Travel. Questions may be sent to travel@corvia-internal.example."
+  ],
+  "questions": [
+   {
+    "q": "What must employees do to have a flight reimbursed?",
+    "choices": [
+     "Book it through a designated system",
+     "Pay for it with a company card",
+     "Submit a receipt within 30 days",
+     "Obtain approval from Finance"
+    ],
+    "answer": 0,
+    "note": "First 段：all flights must be booked through the Corvia travel portal。★ (D) 是陷阱——department head 的核准只在「不透過 portal 訂」時才需要。"
+   },
+   {
+    "q": "What is stated about meal receipts?",
+    "choices": [
+     "They are not needed for smaller purchases.",
+     "They must be submitted weekly.",
+     "They are no longer required at all.",
+     "They must be translated into English."
+    ],
+    "answer": 0,
+    "note": "Receipts are no longer required for individual meals under 20 dollars。★ (C) 太絕對 —— 每日總表仍要交，這是 Part 7 最常見的「以偏概全」陷阱。"
+   },
+   {
+    "q": "What happens if a travel request is filed late?",
+    "choices": [
+     "A written explanation is needed.",
+     "The trip must be cancelled.",
+     "The allowance is reduced.",
+     "A manager must book it instead."
+    ],
+    "answer": 0,
+    "note": "Requests submitted with less notice will require written justification。"
+   }
+  ]
+ },
+ {
+  "id": "p7-009",
+  "part": 7,
+  "scene": "單篇・活動議程",
+  "passage": [
+   "【文件】議程表",
+   "REGIONAL LOGISTICS FORUM — Saturday, 12 October, Halvard Convention Centre",
+   "08:30 — 09:00   Registration and coffee (Main Foyer)",
+   "09:00 — 09:45   Opening address: Automation and the Mid-Sized Warehouse — Dr. Feliks Nowak (Hall A)",
+   "10:00 — 11:15   Panel: Managing Driver Shortages (Hall A)",
+   "11:15 — 11:45   Break, refreshments provided (Main Foyer)",
+   "11:45 — 13:00   Workshop: Route Optimisation Software — hands-on, laptops required (Room 204, limited to 40 participants)",
+   "13:00 — 14:00   Lunch (Terrace)",
+   "14:00 — 15:30   Breakout sessions — choose one:",
+   "        A. Cold Chain Compliance (Room 201)   B. Last-Mile Delivery Costs (Room 202)",
+   "15:45 — 16:30   Closing discussion and networking (Hall A)",
+   "Note: The workshop at 11:45 requires separate sign-up at the registration desk. Places are allocated on a first-come basis."
+  ],
+  "questions": [
+   {
+    "q": "What should participants bring to the 11:45 session?",
+    "choices": [
+     "A laptop computer",
+     "A printed handout",
+     "A photo identification card",
+     "A parking voucher"
+    ],
+    "answer": 0,
+    "note": "11:45 那列寫 hands-on, laptops required。★ 表格題先鎖定題目提到的時間，再橫著讀那一列。"
+   },
+   {
+    "q": "What is true about the 14:00 sessions?",
+    "choices": [
+     "Attendees must select one of two options.",
+     "They take place in Hall A.",
+     "They require an extra fee.",
+     "They last for two hours."
+    ],
+    "answer": 0,
+    "note": "Breakout sessions — choose one，底下列 A 與 B。"
+   },
+   {
+    "q": "What is indicated about the workshop?",
+    "choices": [
+     "It may fill up before the event begins.",
+     "It is repeated in the afternoon.",
+     "It is open to all attendees.",
+     "It replaces the lunch break."
+    ],
+    "answer": 0,
+    "note": "推論題。★ limited to 40 participants ＋ first-come basis ＋ separate sign-up 三個線索合起來 = 可能額滿。(C) 正好被 limited 與 separate sign-up 否定。"
+   }
+  ]
+ },
+ {
+  "id": "p7-010",
+  "part": 7,
+  "scene": "單篇・常見問題",
+  "passage": [
+   "【文件】網站常見問題",
+   "BRIGHTLEAF GARDEN SUPPLY — DELIVERY QUESTIONS",
+   "How long does delivery take?",
+   "Orders placed before 2 P.M. on a business day are dispatched the same day. Standard delivery arrives in three to five business days; express arrives the next business day for an additional 12 dollars.",
+   "Do you deliver live plants?",
+   "Yes, but live plants ship Monday through Wednesday only, so that they are not held in a warehouse over the weekend. If your order contains both plants and other items, the entire order ships on the next available plant shipping day.",
+   "What if something arrives damaged?",
+   "Photograph the item and the packaging, then submit a claim through your account within seven days of delivery. Replacements are sent at no cost. We do not require you to return damaged goods.",
+   "Can I change my delivery address after ordering?",
+   "Only if the order has not yet been dispatched. Contact us by phone; address changes cannot be made by email."
+  ],
+  "questions": [
+   {
+    "q": "Why do live plants ship early in the week?",
+    "choices": [
+     "To avoid being stored over the weekend",
+     "To reduce shipping costs",
+     "To match the supplier's schedule",
+     "To allow time for inspection"
+    ],
+    "answer": 0,
+    "note": "so that they are not held in a warehouse over the weekend。"
+   },
+   {
+    "q": "What is required to make a damage claim?",
+    "choices": [
+     "Photographs of the item",
+     "Return of the damaged goods",
+     "A receipt from the courier",
+     "A phone call within 24 hours"
+    ],
+    "answer": 0,
+    "note": "Photograph the item and the packaging。★ (B) 被明確否定：We do not require you to return damaged goods —— Part 7 很愛把「明說不需要的事」做成選項。"
+   },
+   {
+    "q": "What is suggested about an order containing plants and tools?",
+    "choices": [
+     "It may be dispatched later than a tools-only order.",
+     "It will be split into two shipments.",
+     "It cannot be sent by express delivery.",
+     "It requires a signature on arrival."
+    ],
+    "answer": 0,
+    "note": "推論題：the entire order ships on the next available plant shipping day（週一至週三）→ 若在週四下單就要等到下週一，比純工具訂單晚。"
+   }
+  ]
+ },
+ {
+  "id": "p7-011",
+  "part": 7,
+  "scene": "雙篇・研習報名",
+  "passage": [
+   "【文件一】電子郵件",
+   "To: All Branch Supervisors",
+   "From: Learning & Development",
+   "Subject: Autumn certification courses",
+   "Four courses are open for enrolment this autumn. Each runs for two consecutive Fridays at the Northfield training centre.",
+   "Because these courses lead to an external certification, the company covers the full fee only for staff who complete both sessions. Supervisors should confirm that candidates are available on both dates before approving an application.",
+   "Applications close on 30 August. Send the completed form to learning@northfield-group.example.",
+   "",
+   "【文件二】課程表",
+   "COURSE / DATES / FEE / PLACES AVAILABLE",
+   "Warehouse Safety — 13 & 20 September — 320 dollars — 24 places",
+   "Forklift Level 2 — 27 September & 4 October — 480 dollars — 12 places",
+   "Inventory Systems — 11 & 18 October — 390 dollars — 20 places",
+   "Team Supervision — 25 October & 1 November — 350 dollars — 18 places",
+   "All courses run from 09:00 to 16:00. Lunch is provided. Participants who miss a session may join the same course in the spring term at no additional cost, but the certification will not be issued until both sessions are complete."
+  ],
+  "questions": [
+   {
+    "q": "What is the purpose of the email?",
+    "choices": [
+     "To announce training opportunities",
+     "To report on last year's results",
+     "To introduce a new safety rule",
+     "To request feedback on a course"
+    ],
+    "answer": 0,
+    "note": "主旨題，第一句 Four courses are open for enrolment。"
+   },
+   {
+    "q": "What are supervisors asked to verify?",
+    "choices": [
+     "That applicants can attend both dates",
+     "That applicants have passed a prior course",
+     "That the budget has been approved",
+     "That the form has been signed"
+    ],
+    "answer": 0,
+    "note": "文件一第二段 confirm that candidates are available on both dates。"
+   },
+   {
+    "q": "Which course has the fewest available places?",
+    "choices": [
+     "Forklift Level 2",
+     "Warehouse Safety",
+     "Inventory Systems",
+     "Team Supervision"
+    ],
+    "answer": 0,
+    "note": "表格 PLACES 欄最小是 12。★ 純查表題，先找欄位名稱再比大小。"
+   },
+   {
+    "q": "What is suggested about an employee who attends only the first session of a course?",
+    "choices": [
+     "The company may not cover the fee.",
+     "The employee must repay the full amount.",
+     "The certification is issued immediately.",
+     "The second session is waived."
+    ],
+    "answer": 0,
+    "note": "★ 跨篇題：文件一說「完成兩堂公司才全額補助」，文件二說「缺席可春季補上，但兩堂完成才發證」。合起來推出只上一堂可能拿不到補助。★ 雙篇必考一題要兩份文件合看。"
+   },
+   {
+    "q": "When must applications be submitted?",
+    "choices": [
+     "By 30 August",
+     "By 13 September",
+     "By 30 September",
+     "By 1 November"
+    ],
+    "answer": 0,
+    "note": "文件一 Applications close on 30 August。★ 陷阱：其餘三個都是文件二裡真實出現過的日期。"
+   }
+  ]
+ },
+ {
+  "id": "p7-012",
+  "part": 7,
+  "scene": "雙篇・訂單投訴",
+  "passage": [
+   "【文件一】廣告",
+   "MERIDIAN OFFICE INTERIORS — SPRING CLEARANCE",
+   "Ergonomic task chairs, model TC-9, reduced from 420 to 285 dollars each.",
+   "Orders of ten chairs or more qualify for free delivery and assembly within the metropolitan area. Assembly is scheduled separately and normally takes place within five business days of delivery.",
+   "Clearance stock is limited. Prices valid through 30 April or while supplies last. Clearance items may be exchanged but not refunded.",
+   "",
+   "【文件二】電子郵件",
+   "To: service@meridianoffice.example",
+   "From: h.castellanos@wrenfield-clinic.example",
+   "Subject: Order 44-2071",
+   "Hello,",
+   "On 22 April we ordered fourteen TC-9 chairs, which arrived on 26 April. Delivery went smoothly and the chairs themselves are in good condition.",
+   "The difficulty is assembly. We were told a team would come within five business days, but it has now been more than two weeks and we have had no contact. Fourteen boxed chairs are currently occupying our staff room, which we need for a training session on 14 May.",
+   "I would like the assembly scheduled before that date. If that is not possible, please tell me now so that I can arrange for another company to do it and we can discuss the delivery charge.",
+   "Thank you,",
+   "Hélène Castellanos, Practice Manager"
+  ],
+  "questions": [
+   {
+    "q": "What is the main purpose of the email?",
+    "choices": [
+     "To follow up on an unfulfilled service",
+     "To request a refund for damaged goods",
+     "To increase the size of an order",
+     "To ask about a product's warranty"
+    ],
+    "answer": 0,
+    "note": "主旨題：整封信在追討遲未安排的組裝服務。"
+   },
+   {
+    "q": "What is indicated about the clinic's order?",
+    "choices": [
+     "It qualified for free delivery.",
+     "It was placed after the sale ended.",
+     "It was partially cancelled.",
+     "It arrived later than promised."
+    ],
+    "answer": 0,
+    "note": "★ 跨篇題：廣告說十張以上免費運送與組裝，郵件說訂了十四張 → 符合資格。★ (D) 是陷阱：延遲的是組裝不是送貨，郵件明說 Delivery went smoothly。"
+   },
+   {
+    "q": "How much would the clinic have paid per chair?",
+    "choices": [
+     "285 dollars",
+     "420 dollars",
+     "390 dollars",
+     "135 dollars"
+    ],
+    "answer": 0,
+    "note": "★ 跨篇題：訂購日 22 April 在 30 April 之前，適用清倉價 285。★ 這種題要先確認日期落在優惠期內，再回去抓價格。"
+   },
+   {
+    "q": "Why does Ms. Castellanos mention 14 May?",
+    "choices": [
+     "A room must be cleared by then.",
+     "A new shipment is expected then.",
+     "The warranty expires then.",
+     "A staff member will be away then."
+    ],
+    "answer": 0,
+    "note": "we need for a training session on 14 May。★ 問「為什麼提到某個日期」是 Part 7 的固定題型，答案永遠在那個日期出現的那一句附近。"
+   },
+   {
+    "q": "What does Ms. Castellanos suggest she might do?",
+    "choices": [
+     "Hire a different company for the assembly",
+     "Return the chairs for a refund",
+     "Cancel her account with the supplier",
+     "Postpone the training session"
+    ],
+    "answer": 0,
+    "note": "If that is not possible... arrange for another company to do it。★ (B) 被廣告否定：清倉品可換不可退。"
+   }
+  ]
+ },
+ {
+  "id": "p7-013",
+  "part": 7,
+  "scene": "三篇・徵才流程",
+  "passage": [
+   "【文件一】徵才啟事",
+   "FIELD TECHNICIAN — Aldergrove Water Services",
+   "We are seeking a field technician to carry out routine inspections of pumping stations across the northern district.",
+   "Requirements: a valid driver's licence, two years of mechanical maintenance experience, and willingness to participate in an on-call rota one week in four. A Level 3 water treatment certificate is preferred but not required; the successful candidate may complete it during the first year at company expense.",
+   "Applications close 15 March. Send a résumé and a short cover letter to hiring@aldergrovewater.example.",
+   "",
+   "【文件二】應徵信",
+   "To: hiring@aldergrovewater.example",
+   "From: t.oyelaran@mailbox.example",
+   "Subject: Field Technician application",
+   "Dear Hiring Team,",
+   "I am applying for the field technician position. For the past four years I have maintained pumping and filtration equipment at a food processing plant in Ridgeway, where I also managed the weekend call-out schedule for a team of three.",
+   "I hold a full driver's licence and completed my Level 3 water treatment certificate in November. I am comfortable with on-call work, having done it throughout my current role.",
+   "My résumé is attached. I am available to start with four weeks' notice.",
+   "Kind regards,",
+   "Temiloluwa Oyelaran",
+   "",
+   "【文件三】面試安排",
+   "To: t.oyelaran@mailbox.example",
+   "From: hiring@aldergrovewater.example",
+   "Subject: Interview — Thursday 21 March",
+   "Dear Mr. Oyelaran,",
+   "Thank you for your application. We would like to meet you on Thursday 21 March at 2 P.M. at our Northgate depot.",
+   "The meeting will last about ninety minutes and includes a short practical assessment at the pump housing, so please wear closed-toe footwear. Bring your driver's licence for verification.",
+   "Please reply to confirm.",
+   "Ola Nkemdirim, Operations"
+  ],
+  "questions": [
+   {
+    "q": "What is one requirement listed in the advertisement?",
+    "choices": [
+     "Being available for on-call duty",
+     "Holding a university degree",
+     "Living in the northern district",
+     "Owning a vehicle"
+    ],
+    "answer": 0,
+    "note": "文件一 willingness to participate in an on-call rota。"
+   },
+   {
+    "q": "What does Mr. Oyelaran have that the advertisement lists as optional?",
+    "choices": [
+     "A Level 3 water treatment certificate",
+     "A driver's licence",
+     "Mechanical maintenance experience",
+     "Supervisory experience"
+    ],
+    "answer": 0,
+    "note": "★ 跨篇題：文件一說證照 preferred but not required，文件二說他十一月已取得。★ 三篇題必考這種「A 文件說可有可無，B 文件說我有」的對照。"
+   },
+   {
+    "q": "What is indicated about Mr. Oyelaran's experience?",
+    "choices": [
+     "It exceeds the minimum the company asked for.",
+     "It is in an unrelated industry.",
+     "It was gained overseas.",
+     "It is limited to office work."
+    ],
+    "answer": 0,
+    "note": "★ 跨篇推論：徵才要求兩年，他有四年。"
+   },
+   {
+    "q": "What is Mr. Oyelaran asked to bring to the interview?",
+    "choices": [
+     "His driver's licence",
+     "A copy of his certificate",
+     "A list of references",
+     "A portfolio of past projects"
+    ],
+    "answer": 0,
+    "note": "文件三 Bring your driver's licence for verification。"
+   },
+   {
+    "q": "Why should Mr. Oyelaran wear closed-toe footwear?",
+    "choices": [
+     "Part of the interview takes place at equipment.",
+     "The depot has a formal dress code.",
+     "He will tour a construction site.",
+     "The weather is expected to be poor."
+    ],
+    "answer": 0,
+    "note": "文件三 includes a short practical assessment at the pump housing, so please wear closed-toe footwear。★ so 前後就是因果，這類題不必往別處找。"
+   }
+  ]
+ },
+ {
+  "id": "p7-014",
+  "part": 7,
+  "scene": "三篇・飯店服務",
+  "passage": [
+   "【文件一】飯店公告",
+   "THE ALDWYCH HOUSE — GUEST NOTICE",
+   "From 3 June to 28 June, our rooftop restaurant will be closed while the kitchen extraction system is replaced.",
+   "During this period, breakfast will be served in the Garden Room on the ground floor from 6:30 to 10:00 A.M. Room service remains available from 7:00 A.M. to 10:00 P.M. with a reduced menu.",
+   "Guests holding a restaurant reservation made before 1 May will receive a voucher for a complimentary dinner at our sister property, The Aldwych Quay, valid for twelve months.",
+   "",
+   "【文件二】旅客評論",
+   "Posted 19 June by M. Solberg   ★★★★☆",
+   "Stayed three nights for a conference. The room was quiet and the bed excellent, which matters more to me than anything else.",
+   "I had booked the rooftop restaurant back in April for our final evening, so I was disappointed to learn on arrival that it was closed. To be fair, the front desk handled it well and gave me a voucher on the spot. The Garden Room breakfast was better than I expected — the pastries in particular.",
+   "One genuine complaint: the lift was out of service on my second morning with no notice posted, and I carried a suitcase down five flights. A sign would have cost nothing.",
+   "",
+   "【文件三】飯店回覆",
+   "Dear Ms. Solberg,",
+   "Thank you for taking the time to write, and for your kind words about the Garden Room — I have passed them on to our pastry chef.",
+   "You are right about the lift. It was taken out of service at short notice after a routine inspection, and we should have posted signs on every floor immediately. We have since changed our procedure so that notices go up before any unplanned shutdown.",
+   "I hope you will use your voucher and let us welcome you back.",
+   "Sincerely,",
+   "Bertram Oyelowo, Guest Relations"
+  ],
+  "questions": [
+   {
+    "q": "Why is the rooftop restaurant closed?",
+    "choices": [
+     "Equipment is being replaced.",
+     "The staff are being retrained.",
+     "It is being converted into rooms.",
+     "Business has been slow."
+    ],
+    "answer": 0,
+    "note": "文件一 while the kitchen extraction system is replaced。"
+   },
+   {
+    "q": "What made Ms. Solberg eligible for a voucher?",
+    "choices": [
+     "She reserved the restaurant before 1 May.",
+     "She stayed for three nights.",
+     "She attended a conference.",
+     "She posted a review."
+    ],
+    "answer": 0,
+    "note": "★ 跨篇題：文件一說 5/1 前訂位者可獲兌換券，文件二說她四月訂的。★ 這種題的關鍵是日期比對，不是關鍵字比對。"
+   },
+   {
+    "q": "What does Ms. Solberg say she values most?",
+    "choices": [
+     "A quiet room and a comfortable bed",
+     "The variety of the breakfast menu",
+     "The location of the hotel",
+     "The speed of the check-in process"
+    ],
+    "answer": 0,
+    "note": "which matters more to me than anything else 直接指向前面那一句。"
+   },
+   {
+    "q": "How does the hotel respond to the complaint about the lift?",
+    "choices": [
+     "It acknowledges the error and describes a change.",
+     "It denies that the lift was out of service.",
+     "It offers a refund for the stay.",
+     "It explains that guests were notified by email."
+    ],
+    "answer": 0,
+    "note": "文件三 You are right about the lift... We have since changed our procedure。★ 回覆信的題目多半考「承認什麼、改了什麼」。"
+   },
+   {
+    "q": "What is suggested about Ms. Solberg's voucher?",
+    "choices": [
+     "It can be used at a different property.",
+     "It expires at the end of June.",
+     "It covers the cost of her room.",
+     "It must be requested online."
+    ],
+    "answer": 0,
+    "note": "★ 跨篇題：文件二只說拿到 voucher，要回文件一才知道那是 sister property 的晚餐券、效期十二個月。★ (B) 用的是文件一裡整修結束的日期，是典型的張冠李戴。"
+   }
+  ]
+ }
+]
