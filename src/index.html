@@ -116,6 +116,9 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 .gfx svg{display:block;width:100%;max-width:460px;height:auto;margin:0 auto;color:var(--fg)}
 .gfx-hint{font-size:13px;color:var(--dim);margin:9px 0 0;line-height:1.55}
 /* 閱讀文章。Part 6/7 的文章要能長，行距放寬一點才讀得下去。 */
+/* Part 1 的圖。跟圖表題共用 currentColor 的做法，深淺色自動跟著走。 */
+.pic{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;margin:2px 0 14px}
+.pic svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;color:var(--fg)}
 .psg{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:2px 0 14px;font-size:15px;line-height:1.75}
 .psg p{margin:0 0 10px}
 .psg p:last-child{margin-bottom:0}
@@ -161,6 +164,18 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
     </div>
 
     <div class="card">
+      <h2>Part 1　照片描述</h2>
+      <p class="lead">看圖，聽四句敘述選最貼切的。正式考試只有 <b>6 題</b>，但
+      <b>is being V-ed 與 have been V-ed 的分辨</b>是這一段的主要失分點，練起來很快。</p>
+      <p class="lead" style="margin-top:-4px"><b>⚠ 這裡的圖是自己畫的示意圖，不是照片。</b>
+      練的是文法反射，不是真實照片的判讀 —— 那個留給官方試題。</p>
+      <button class="primary" data-start="p1-all">全部 24 題</button>
+      <div class="row" style="margin-top:10px">
+        <button data-start="p1-unseen">只練沒做過的</button>
+      </div>
+    </div>
+
+    <div class="card">
       <h2>Part 2　應答問題</h2>
       <p class="lead">每題約 8 秒，聽完直接選。預設不顯示選項文字，跟正式考試一樣。</p>
       <button class="primary" data-start="p2-25">隨機 25 題</button>
@@ -181,6 +196,23 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
         <button data-start="r-topics">依題型練</button>
       </div>
       <div id="rtopics" class="row hide" style="flex-direction:column;margin-top:10px"></div>
+    </div>
+  </section>
+
+  <!-- Part 1 作答 -->
+  <section id="v-quiz1" class="hide">
+    <div class="card">
+      <div class="tag" id="o-tag">—</div>
+      <div class="pic" id="o-pic"></div>
+      <button class="play" id="o-play"><span class="big" id="o-icon">▶</span><span class="sub" id="o-sub">播放敘述</span></button>
+      <div class="seg"><i></i><i></i><i></i><i></i></div>
+      <div class="opts" id="o-opts"></div>
+      <div id="o-after" class="hide">
+        <div class="verdict" id="o-verdict"></div>
+        <div class="note" id="o-note"></div>
+        <button class="primary" id="o-next" style="margin-top:14px">下一題</button>
+      </div>
+      <button id="o-quit" class="quit">結束這一輪</button>
     </div>
   </section>
 
@@ -294,6 +326,7 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
       <p class="muted" id="dl-info" style="margin:0 0 10px"></p>
       <button class="primary" id="dl-p2">下載 Part 2 音檔</button>
       <button class="primary" id="dl-p34" style="margin-top:10px">下載 Part 3・4 音檔</button>
+      <button class="primary" id="dl-p1" style="margin-top:10px">下載 Part 1 音檔</button>
     </div>
     <div class="card">
       <h2>紀錄</h2>
@@ -316,7 +349,7 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 <script>
 'use strict';
 var LS_H='p2.hist.v1', LS_O='p2.opt.v1';
-var D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
+var D1=[], D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
 var session=null, audio=new Audio(), stopAt=null;
 var DAY=86400000, STEPS=[1,3,7];          // 間隔重複：錯了之後 1、3、7 天各回來一次
 
@@ -334,6 +367,7 @@ function get(id){return hist[id]||EMPTY;}
 // Part 2 一題就是一個 id；Part 3／4 一段有三題，用 <段號>#<第幾題> 當 id
 function allQ(){
   var out=[];
+  D1.forEach(function(it){out.push({qid:it.id,part:1,item:it});});
   D2.forEach(function(it){out.push({qid:it.id,part:2,item:it});});
   D34.forEach(function(it){it.questions.forEach(function(q,i){
     out.push({qid:it.id+'#'+i,part:it.part,item:it,qi:i});});});
@@ -342,7 +376,7 @@ function allQ(){
   return out;
 }
 function totalQ(){
-  var n=D2.length;
+  var n=D1.length+D2.length;
   D34.forEach(function(x){n+=x.questions.length;});
   DR.forEach(function(x){n+=x.questions.length;});
   return n;
@@ -385,6 +419,7 @@ function start(mode,arg){
   if(mode==='due'){
     var due=dueList(), seen={};
     due.forEach(function(x){
+      if(x.part===1){cards.push({kind:'p1',item:x.item});return;}
       if(x.part===2){cards.push({kind:'p2',item:x.item});return;}
       // Part 3/4 與閱讀的長文都是整組重做，同一組只排一次
       if(seen[x.item.id]) return;
@@ -400,6 +435,12 @@ function start(mode,arg){
     shuffle(pool);
     if(mode==='p2-25') pool=pool.slice(0,25);
     cards=pool.map(function(it){return {kind:'p2',item:it};});
+  }else if(mode==='p1-all'||mode==='p1-unseen'){
+    var p1=D1.slice();
+    if(mode==='p1-unseen') p1=p1.filter(function(x){return !get(x.id).n;});
+    if(!p1.length) p1=D1.slice();
+    shuffle(p1);
+    cards=p1.map(function(it){return {kind:'p1',item:it};});
   }else if(mode==='r-30'||mode==='r-unseen'||mode==='r-topic'){
     var pr=DR.slice();
     if(mode==='r-unseen') pr=pr.filter(function(x){
@@ -429,7 +470,8 @@ function card(){return session?session.cards[session.i]:null;}
 function renderCard(){
   var c=card(); session.kind=c.kind;
   $('#hpill').textContent=(session.i+1)+' / '+session.cards.length;
-  if(c.kind==='p2'){show('quiz2');render2();}
+  if(c.kind==='p1'){show('quiz1');render1();}
+  else if(c.kind==='p2'){show('quiz2');render2();}
   else if(c.kind==='r'){session.qi=0;show('quizR');renderR();}
   else{show('quiz34');render34();}
   $('main').scrollTop=0;
@@ -437,6 +479,46 @@ function renderCard(){
 function nextCard(){
   if(session.i+1>=session.cards.length) finish();
   else{session.i++;renderCard();}
+}
+
+/* ---------- Part 1 ---------- */
+function render1(){
+  var it=card().item; session.answered=false;
+  $('#o-tag').textContent='Part 1　'+it.scene;
+  $('#o-pic').innerHTML=it.svg;          // 圖是本專案自己畫的，沒有外來字串
+  $('#o-after').classList.add('hide'); $('#o-quit').classList.remove('hide');
+  segMark(-1); setPlay(false);
+  audio.src='audio1/'+it.id+'.mp3';
+  $('#o-sub').textContent='播放敘述';
+  var box=$('#o-opts'); box.innerHTML='';
+  ['A','B','C','D'].forEach(function(k,n){
+    var b=el('button','opt');
+    b.appendChild(el('span','k',k));
+    // 正式考試 Part 1 的選項不印在題本上，所以跟 Part 2 共用同一個開關
+    b.appendChild(el('span','t',opt.show?it.choices[n]:'　'));
+    b.onclick=function(){answer1(n);};
+    box.appendChild(b);
+  });
+  if(opt.autoplay) setTimeout(function(){playRange(0,null);segMark(0,true);},250);
+}
+function answer1(n){
+  if(session.answered) return;
+  session.answered=true; audio.pause(); stopAt=null; setPlay(false);
+  var it=card().item, ok=(n===it.answer);
+  grade(it.id,ok);
+  session.total++; if(ok) session.right++; else session.wrong.push(it.id);
+  var btns=$('#o-opts').children;
+  for(var k=0;k<4;k++){
+    btns[k].onclick=null;
+    btns[k].children[1].textContent=it.choices[k];   // 對完答案一定要把文字放出來
+    if(k===it.answer) btns[k].classList.add('correct');
+    if(k===n&&!ok) btns[k].classList.add('chosen-wrong');
+  }
+  $('#o-verdict').className='verdict '+(ok?'ok':'no');
+  $('#o-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[it.answer];
+  $('#o-note').textContent=it.note;
+  $('#o-after').classList.remove('hide');
+  if(ok&&opt.auto) setTimeout(nextCard,1200);
 }
 
 /* ---------- Part 2 ---------- */
@@ -688,6 +770,8 @@ function finish(){
 function byQid(qid){
   var p=qid.split('#');
   if(p.length===1){
+    var o=D1.filter(function(x){return x.id===qid;})[0];
+    if(o) return {part:1,item:o,q:{q:o.scene,choices:o.choices,answer:o.answer,note:o.note}};
     var it=D2.filter(function(x){return x.id===qid;})[0];
     return it?{part:2,item:it,q:{q:it.prompt,choices:it.choices,answer:it.answer,note:it.note}}:null;
   }
@@ -700,7 +784,7 @@ function wrongRow(qid){
   var o=byQid(qid), d=el('div','wrong-item');
   if(!o) return d;
   var r=get(qid), L=(o.part===2?'ABC':'ABCD');
-  var head=(o.item.scene||o.item.topic||'');
+  var head=(o.part===1?'':(o.item.scene||o.item.topic||''));
   d.appendChild(el('div','q',(o.part===2||!head)?o.q.q:(head+'　'+o.q.q)));
   var when=r.wrong&&r.due?('　·　'+fmtDue(r.due)):'';
   d.appendChild(el('div','m','Part '+o.part+'　·　正解 '+L[o.q.answer]+'：'+o.q.choices[o.q.answer]
@@ -742,12 +826,12 @@ function copy(text,btn){
 
 /* ---------- 畫面 ---------- */
 function show(v){
-  ['home','quiz2','quiz34','quizR','done','wrong','set'].forEach(function(k){
+  ['home','quiz1','quiz2','quiz34','quizR','done','wrong','set'].forEach(function(k){
     $('#v-'+k).classList.toggle('hide',k!==v);
   });
-  var tab=(v==='quiz2'||v==='quiz34'||v==='quizR'||v==='done')?'home':v;
+  var tab=(v==='quiz1'||v==='quiz2'||v==='quiz34'||v==='quizR'||v==='done')?'home':v;
   document.querySelectorAll('footer button').forEach(function(b){b.classList.toggle('on',b.dataset.tab===tab);});
-  if(v!=='quiz2'&&v!=='quiz34'){audio.pause();stopAt=null;}
+  if(v!=='quiz1'&&v!=='quiz2'&&v!=='quiz34'){audio.pause();stopAt=null;}
   if(v==='home'||v==='wrong'||v==='set') $('#hpill').textContent=totalQ()+' 題';
   if(v==='wrong') renderWrong();
   $('main').scrollTop=0;
@@ -813,11 +897,12 @@ function renderWrong(){
 function download(which,btn){
   if(!('caches' in window)){$('#dl-info').textContent='這個瀏覽器不支援離線快取。';return;}
   var urls=(which==='p2')?D2.map(function(x){return 'audio/'+x.id+'.mp3';})
-                         :D34.map(function(x){return 'audio34/'+x.id+'.mp3';});
+          :(which==='p1')?D1.map(function(x){return 'audio1/'+x.id+'.mp3';})
+                       :D34.map(function(x){return 'audio34/'+x.id+'.mp3';});
   if(!urls.length){$('#dl-info').textContent='這個部分還沒有音檔。';return;}
   var bar=$('#dl-bar'),fill=bar.querySelector('i'),t0=btn.textContent,total=urls.length,done=0,fail=0;
   btn.disabled=true; bar.classList.remove('hide');
-  caches.open(which==='p2'?'p2-audio-v2':'p34-audio-v2').then(function(c){
+  caches.open(which==='p2'?'p2-audio-v2':which==='p1'?'p1-audio-v1':'p34-audio-v2').then(function(c){
     function step(){
       if(!urls.length){
         btn.disabled=false; btn.textContent=t0; fill.style.width='100%';
@@ -849,6 +934,9 @@ document.querySelectorAll('[data-start]').forEach(function(b){
 document.querySelectorAll('footer button').forEach(function(b){b.onclick=function(){show(b.dataset.tab);};});
 $('#q-play').onclick=function(){if(!audio.paused){audio.pause();setPlay(false);return;}playRange(0,null);segMark(0,true);};
 $('#q-next').onclick=nextCard;
+$('#o-play').onclick=function(){if(!audio.paused){audio.pause();setPlay(false);return;}playRange(0,null);segMark(0,true);};
+$('#o-next').onclick=nextCard;
+$('#o-quit').onclick=function(){if(session.total)finish();else{audio.pause();show('home');}};
 $('#r-next').onclick=nextR;
 $('#r-quit').onclick=function(){if(session.total)finish();else show('home');};
 $('#q-quit').onclick=function(){if(session.total)finish();else{audio.pause();show('home');}};
@@ -880,6 +968,7 @@ $('#o-reset').onclick=function(){
 };
 $('#dl-p2').onclick=function(){download('p2',this);};
 $('#dl-p34').onclick=function(){download('p34',this);};
+$('#dl-p1').onclick=function(){download('p1',this);};
 
 /* ---------- 啟動 ---------- */
 $('#o-show').checked=opt.show; $('#o-auto').checked=opt.auto; $('#o-autoplay').checked=opt.autoplay;
@@ -887,9 +976,10 @@ document.querySelectorAll('#o-speed button').forEach(function(x){
   x.classList.toggle('on',parseFloat(x.dataset.sp)===opt.speed);
 });
 function grab(u){return fetch(u).then(function(r){return r.ok?r.json():{items:[]};}).catch(function(){return {items:[]};});}
-Promise.all([grab('items.json'),grab('items34.json'),grab('itemsR.json')]).then(function(res){
-  D2=res[0].items||[]; D34=res[1].items||[]; DR=res[2].items||[];
-  if(!D2.length&&!D34.length&&!DR.length){
+Promise.all([grab('items.json'),grab('items34.json'),grab('itemsR.json'),
+             grab('items1.json')]).then(function(res){
+  D2=res[0].items||[]; D34=res[1].items||[]; DR=res[2].items||[]; D1=res[3].items||[];
+  if(!D2.length&&!D34.length&&!DR.length&&!D1.length){
     $('#hpill').textContent='載入失敗';
     $('#v-home').innerHTML='<div class="card"><h2>題庫載入失敗</h2><p class="lead">請確認網路，或重新整理。</p></div>';
     return;

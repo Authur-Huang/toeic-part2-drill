@@ -122,6 +122,26 @@ def main():
         print(u"⚠ 還沒有 items.json，請先跑 build/gen_audio.py")
 
     # 閱讀題庫：純文字、沒有音檔，只確認題號不重複與正解分佈
+    p1 = os.path.join(OUT, "items1.json")
+    if os.path.exists(p1):
+        d = json.load(io.open(p1, encoding="utf-8"))
+        items = d["items"]
+        missing = [x["id"] for x in items
+                   if not os.path.exists(os.path.join(OUT, "audio1", x["id"] + ".mp3"))]
+        if missing:
+            raise SystemExit(u"缺少 Part 1 音檔：{}".format(missing[:5]))
+        for x in items:
+            if not x.get("svg"):
+                raise SystemExit(u"{}：Part 1 沒有圖".format(x["id"]))
+            last = x["marks"][-1]
+            if last["start"] + last["len"] > x["total"] + 0.5:
+                raise SystemExit(u"{} 的標記超出音檔長度".format(x["id"]))
+        d1 = [0, 0, 0, 0]
+        for x in items:
+            d1[x["answer"]] += 1
+        print(u"Part 1 檢查通過：{} 題，圖與音檔齊全，正解分佈 A/B/C/D = {}".format(
+            len(items), d1))
+
     rd = os.path.join(OUT, "itemsR.json")
     if os.path.exists(rd):
         d = json.load(io.open(rd, encoding="utf-8"))
