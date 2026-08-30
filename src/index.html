@@ -494,6 +494,8 @@ function start(mode,arg){
     if(mode==='p34-4') p34=p34.filter(function(x){return x.part===4;});
     if(mode==='p34-graphic') p34=p34.filter(function(x){
       return x.questions.some(function(q){return q.graphic;});});
+    if(mode==='p34-unseen') p34=p34.filter(function(x){
+      return x.questions.some(function(q,i){return !get(x.id+'#'+i).n;});});
     if(!p34.length) p34=D34.slice();
     p34=p34.filter(lvOK);        // 同上：先篩再抽
     shuffle(p34);
@@ -501,7 +503,10 @@ function start(mode,arg){
     cards=p34.map(function(it){return {kind:'p34',item:it};});
   }
   var before=cards.length;
-  cards=filterByLevel(cards);
+  // 🔴 「今天該複習」不套難度篩選。複習佇列是「你答錯過的題」，不是難度選擇：
+  //    濾掉它會讓該複習的題目無聲消失，而且首頁的「今天該複習 N 題」是用未過濾的
+  //    dueList() 算的，兩邊會對不上。
+  if(mode!=='due') cards=filterByLevel(cards);
   if(!cards.length){
     alert(before?'這個範圍裡沒有符合目前難度設定的題目。到設定頁把難度打開再試。'
                 :'沒有符合的題目。');
@@ -958,7 +963,8 @@ var GROUPS=[
  {k:'p34',nm:'Part 3・4',sub:'對話與獨白',pick:function(x){return x.part===3||x.part===4;},
   tip:'先聽一段 30–50 秒的對話或獨白，再答三題。這兩部分在正式考試佔 69 題，'
      +'是聽力最大的一塊。',
-  acts:[['p34-mix','隨機 5 段',1],['p34-3','只練 Part 3',0],['p34-4','只練 Part 4',0],
+  acts:[['p34-mix','隨機 5 段',1],['p34-unseen','只練沒做過的',0],
+        ['p34-3','只練 Part 3',0],['p34-4','只練 Part 4',0],
         ['p34-graphic','只練圖表題',0]]},
  {k:'r',nm:'Part 5・6・7',sub:'閱讀',pick:function(x){return x.part>=5;},
   tip:'純文字，不用戴耳機也能練。閱讀在正式考試佔 100 題，其中 Part 5＋6 就有 46 題，'
