@@ -1,0 +1,1110 @@
+{
+ "_說明": "Part 3／4 逐選項解析與難度。鍵是「題號#小題索引」（從 0 起）。why 依 items34/*.json 的原始 choices 順序（正解在第 0 個），enrich.py 會對到打散後的位置。",
+ "p3-001#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。整段都在講 Henderson 的訂單還沒出貨（still hasn't shipped）。ship 出貨。",
+   "✗ overcharge 多收費。費用是後面才提到的枝節（they'd be charged for two deliveries），不是問題本身。★ 主旨題最常見的錯法就是抓了枝節。",
+   "✗ damaged 損壞的。對話從沒提到貨品受損。",
+   "✗ unavailable 沒空的。採購經理是「要打給他」，不是找不到人。"
+  ]
+ },
+ "p3-001#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。男子說 Let me call their purchasing manager。★ 選項用 contact 換掉 call —— **正解幾乎都會換字**。",
+   "✗ 倉庫只是資訊來源（The warehouse says...），沒人要去。",
+   "✗ 討論的是要不要分批出貨，沒有要取消。",
+   "✗ issue a refund 退款。沒提到。"
+  ]
+ },
+ "p3-001#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。最後一句 put it in writing so we have a record ＝ 留書面紀錄。★ **Part 3 第三題通常對應對話最後幾句**，聽到尾聲要特別集中。",
+   "✗ 沒有要他回電。",
+   "✗ 倉庫是男子引用的資訊來源，女子沒要他去談。",
+   "✗ discount 折扣。沒提到。"
+  ]
+ },
+ "p3-002#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。reservation 訂房、check-in 入住、housekeeping 房務 —— 三個詞合起來只指向飯店。",
+   "✗ 機場不會有 housekeeping，也沒有「三點才能入住」。",
+   "✗ ★ 健身中心只是飯店裡的一項設施 —— **拿設施當地點**是典型陷阱。",
+   "✗ conference centre 會議中心。他是要去開會，但人不在那裡。"
+  ]
+ },
+ "p3-002#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。I have a client meeting at one and I was hoping to change first。★ change 這裡是「換衣服」不是「更改」。",
+   "✗ 訂房沒被取消，只是房間還沒整理好。",
+   "✗ 行李是要寄放，不是弄丟。",
+   "✗ 健身中心沒關，它正是解方。"
+  ]
+ },
+ "p3-002#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ **提議題**：Part 3 幾乎每組都有一題問「某人提議什麼」，聽到 You're welcome to... 就是答案所在。changing facilities 更衣設施。",
+   "✗ 沒提到房價。rate 費率。",
+   "✗ later checkout 延後退房 —— 他要的是**提早入住**，方向相反。",
+   "✗ 沒有要載他去開會。"
+  ]
+ },
+ "p3-003#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。narrow down 縮小範圍到、get the interviews done 把面試辦完。",
+   "✗ ★ 大阪出差只是**限制條件**不是主題 —— 把限制條件誤當主題是主旨題最常見的錯法。",
+   "✗ portfolio 作品集只在條件句裡出現一次。",
+   "✗ video 是面試的方式，不是要請攝影團隊。"
+  ]
+ },
+ "p3-003#1": {
+  "level": 1,
+  "why": [
+   "✓ 正解。I'm at the Osaka office Monday and Tuesday。",
+   "✗ 沒提到看醫生。",
+   "✗ 沒提到趕報告。",
+   "✗ 出差不是休假。"
+  ]
+ },
+ "p3-003#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **答應時附帶的條件常常就是答案**：as long as someone sends me the candidate's portfolio beforehand。in advance ＝ beforehand 事先。",
+   "✗ 他沒要求換地點，是他自己人在大阪。",
+   "✗ 沒要求多一個面試官。",
+   "✗ 沒要求更多時間，反而配合三天面四個人。"
+  ]
+ },
+ "p4-001#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。reschedule 改期。★ **Part 4 第一題幾乎都問目的，答案幾乎都在前兩句** —— 開頭沒聽到就很難補回來。",
+   "✗ 沒提到付款。",
+   "✗ 不是廣告，是對既有客戶的後續聯絡。",
+   "✗ 維修還沒做，談的正是改期。"
+  ]
+ },
+ "p4-001#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。the replacement compressor won't reach our depot until Thursday afternoon。★ part 是 compressor（壓縮機）的**上位詞改寫**。depot 集散倉庫。",
+   "✗ 技師沒生病，是零件沒到。",
+   "✗ 沒提到大樓關閉。",
+   "✗ 沒提到費用增加。"
+  ]
+ },
+ "p4-001#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。please call me back on extension four-one-two before end of day tomorrow。★ 注意題目問的是「**不方便的話**」該做什麼。extension 分機。",
+   "✗ 他要的是回電，不是寄 email。",
+   "✗ 要打給他（分機 412），不是直接找技師。",
+   "✗ depot 是零件送達的地方，不是要你跑一趟。"
+  ]
+ },
+ "p4-002#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。Marlow's Home and Garden ＋ shoppers ＋ service desk。home goods 家用品。",
+   "✗ trade show 商展。這是賣場的店內廣播。",
+   "✗ ★ 拿 lighting（燈飾部）當陷阱 —— 那是店裡的一個部門，不是工廠。",
+   "✗ 沒提到家具倉庫。"
+  ]
+ },
+ "p4-002#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。beginning this Monday, our second-floor lighting department will close for four weeks。temporarily 暫時地。",
+   "✗ 不是新開店，是既有部門整修。",
+   "✗ 沒提到漲價，反而發折價券。",
+   "✗ 週末的優惠才要開始，不是結束。"
+  ]
+ },
+ "p4-002#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。will be contacted by phone 會用電話通知。",
+   "✗ ★ **陷阱正好是廣播明講「不需要做」的事**：there is no need to check with the service desk。**否定敘述常被改寫成錯誤選項**。",
+   "✗ 沒說訂單會延遲。",
+   "✗ 沒提到退款。"
+  ]
+ },
+ "p3-004#0": {
+  "level": 3,
+  "why": [
+   "✓ 正解。record 記錄。★ 陷阱在 **eight 被用了兩次、意思不同**：eight o'clock（八點）vs a table for eight（八個人）。**數字重複出現時要聽清楚它在修飾什麼**。",
+   "✗ 餐廳沒有要提早打烊。",
+   "✗ 客人不是遲到，是訂位資料記錯。",
+   "✗ double-booked 重複訂位 —— 不是同一張桌子被訂兩次。"
+  ]
+ },
+ "p3-004#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。push two tables together 被改寫成 combine two tables —— ★ 正解幾乎都會換字。",
+   "✗ 沒提到折扣。",
+   "✗ 沒有要打去別家分店。",
+   "✗ 不是延長訂位時間。"
+  ]
+ },
+ "p3-004#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **意圖題（新制特色）**：字面是「十分鐘不算什麼」，實際在表達願意等。判斷靠下一句 —— 她說本來以為會被趕走（be turned away）。",
+   "✗ 意思正好相反。",
+   "✗ 不是「我只有十分鐘」。",
+   "✗ 沒有要改期。"
+  ]
+ },
+ "p3-005#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。put in a ticket ＝ 開報修單；follow up 追蹤後續。",
+   "✗ 沒有要買新設備，是要換電池。",
+   "✗ 沒提到資安問題。",
+   "✗ ★ 週四的簡報只是他著急的**理由**，不是他找對方的目的。"
+  ]
+ },
+ "p3-005#1": {
+  "level": 1,
+  "why": [
+   "✓ 正解。It's probably the battery。faulty 有故障的。",
+   "✗ 沒提到軟體更新。",
+   "✗ 沒提到線材損壞。",
+   "✗ 沒提到室溫過高。"
+  ]
+ },
+ "p3-005#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **意圖題**：表面在講數字，實際是「原來是常見故障，那就好辦」。relieved 鬆一口氣的。★ 這裡**不是反話** —— 他接著就問能不能今天換，語氣是放心的。",
+   "✗ 他關心的是自己那台，不是別人的。",
+   "✗ 不是嫌四台太少。",
+   "✗ 沒有要換機型。"
+  ]
+ },
+ "p3-006#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。三份 quote（報價）在比較，最後選了 Ardmore。supplier 供應商。",
+   "✗ ★ 春季上市只是限制條件（六週來不及），不是主題。",
+   "✗ ★「離工廠二十分鐘」是**選擇理由**，不是要搬廠。",
+   "✗ lease 租約。完全沒提到。"
+  ]
+ },
+ "p3-006#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。Kesler 最便宜但 lead time is six weeks。lead time 前置時間（下單到交貨）。",
+   "✗ 沒提到品質不穩。inconsistent 不一致的。",
+   "✗ ★ 「距離遠」是拿另一家的優點反過來設的陷阱 —— Ardmore 才是近的那家。",
+   "✗ 沒說價格會漲。"
+  ]
+ },
+ "p3-006#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ **下一步題的答案幾乎永遠在最後一兩句**：I'll draft a recommendation。draft 起草。",
+   "✗ 沒有要去拜訪供應商。",
+   "✗ 沒有要再要一份報價。",
+   "✗ 沒有要取消合約。"
+  ]
+ },
+ "p3-007#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。sign up for ＝ enrol in 報名參加，換字改寫。",
+   "✗ 他沒有要延後考核，是考核逼著他要趕快上課。",
+   "✗ 他是想上課的人，不是講師。",
+   "✗ 沒提到轉調部門。"
+  ]
+ },
+ "p3-007#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **「為什麼提到某件事」是高頻題型，考的是功能不是內容**。他提績效考核，是為了說明為何不能等到十月那一梯。",
+   "✗ 沒有在要求升遷。",
+   "✗ 沒有抱怨主管。",
+   "✗ 沒有要請假。"
+  ]
+ },
+ "p3-007#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。People do drop out — usually two or three each time，改寫成 spots often open up（常有名額空出來）。drop out 退出。",
+   "✗ 候補名單沒有關閉，她正要把他加進去。",
+   "✗ 沒提到要額外付費。",
+   "✗ 沒說只限主管參加。"
+  ]
+ },
+ "p3-008#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。The movers arrive Saturday morning。mover 搬家公司。★ 聽到星期就要抓，Part 3 很愛拿它出題。",
+   "✗ 沒提到開會。",
+   "✗ 沒提到大樓檢查。",
+   "✗ 影印室只是位置討論，不是週六要印東西。"
+  ]
+ },
+ "p3-008#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。they'd rather have the noise than walk the length of the building twenty times a day。would rather A than B 寧願 A 也不要 B。",
+   "✗ ★ **正好相反** —— 那裡是全樓層**最吵**的角落。拿對話裡明講的反面設陷阱。",
+   "✗ 沒提到採光。",
+   "✗ 沒提到想靠近管理層。"
+  ]
+ },
+ "p3-008#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ **建議題**，答案在最後一句 make sure it's in writing。documenting 是 in writing 的換字。",
+   "✗ 沒有要延後搬遷。",
+   "✗ 沒有要問整層樓的人。",
+   "✗ 沒有要做降噪。"
+  ]
+ },
+ "p3-009#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。the board（航班顯示板）、terminal 航廈、check in again 三個線索。service desk 服務櫃檯。",
+   "✗ 已經在機上就不會看顯示板、也不會重新報到。",
+   "✗ 火車站不會有 flight 與 terminal。",
+   "✗ ★ 旅行社不會有航班顯示板與航廈。"
+  ]
+ },
+ "p3-009#1": {
+  "level": 1,
+  "why": [
+   "✓ 正解。There's weather moving through Denver。★ 英文只用 weather 一個字，常常就是指「壞天氣」。destination 目的地。",
+   "✗ mechanical fault 機械故障。沒提到。",
+   "✗ 沒提到人力不足。",
+   "✗ 沒提到安檢事件。"
+  ]
+ },
+ "p3-009#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。Put me on it ＝ 幫我劃那一班。經 Salt Lake City 轉機就是 a different route 換一條路線。",
+   "✗ 他決定不等原班機了。",
+   "✗ 沒提到訂旅館。",
+   "✗ 沒有要退款。"
+  ]
+ },
+ "p3-010#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。only one arrived —— 兩張椅子只到一張。",
+   "✗ ★ 費用是男子**後面主動提**的（不會被收第二次運費），不是她打來的原因。",
+   "✗ 沒說東西壞了。",
+   "✗ 沒有要取消訂單。"
+  ]
+ },
+ "p3-010#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。I'll email you the tracking number now。tracking number 物流追蹤號碼。",
+   "✗ 沒提到全額退款。",
+   "✗ ★ 陷阱：第二張椅子**不是補寄** —— 它本來就在路上（went out from a different warehouse）。dispatch 派送。",
+   "✗ 沒有要聯絡倉庫主管。"
+  ]
+ },
+ "p3-010#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。before the new staff start on Monday。imply 暗示。",
+   "✗ 沒說辦公室會關閉。",
+   "✗ 沒說她人不在。",
+   "✗ ★ **送達是週三不是週一** —— 把兩個日期混在一起是這類題最常見的失分點。"
+  ]
+ },
+ "p4-003#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。I'll be taking you through the plant ＝ 帶各位參觀廠房。plant 廠房、工廠。",
+   "✗ 安全稽核員不會做導覽開場白。",
+   "✗ ★ 廠長不會這樣自我介紹，而且她講的全是參觀流程。",
+   "✗ supplier 供應商只在後面被提到一次（設備還在供應商合約下）。"
+  ]
+ },
+ "p4-003#1": {
+  "level": 1,
+  "why": [
+   "✓ 正解。must wear the vest and glasses，改寫成 protective equipment 防護裝備。vest 背心。",
+   "✗ 背心與護目鏡是在櫃檯**領取**，不是寄放包包。",
+   "✗ 沒有要簽訪客切結書。",
+   "✗ 要求的是站在黃線後，不是兩人一組。"
+  ]
+ },
+ "p4-003#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ **例外題**：everywhere except quality control —— 聽到 except 就要立刻標記，那通常就是要考的。quality control 品管。",
+   "✗ 倉庫是行程終點，可以拍。",
+   "✗ 裝瓶線是起點，可以拍。",
+   "✗ 櫃檯不在導覽的拍照限制內。"
+  ]
+ },
+ "p4-004#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。★ **第二句就明講** This is a gate change announcement —— Part 4 開頭兩句是最貴的資訊。depart 起飛、出發。",
+   "✗ 航班沒取消，只是換登機門。",
+   "✗ 沒提到行李延誤。",
+   "✗ 沒有針對家庭的登機程序。"
+  ]
+ },
+ "p4-004#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。reachable by the shuttle train on the lower level。shuttle train 接駁電車；concourse 候機大廳。",
+   "✗ 沒說要重過安檢。",
+   "✗ 是電車不是接駁巴士。",
+   "✗ 沒提到頂樓。"
+  ]
+ },
+ "p4-004#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。Passengers requiring assistance should speak to an agent at the B-seven desk **before moving**。★ 關鍵在 before moving —— 要在**舊登機門**先找地勤，不是到了新的再說。agent 地勤人員。",
+   "✗ 正好相反，是移動前先找人。",
+   "✗ 沒說要打電話給航空公司。",
+   "✗ 沒說可以優先登機。"
+  ]
+ },
+ "p4-005#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。leave request 請假申請；move to the new online system 改用線上系統。",
+   "✗ 沒提到工時改變。",
+   "✗ 沒有在回顧去年績效。",
+   "✗ ★ 九點的客戶電話只是她長話短說的**理由**。"
+  ]
+ },
+ "p4-005#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。mainly for the managers, who currently have to chase signatures across three floors。chase signatures 追著跑要簽名。",
+   "✗ 沒有特別提到新人。",
+   "✗ 這件事跟客戶無關。",
+   "✗ 訓練團隊不是受益者。"
+  ]
+ },
+ "p4-005#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **意圖題**：她說訓練是 optional（自由參加），卻馬上舉「去年沒去上課的人到現在每週都在寄信問我」—— 這是在暗示不去會後悔。",
+   "✗ 錯在她**明說** optional。",
+   "✗ 沒有取消。",
+   "✗ 是二十分鐘，不是整天。"
+  ]
+ },
+ "p4-006#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。opens its third location ＝ 第三家分店開幕。branch 分店。",
+   "✗ 泳池只是設施之一，不是游泳比賽。",
+   "✗ 沒提到私人教練。",
+   "✗ ★ 器材只是設施描述，不是在賣器材。"
+  ]
+ },
+ "p4-006#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。waive the registration fee 免收註冊費。★ **waive（免除）這個字在廣告型 Part 4 幾乎必考**。",
+   "✗ 免的是註冊費，不是送一個月會籍。",
+   "✗ 沒說課程打折。",
+   "✗ 沒有送器材。"
+  ]
+ },
+ "p4-006#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。at no extra cost ＝ for free 不另外收費。existing members 現有會員。",
+   "✗ 沒說要續約。",
+   "✗ 沒提到優先預約。",
+   "✗ 沒提到退款。"
+  ]
+ },
+ "p4-007#0": {
+  "level": 3,
+  "why": [
+   "✓ 正解。Friday from eight until noon。noon 正午十二點。",
+   "✗ ★ **陷阱在同一句話裡放了兩組時間**：五點是週一到週四的，不是週五。",
+   "✗ 八點是開始營業的時間，不是結束。",
+   "✗ 週五有開，只是只到中午。"
+  ]
+ },
+ "p4-007#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。hang up and call our on-call line。on-call line 值班專線；around the clock 二十四小時。",
+   "✗ ★ 留言是**預約**用的，不是急診用的。",
+   "✗ 沒說直接過去看診。",
+   "✗ 急診不可能等到下一個上班日。"
+  ]
+ },
+ "p4-007#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。a member of our team will return your call on the next working day。return a call 回電。",
+   "✗ 沒說一小時內。",
+   "✗ 沒說當天晚上。",
+   "✗ ★ 直接與前面「週末不營業」矛盾 —— **Part 4 常在不同段落埋互相牴觸的線索**。"
+  ]
+ },
+ "p3-011#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。floor plans ＝ building plans 建築圖面。",
+   "✗ budget 預算。完全沒提到。",
+   "✗ 掃描是他要做的動作，不是他來borrow的東西。",
+   "✗ security pass 門禁卡。沒提到。"
+  ]
+ },
+ "p3-011#1": {
+  "level": 1,
+  "why": [
+   "✓ 正解。Do you have the project number? project number 專案編號。",
+   "✗ 沒有要求書面申請。",
+   "✗ 沒有要主管核准。",
+   "✗ deposit 押金。沒提到。"
+  ]
+ },
+ "p3-011#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。They can't leave the building。★ **聽到 though、however、but 之後常接限制條件**，那通常就是考點。",
+   "✗ 地下室的開放時間沒提到。",
+   "✗ 沒說只有員工能進去，他就是外來者卻可以掃描。",
+   "✗ 沒提到影印要收費。"
+  ]
+ },
+ "p3-012#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。add a second signatory ＝ 增加一位有權簽章的人。authorise 授權。",
+   "✗ 帳戶已經有了，不是要開新的。",
+   "✗ credit limit 信用額度。沒提到。",
+   "✗ 沒有要關閉舊帳戶。"
+  ]
+ },
+ "p3-012#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **情緒／反應題**：Our last bank just needed a form 就是驚訝的來源。requirement 規定、要求。",
+   "✗ 沒提到費用。",
+   "✗ 男子反而說 most companies get it signed the same week，是很快的。",
+   "✗ 新財務經理下週一才到職，但她不是為這個驚訝。"
+  ]
+ },
+ "p3-012#2": {
+  "level": 1,
+  "why": [
+   "✓ 正解。I can email you a template。template 範本。",
+   "✗ waiver 免除。沒提到免手續費。",
+   "✗ 沒提到分行清單。",
+   "✗ 沒提到補發卡片。"
+  ]
+ },
+ "p3-013#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。the lease starts in November ＝ 租約。unit 這裡是「一個單位、一間」。",
+   "✗ 停車場是隔壁的替代方案，不是他們在看的標的。",
+   "✗ ★ for sale 是「出售」，與 lease（承租）矛盾。",
+   "✗ 是辦公空間不是住宅。"
+  ]
+ },
+ "p3-013#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。only twelve parking spaces for a team of thirty。",
+   "✗ ★ **正好相反** —— 她說 It's brighter than the last one。拿對話裡明講的反面設陷阱，是 Part 3 最常見的手法。",
+   "✗ 她擔心的是「多出來的停車費沒編預算」，不是租金本身太貴。",
+   "✗ 沒抱怨位置，對面就有公共停車場。"
+  ]
+ },
+ "p3-013#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。I can ask —— 去問房東能不能在租約裡多納幾個車位。landlord 房東。",
+   "✗ 沒有要帶她看別間。",
+   "✗ 他反而說可能會**漲**租金。",
+   "✗ 沒有要安排第二次看屋。"
+  ]
+ },
+ "p3-014#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。page eleven still shows last season's prices。outdated 過時的；proof 校樣。",
+   "✗ ★ 相反 —— 她說 The colours are good。",
+   "✗ 沒有缺頁，是內容舊了。",
+   "✗ 沒提到送件遲到。"
+  ]
+ },
+ "p3-014#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **意圖題**：不去追究檔案跑到哪，直接叫對方重寄。重點是**省時間**，不是「不在乎」。chase 追查。",
+   "✗ 他沒說檔案不重要，正是因為重要才要馬上換。",
+   "✗ 沒有要取消。",
+   "✗ 他要的是現在解決，不是之後再查。"
+  ]
+ },
+ "p3-014#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。a fresh proof of just that page。★ 注意是「**只有那一頁**」的新校樣，不是整份重來。",
+   "✗ 沒提到折扣。",
+   "✗ 印刷日是週四，她沒要求提前。",
+   "✗ print run 印量。沒提到。"
+  ]
+ },
+ "p3-015#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。I've been asked to cover a shift ＝ 被要求代班。shift 輪班。",
+   "✗ 沒提到出差或旅行。",
+   "✗ 沒說身體好轉。",
+   "✗ 他很清楚原本是週二四點，沒有忘記。"
+  ]
+ },
+ "p3-015#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。Thursday at eight-thirty in the morning，他說 that suits me better。",
+   "✗ 那是原本要改掉的時段。",
+   "✗ 那是另一個被提出但沒選的選項。",
+   "✗ ★ **三個時間選項全部在對話裡出現過，只有一個是他最後選的** —— 這種題一定要聽到最後才作答。"
+  ]
+ },
+ "p3-015#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。arrive ten minutes early，因為表格改了。",
+   "✗ referral letter 轉診單。沒提到。",
+   "✗ 沒要求先付款。",
+   "✗ 沒要求前一天打電話。"
+  ]
+ },
+ "p3-016#0": {
+  "level": 3,
+  "why": [
+   "✓ 正解。Training is the hold-up ＝ 卡住的是教育訓練。hold-up 耽擱、瓶頸。",
+   "✗ 被明確排除：Development is done。★ **三人對話要分清楚哪句話是誰說的**。",
+   "✗ 被明確排除：nothing outstanding on my side。outstanding 這裡是「未處理的」。",
+   "✗ 沒提到客戶改需求。"
+  ]
+ },
+ "p3-016#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。their internet has been unreliable —— 他寧願親自去也不要中途斷線。unreliable 不可靠的。",
+   "✗ 不是客戶要求的。",
+   "✗ 親自去只會更貴，不是為了省錢。",
+   "✗ 沒說他在那裡有別的事。"
+  ]
+ },
+ "p3-016#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。I can join that session by phone as backup。backup 備援。",
+   "✗ 沒有要改期。",
+   "✗ ★ 去島上的是**第三位**說話者，不是他 —— **三人對話最愛考「張冠李戴」**。",
+   "✗ 沒有要延長期限。"
+  ]
+ },
+ "p3-017#0": {
+  "level": 3,
+  "why": [
+   "✓ 正解。The brakes are fine 煞車沒問題。★ 選項刻意把三個部位（煞車、正時皮帶、輪胎）混在一起，**要聽清楚哪個對應哪個**。",
+   "✗ 今天要處理的是皮帶與輪胎，不是煞車。",
+   "✗ 不安全的是輪胎（below the legal tread 胎紋低於法定值）。",
+   "✗ 沒提到保固。"
+  ]
+ },
+ "p3-017#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。The van's on the road every day, so I can't risk that。depend on 仰賴。",
+   "✗ 沒說比預期便宜。",
+   "✗ 沒提到保固。",
+   "✗ 輪胎是胎紋不足，不是已經爆胎。"
+  ]
+ },
+ "p3-017#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。If you leave it with us, yes —— ★ **條件句常常就是答案**。",
+   "✗ 沒要求先付款。",
+   "✗ 是今天就做，不是下週。",
+   "✗ estimate 估價單。沒要求簽名。"
+  ]
+ },
+ "p3-018#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。stand 展場攤位；organisers 主辦單位。整段在談攤位位置與設備。",
+   "✗ ★ 產品示範只是他們想加一台螢幕的**用途**。",
+   "✗ 沒有要換場地，只討論要不要換攤位。",
+   "✗ 沒談預算。"
+  ]
+ },
+ "p3-018#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **三人對話特有的「兩人共識」題**：第二位說後面的攤位人流反而更多，第三位說 That matches what I saw。rear 後方的。",
+   "✗ 攤位大小跟去年一樣，沒人抱怨。",
+   "✗ ★ 正好是他們一起**否定**的說法 —— 入口的攤位大家只是路過。",
+   "✗ 沒有批評主辦單位。"
+  ]
+ },
+ "p3-018#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。I'll book one this afternoon —— 指第二台螢幕。reserve 預訂。",
+   "✗ 第一位說「那我就不申請換位子了」，沒人要聯絡主辦。",
+   "✗ 沒有要重新設計攤位。",
+   "✗ 沒有要取消。"
+  ]
+ },
+ "p3-019#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。It's been three weeks and I haven't heard anything ＝ 問進度。claim 理賠申請。",
+   "✗ 沒有新的損壞要報。",
+   "✗ policy 保單。沒有要解約。",
+   "✗ 沒有在爭執金額。"
+  ]
+ },
+ "p3-019#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。we're waiting on the repair invoice from the workshop。workshop 這裡是「修車廠」。",
+   "✗ ★ 這是**已經收到**的那一份（the assessor's report came in）—— **把「已完成」和「還在等」對調是高頻陷阱**。assessor 理賠鑑定人。",
+   "✗ 沒提到警方報告。",
+   "✗ 沒提到需要他簽名。"
+  ]
+ },
+ "p3-019#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。could you note my mobile on the file —— 更新聯絡方式。",
+   "✗ 沒要求書面確認。",
+   "✗ 他沒要求加速付款，是男方主動說四個工作天。",
+   "✗ 沒要求轉接主管。"
+  ]
+ },
+ "p3-020#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。Welcome aboard 歡迎加入 ＋ 交代第一天要做什麼。",
+   "✗ 客戶不會安排新人的筆電與帳號。",
+   "✗ 她是轉述 IT 的狀況，不是 IT 人員。",
+   "✗ 他已經簽約到職了，不是應徵者。"
+  ]
+ },
+ "p3-020#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。until your contract was countersigned，而合約昨天才回來。countersign 會簽、副署。",
+   "✗ 筆電已經設定好了。",
+   "✗ 沒提到密碼。",
+   "✗ 沒說 IT 人手不足。"
+  ]
+ },
+ "p3-020#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **意圖題**：她補了一句 that'll teach you more than the modules will，說明她認為會議比線上課程有價值。",
+   "✗ 沒有要趕他出去的意思。",
+   "✗ 課程沒取消，她說本週隨時可以做。",
+   "✗ 錯在她沒說是強制參加。"
+  ]
+ },
+ "p4-008#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。ledger ＝ 帳冊。★ 就算不認得這個字，from fourteen ninety-two 與 records the price 也指向「文件」。",
+   "✗ 沒提到畫作。",
+   "✗ 展示櫃是容器，不是展品本身。",
+   "✗ 紡織品展廳是**下一站**，不是這件展品。"
+  ]
+ },
+ "p4-008#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **not its age but its detail —— not A but B 的句型，答案永遠在 but 後面**。transaction 交易。",
+   "✗ 年代久遠正是被否定的那一個。",
+   "✗ 是歷史學家從中受益，不是歷史學家寫的。",
+   "✗ 沒提到材質稀有。"
+  ]
+ },
+ "p4-008#2": {
+  "level": 1,
+  "why": [
+   "✓ 正解。do not use flash photography anywhere in this room。flash 閃光燈。",
+   "✗ 沒說不能碰展示櫃（雖然本來就不該碰，但廣播沒講）。",
+   "✗ 沒提到音量。",
+   "✗ 沒提到包包。"
+  ]
+ },
+ "p4-009#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。standing water ＝ 積水（不是「站著的水」）。",
+   "✗ 沒提到車禍。",
+   "✗ 是在抽水，不是道路施工。",
+   "✗ 沒提到橋樑封閉。"
+  ]
+ },
+ "p4-009#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。longer in distance but currently running normally —— 雖然遠但是通的。inland 內陸的。",
+   "✗ ★ 那是天氣預報的內容，不是給北上駕駛的建議。",
+   "✗ 沒叫人不要出門。",
+   "✗ 沒提到大眾運輸。"
+  ]
+ },
+ "p4-009#2": {
+  "level": 1,
+  "why": [
+   "✓ 正解。clearer conditions for the evening commute。commute 通勤。",
+   "✗ 雨勢是預期會**減弱**。",
+   "✗ 沒說會封路。",
+   "✗ 沒說延誤會惡化。"
+  ]
+ },
+ "p4-010#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。before we move on to dessert ＝ 正在用餐。dessert 甜點。",
+   "✗ 訓練是得獎理由，不是現場活動。",
+   "✗ 倉庫是他十一年前的起點，不是現場。",
+   "✗ job fair 就業博覽會。沒提到。"
+  ]
+ },
+ "p4-010#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ 又是 **not A but B**：not the promotions, but the number of colleagues who named him as the person who trained them。",
+   "✗ ★ 升遷正是被否定的那一個。",
+   "✗ 沒說他年資最長。",
+   "✗ 他是管理三國的配送網，不是開了三間辦公室。"
+  ]
+ },
+ "p4-010#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **意圖題，帶玩笑語氣**：「我們可是有計時的」＝ 請講短一點。brief 簡短的。",
+   "✗ 沒說他遲到。",
+   "✗ 沒提到錄影錄音。",
+   "✗ 沒說他以前得過。"
+  ]
+ },
+ "p4-011#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。safety notice 安全通知 ＋ faulty base connector 底座接頭有瑕疵。defective 有缺陷的。",
+   "✗ 不是新品發表，是既有型號出問題。",
+   "✗ 不是促銷。",
+   "✗ 沒提到開店。"
+  ]
+ },
+ "p4-011#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。batch codes are printed underneath the unit。batch code 批號。",
+   "✗ 沒提到客服專線。",
+   "✗ 是看批號，不是看購買日期 —— 製造月份只是背景說明。",
+   "✗ 是拿去經銷商，不是寄回工廠。"
+  ]
+ },
+ "p4-011#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **否定題**：You do not need a receipt —— 題目問「不需要什麼」，聽到 do not need 要立刻記下。receipt 收據。",
+   "✗ 沒提到原包裝。",
+   "✗ 沒提到地址證明。",
+   "✗ 沒提到要預約。"
+  ]
+ },
+ "p4-012#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。a signalling fault south of Danforth。signalling 號誌；fault 故障。",
+   "✗ 沒提到天氣。",
+   "✗ 沒提到人力不足。",
+   "✗ 沒提到事故。"
+  ]
+ },
+ "p4-012#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。the eleven o'clock bus from outside the main entrance。",
+   "✗ 沒有提供另一班列車。",
+   "✗ 沒提到共乘計程車。",
+   "✗ 沒有換月台。★ 注意這個建議有**限定條件**：只有 travelling only as far as Danforth 的人適用，不是所有人。"
+  ]
+ },
+ "p4-012#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。Refreshment vouchers are available from the ticket office。refreshment 茶點；voucher 兌換券。",
+   "✗ ★ 沒提到退費 —— 「誤點就該退錢」是想當然耳的陷阱。",
+   "✗ 沒提到訂位。",
+   "✗ 沒提到行李寄放。"
+  ]
+ },
+ "p4-013#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。customer response workshop 客訴應對工作坊。",
+   "✗ marketing copy 行銷文案。沒提到。",
+   "✗ 沒提到帶團隊。",
+   "✗ 沒提到軟體。"
+  ]
+ },
+ "p4-013#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。You'll be working in pairs on real complaints from our own inbox。★ 關鍵是 **this is not a lecture** —— 說話者刻意否定「聽講」的形式。",
+   "✗ 被 not a lecture 排除的被動形式。",
+   "✗ 沒有筆試。",
+   "✗ 是實際練習電話，不是聽錄音。"
+  ]
+ },
+ "p4-013#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。If you'd rather not read your work aloud, that's completely fine。would rather not 寧可不要。",
+   "✗ 第二小時是課程內容，不能選擇不上。",
+   "✗ 兩人一組是課程設計，沒說可以不參加。",
+   "✗ 客訴信箱是教材來源。"
+  ]
+ },
+ "p4-014#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。closing its doors 結束營業 ＋ everything in the shop is reduced 全面降價。",
+   "✗ 沒有新分店。",
+   "✗ 沒有新書發表會。",
+   "✗ 沒有在徵人。"
+  ]
+ },
+ "p4-014#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。maps, prints and stationery 六折（sixty percent off）。stationery 文具（★ 跟 stationary 靜止的 只差一個字母）。",
+   "✗ 書是 forty percent off，折扣比較小。★ **兩個百分比同時出現時，一定會考哪個比較多**。",
+   "✗ 禮券不是商品，沒有折扣。",
+   "✗ 沒提到二手書。"
+  ]
+ },
+ "p4-014#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。Gift cards must be used before the final day，而且明說之後無法兌現。honour 這裡是「兌現、認可」。",
+   "✗ 與「無法兌現」矛盾。",
+   "✗ 沒有別家分店可以轉。",
+   "✗ 與「無法兌現」矛盾。"
+  ]
+ },
+ "p4-015#0": {
+  "level": 2,
+  "why": [
+   "✓ 正解。We'd like to invite you to an interview。",
+   "✗ ★ 那是還沒發生的**下一步** —— 別跳太快，現在只到面試邀約。",
+   "✗ reference 推薦人。沒提到。",
+   "✗ 還沒錄取，談不上到職日。"
+  ]
+ },
+ "p4-015#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。It would be with two people —— 他本人與倉儲主管。conduct 主持、執行。",
+   "✗ 沒說線上進行。",
+   "✗ ★ 拿 two 這個數字誤導到時間長度 —— 實際是四十五分鐘。",
+   "✗ 沒要求做簡報。"
+  ]
+ },
+ "p4-015#2": {
+  "level": 3,
+  "why": [
+   "✓ 正解。reply to the email I've just sent。",
+   "✗ ★ **rather than 之後的正是被排除的做法** —— rather than calling back，而且他說自己在外地不會接。這是最誘人的錯誤選項。",
+   "✗ 沒提到簡訊。",
+   "✗ 沒要求本人前往。"
+  ]
+ },
+ "p3-g01#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。my manager asked me to take the leadership session instead。assignment 指派的任務。",
+   "✗ 沒有任何場次被取消。",
+   "✗ 沒提到客戶。",
+   "✗ 沒提到房間太小。"
+  ]
+ },
+ "p3-g01#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。Room 118 —— 表上 Team Leadership 那一列。★ 男子只說了 leadership，**房號從頭到尾沒被念出來**，要自己回表上查。",
+   "✗ Room 305 是上午十一點的 Digital Tools。",
+   "✗ Room 402 是三點的 Customer Service —— ★ 那是**女子**的場次，而 three o'clock 是全段唯一被念出來的時間。**只抓數字不查表就會中招**。",
+   "✗ Room 201 是四點半的 Market Trends，完全沒被提到。"
+  ]
+ },
+ "p3-g01#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。Could you save me a seat...? — Of course。save a seat 留位子。",
+   "✗ 沒有要改期。",
+   "✗ 他是自己先隨便吃（grab something quick），不是她帶午餐。",
+   "✗ 沒提到寄議程。"
+  ]
+ },
+ "p3-g02#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。開頭第一句就是 training booklets。booklet 小冊子。★ Part 3 第一題常是「來意」，答案幾乎都在前兩句。",
+   "✗ 沒提到名片。",
+   "✗ 沒提到海報。",
+   "✗ 沒提到名牌。"
+  ]
+ },
+ "p3-g02#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。$0.32 —— 最後確定的數量是 a hundred and twenty，落在 100–249 那一列。★ **對話裡沒有出現任何金額**。",
+   "✗ $0.40 對應 1–99。★ 那是她**先講後又改掉**的 eighty —— **圖表題很愛「先講一個數字再改掉」，要聽到最後一個確定的數字才查表**。",
+   "✗ $0.25 要 250 份以上。",
+   "✗ $0.18 要 500 份以上。"
+  ]
+ },
+ "p3-g02#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。I'll email you a confirmation once your file uploads。confirmation 確認函。",
+   "✗ 沒說親自送過去。",
+   "✗ 沒提到退款。",
+   "✗ 沒提到別家分店。"
+  ]
+ },
+ "p3-g03#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。I can't find the right room。",
+   "✗ 沒有要簽文件。",
+   "✗ 沒提到班機。",
+   "✗ 沒有要借筆電。"
+  ]
+ },
+ "p3-g03#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。線索是 the office directly across from the break room（茶水間正對面）。★ **房間名稱一次都沒被念出來，只給了位置關係**。",
+   "✗ Storage 不在茶水間對面。",
+   "✗ ★ copier（Copy Room）被念了兩次，但那是「**隔壁**」（right next to it）不是「對面」。",
+   "✗ Server Room 完全沒被提到。★ 平面圖題的關鍵字就那幾個：across from 對面、next to 隔壁、between 中間、at the end of 走廊底 —— 先把它們聽熟。"
+  ]
+ },
+ "p3-g03#2": {
+  "level": 1,
+  "why": [
+   "✓ 正解。the copier was finally repaired yesterday。",
+   "✗ 沒說要換新的。",
+   "✗ 沒說沒紙了。",
+   "✗ 它就在會議室隔壁，不是別層樓。"
+  ]
+ },
+ "p3-g04#0": {
+  "level": 1,
+  "why": [
+   "✓ 正解。第一句 the supply order for the new branch。supply order 補貨訂單。",
+   "✗ 沒提到預算報告。",
+   "✗ 沒提到排班表。",
+   "✗ 沒提到平面圖。"
+  ]
+ },
+ "p3-g04#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。Office chairs 庫存 0，線索是 completely out of。★ **正解的產品名整段沒被念出來**。",
+   "✗ ★ lamps 被明確念了兩次，但女子說 those can wait —— 那是「不急」的那一項（庫存 4）。",
+   "✗ Filing cabinets 庫存 18，是最多的。",
+   "✗ Whiteboards 庫存 9。★ 庫存表最常考三種說法：out of stock（0）、running low（最少但非 0）、fully stocked（最多）。"
+  ]
+ },
+ "p3-g04#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。flag the lamps for December —— 選項用 a later order 改寫 December。flag 標記待辦。",
+   "✗ 沒有要退回供應商。",
+   "✗ 沒有要調撥到別的分店。",
+   "✗ 沒有要議價。"
+  ]
+ },
+ "p4-g01#0": {
+  "level": 3,
+  "why": [
+   "✓ 正解。線索是 the final stop on this route（路線圖上的最後一站）。★ **正解的站名沒被念出來**。",
+   "✗ ★ Conference Center 是「**剛離開**」的那一站（We've just departed）。",
+   "✗ Parking Lot C 是中間站，完全沒被提到。",
+   "✗ ★ Main Terminal 確實被念出來，但那是**失物招領櫃檯的位置**，不是下一站。★ 路線圖題常用的位置詞：next stop、final/last stop、the stop before、two stops from here。"
+  ]
+ },
+ "p4-g01#1": {
+  "level": 2,
+  "why": [
+   "✓ 正解。every fifteen minutes instead of every half hour —— 選項用 more frequently 概括。★ **這是 Part 4 最典型的改寫方式**。",
+   "✗ 沒說路線會關閉。",
+   "✗ fare 車資。沒提到漲價。",
+   "✗ 沒說要開新航廈。"
+  ]
+ },
+ "p4-g01#2": {
+  "level": 1,
+  "why": [
+   "✓ 正解。our lost and found desk is inside the main terminal。lost and found 失物招領。",
+   "✗ 沒說搬了樓層。",
+   "✗ 沒說週末不開，只說今晚開到九點。",
+   "✗ 沒提到保管費。"
+  ]
+ },
+ "p4-g02#0": {
+  "level": 3,
+  "why": [
+   "✓ 正解。線索是 the region that came in lowest（長條圖最矮的那一根）。★ **正解的地區名沒被念出來**。",
+   "✗ ★ south region 被明確念出來，但那是**表現最好**的對照組，而且排在 after the break。",
+   "✗ North 完全沒被提到。",
+   "✗ West 完全沒被提到。★ 長條圖題八成問這四種：highest、lowest、second highest、增加或減少的那一個 —— 聽到最高級就立刻回圖上找。"
+  ]
+ },
+ "p4-g02#1": {
+  "level": 3,
+  "why": [
+   "✓ 正解。two of our largest accounts there postponed their orders until January。postpone 延後；account 這裡是「大客戶」。",
+   "✗ 沒提到關店。",
+   "✗ 沒提到漲價。",
+   "✗ ★ 她**特地否認**了這一點：this is not a staffing problem — that team is fully hired。**說話者主動否認的事，往往就是某個錯誤選項的來源**。resign 辭職。"
+  ]
+ },
+ "p4-g02#2": {
+  "level": 2,
+  "why": [
+   "✓ 正解。I've asked their director to walk us through what worked。walk someone through 帶某人逐步了解。",
+   "✗ 沒提到核准預算。",
+   "✗ 沒有參觀行程。",
+   "✗ next year's targets 是在這段之前談的，不是休息後。"
+  ]
+ }
+}
