@@ -1,0 +1,803 @@
+{
+ "_說明": "Part 2 逐選項解析與難度。why 依 items/*.json 的原始 choices 順序（正解在第 0 個），enrich.py 會對到打散後的位置。★ 標的是這一題最值得記住的判斷法。",
+ "p2-001": {
+  "level": 1,
+  "why": [
+   "✓ 正解。Where 問地點，in the tray 就是位置。tray 收件盤／by 在…旁邊。",
+   "✗ 答的是時間，不是地點。sometime before Friday 週五前某個時候。",
+   "✗ ★ 用 Yes 回答 WH 問句一定錯。而且把 shipment（貨件）換成 shipped（已出貨）做同字陷阱。"
+  ]
+ },
+ "p2-002": {
+  "level": 2,
+  "why": [
+   "✓ 正解。across from 在…對面 —— 給了地點。",
+   "✗ 重複 print → printed，這是 Part 2 最常見的陷阱；而且答的是時間。",
+   "✗ 答價錢，那是 How much 的答案。"
+  ]
+ },
+ "p2-003": {
+  "level": 1,
+  "why": [
+   "✓ 正解。conference room 會議室，是地點。",
+   "✗ 答時間 → 那是 When 的答案。",
+   "✗ 答人 → 那是 Who 的答案。director 主管、總監。"
+  ]
+ },
+ "p2-004": {
+  "level": 2,
+  "why": [
+   "✓ 正解。be posted on 張貼在…上、intranet 公司內部網路 —— 這就是「在哪裡」。",
+   "✗ 重複 find → found，而且 helpful 講的是好不好用，不是位置。",
+   "✗ new hire 新進員工。答的是「誰會拿到」不是「在哪裡」。"
+  ]
+ },
+ "p2-005": {
+  "level": 2,
+  "why": [
+   "✓ 正解。directly to 直接寄到、accounting department 會計部。",
+   "✗ Yes 回 WH 問句 ＋ 重複 send → sent，兩個錯一起犯。",
+   "✗ Because 開頭是回答 Why 的。deadline 期限、截止日。"
+  ]
+ },
+ "p2-006": {
+  "level": 1,
+  "why": [
+   "✓ 正解。給了明確時間點。I believe 表示不太確定，但仍是有效回答。",
+   "✗ east wing 東側廂房 —— 答的是地點。",
+   "✗ Yes 回 WH 問句。"
+  ]
+ },
+ "p2-007": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ Not until... 要到…才 —— 聽起來像否定，其實正在講時間，是回答 When 的常見句型。renovation 翻修。",
+   "✗ contractor 承包商。在稱讚工程品質，沒回答時間。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-008": {
+  "level": 3,
+  "why": [
+   "✓ 正解。just before 就在…之前、holiday weekend 連假。回答「上一次是什麼時候」。",
+   "✗ Twice a month 一個月兩次＝**頻率**，那是 How often 的答案。★ When 與 How often 混淆是高頻失分點。",
+   "✗ 答的是「那是什麼系統」，跟時間無關。"
+  ]
+ },
+ "p2-009": {
+  "level": 2,
+  "why": [
+   "✓ 正解。push back 延後（時間往後推）。quarterly 每季的。",
+   "✗ 重複 results，而且在講結果令人失望。disappointing 令人失望的。",
+   "✗ auditorium 大禮堂 —— 答地點。"
+  ]
+ },
+ "p2-010": {
+  "level": 3,
+  "why": [
+   "✓ 正解。As soon as... 一…就…；be down to 只剩下。★ 用條件回答時間、不給明確鐘點，是進階但常考的形式。toner 碳粉。",
+   "✗ 答的是「跟誰買」，那是 Where from。supplier 供應商。",
+   "✗ 重複 order；而且 order lunch 是「訂午餐」，同一個字換了情境。"
+  ]
+ },
+ "p2-011": {
+  "level": 2,
+  "why": [
+   "✓ 正解。volunteer 自願。★ cover 在這裡是「代班、頂班」——cover the front desk 顧櫃檯。",
+   "✗ ★ 用 cover 的另一個意思「涵蓋、寫在裡面」當陷阱。manual 手冊。",
+   "✗ right after lunch 午餐後 —— 答時間。"
+  ]
+ },
+ "p2-012": {
+  "level": 1,
+  "why": [
+   "✓ 正解。The regional director did，did 代替前面的 approved。regional 區域的。",
+   "✗ 答百分比＝數量，那是 How much 的答案。",
+   "✗ Yes 回 WH 問句 ＋ 重複 increase。"
+  ]
+ },
+ "p2-013": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **Who 的答案不一定是人名** —— 回答「哪個單位」同樣成立。facilities office 總務室、level one 一樓。",
+   "✗ 重複 parking → parked。講自己停哪，沒回答該找誰。",
+   "✗ expire 到期。答的是效期。"
+  ]
+ },
+ "p2-014": {
+  "level": 2,
+  "why": [
+   "✓ 正解。給了人名；unless 除非，是補充條件不影響回答。delayed 延誤的。",
+   "✗ 答地點。",
+   "✗ 重複 give → gave，還放了 She 讓你以為在講人 —— ★ 同字＋同代名詞，是最狠的一種陷阱。"
+  ]
+ },
+ "p2-015": {
+  "level": 1,
+  "why": [
+   "✓ 正解。What time 就是問 When。let me check 讓我確認一下，是合法的補充。",
+   "✗ 重複 close → closed，而且講的是「因整修不開」不是幾點關門。renovation 整修。",
+   "✗ 答地點。downtown 市中心。"
+  ]
+ },
+ "p2-016": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ What did you think of...? 是問**意見**，不是問「你在想什麼」。seem a little high 好像偏高一點。quote 報價（名詞）。",
+   "✗ 重複 quote —— 這裡是動詞「向某人報價」。",
+   "✗ Yes 回 WH ＋ supplier → supply 的變化形陷阱。"
+  ]
+ },
+ "p2-017": {
+  "level": 2,
+  "why": [
+   "✓ 正解。bulb 燈泡；need replacing 需要更換（need + V-ing 帶被動意思，等於 need to be replaced）。",
+   "✗ 答地點。",
+   "✗ 重複 problem ＋ No 開頭，聽起來很順但完全沒回答。★ No problem 是客套話，不是答案。"
+  ]
+ },
+ "p2-018": {
+  "level": 2,
+  "why": [
+   "✓ 正解。business casual 商務休閒（服裝規範的固定說法）。should be fine 應該可以。",
+   "✗ 答的是時間與地點。",
+   "✗ 重複 wear → wore。"
+  ]
+ },
+ "p2-019": {
+  "level": 1,
+  "why": [
+   "✓ 正解。repairs 維修、inspection 檢查 —— 直接回答「包含什麼」。",
+   "✗ 答的是簽約時間。",
+   "✗ Yes 回 WH ＋ 重複 include。"
+  ]
+ },
+ "p2-020": {
+  "level": 1,
+  "why": [
+   "✓ 正解。customs 海關（★ 一定要複數；單數 custom 是「習俗」）。給了原因。",
+   "✗ express courier 快遞。答的是方式 → How 的答案。",
+   "✗ Yes ＋ 重複 delayed。"
+  ]
+ },
+ "p2-021": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ 否定疑問 Why isn't...? 照樣當一般 Why 回答，不用管那個 isn't。out at a client site 出去跑客戶端。",
+   "✗ 答頻率。",
+   "✗ 重複 meeting，而且在講會議結果好不好。"
+  ]
+ },
+ "p2-022": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **To + 原形表目的**，是 Why 的標準答案之一，不一定要有 Because。make room for 挪出空間給；new hires 新人。",
+   "✗ 答地點。",
+   "✗ ★ change 的同字陷阱：這裡是名詞「零錢」，跟題目的動詞「改變」完全兩回事。"
+  ]
+ },
+ "p2-023": {
+  "level": 2,
+  "why": [
+   "✓ 正解。over eight years old 用了八年多。★ **Why 的答案不一定有 Because**，直接講原因就夠。",
+   "✗ 答地點。copy room 影印室。",
+   "✗ Yes 回 WH ＋ 重複 replace。"
+  ]
+ },
+ "p2-024": {
+  "level": 2,
+  "why": [
+   "✓ 正解。How long 問**時間長度**。about forty minutes 大約四十分鐘。",
+   "✗ 答地點。HR ＝ human resources 人力資源。",
+   "✗ 重複 interview（這裡當動詞），而且答的是表現好不好。"
+  ]
+ },
+ "p2-025": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **How did...go? 是問「結果如何」，不是問方法。** better than we expected 比預期好。launch 上市、產品發表。",
+   "✗ 答時間。quarter 季。",
+   "✗ ★ By train 是 How 問「交通方式」時的答案 —— 專門用來騙沒聽出 go 的人。"
+  ]
+ },
+ "p2-026": {
+  "level": 3,
+  "why": [
+   "✓ 正解。register 報名、so far 到目前為止 —— 回答人數。",
+   "✗ ★ **有數字不代表就是答案**：three-hour 是長度，不是人數。",
+   "✗ 答地點。seminar hall 研討會廳。"
+  ]
+ },
+ "p2-027": {
+  "level": 2,
+  "why": [
+   "✓ 正解。through the portal 透過（公司的）入口網站 —— 回答方法。expense report 費用報帳單。",
+   "✗ 重複 submit ＋ 答的是時間。",
+   "✗ 答金額。"
+  ]
+ },
+ "p2-028": {
+  "level": 1,
+  "why": [
+   "✓ 正解。How often 問頻率，答案就是「幾次／多久一次」。three times a week 一週三次；crew 一組工作人員。",
+   "✗ thorough 徹底的。在稱讚品質，不是頻率。",
+   "✗ Yes ＋ 重複 clean。"
+  ]
+ },
+ "p2-029": {
+  "level": 2,
+  "why": [
+   "✓ 正解。forward 轉寄。★ 兩個陷阱夾攻時，**正解常常是最樸素的那一個**。",
+   "✗ 重複 floor —— 題目的 floor plan 是「樓面平面圖」，這裡卻是「樓層」。",
+   "✗ 重複 plan，而且在評價好壞。"
+  ]
+ },
+ "p2-030": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **間接回答**：沒說 Yes/No，但「明天帶零件再來」等於還沒修好。多益最愛考這種，**別因為沒聽到 Yes/No 就排除**。part 零件。",
+   "✗ 有 Yes，但後半「外面很冷」接不上；而且 cold 跟 air conditioning 是聯想陷阱。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-031": {
+  "level": 2,
+  "why": [
+   "✓ 正解。Go ahead 請便。★ free 在這裡是「空著、沒人坐」，不是「免費」。",
+   "✗ 重複 take → took。",
+   "✗ 答人數。"
+  ]
+ },
+ "p2-032": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **meet the deadline ＝ 趕上期限**。tight 時間很緊 —— 先講困難再給肯定，仍然是 yes。",
+   "✗ 把 meet 當「開會」用（conference room 會議室）。",
+   "✗ 把 meet 當「見面」用。★ 同一個字三種用法，這題就是在考 meet。"
+  ]
+ },
+ "p2-033": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **間接回答**：「某人今天早上處理掉了」＝ 已經確認。handle 處理；caterer 外燴業者。",
+   "✗ 有 Yes，但後半在講食物好吃，跟「有沒有確認」接不上。★ **有 Yes 不代表就是答案**。",
+   "✗ 答時間。"
+  ]
+ },
+ "p2-034": {
+  "level": 2,
+  "why": [
+   "✓ 正解。用 begin 換掉題目的 start —— ★ **正解通常換字，陷阱才重複原字**。the first 一號；intern 實習生。",
+   "✗ 重複 start，而且 start raining 是「開始下雨」，完全另一件事。",
+   "✗ 答的是期間長度。"
+  ]
+ },
+ "p2-035": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **「還在等消息」是合法的迴避型答案**，不必給 Yes/No。wait to hear 等回覆。",
+   "✗ 重複 proposal → proposed；propose a date 是「提議日期」，換了情境。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-036": {
+  "level": 2,
+  "why": [
+   "✓ 正解。直述句要聽「對方在暗示什麼」—— 抱怨機器壞了，合理回應是去處理它。jam 卡紙；service line 維修專線。",
+   "✗ Yes 回直述句本來就怪，還重複 copier → copied。",
+   "✗ 答地點。supply closet 文具間。"
+  ]
+ },
+ "p2-037": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ 對方有困難時，**正解通常是提供解法**。issue 核發；temporary 臨時的；badge 識別證。",
+   "✗ 只是評論證件好看，沒幫上任何忙。",
+   "✗ 重複 find → found；find it interesting 是「覺得有趣」。"
+  ]
+ },
+ "p2-038": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ **Then... 開頭的回應在直述句題型很常見**：接受對方給的資訊，然後說自己要怎麼做。had better 最好。",
+   "✗ 重複 go → went；go well 是「進行順利」。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-039": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **run low on ＝ 快用完了**。case 一箱；storeroom 儲藏室。",
+   "✗ ★ 把 run 當「跑步」—— 典型的**片語拆解陷阱**：整個片語的意思跟單字拆開完全不同。",
+   "✗ 重複 printer ＋ Yes 回直述句。"
+  ]
+ },
+ "p2-040": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **work 在這裡是「時間方便、行得通」**，不是「工作」。move a meeting 把會議改期。",
+   "✗ ★ 把 move 換成「搬家」的意思來騙（move into a new building 搬進新大樓）。",
+   "✗ 重複 client ＋ 答數量。"
+  ]
+ },
+ "p2-041": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★「我以為…」是在確認資訊，**正解通常是糾正它** —— 不是取消，只是換了教室。",
+   "✗ 用 workshop 裡的 work 做近音陷阱。",
+   "✗ 答費用。"
+  ]
+ },
+ "p2-042": {
+  "level": 3,
+  "why": [
+   "✓ 正解。lost and found 失物招領處 —— 給了處理方式。",
+   "✗ 重複 leave → left；這裡是「離開」不是「遺留」。",
+   "✗ ★ 最危險的一個：下雨跟雨傘明顯相關，但**話題相關不等於回答了對方**。"
+  ]
+ },
+ "p2-043": {
+  "level": 1,
+  "why": [
+   "✓ 正解。★ **附加問句就當一般 Yes/No 問句回答**，haven't you 不用另外處理。vendor 供應商、廠商。",
+   "✗ 重複 work，而且在講進度。",
+   "✗ 重複 vendor ＋ 答地點。"
+  ]
+ },
+ "p2-044": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **先加條件再說 yes，順序跟中文直覺相反** —— 一定要聽完整句才知道是肯定。client-facing 直接面對客戶的；mandatory 強制的。",
+   "✗ 重複 training → trained。",
+   "✗ 答時間。"
+  ]
+ },
+ "p2-045": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **否定附加問句**：對方猜「你沒訂」，而你訂了，就要用 I did 反駁。actually 其實、事實上。",
+   "✗ have a seat 請坐 —— 用 chairs 做聯想陷阱。",
+   "✗ No 順著對方講，但後半「訂單沒錯」跟「沒訂」互相矛盾。"
+  ]
+ },
+ "p2-046": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ **選擇疑問句不能用 Yes/No 回答 —— 聽到 or 就先刪掉所有 Yes/No 開頭的選項**。printout 列印本。",
+   "✗ Yes 開頭，直接出局；還重複 email。",
+   "✗ 答檔案大小。"
+  ]
+ },
+ "p2-047": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **Whichever／Either／It doesn't matter 這類「都可以」是選擇疑問句的高頻正解**。whichever 不論哪一個。",
+   "✗ 重複 take → took。",
+   "✗ Yes 開頭，選擇疑問句用不了。license 駕照。"
+  ]
+ },
+ "p2-048": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **第三選項陷阱：正解兩個都不選**，直接給你第三種情況（改到明天了）。get moved 被改期。",
+   "✗ Yes 開頭 ＋ 重複 presentation。",
+   "✗ 答地點。auditorium 大禮堂。"
+  ]
+ },
+ "p2-049": {
+  "level": 2,
+  "why": [
+   "✓ 正解。Could you...? 是**請求**，答案是答應或婉拒。Sure 好啊；figures 數據。",
+   "✗ 重複 look；look everywhere 是「到處找」。",
+   "✗ 重複 send → sent。"
+  ]
+ },
+ "p2-050": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **Would you like me to...? 是「我幫你做…好嗎」的提議**，不是問你想不想要東西。That would be a big help 那就幫大忙了。",
+   "✗ ★ book 的同字陷阱：題目是動詞「預訂」，這裡是名詞「書」。",
+   "✗ 答地點。terminal 航廈。"
+  ]
+ },
+ "p2-051": {
+  "level": 2,
+  "why": [
+   "✓ 正解。downstairs 樓下、climate-controlled 恆溫恆濕的 —— 回答地點。",
+   "✗ 重複 store → stored ＋ 答的是時間。",
+   "✗ Yes 回 WH 問句 ＋ 重複 samples。"
+  ]
+ },
+ "p2-052": {
+  "level": 2,
+  "why": [
+   "✓ 正解。sign on the line 在線上簽名、at the bottom 在下方 —— 回答位置。",
+   "✗ 重複 delivery → delivered ＋ 答時間。",
+   "✗ 答重量。kilo 公斤。"
+  ]
+ },
+ "p2-053": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **間接回答**：「還沒搬進去」等於現在還沒有那個地點。move in 遷入。",
+   "✗ 答時間。",
+   "✗ 重複 office，還放了 She 讓你以為在講人。office manager 辦公室主管。"
+  ]
+ },
+ "p2-054": {
+  "level": 2,
+  "why": [
+   "✓ 正解。anywhere along 沿著…隨便哪裡、back wall 後牆 —— 回答位置。",
+   "✗ 答數量。",
+   "✗ ★ set the table 是「擺餐具」的固定用法，跟題目的 tables 完全不同意思。"
+  ]
+ },
+ "p2-055": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **就算 notarize（公證）不認得，也能靠 Where 判斷只有這個在講地點**。two blocks north 往北兩個街區。",
+   "✗ 重複 document —— 這裡是動詞「做成書面紀錄」。",
+   "✗ 答時間。at the latest 最晚。"
+  ]
+ },
+ "p2-056": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ 問未來卻答「已經到了」，是合理的**糾正型回答**。be due to 預定要。",
+   "✗ loading dock 卸貨區 —— 答地點。",
+   "✗ Yes 回 WH 問句。expect 預期、等著。"
+  ]
+ },
+ "p2-057": {
+  "level": 2,
+  "why": [
+   "✓ 正解。by the end of this week 這週結束前。availability 有空的時段。",
+   "✗ 重複 availability → available，聽起來很順但答的是別的事。",
+   "✗ 答地點。shared calendar 共用行事曆。"
+  ]
+ },
+ "p2-058": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **「我查一下」是合法的迴避型答案**，多益很常拿來當正解。pull up 調出（紀錄）。",
+   "✗ 重複 inspection → inspector；thorough 徹底的，講的是品質。",
+   "✗ factory floor 廠房區 —— 答地點。"
+  ]
+ },
+ "p2-059": {
+  "level": 1,
+  "why": [
+   "✓ 正解。late Thursday night 週四深夜 —— 明確時間。",
+   "✗ 答地點。",
+   "✗ 答的是過去的事，時態不符。attend 出席。"
+  ]
+ },
+ "p2-060": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ Once... 一旦…，**用條件代替時間點**，是 When 的高階答法。switch to 換成。",
+   "✗ 重複 system ＋ 在講速度快。",
+   "✗ Yes 回 WH ＋ 重複 switch。"
+  ]
+ },
+ "p2-061": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **Who 的答案可以是分公司或部門**，不一定是人。account 這裡是「客戶、往來帳戶」；branch 分公司。",
+   "✗ 重複 handle。",
+   "✗ 答的是期間，那是 How long 的答案。"
+  ]
+ },
+ "p2-062": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **用反問回答問句是完全合法的正解** —— 別因為它沒給名字就排除。Wasn't it you? 不是你嗎？",
+   "✗ 重複 boxes ＋ 答數量。",
+   "✗ 答地點。storage room 儲藏室。"
+  ]
+ },
+ "p2-063": {
+  "level": 1,
+  "why": [
+   "✓ 正解。customer service 客服、extension 分機 —— 回答該找誰。refund 退款。",
+   "✗ 重複 contact ＋ 答時間。",
+   "✗ 答金額。"
+  ]
+ },
+ "p2-064": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★「還沒公布」是迴避型正解。announce 公布；luncheon 午餐會。",
+   "✗ 答地點。",
+   "✗ 重複 speaker → speaks。"
+  ]
+ },
+ "p2-065": {
+  "level": 2,
+  "why": [
+   "✓ 正解。the thirtieth 三十號、no extensions 不延期。grant 補助金。",
+   "✗ 重複 application → applied ＋ 答的是去年。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-066": {
+  "level": 2,
+  "why": [
+   "✓ 正解。What happened to...? 問「發生什麼事」。back up 倒車。",
+   "✗ 重複 display，而且在稱讚它好看。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-067": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **That depends on...「看情況」是常見正解**，不給數字也算回答。rate 費率；season 旺淡季。",
+   "✗ 重複 room —— 這裡變成房號。",
+   "✗ Yes 回 WH ＋ 重複 double。"
+  ]
+ },
+ "p2-068": {
+  "level": 1,
+  "why": [
+   "✓ 正解。Just your laptop 只要帶筆電 —— 直接回答。",
+   "✗ 重複 bring → brought。",
+   "✗ 答時間。"
+  ]
+ },
+ "p2-069": {
+  "level": 2,
+  "why": [
+   "✓ 正解。be short (of) 缺少、operator 機台操作員 —— 回答原因。",
+   "✗ 重複 delay ＋ 答次數。",
+   "✗ line 這裡是「產線」—— 答地點。"
+  ]
+ },
+ "p2-070": {
+  "level": 1,
+  "why": [
+   "✓ 正解。break down 拋錨、故障 —— 給了原因。",
+   "✗ 答時間。",
+   "✗ Yes 回 WH ＋ 重複 cancel。"
+  ]
+ },
+ "p2-071": {
+  "level": 2,
+  "why": [
+   "✓ 正解。audit 稽核。直接講原因、沒有 Because，是 Why 的常態。",
+   "✗ 答地點。branch office 分公司。",
+   "✗ 重複 work ＋ 時態是過去，跟「這個週末」對不上。"
+  ]
+ },
+ "p2-072": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **「道歉＋補救」是抱怨型問句的標準正解**。resend 重寄；be copied on 被副本抄送。",
+   "✗ ★ 把 copy 當「影印」來騙 —— 題目的 copied 是「副本抄送」。",
+   "✗ 答的是內容主題，不是原因。policy 政策。"
+  ]
+ },
+ "p2-073": {
+  "level": 2,
+  "why": [
+   "✓ 正解。refinish 重新打磨上漆 —— 給了原因。closed off 封閉起來。",
+   "✗ 重複 closed → closes ＋ 答時間。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-074": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **How's...working out? 問的是「用起來如何」**，不是問方法。get used to 習慣（to 後面接名詞或動名詞）。",
+   "✗ 答價錢。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-075": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **come to ＝ 總計為**。estimate 估價單。沒給數字，但「比估價低」確實回答了金額。",
+   "✗ 重複 repairs → repaired ＋ 答時間。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-076": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ 用「我印張地圖給你」代替講路線，是合法正解。★ plant 這裡是「廠房」不是「植物」。",
+   "✗ 重複 plant ＋ 在講規模大小。",
+   "✗ 答人數。"
+  ]
+ },
+ "p2-077": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ 沒講數字，但「名單上每人一份」確實回答了數量。",
+   "✗ 重複 copies → copier；out of paper 沒紙了。",
+   "✗ 答時間。"
+  ]
+ },
+ "p2-078": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ How was...? 問的是**感受**，不是方式。on time 準時。",
+   "✗ 答目的地。",
+   "✗ 重複 flight → fly ＋ 答頻率。"
+  ]
+ },
+ "p2-079": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **用反問婉拒**：問「可以等到午餐後嗎」等於現在不方便。",
+   "✗ ★ 把 free 當「免費」（free of charge）—— 題目的 free 是「有空」。",
+   "✗ 重複 review。"
+  ]
+ },
+ "p2-080": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **間接回答**：「Miguel 正在跟他們通話」＝ 有人打了。electrician 水電工。",
+   "✗ 有 Yes，但答的是停電這件事。electricity is out 停電。",
+   "✗ 答時間。"
+  ]
+ },
+ "p2-081": {
+  "level": 2,
+  "why": [
+   "✓ 正解。用「只收現金」代替 No。I'm afraid 用來緩和拒絕的語氣。",
+   "✗ 把 take 當「拿、買」用。",
+   "✗ 把 take 當「拿走」，時態還是過去。★ 這題就是在考 take 的多義。"
+  ]
+ },
+ "p2-082": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **反問等於「我沒收到」** —— 收到了就不會問是哪個場地。venue 場地。",
+   "✗ 有 Yes，但重複 change 而且意思變成「我改的」。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-083": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★「只到中午」＝ 有開但有限制，**比單純的 Yes 更常當正解**。",
+   "✗ 重複 warehouse ＋ 在講規模。",
+   "✗ Yes 之後接「我把它打開的」，語意接不上。"
+  ]
+ },
+ "p2-084": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **back-ordered ＝ 缺貨待補**，等於還沒到。uniform 制服。",
+   "✗ 重複 uniform ＋ 只是稱讚。",
+   "✗ changing room 更衣室 —— 答地點。"
+  ]
+ },
+ "p2-085": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ **轉述第三人的話來回答**，是常見的正解形式。start without her 不等她先開始。",
+   "✗ 重複 wait ＋ 講的是自己等了多久。",
+   "✗ 答地點。reception desk 接待櫃檯。"
+  ]
+ },
+ "p2-086": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ 對方說了壞消息，**用關心的反問回應**。rebook 改訂；be able to 能夠。",
+   "✗ 重複 flight ＋ 在講航程長短。",
+   "✗ gate 登機門 —— 答地點。"
+  ]
+ },
+ "p2-087": {
+  "level": 3,
+  "why": [
+   "✓ 正解。be due for 該做…了、servicing 保養維修、anyway 反正。",
+   "✗ 重複 printer → printed ＋ 答次數。",
+   "✗ ★ 跟 noise（噪音）明顯相關所以特別危險 —— **話題相關不等於回答了對方**。"
+  ]
+ },
+ "p2-088": {
+  "level": 2,
+  "why": [
+   "✓ 正解。對數字做比較是自然的回應。application 申請件。",
+   "✗ 重複 application → applied。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-089": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★ 聽到別人要請假，**主動提議幫忙**。cover 代接、代班；out of the office 不在辦公室。",
+   "✗ 重複 office，而且說整間關閉，跟原句矛盾。",
+   "✗ 重複 Monday —— 等於把對方的話再說一次，沒有回應。"
+  ]
+ },
+ "p2-090": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **add up ＝ 數字對得起來**（不是「加起來」）。figures 數據。",
+   "✗ ★ 把 add 拆開當「加上去」用 —— 片語拆解陷阱。",
+   "✗ 答金額。"
+  ]
+ },
+ "p2-091": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **out of service ＝ 故障停用**。around the corner 就在轉角、很近。",
+   "✗ ★ 把 service 當「服務」—— 它是片語的一部分，不能拆開解讀。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-092": {
+  "level": 2,
+  "why": [
+   "✓ 正解。對方說不會用，正解**提供解法**。manual 說明書；drawer 抽屜。",
+   "✗ 重複 model ＋ 只是陳述它很新。",
+   "✗ 重複 use → used，說自己用過，跟對方的困難無關。"
+  ]
+ },
+ "p2-093": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **用條件回答，不給是或否**。Only if 只有在…的情況下；in time 及時。",
+   "✗ 重複 trade show ＋ 講規模。",
+   "✗ ★ present 的另一個意思：present someone with an award 頒獎給某人。"
+  ]
+ },
+ "p2-094": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **間接回答**：「會計週二就寄出了」＝ 已經付了，**糾正了對方的假設**。accounting 會計部。",
+   "✗ 有 Yes，但只是重複 invoice 並講金額大。",
+   "✗ 答地點。"
+  ]
+ },
+ "p2-095": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **講理由來支持對方的判斷**，等於同意。traffic 車流；after five 五點以後。",
+   "✗ 重複 leave → left —— 這裡是「留置」不是「離開」。",
+   "✗ 重複 six，但那是人數不是時間。"
+  ]
+ },
+ "p2-096": {
+  "level": 2,
+  "why": [
+   "✓ 正解。選一個並附上理由。save someone the travel 省下某人的舟車勞頓。",
+   "✗ ★ Yes 回選擇疑問句一定錯。",
+   "✗ 重複 meet 與 in person，而且時態是過去。"
+  ]
+ },
+ "p2-097": {
+  "level": 2,
+  "why": [
+   "✓ 正解。★「都可以」型的正解。Whatever's easier for you 哪個對你方便就哪個。",
+   "✗ Yes 回選擇疑問句。",
+   "✗ 重複 print。"
+  ]
+ },
+ "p2-098": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **第三選項陷阱：兩個都不是**。transfer to 調到（某部門）；operations 營運部。",
+   "✗ Yes 回選擇疑問句，還順著講 sales。",
+   "✗ 重複 sales，但答的是業績數字。"
+  ]
+ },
+ "p2-099": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **Would you mind...? 答應時要用否定** —— Not at all／Of course not 才是「好啊」。中文直覺很容易選反。",
+   "✗ 重複 hold；hold a meeting 是「開會」。",
+   "✗ 重複 door ＋ 答位置。"
+  ]
+ },
+ "p2-100": {
+  "level": 3,
+  "why": [
+   "✓ 正解。★ **Why don't we...? 是提議，不是問原因** —— 不要去找理由。push back 延後；that gives us time to 那讓我們有時間…。",
+   "✗ ★ 把 push 當「推」的字面意思。",
+   "✗ 重複 launch —— launch party 是「發表酒會」。"
+  ]
+ }
+}
