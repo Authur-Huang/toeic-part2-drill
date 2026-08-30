@@ -70,6 +70,10 @@ button:disabled{opacity:.45;cursor:default}
    對照的對象是「這一句英文」，分開放就得自己在兩處之間來回對號。 */
 .opt .why{font-size:13px;line-height:1.7;color:var(--dim);margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);white-space:pre-line}
 .opt.correct .why,.opt.chosen-wrong .why{color:var(--fg)}
+/* 對完答案後整列可點＝再唸一次。🔊 是「這裡可以點」的提示，不是另一顆按鈕。 */
+.opt.sayable{cursor:pointer}
+.opt .sayic{flex:none;font-size:15px;line-height:1.4;opacity:.5}
+.opt.sayable:active .sayic{opacity:1}
 .lv{display:inline-block;font-size:11px;border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-left:6px;color:var(--dim)}
 .lv.l1{color:var(--ok);border-color:var(--ok)}
 .lv.l3{color:var(--accent);border-color:var(--accent)}
@@ -296,8 +300,10 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
     <div class="card">
       <h2>作答方式</h2>
       <label class="sw"><span>Part 2 顯示選項文字<small>關閉時只看得到 A／B／C 按鈕，跟正式考試一樣。Part 3／4 的選項一律顯示，因為正式考試就是印在題本上的。</small></span><input type="checkbox" id="o-show"></label>
-      <label class="sw"><span>答對自動下一題<small>開著的話答對後 1.2 秒就換頁，會來不及看逐選項解析。答錯一律停下來。</small></span><input type="checkbox" id="o-auto"></label>
+      <label class="sw"><span>答對自動下一題<small>開著的話答對後 1.2 秒就換頁，會來不及看逐選項解析。答錯一律停下來。<b>下面的「答完自動唸出選項」開著時，這一項不生效</b>——唸到一半換頁沒有意義。</small></span><input type="checkbox" id="o-auto"></label>
       <label class="sw"><span>進入題目自動播放<small>不用每題都按播放。</small></span><input type="checkbox" id="o-autoplay"></label>
+      <label class="sw"><span>答完自動唸出你按的選項<small>對完答案後<b>每個選項都可以點，點一下就唸那一句</b>；這個開關只決定要不要自動唸你剛按的那個。Part 1／2 播原本的錄音，Part 3／4 沒有錄選項，改用語音合成照文字唸。</small></span><input type="checkbox" id="o-replay"></label>
+      <p class="muted hide" id="sayWarn" style="margin:0 0 10px;font-size:12.5px"></p>
       <label class="sw"><span>播放速度<div class="seg-ctl" id="o-speed" style="margin-top:8px">
         <button data-sp="0.8">0.8×</button><button data-sp="1" class="on">1×</button><button data-sp="1.15">1.15×</button>
       </div></span></label>
@@ -332,7 +338,8 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 <script>
 'use strict';
 var LS_H='p2.hist.v1', LS_O='p2.opt.v1';
-var D1=[], D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:false,autoplay:true,speed:1});
+var D1=[], D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:false,autoplay:true,speed:1,replay:true});
+if(opt.replay===undefined){ opt.replay=true; save(LS_O,opt); }   // 舊裝置沒有這個欄位
 /* 2026-08-30：加了逐選項解析之後，「答對自動下一題」會在 1.2 秒後把解析收走 ——
    正好把這次要給的東西蓋掉，而且答對時最需要看的就是「我為什麼對」。
    所以一次性把既有裝置的這個開關關掉（新安裝的預設也改成關）。
@@ -489,6 +496,73 @@ function render1(){
   });
   if(opt.autoplay) setTimeout(function(){playRange(0,null);segMark(0,true);},250);
 }
+/* ---------- 答完之後點選項就唸出來 ---------- */
+/* Part 1／2 的選項本來就有錄音，直接播那一段。
+   Part 3／4 **刻意沒有錄選項**（正式考試選項印在題本上，唸了會練成「等人唸選項」的習慣），
+   所以那邊改用瀏覽器的語音合成照文字唸。
+
+   🔴 只有 session.answered 之後才會發出聲音。作答當下唸選項會直接毀掉 Part 3／4 的訓練目的，
+      這條界線比功能本身重要，改任何一處都要確認它還在。 */
+var SAY = window.speechSynthesis || null, SAY_VOICE = null;
+function sayWarn(msg){
+  var w = $('#sayWarn'); if(!w) return;
+  if(msg){ w.textContent = msg; w.classList.remove('hide'); } else { w.classList.add('hide'); }
+}
+function pickVoice(){
+  if(!SAY) return;
+  var vs = SAY.getVoices() || [];
+  SAY_VOICE = vs.filter(function(v){return /^en[-_]US/i.test(v.lang);})[0]
+           || vs.filter(function(v){return /^en/i.test(v.lang);})[0] || null;
+  if(!vs.length) return;           // 清單還沒載完就先別報警，等 voiceschanged 再判
+  sayWarn(SAY_VOICE ? '' :
+    '⚠ 這台裝置沒有英文語音，Part 3／4 點選項會由中文語音硬唸，聽起來不準。'
+    + 'Windows 加裝：設定 → 時間與語言 → 語言與地區 → 新增語言 → English → 勾「語音」。'
+    + '手機（iOS／Android）內建就有，不必設定。Part 1／2 是真人錄音，不受影響。');
+}
+if(SAY){ pickVoice(); SAY.addEventListener('voiceschanged', pickVoice); }
+else sayWarn('這個瀏覽器不支援語音合成，Part 3／4 的選項無法發音。Part 1／2 不受影響。');
+
+function speak(text){
+  if(!SAY) return;
+  function go(){
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';        // 不指定的話 iOS 會用系統語言（中文）去唸英文
+    if(SAY_VOICE) u.voice = SAY_VOICE;
+    u.rate = .85;            // 比預設慢一點，音節才聽得清楚
+    SAY.speak(u);
+  }
+  // cancel 後立刻 speak 在 Chrome 會卡死，所以只有真的在唸時才延遲
+  if(SAY.speaking || SAY.pending){ SAY.cancel(); setTimeout(go, 60); }
+  else go();
+}
+
+/* 唸出第 i 個選項。四個 Part 的來源不同，這裡收成同一個進入點。 */
+function sayChoice(i){
+  if(!session || !session.answered) return;      // 🔴 見上面那條界線
+  var it = card().item;
+  if(session.kind === 'p1'){
+    var m = it.marks[i];  if(m) playRange(m.start, m.start + m.len);
+  }else if(session.kind === 'p2'){
+    var m2 = it.marks[i + 1];                    // marks[0] 是題目句，選項從 1 開始
+    if(m2) playRange(m2.start, m2.start + m2.len);
+  }else if(session.kind === 'p34'){
+    var q = it.questions[session.qi];
+    if(q) speak(q.choices[i]);                   // Part 3／4：沒有錄音，照文字唸
+  }
+  // 閱讀（kind 'r'）不發音——使用者要的是聽力測驗，閱讀朗讀是另一件事
+}
+/* 對完答案後把每個選項變成可以點的「再唸一次」，並自動唸出剛按的那一個。 */
+function armReplay(box, chosen){
+  for(var i = 0; i < box.children.length; i++){
+    (function(k, b){
+      b.classList.add('sayable');
+      if(!b.querySelector('.sayic')) b.appendChild(el('span','sayic','🔊'));
+      b.onclick = function(){ sayChoice(k); };
+    })(i, box.children[i]);
+  }
+  if(opt.replay && chosen != null) sayChoice(chosen);
+}
+
 /* ---------- 逐選項解析與難度（四個 Part 共用） ---------- */
 var LV=['','基礎','標準','進階'];
 function lvTag(q){
@@ -512,7 +586,6 @@ function answer1(n){
   session.total++; if(ok) session.right++; else session.wrong.push(it.id);
   var btns=$('#o-opts').children;
   for(var k=0;k<4;k++){
-    btns[k].onclick=null;
     btns[k].children[1].textContent=it.choices[k];   // 對完答案一定要把文字放出來
     if(k===it.answer) btns[k].classList.add('correct');
     if(k===n&&!ok) btns[k].classList.add('chosen-wrong');
@@ -521,8 +594,9 @@ function answer1(n){
   $('#o-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[it.answer];
   $('#o-note').textContent=it.note;
   showWhy($('#o-opts'),it);
+  armReplay($('#o-opts'),n);
   $('#o-after').classList.remove('hide');
-  if(ok&&opt.auto) setTimeout(nextCard,1200);
+  if(ok&&opt.auto&&!opt.replay) setTimeout(nextCard,1200);   // 開著自動唸選項時不自動換頁：唸到一半被切掉沒有意義
 }
 
 /* ---------- Part 2 ---------- */
@@ -551,19 +625,18 @@ function answer2(n){
   var btns=$('#q-opts').children;
   for(var k=0;k<3;k++){
     btns[k].querySelector('.t').textContent=it.choices[k];
-    btns[k].onclick=null;
     if(k===it.answer) btns[k].classList.add('correct');
     if(k===n&&!ok) btns[k].classList.add('chosen-wrong');
-    var re=el('button','re','重聽'); re.dataset.i=k+1;
-    re.onclick=function(e){e.stopPropagation();var m=it.marks[+this.dataset.i];playRange(m.start,m.start+m.len);};
-    btns[k].appendChild(re);
   }
+  // 原本每個選項旁邊有一顆小小的「重聽」按鈕。現在整列都能點，那顆就多餘了，
+  // 而且兩個可點區域疊在一起反而要瞄準。改成右邊一個 🔊 當作可點的提示。
   $('#q-verdict').className='verdict '+(ok?'ok':'no');
   $('#q-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABC'[it.answer];
   $('#q-note').innerHTML='<b>題目：</b>'+esc(it.prompt)+'<div style="margin-top:8px">'+esc(it.note)+'</div>';
   showWhy($('#q-opts'),it);
+  armReplay($('#q-opts'),n);
   $('#q-after').classList.remove('hide'); $('#q-quit').classList.add('hide');
-  if(ok&&opt.auto) setTimeout(nextCard,1200);
+  if(ok&&opt.auto&&!opt.replay) setTimeout(nextCard,1200);   // 開著自動唸選項時不自動換頁：唸到一半被切掉沒有意義
 }
 
 /* ---------- 圖表題 ---------- */
@@ -653,7 +726,6 @@ function answer34(n){
   session.total++; if(ok) session.right++; else session.wrong.push(it.id+'#'+session.qi);
   var btns=$('#t-opts').children;
   for(var k=0;k<4;k++){
-    btns[k].onclick=null;
     if(k===q.answer) btns[k].classList.add('correct');
     if(k===n&&!ok) btns[k].classList.add('chosen-wrong');
   }
@@ -661,9 +733,10 @@ function answer34(n){
   $('#t-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[q.answer];
   $('#t-note').textContent=q.note;
   showWhy($('#t-opts'),q);
+  armReplay($('#t-opts'),n);
   $('#t-after').classList.remove('hide');
   $('#t-next').textContent=(session.qi>=2)?'看逐字稿':'下一題';
-  if(ok&&opt.auto) setTimeout(next34,1200);
+  if(ok&&opt.auto&&!opt.replay) setTimeout(next34,1200);   // 開著自動唸選項時不自動換頁：唸到一半被切掉沒有意義
 }
 function next34(){
   if(!session.answered) return;
@@ -1031,6 +1104,7 @@ $('#w-copy').onclick=function(){
 $('#o-show').onchange=function(){opt.show=this.checked;save(LS_O,opt);};
 $('#o-auto').onchange=function(){opt.auto=this.checked;save(LS_O,opt);};
 $('#o-autoplay').onchange=function(){opt.autoplay=this.checked;save(LS_O,opt);};
+$('#o-replay').onchange=function(){opt.replay=this.checked;save(LS_O,opt);};
 document.querySelectorAll('#o-speed button').forEach(function(b){
   b.onclick=function(){
     opt.speed=parseFloat(b.dataset.sp);save(LS_O,opt);audio.playbackRate=opt.speed;
@@ -1048,6 +1122,7 @@ $('#dl-p1').onclick=function(){download('p1',this);};
 
 /* ---------- 啟動 ---------- */
 $('#o-show').checked=opt.show; $('#o-auto').checked=opt.auto; $('#o-autoplay').checked=opt.autoplay;
+$('#o-replay').checked=opt.replay;
 document.querySelectorAll('#o-speed button').forEach(function(x){
   x.classList.toggle('on',parseFloat(x.dataset.sp)===opt.speed);
 });
