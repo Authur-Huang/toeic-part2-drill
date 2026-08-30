@@ -66,6 +66,13 @@ button:disabled{opacity:.45;cursor:default}
 .opt.chosen-wrong{background:var(--nobg);border-color:var(--no)}
 .opt.chosen-wrong .k{color:var(--no)}
 .opt .re{flex:none;font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:transparent}
+/* 逐選項解析：貼在該選項底下，不集中放到下面那塊 note。
+   對照的對象是「這一句英文」，分開放就得自己在兩處之間來回對號。 */
+.opt .why{font-size:13px;line-height:1.7;color:var(--dim);margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);white-space:pre-line}
+.opt.correct .why,.opt.chosen-wrong .why{color:var(--fg)}
+.lv{display:inline-block;font-size:11px;border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-left:6px;color:var(--dim)}
+.lv.l1{color:var(--ok);border-color:var(--ok)}
+.lv.l3{color:var(--accent);border-color:var(--accent)}
 
 .verdict{font-weight:700;margin:16px 0 8px;font-size:16px}
 .verdict.ok{color:var(--ok)} .verdict.no{color:var(--no)}
@@ -289,7 +296,7 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
     <div class="card">
       <h2>作答方式</h2>
       <label class="sw"><span>Part 2 顯示選項文字<small>關閉時只看得到 A／B／C 按鈕，跟正式考試一樣。Part 3／4 的選項一律顯示，因為正式考試就是印在題本上的。</small></span><input type="checkbox" id="o-show"></label>
-      <label class="sw"><span>答對自動下一題<small>答錯一律停下來看解析。</small></span><input type="checkbox" id="o-auto"></label>
+      <label class="sw"><span>答對自動下一題<small>開著的話答對後 1.2 秒就換頁，會來不及看逐選項解析。答錯一律停下來。</small></span><input type="checkbox" id="o-auto"></label>
       <label class="sw"><span>進入題目自動播放<small>不用每題都按播放。</small></span><input type="checkbox" id="o-autoplay"></label>
       <label class="sw"><span>播放速度<div class="seg-ctl" id="o-speed" style="margin-top:8px">
         <button data-sp="0.8">0.8×</button><button data-sp="1" class="on">1×</button><button data-sp="1.15">1.15×</button>
@@ -325,7 +332,12 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 <script>
 'use strict';
 var LS_H='p2.hist.v1', LS_O='p2.opt.v1';
-var D1=[], D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:true,autoplay:true,speed:1});
+var D1=[], D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:false,autoplay:true,speed:1});
+/* 2026-08-30：加了逐選項解析之後，「答對自動下一題」會在 1.2 秒後把解析收走 ——
+   正好把這次要給的東西蓋掉，而且答對時最需要看的就是「我為什麼對」。
+   所以一次性把既有裝置的這個開關關掉（新安裝的預設也改成關）。
+   使用者仍可在設定頁自己開回來，migrated 旗標確保不會每次開 App 都強制關一次。 */
+if(!opt.whyMigrated){ opt.auto=false; opt.whyMigrated=1; save(LS_O,opt); }
 var session=null, audio=new Audio(), stopAt=null;
 var DAY=86400000, STEPS=[1,3,7];          // 間隔重複：錯了之後 1、3、7 天各回來一次
 
@@ -460,7 +472,7 @@ function nextCard(){
 /* ---------- Part 1 ---------- */
 function render1(){
   var it=card().item; session.answered=false;
-  $('#o-tag').textContent='Part 1　'+it.scene;
+  $('#o-tag').innerHTML=esc('Part 1　'+it.scene)+lvTag(it);
   $('#o-pic').innerHTML=it.svg;          // 圖是本專案自己畫的，沒有外來字串
   $('#o-after').classList.add('hide'); $('#o-quit').classList.remove('hide');
   segMark(-1); setPlay(false);
@@ -476,6 +488,21 @@ function render1(){
     box.appendChild(b);
   });
   if(opt.autoplay) setTimeout(function(){playRange(0,null);segMark(0,true);},250);
+}
+/* ---------- 逐選項解析與難度（四個 Part 共用） ---------- */
+var LV=['','基礎','標準','進階'];
+function lvTag(q){
+  if(!q||!q.level) return '';
+  return ' <span class="lv l'+q.level+'">'+LV[q.level]+'</span>';
+}
+// 對完答案才呼叫。沒有 why 的題目（還沒標註到）就什麼都不做，畫面照舊。
+function showWhy(box,q){
+  if(!q||!q.why) return;
+  for(var i=0;i<box.children.length;i++){
+    var t=box.children[i].querySelector('.t');
+    if(!t||!q.why[i]) continue;
+    var d=el('div','why'); d.textContent=q.why[i]; t.appendChild(d);
+  }
 }
 function answer1(n){
   if(session.answered) return;
@@ -493,6 +520,7 @@ function answer1(n){
   $('#o-verdict').className='verdict '+(ok?'ok':'no');
   $('#o-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[it.answer];
   $('#o-note').textContent=it.note;
+  showWhy($('#o-opts'),it);
   $('#o-after').classList.remove('hide');
   if(ok&&opt.auto) setTimeout(nextCard,1200);
 }
@@ -500,7 +528,7 @@ function answer1(n){
 /* ---------- Part 2 ---------- */
 function render2(){
   var it=card().item; session.answered=false;
-  $('#q-tag').textContent='Part 2　'+it.type;
+  $('#q-tag').innerHTML=esc('Part 2　'+it.type)+lvTag(it);
   $('#q-after').classList.add('hide'); $('#q-quit').classList.remove('hide');
   segMark(-1); setPlay(false);
   audio.src='audio/'+it.id+'.mp3';
@@ -533,6 +561,7 @@ function answer2(n){
   $('#q-verdict').className='verdict '+(ok?'ok':'no');
   $('#q-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABC'[it.answer];
   $('#q-note').innerHTML='<b>題目：</b>'+esc(it.prompt)+'<div style="margin-top:8px">'+esc(it.note)+'</div>';
+  showWhy($('#q-opts'),it);
   $('#q-after').classList.remove('hide'); $('#q-quit').classList.add('hide');
   if(ok&&opt.auto) setTimeout(nextCard,1200);
 }
@@ -603,7 +632,7 @@ function toAnswer(){
 function renderQ34(){
   var it=card().item, q=it.questions[session.qi];
   session.answered=false;
-  $('#t-tag').textContent='Part '+it.part+'　'+it.scene+'　第 '+(session.qi+1)+' / 3 題';
+  $('#t-tag').innerHTML=esc('Part '+it.part+'　'+it.scene+'　第 '+(session.qi+1)+' / 3 題')+lvTag(q);
   $('#t-qtext').textContent=q.q;
   $('#t-after').classList.add('hide');
   var box=$('#t-opts'); box.innerHTML='';
@@ -631,6 +660,7 @@ function answer34(n){
   $('#t-verdict').className='verdict '+(ok?'ok':'no');
   $('#t-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[q.answer];
   $('#t-note').textContent=q.note;
+  showWhy($('#t-opts'),q);
   $('#t-after').classList.remove('hide');
   $('#t-next').textContent=(session.qi>=2)?'看逐字稿':'下一題';
   if(ok&&opt.auto) setTimeout(next34,1200);
@@ -666,8 +696,8 @@ function toReview(){
 function renderR(){
   var it=card().item, q=it.questions[session.qi];
   session.answered=false;
-  $('#r-tag').textContent='Part '+it.part+'　'+(it.topic||it.scene||'')
-    +(it.questions.length>1?('　第 '+(session.qi+1)+' / '+it.questions.length+' 題'):'');
+  $('#r-tag').innerHTML=esc('Part '+it.part+'　'+(it.topic||it.scene||'')
+    +(it.questions.length>1?('　第 '+(session.qi+1)+' / '+it.questions.length+' 題'):''))+lvTag(q);
   var psg=$('#r-psg'); psg.innerHTML='';
   if(it.passage&&it.passage.length){
     it.passage.forEach(function(p){
@@ -703,6 +733,7 @@ function answerR(n){
   $('#r-verdict').className='verdict '+(ok?'ok':'no');
   $('#r-verdict').textContent=ok?'✓ 答對':'✗ 答錯，正解是 '+'ABCD'[q.answer];
   $('#r-note').textContent=q.note;
+  showWhy($('#r-opts'),q);
   $('#r-after').classList.remove('hide');
   $('#r-next').textContent=(session.qi+1>=it.questions.length)?'下一題':'同一篇下一小題';
   if(ok&&opt.auto) setTimeout(nextR,1200);

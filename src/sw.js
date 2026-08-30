@@ -6,7 +6,7 @@
       漏了這一步是靜默錯誤：items.json 是 network-first 會更新成新時間軸，
       音檔卻還是舊的，「重聽某一句」會對不準而畫面看不出異常。
    音檔快取由設定頁的「下載全部音檔」預先填滿，這裡只負責讀。 */
-var SHELL = 'p2-shell-v7';
+var SHELL = 'p2-shell-v9';   // v9：2026-08-30 逐選項解析＋難度標籤；並修掉題庫 JSON 被瀏覽器 HTTP 快取攔截的問題
 // 兩個音檔快取分開，對應設定頁的分包下載。
 // ⚠ 這裡的名稱必須與 index.html 的 download() 寫入的名稱一致，
 //    否則下載好的檔案 SW 讀不到，離線就會失效。
@@ -78,7 +78,12 @@ self.addEventListener('fetch', function (e) {
   e.respondWith(
     caches.open(SHELL).then(function (c) {
       if (isData) {
-        return fetch(req).then(function (res) {
+        // 🔴 這裡一定要 no-store。SW 的 fetch 預設會先問**瀏覽器自己的 HTTP 快取**，
+        //    題庫 JSON 沒有帶 Cache-Control，瀏覽器就用啟發式規則自行沿用舊的，
+        //    於是「網路優先」實際上拿到的還是舊檔 —— 更新了解析卻怎麼重開都看不到。
+        //    2026-08-30 實測到：itemsR.json 已更新，透過 SW 拿到的仍是舊版，
+        //    同一支檔案用 {cache:'no-store'} 抓就是新的。
+        return fetch(req.url, { cache: 'no-store' }).then(function (res) {
           if (res && res.ok) c.put(req, res.clone());
           return res;
         }).catch(function () {

@@ -1,0 +1,220 @@
+{
+  "_說明": "Part 1 逐選項解析與難度。why 依**題庫原始順序**（items1/batch01.json 的 choices），enrich.py 會自動對到 App 打散後的位置。level：1 基礎／2 標準／3 進階。",
+
+  "p1-001": {
+    "level": 1,
+    "why": [
+      "✓ 正解。東西已經放好、現場沒人在動它 → have been V-ed（完成被動），描述的是「結果狀態」。stack 堆疊／against a wall 靠著牆。",
+      "✗ 畫面裡沒有人。carry 搬運。★ 只要選項出現 a man／a woman 而畫面無人，一律先刪，不必聽完。",
+      "✗ be being V-ed 是「正在被…」，一定要有人正在做這個動作。load A onto B 把 A 裝上 B。",
+      "✗ scatter 散落一地，與畫面「疊得整整齊齊」正好相反。carton 紙箱 —— 它是 box 的同義換字，Part 1 很愛這樣換。"
+    ]
+  },
+  "p1-002": {
+    "level": 2,
+    "why": [
+      "✓ 正解。人就在梯子上 → 有動作者用進行式。stand on 站在…上面。",
+      "✗ lean against 倚靠、with no one on it 上面沒有人 —— 後半句與畫面直接衝突。★ 這句是 p1-023 的正解，兩題刻意配成一對。",
+      "✗ fold up 收摺起來。畫面裡梯子是張開站著的，沒有人在收。",
+      "✗ climb down from 從…爬下來、roof 屋頂。畫面沒有屋頂，人數也不是複數。"
+    ]
+  },
+  "p1-003": {
+    "level": 1,
+    "why": [
+      "✓ 正解。椅子已經排好、沒人在動 → have been V-ed。arrange 排列／around a table 圍著桌子。",
+      "✗ be seated 就座（狀態）。空無一人的會議室，任何 people 開頭的選項都錯。",
+      "✗ be being V-ed 需要有人正在疊。stack 疊放／in a corner 在角落。",
+      "✗ in progress 進行中。沒有人，會議就不可能在進行。"
+    ]
+  },
+  "p1-004": {
+    "level": 2,
+    "why": [
+      "✓ 正解。有人、正在做 → 進行式。work at a computer 在電腦前工作（介系詞用 at）。",
+      "✗ unplug 拔掉插頭、monitor 螢幕。畫面沒有這個動作。",
+      "✗ clear off 清空（桌面）。文法完全正確，但桌上明明有電腦 —— ★ Part 1 最常見的陷阱就是「文法對、與畫面不符」的完成被動。",
+      "✗ beside 在…旁邊、filing cabinet 檔案櫃。她是坐著的，不是站著。"
+    ]
+  },
+  "p1-005": {
+    "level": 1,
+    "why": [
+      "✓ 正解。車停著、沒人 → have been V-ed。park 停放／in a row 排成一列。",
+      "✗ cyclist 騎自行車的人、path 小徑。畫面沒有人。",
+      "✗ be being V-ed 要有人在修。repair 修理。",
+      "✗ someone 也是人。lock up 上鎖固定。"
+    ]
+  },
+  "p1-006": {
+    "level": 2,
+    "why": [
+      "✓ 正解。人正在推 → 進行式。push 推／cart 推車、手推車。",
+      "✗ unattended 無人看管的。人就在把手上，與畫面矛盾。★ be left + 形容詞 = 被留置在某狀態。",
+      "✗ load A onto B 把 A 放上 B、shelf 架子。他推的是車，不是在上架。",
+      "✗ 要有人在修才能用 be being repaired。"
+    ]
+  },
+  "p1-007": {
+    "level": 2,
+    "why": [
+      "✓ 正解。be displayed 被陳列著（狀態），不需要動作者 —— ★ 這種寫法在無人畫面裡最常當正解。merchandise 商品（不可數，動詞用單數）。",
+      "✗ customer 顧客、reach for 伸手去拿。空店裡沒有人。",
+      "✗ restock 補貨，be being restocked 要有店員正在補。",
+      "✗ scan 掃描條碼、register 收銀機。同樣需要有人操作。"
+    ]
+  },
+  "p1-008": {
+    "level": 2,
+    "why": [
+      "✓ 正解。兩個人 → 主詞用 They're。shake hands 握手 ★ hands 一定要複數，這是固定用法。",
+      "✗ luggage 行李（不可數，沒有 luggages）。畫面沒有行李。",
+      "✗ one of them 他們其中一人、point at 指著。畫面裡沒有人在指螢幕。",
+      "✗ seated 坐著的、across from each other 面對面。兩人都站著 —— ★ Part 1 常拿 standing／seated 互換當陷阱。"
+    ]
+  },
+  "p1-009": {
+    "level": 1,
+    "why": [
+      "✓ 正解。be parked 停著（狀態），最適合無人的靜態畫面。vehicle 車輛（比 car 更廣的說法）／pump 加油機。",
+      "✗ fill up 加滿、tank 油箱。畫面沒有人在加油。",
+      "✗ be being washed 要有人正在洗。",
+      "✗ line up 排隊、traffic light 紅綠燈。畫面是加油站，不是路口。"
+    ]
+  },
+  "p1-010": {
+    "level": 1,
+    "why": [
+      "✓ 正解。有人正在做 → 進行式。★ water 在這裡是**動詞**：澆水。plant 植物。",
+      "✗ trim 修剪、hedge 樹籬。動作不對。",
+      "✗ move indoors 搬進室內。植物在戶外地上，與畫面矛盾。",
+      "✗ arrange 插放、vase 花瓶。畫面沒有花瓶。"
+    ]
+  },
+  "p1-011": {
+    "level": 2,
+    "why": [
+      "✓ 正解。傘已經撐開、沒人在動它 → have been V-ed。above 在…上方。",
+      "✗ server 服務生、clear a table 收拾桌子。畫面沒有人。",
+      "✗ fold up 收起來，be being folded up 要有人正在收。",
+      "✗ diner 用餐的客人（不是 dinner 晚餐，★ 只差一個字母，聽力很容易混）、outdoors 在戶外。"
+    ]
+  },
+  "p1-012": {
+    "level": 3,
+    "why": [
+      "✓ 正解。人正在漆 → 進行式。paint 油漆（動詞、名詞同形）。",
+      "✗ hang 掛（hang-hung-hung）、picture 畫。動作不對。",
+      "✗ tear down 拆除。★ 這是本題最值得記的一個：文法對、也用了 being V-ed，但**根本沒人在拆牆**。being V-ed 不是萬用正解，動作要真的在發生。",
+      "✗ paint can 油漆罐、in a corner 在角落。畫面裡沒有堆起來的油漆罐。"
+    ]
+  },
+  "p1-013": {
+    "level": 1,
+    "why": [
+      "✓ 正解。錐子已擺好、無人 → have been V-ed。cone 三角錐／along 沿著。",
+      "✗ repave 重新鋪路（re- 再一次 + pave 鋪設）。畫面沒有工人。",
+      "✗ remove 移走，be being removed 要有人正在搬。",
+      "✗ between 在…之間。畫面沒有車。"
+    ]
+  },
+  "p1-014": {
+    "level": 2,
+    "why": [
+      "✓ 正解。手上拿著紙在看 → look at 看著。document 文件。★ 動作要選畫面撐得住的那一個。",
+      "✗ sign 簽署、contract 合約。畫面裡沒有筆 —— **畫面上沒有的東西不能選**。",
+      "✗ throw away 丟棄。紙在他手上，不在垃圾桶。",
+      "✗ speak on the telephone 講電話。畫面裡沒有電話。"
+    ]
+  },
+  "p1-015": {
+    "level": 3,
+    "why": [
+      "✓ 正解。衣服已經掛好、沒人在動 → 完成被動。hang out to dry 晾乾（hang-hung-hung）。★ clothing 是**不可數**，所以助動詞用 has 不是 have。",
+      "✗ fold 摺疊、towel 毛巾。畫面沒有人。",
+      "✗ laundry 要洗或洗好的衣物、take down 收下來。要有人才收得下來。",
+      "✗ pile 堆放、basket 籃子。衣服是掛著的，不是堆在籃子裡。"
+    ]
+  },
+  "p1-016": {
+    "level": 2,
+    "why": [
+      "✓ 正解。人站著 → 進行式。shelter 遮雨棚、候車亭。",
+      "✗ board 上車（＝get on）。畫面沒有公車。",
+      "✗ get off 下車、passenger 乘客。畫面既沒有火車也沒有那些人。",
+      "✗ be occupied 被佔用、有人坐。長椅是空的，狀態寫反了。"
+    ]
+  },
+  "p1-017": {
+    "level": 2,
+    "why": [
+      "✓ 正解。工具已攤開擺好、無人 → 完成被動。lay out 攤開陳列／workbench 工作台。",
+      "✗ mechanic 技師、engine 引擎。畫面沒有人。",
+      "✗ put away 收起來歸位，要有人正在收。",
+      "✗ store 存放（動詞）、cabinet 櫃子。工具在台面上，不在櫃子裡 —— 狀態與畫面矛盾。"
+    ]
+  },
+  "p1-018": {
+    "level": 3,
+    "why": [
+      "✓ 正解。sweep 掃地（sweep-swept-swept）。人正在做 → 進行式。",
+      "✗ mop up 拖乾淨、spill 灑出來的液體。掃把不是拖把，動作不同。",
+      "✗ carpet 在這裡是**動詞**：鋪地毯。地板沒有鋪地毯。",
+      "✗ lean against 倚靠著、broom 掃把。★ 這題最值得記：**同一個道具、配錯誤的動作**是 Part 1 最愛的陷阱 —— 靠著掃把不動，跟正在掃地是兩回事。"
+    ]
+  },
+  "p1-019": {
+    "level": 2,
+    "why": [
+      "✓ 正解。tie up 繫泊、綁住（狀態），符合船停著不動。dock 碼頭。",
+      "✗ board 登船、ferry 渡輪。畫面沒有乘客。",
+      "✗ launch 使…下水（船）。要有人操作才會發生。",
+      "✗ sail 船帆（名詞）、raise 升起。同樣需要有人在拉。"
+    ]
+  },
+  "p1-020": {
+    "level": 2,
+    "why": [
+      "✓ 正解。兩人一起面向螢幕 → They're looking at。monitor 螢幕。",
+      "✗ move 搬動。畫面沒有人在搬桌子。",
+      "✗ one of them 其中一人、turn off 關掉。畫面沒有這個動作。",
+      "✗ unplug 拔掉插頭。螢幕是亮著的，狀態相反。"
+    ]
+  },
+  "p1-021": {
+    "level": 1,
+    "why": [
+      "✓ 正解。報紙已放好、無人 → 完成被動。rack 置物架、書報架。",
+      "✗ buy 買。畫面沒有人。",
+      "✗ refill 重新補滿（re- 再 + fill 裝滿），要有人正在補。",
+      "✗ scatter 散落、on the ground 在地上。東西整齊放在架上，與畫面矛盾。"
+    ]
+  },
+  "p1-022": {
+    "level": 2,
+    "why": [
+      "✓ 正解。托盤在手上、正在端 → 進行式。server 服務生／tray 托盤。",
+      "✗ set a table 擺放餐具（固定用法，不是「設定桌子」）。動作不對。",
+      "✗ 托盤在她手上，不是已經放在桌上 —— 完成被動的狀態寫反了。",
+      "✗ be seated 被帶位入座。畫面沒有顧客。"
+    ]
+  },
+  "p1-023": {
+    "level": 3,
+    "why": [
+      "✓ 正解。梯子靠著牆、上面沒人 → 用狀態描述。lean against 倚靠。★ **這題和 p1-002 是刻意做的一對**：同一把梯子，差別只在有沒有人 —— 有人 → A man is standing on a ladder；沒人 → A ladder is leaning against a wall。",
+      "✗ climb 攀爬。畫面沒有人。",
+      "✗ carry away 搬走，要有人正在搬。",
+      "✗ lay 放置、平放（lay-laid-laid，★ 別跟 lie 躺 混淆）。梯子是靠著的，不是躺在地上。"
+    ]
+  },
+  "p1-024": {
+    "level": 3,
+    "why": [
+      "✓ 正解。有一格抽屜拉開、人手伸過去 → 正在進行。drawer 抽屜。",
+      "✗ lock 上鎖、cabinet 櫃子。動作不對。",
+      "✗ all 全部都關上了 —— 但畫面明明有一格開著。★ 完成被動的陷阱通常就是**把狀態寫反**，聽到 have been 先去核對畫面現在到底是什麼樣子。",
+      "✗ shred 碎紙、切碎（shredder 就是碎紙機）。畫面沒有這個動作。"
+    ]
+  }
+}
