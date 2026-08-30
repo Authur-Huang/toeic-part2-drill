@@ -74,6 +74,15 @@ button:disabled{opacity:.45;cursor:default}
 .opt.sayable{cursor:pointer}
 .opt .sayic{flex:none;font-size:15px;line-height:1.4;opacity:.5}
 .opt.sayable:active .sayic{opacity:1}
+/* 先讀題：對話播放期間列出這一段的三題與選項，等同正式考試攤開的題本。
+   純文字、不可點——這個階段只讀不答，答題還是進「開始作答」之後一題一題來。 */
+.preview{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.preview .pvq{margin-bottom:14px}
+.preview .pvq:last-child{margin-bottom:0}
+.preview .pvn{font-size:12px;color:var(--dim);margin-bottom:3px}
+.preview .pvt{font-size:14.5px;font-weight:600;line-height:1.5}
+.preview .pvo{display:flex;gap:8px;font-size:13.5px;line-height:1.6;color:var(--dim);margin-top:4px}
+.preview .pvo b{flex:none;font-weight:600;width:14px}
 .lv{display:inline-block;font-size:11px;border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-left:6px;color:var(--dim)}
 .lv.l1{color:var(--ok);border-color:var(--ok)}
 .lv.l3{color:var(--accent);border-color:var(--accent)}
@@ -243,7 +252,10 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 
       <div id="t-listen">
         <button class="play" id="t-play"><span class="big" id="t-icon">▶</span><span class="sub" id="t-sub">播放對話</span></button>
-        <p class="lead" style="margin:14px 0 0;text-align:center">聽完再作答。可以重聽，但正式考試只播一次。</p>
+        <p class="lead" style="margin:14px 0 0;text-align:center">可以重聽，但正式考試只播一次。</p>
+        <!-- 正式考試 Part 3／4 的題目與選項印在題本上，對話播放時就攤在你面前。
+             所以這裡在播放期間先把三題全部列出來——「先讀題」這個技巧靠的就是它。 -->
+        <div class="preview" id="t-preview"></div>
         <button class="primary" id="t-go" style="margin-top:12px">開始作答</button>
       </div>
 
@@ -658,10 +670,29 @@ function render34(){
   $('#t-answer').classList.add('hide');
   $('#t-review').classList.add('hide');
   $('#t-quit').classList.remove('hide');
+  renderPreview(it);
   setPlay(false);
   audio.src='audio34/'+it.id+'.mp3';
   $('#t-sub').textContent='播放對話';
   if(opt.autoplay) setTimeout(playConvo,300);
+}
+/* 對話播放期間先把這一段的三題與選項列出來（正式考試印在題本上，本來就看得到）。
+   ⚠ 只列文字、不掛 onclick —— 這個階段是「讀題」，不是作答。
+      在這裡就能按下去會讓人邊聽邊選，跟考場的節奏不一樣。 */
+function renderPreview(it){
+  var host=$('#t-preview'); host.innerHTML='';
+  it.questions.forEach(function(q,i){
+    var w=el('div','pvq');
+    w.appendChild(el('div','pvn','第 '+(i+1)+' 題'));
+    w.appendChild(el('div','pvt',q.q));
+    q.choices.forEach(function(c,n){
+      var r=el('div','pvo');
+      r.appendChild(el('b',null,'ABCD'[n]));
+      r.appendChild(el('span',null,c));
+      w.appendChild(r);
+    });
+    host.appendChild(w);
+  });
 }
 function playConvo(){
   var it=card().item;
