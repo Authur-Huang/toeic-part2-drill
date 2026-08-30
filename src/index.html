@@ -300,10 +300,9 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
     <div class="card">
       <h2>作答方式</h2>
       <label class="sw"><span>Part 2 顯示選項文字<small>關閉時只看得到 A／B／C 按鈕，跟正式考試一樣。Part 3／4 的選項一律顯示，因為正式考試就是印在題本上的。</small></span><input type="checkbox" id="o-show"></label>
-      <label class="sw"><span>答對自動下一題<small>開著的話答對後 1.2 秒就換頁，會來不及看逐選項解析。答錯一律停下來。<b>下面的「答完自動唸出選項」開著時，這一項不生效</b>——唸到一半換頁沒有意義。</small></span><input type="checkbox" id="o-auto"></label>
+      <label class="sw"><span>答對自動下一題<small>開著的話答對後 1.2 秒就換頁，會來不及看逐選項解析。答錯一律停下來。<b>下面的「答完自動重播選項」開著時，Part 1／2 這一項不生效</b>——播到一半換頁沒有意義。</small></span><input type="checkbox" id="o-auto"></label>
       <label class="sw"><span>進入題目自動播放<small>不用每題都按播放。</small></span><input type="checkbox" id="o-autoplay"></label>
-      <label class="sw"><span>答完自動唸出你按的選項<small>對完答案後<b>每個選項都可以點，點一下就唸那一句</b>；這個開關只決定要不要自動唸你剛按的那個。Part 1／2 播原本的錄音，Part 3／4 沒有錄選項，改用語音合成照文字唸。</small></span><input type="checkbox" id="o-replay"></label>
-      <p class="muted hide" id="sayWarn" style="margin:0 0 10px;font-size:12.5px"></p>
+      <label class="sw"><span>答完自動重播你按的選項<small>對完答案後<b>每個選項都可以點，點一下就重播那一句</b>；這個開關只決定要不要自動播你剛按的那個。<b>只有 Part 1／2 有</b>——正式考試 Part 3／4 的選項印在題本上、不會唸出來，所以那邊沒有錄音，也不用合成語音硬生一段考場上不存在的聲音。</small></span><input type="checkbox" id="o-replay"></label>
       <label class="sw"><span>播放速度<div class="seg-ctl" id="o-speed" style="margin-top:8px">
         <button data-sp="0.8">0.8×</button><button data-sp="1" class="on">1×</button><button data-sp="1.15">1.15×</button>
       </div></span></label>
@@ -496,63 +495,35 @@ function render1(){
   });
   if(opt.autoplay) setTimeout(function(){playRange(0,null);segMark(0,true);},250);
 }
-/* ---------- 答完之後點選項就唸出來 ---------- */
-/* Part 1／2 的選項本來就有錄音，直接播那一段。
-   Part 3／4 **刻意沒有錄選項**（正式考試選項印在題本上，唸了會練成「等人唸選項」的習慣），
-   所以那邊改用瀏覽器的語音合成照文字唸。
+/* ---------- 答完之後點選項就重播那一句 ---------- */
+/* 🔴 **只重播真的錄過的東西，不合成語音。**
+   依實際考試：Part 1／2 的選項是唸出來的，所以有錄音，可以重播；
+   Part 3／4 的選項印在題本上、正式考試不會唸，我們也就沒有錄 ——
+   那就**不要用語音合成硬生出一段考場上不存在的聲音**。
+   （2026-08-30 一度做了合成語音版，使用者要求依實際考試移除。）
+   Part 3／4 答完照樣呈現選項文字，只是沒有發音；那邊要重聽請用
+   「🔊 重聽題目」與「▶重聽對話」——那兩段才是考試真的會聽到的。
 
-   🔴 只有 session.answered 之後才會發出聲音。作答當下唸選項會直接毀掉 Part 3／4 的訓練目的，
-      這條界線比功能本身重要，改任何一處都要確認它還在。 */
-var SAY = window.speechSynthesis || null, SAY_VOICE = null;
-function sayWarn(msg){
-  var w = $('#sayWarn'); if(!w) return;
-  if(msg){ w.textContent = msg; w.classList.remove('hide'); } else { w.classList.add('hide'); }
+   🔴 另一條界線：只有 session.answered 之後才會出聲。作答當下重播選項
+      等於把答案送到耳邊，改任何一處都要確認這個守衛還在。 */
+function hasChoiceAudio(){
+  return session && (session.kind === 'p1' || session.kind === 'p2');
 }
-function pickVoice(){
-  if(!SAY) return;
-  var vs = SAY.getVoices() || [];
-  SAY_VOICE = vs.filter(function(v){return /^en[-_]US/i.test(v.lang);})[0]
-           || vs.filter(function(v){return /^en/i.test(v.lang);})[0] || null;
-  if(!vs.length) return;           // 清單還沒載完就先別報警，等 voiceschanged 再判
-  sayWarn(SAY_VOICE ? '' :
-    '⚠ 這台裝置沒有英文語音，Part 3／4 點選項會由中文語音硬唸，聽起來不準。'
-    + 'Windows 加裝：設定 → 時間與語言 → 語言與地區 → 新增語言 → English → 勾「語音」。'
-    + '手機（iOS／Android）內建就有，不必設定。Part 1／2 是真人錄音，不受影響。');
-}
-if(SAY){ pickVoice(); SAY.addEventListener('voiceschanged', pickVoice); }
-else sayWarn('這個瀏覽器不支援語音合成，Part 3／4 的選項無法發音。Part 1／2 不受影響。');
-
-function speak(text){
-  if(!SAY) return;
-  function go(){
-    var u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US';        // 不指定的話 iOS 會用系統語言（中文）去唸英文
-    if(SAY_VOICE) u.voice = SAY_VOICE;
-    u.rate = .85;            // 比預設慢一點，音節才聽得清楚
-    SAY.speak(u);
-  }
-  // cancel 後立刻 speak 在 Chrome 會卡死，所以只有真的在唸時才延遲
-  if(SAY.speaking || SAY.pending){ SAY.cancel(); setTimeout(go, 60); }
-  else go();
-}
-
-/* 唸出第 i 個選項。四個 Part 的來源不同，這裡收成同一個進入點。 */
 function sayChoice(i){
   if(!session || !session.answered) return;      // 🔴 見上面那條界線
+  if(!hasChoiceAudio()) return;                  // Part 3／4 與閱讀沒有選項錄音
   var it = card().item;
   if(session.kind === 'p1'){
     var m = it.marks[i];  if(m) playRange(m.start, m.start + m.len);
-  }else if(session.kind === 'p2'){
+  }else{
     var m2 = it.marks[i + 1];                    // marks[0] 是題目句，選項從 1 開始
     if(m2) playRange(m2.start, m2.start + m2.len);
-  }else if(session.kind === 'p34'){
-    var q = it.questions[session.qi];
-    if(q) speak(q.choices[i]);                   // Part 3／4：沒有錄音，照文字唸
   }
-  // 閱讀（kind 'r'）不發音——使用者要的是聽力測驗，閱讀朗讀是另一件事
 }
-/* 對完答案後把每個選項變成可以點的「再唸一次」，並自動唸出剛按的那一個。 */
+/* 對完答案後把每個選項變成可以點的「再聽一次」，並自動重播剛按的那一個。
+   沒有選項錄音的 Part 不掛任何東西——掛了 🔊 卻點不出聲音比沒有更糟。 */
 function armReplay(box, chosen){
+  if(!hasChoiceAudio()) return;
   for(var i = 0; i < box.children.length; i++){
     (function(k, b){
       b.classList.add('sayable');
