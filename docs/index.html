@@ -315,6 +315,9 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
       <label class="sw"><span>答對自動下一題<small>開著的話答對後 1.2 秒就換頁，會來不及看逐選項解析。答錯一律停下來。<b>下面的「答完自動重播選項」開著時，Part 1／2 這一項不生效</b>——播到一半換頁沒有意義。</small></span><input type="checkbox" id="o-auto"></label>
       <label class="sw"><span>進入題目自動播放<small>不用每題都按播放。</small></span><input type="checkbox" id="o-autoplay"></label>
       <label class="sw"><span>答完自動重播你按的選項<small>對完答案後<b>每個選項都可以點，點一下就重播那一句</b>；這個開關只決定要不要自動播你剛按的那個。<b>只有 Part 1／2 有</b>——正式考試 Part 3／4 的選項印在題本上、不會唸出來，所以那邊沒有錄音，也不用合成語音硬生一段考場上不存在的聲音。</small></span><input type="checkbox" id="o-replay"></label>
+      <label class="sw"><span>只練這些難度<small>關掉某一級就不會出現。<b>Part 3／4 與 Part 6／7 一組有好幾題</b>，只要組裡有一題符合就整組保留——一段對話不能只播一半。</small><div class="seg-ctl" id="o-levels" style="margin-top:8px">
+        <button data-lv="1" class="on">基礎</button><button data-lv="2" class="on">標準</button><button data-lv="3" class="on">進階</button>
+      </div></span></label>
       <label class="sw"><span>播放速度<div class="seg-ctl" id="o-speed" style="margin-top:8px">
         <button data-sp="0.8">0.8×</button><button data-sp="1" class="on">1×</button><button data-sp="1.15">1.15×</button>
       </div></span></label>
@@ -351,6 +354,7 @@ label.sw input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
 var LS_H='p2.hist.v1', LS_O='p2.opt.v1';
 var D1=[], D2=[], D34=[], DR=[], hist=load(LS_H,{}), opt=load(LS_O,{show:false,auto:false,autoplay:true,speed:1,replay:true});
 if(opt.replay===undefined){ opt.replay=true; save(LS_O,opt); }   // 舊裝置沒有這個欄位
+if(!opt.levels){ opt.levels={1:true,2:true,3:true}; save(LS_O,opt); }
 /* 2026-08-30：加了逐選項解析之後，「答對自動下一題」會在 1.2 秒後把解析收走 ——
    正好把這次要給的東西蓋掉，而且答對時最需要看的就是「我為什麼對」。
    所以一次性把既有裝置的這個開關關掉（新安裝的預設也改成關）。
@@ -420,6 +424,30 @@ function segMark(i,prog){
 /* ---------- 開始一輪 ---------- */
 function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
 
+/* 難度篩選。三級都開就整個略過，不做多餘的過濾。
+   ⚠ 單題的 Part（1／2／5）是逐題比對；**Part 3／4 與 Part 6／7 一組有好幾題，
+      只要組裡有一題符合就整組保留** —— 一段對話不能只播一半，一篇文章也不能只給其中一題。
+      設定頁的說明文字有寫這件事，改邏輯時要一起改。 */
+function levelsOn(){
+  var out=[]; for(var n=1;n<=3;n++) if(opt.levels[n]) out.push(n);
+  return out;
+}
+function lvOK(it){
+  var on=levelsOn();
+  if(on.length===3||!on.length) return true;
+  var keep={}; on.forEach(function(n){keep[n]=1;});
+  return (it.questions||[it]).some(function(q){return !q.level||keep[q.level];});
+}
+function filterByLevel(cards){
+  var on=levelsOn();
+  if(on.length===3||!on.length) return cards;
+  var keep={}; on.forEach(function(n){keep[n]=1;});
+  return cards.filter(function(c){
+    var qs=c.item.questions||[c.item];
+    return qs.some(function(q){return !q.level||keep[q.level];});
+  });
+}
+
 function start(mode,arg){
   var cards=[];
   if(mode==='due'){
@@ -438,6 +466,8 @@ function start(mode,arg){
     if(mode==='p2-unseen') pool=pool.filter(function(x){return !get(x.id).n;});
     if(mode==='p2-type') pool=pool.filter(function(x){return x.type===arg;});
     if(!pool.length) pool=D2.slice();
+    // 🔴 難度篩選一定要在「抽幾題」之前 —— 先抽 25 題再篩，只練進階時會只剩十幾題
+    pool=pool.filter(lvOK);
     shuffle(pool);
     if(mode==='p2-25') pool=pool.slice(0,25);
     cards=pool.map(function(it){return {kind:'p2',item:it};});
@@ -445,6 +475,7 @@ function start(mode,arg){
     var p1=D1.slice();
     if(mode==='p1-unseen') p1=p1.filter(function(x){return !get(x.id).n;});
     if(!p1.length) p1=D1.slice();
+    p1=p1.filter(lvOK);
     shuffle(p1);
     cards=p1.map(function(it){return {kind:'p1',item:it};});
   }else if(mode==='r-30'||mode==='r-unseen'||mode==='r-topic'){
@@ -453,6 +484,7 @@ function start(mode,arg){
       return x.questions.some(function(q,i){return !get(x.id+'#'+i).n;});});
     if(mode==='r-topic') pr=pr.filter(function(x){return rGroup(x)===arg;});
     if(!pr.length) pr=DR.slice();
+    pr=pr.filter(lvOK);          // 同上：先篩再抽
     shuffle(pr);
     if(mode==='r-30') pr=pr.slice(0,30);
     cards=pr.map(function(it){return {kind:'r',item:it};});
@@ -463,11 +495,18 @@ function start(mode,arg){
     if(mode==='p34-graphic') p34=p34.filter(function(x){
       return x.questions.some(function(q){return q.graphic;});});
     if(!p34.length) p34=D34.slice();
+    p34=p34.filter(lvOK);        // 同上：先篩再抽
     shuffle(p34);
     if(mode==='p34-mix') p34=p34.slice(0,5);
     cards=p34.map(function(it){return {kind:'p34',item:it};});
   }
-  if(!cards.length){alert('沒有符合的題目。');return;}
+  var before=cards.length;
+  cards=filterByLevel(cards);
+  if(!cards.length){
+    alert(before?'這個範圍裡沒有符合目前難度設定的題目。到設定頁把難度打開再試。'
+                :'沒有符合的題目。');
+    return;
+  }
   session={cards:cards,i:0,mode:mode,arg:arg,right:0,total:0,wrong:[],kind:cards[0].kind};
   renderCard();
 }
@@ -1107,6 +1146,23 @@ $('#o-show').onchange=function(){opt.show=this.checked;save(LS_O,opt);};
 $('#o-auto').onchange=function(){opt.auto=this.checked;save(LS_O,opt);};
 $('#o-autoplay').onchange=function(){opt.autoplay=this.checked;save(LS_O,opt);};
 $('#o-replay').onchange=function(){opt.replay=this.checked;save(LS_O,opt);};
+$('#o-levels').onclick=function(e){
+  var b=e.target; while(b&&b.tagName!=='BUTTON') b=b.parentNode;
+  if(!b||!b.dataset.lv) return;
+  var n=+b.dataset.lv;
+  // 至少要留一級開著，否則按下去就沒題目可練了
+  if(opt.levels[n]&&levelsOn().length===1) return;
+  opt.levels[n]=!opt.levels[n]; save(LS_O,opt); syncLevelBtns();
+};
+function syncLevelBtns(){
+  var LN=['','基礎','標準','進階'];
+  [].forEach.call(document.querySelectorAll('#o-levels button'),function(b){
+    var n=+b.dataset.lv;
+    b.classList.toggle('on',!!opt.levels[n]);
+    b.textContent=LN[n]+(LEVEL_N[n]?' '+LEVEL_N[n]:'');
+  });
+}
+var LEVEL_N={};
 document.querySelectorAll('#o-speed button').forEach(function(b){
   b.onclick=function(){
     opt.speed=parseFloat(b.dataset.sp);save(LS_O,opt);audio.playbackRate=opt.speed;
@@ -1125,6 +1181,7 @@ $('#dl-p1').onclick=function(){download('p1',this);};
 /* ---------- 啟動 ---------- */
 $('#o-show').checked=opt.show; $('#o-auto').checked=opt.auto; $('#o-autoplay').checked=opt.autoplay;
 $('#o-replay').checked=opt.replay;
+syncLevelBtns();
 document.querySelectorAll('#o-speed button').forEach(function(x){
   x.classList.toggle('on',parseFloat(x.dataset.sp)===opt.speed);
 });
@@ -1132,6 +1189,11 @@ function grab(u){return fetch(u).then(function(r){return r.ok?r.json():{items:[]
 Promise.all([grab('items.json'),grab('items34.json'),grab('itemsR.json'),
              grab('items1.json')]).then(function(res){
   D2=res[0].items||[]; D34=res[1].items||[]; DR=res[2].items||[]; D1=res[3].items||[];
+  // 各難度有幾題——直接標在按鈕上，不用另外找地方說明
+  [D1,D2,D34,DR].forEach(function(d){d.forEach(function(it){
+    (it.questions||[it]).forEach(function(q){ if(q.level) LEVEL_N[q.level]=(LEVEL_N[q.level]||0)+1; });
+  });});
+  syncLevelBtns();
   if(!D2.length&&!D34.length&&!DR.length&&!D1.length){
     $('#hpill').textContent='載入失敗';
     $('#v-home').innerHTML='<div class="card"><h2>題庫載入失敗</h2><p class="lead">請確認網路，或重新整理。</p></div>';
