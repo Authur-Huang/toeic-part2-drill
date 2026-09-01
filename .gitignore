@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# sheet_part1.py 的檢查產物，看過就好，不進版控
+build/_sheet.html
+build/_sheet.png

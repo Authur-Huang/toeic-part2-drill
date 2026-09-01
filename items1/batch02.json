@@ -1,0 +1,338 @@
+[
+ {
+  "id": "p1-025",
+  "part": 1,
+  "scene": "辦公室・使用影印機",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A man operating a copy machine\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"178.0\" y=\"100.0\" width=\"64.0\" height=\"76.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"178.0\" y1=\"122.0\" x2=\"242.0\" y2=\"122.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"162.0\" y=\"140.0\" width=\"18.0\" height=\"10.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"230.0\" cy=\"114.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"120.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"120.0\" y1=\"108.2\" x2=\"120.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"120.0,108.2 180.2,117.1 224.0,114.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,108.2 109.0,122.2 106.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,137.7 114.0,159.7 111.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,137.7 127.0,159.7 130.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "A man is operating a copy machine.",
+   "The copier has been unplugged.",
+   "Papers are scattered on the floor.",
+   "He's repairing a printer."
+  ],
+  "answer": 0,
+  "note": "★ 有人、手在機器上 → 進行式 is operating。\n★ (D) repairing 與 operating 都是「有人在動它」，差別在**做什麼**——畫面看不出在修，就不能選 repair。"
+ },
+ {
+  "id": "p1-026",
+  "part": 1,
+  "scene": "辦公室・沒人的影印機",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A copy machine with documents left in the tray\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"140.0\" y=\"100.0\" width=\"64.0\" height=\"76.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"140.0\" y1=\"122.0\" x2=\"204.0\" y2=\"122.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"124.0\" y=\"140.0\" width=\"18.0\" height=\"10.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"192.0\" cy=\"114.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"124.0\" y1=\"136.0\" x2=\"142.0\" y2=\"136.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"124.0\" y1=\"130.0\" x2=\"142.0\" y2=\"130.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "Some documents have been left in a tray.",
+   "A woman is making copies.",
+   "The machine is being repaired.",
+   "Papers are being fed into a printer."
+  ],
+  "answer": 0,
+  "note": "★ **跟 p1-025 是刻意做的一對**：同一台影印機，差別只在有沒有人。\n★ 無人 → 只能用 have been V-ed 描述結果狀態；(C)(D) 的 being V-ed 都需要動作者。"
+ },
+ {
+  "id": "p1-027",
+  "part": 1,
+  "scene": "會議室・在白板前寫字",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A woman writing on a whiteboard\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"150.0\" y=\"54.0\" width=\"118.0\" height=\"68.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"160.0\" y1=\"78.0\" x2=\"214.0\" y2=\"78.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"160.0\" y1=\"94.0\" x2=\"196.0\" y2=\"94.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"112.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"112.0\" y1=\"108.2\" x2=\"112.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"112.0,108.2 186.5,109.1 242.0,98.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"112.0,108.2 101.0,122.2 98.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"112.0,137.7 106.0,159.7 103.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"112.0,137.7 119.0,159.7 122.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "A woman is writing on a board.",
+   "The board has been wiped clean.",
+   "She's hanging a poster on the wall.",
+   "Notes are being handed out."
+  ],
+  "answer": 0,
+  "note": "★ 板上已有字、手還在板面 → is writing。\n★ (B) wiped clean 說「已擦乾淨」，但板上有字 —— 完成被動的陷阱多半是**狀態寫反**。"
+ },
+ {
+  "id": "p1-028",
+  "part": 1,
+  "scene": "會議室・擦乾淨的白板",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"An empty whiteboard in a room with no people\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"101.0\" y=\"54.0\" width=\"118.0\" height=\"68.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"112.0\" y1=\"130.0\" x2=\"208.0\" y2=\"130.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "A board has been wiped clean.",
+   "Someone is erasing a whiteboard.",
+   "A presentation is being given.",
+   "People are taking notes."
+  ],
+  "answer": 0,
+  "note": "★ 板面全空、沒有人 → have been V-ed。\n★ 這題四個選項的動詞都跟白板有關，**能刪的依據只有「畫面裡有沒有人」**。"
+ },
+ {
+  "id": "p1-029",
+  "part": 1,
+  "scene": "咖啡店・櫃檯上的杯子",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Cups lined up on a counter, nobody behind it\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"70.0\" y=\"132.0\" width=\"180.0\" height=\"8.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"78.0\" y1=\"140.0\" x2=\"78.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"242.0\" y1=\"140.0\" x2=\"242.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"84.0,110.0 85.5,126.0 96.5,126.0 98.0,110.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"98.0,113.0 104.0,118.0 98.0,123.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"116.0,110.0 117.5,126.0 128.5,126.0 130.0,110.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"130.0,113.0 136.0,118.0 130.0,123.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"148.0,110.0 149.5,126.0 160.5,126.0 162.0,110.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"162.0,113.0 168.0,118.0 162.0,123.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"180.0,110.0 181.5,126.0 192.5,126.0 194.0,110.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"194.0,113.0 200.0,118.0 194.0,123.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"212.0,110.0 213.5,126.0 224.5,126.0 226.0,110.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"226.0,113.0 232.0,118.0 226.0,123.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "Some cups have been lined up on a counter.",
+   "A server is pouring coffee.",
+   "The cups are being washed.",
+   "Customers are waiting in line."
+  ],
+  "answer": 0,
+  "note": "★ 排好、沒人動 → have been lined up。line up 排成一列。\n★ 只要畫面無人，server／customers 開頭的選項一律先刪。"
+ },
+ {
+  "id": "p1-030",
+  "part": 1,
+  "scene": "咖啡店・倒飲料",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A server pouring a drink into a cup\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"96.0\" y=\"132.0\" width=\"150.0\" height=\"8.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"104.0\" y1=\"140.0\" x2=\"104.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"238.0\" y1=\"140.0\" x2=\"238.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"160.0,116.0 161.5,132.0 172.5,132.0 174.0,116.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"174.0,119.0 180.0,124.0 174.0,129.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"196.0,116.0 197.5,132.0 208.5,132.0 210.0,116.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"210.0,119.0 216.0,124.0 210.0,129.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"122.0,84.0 124.0,110.0 142.0,110.0 144.0,84.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"122.0\" y1=\"84.0\" x2=\"144.0\" y2=\"84.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"144.0,85.0 150.0,89.0 144.0,95.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"122.0,88.0 115.0,97.0 122.0,104.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"150.0\" y1=\"91.0\" x2=\"166.0\" y2=\"114.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"76.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"76.0\" y1=\"108.2\" x2=\"76.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"76.0,108.2 102.1,106.1 118.0,92.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"76.0,108.2 65.0,122.2 62.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"76.0,137.7 70.0,159.7 67.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"76.0,137.7 83.0,159.7 86.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "A beverage is being poured.",
+   "The cups have all been put away.",
+   "She's wiping down a counter.",
+   "A customer is paying for a drink."
+  ],
+  "answer": 0,
+  "note": "★ **這題就是 is being V-ed 的標準情境**：有人正在對物做這件事，焦點放在物（飲料）就用被動進行式。\n★ 跟 p1-029 對照：同一個櫃檯，有人動作才輪得到 being V-ed。"
+ },
+ {
+  "id": "p1-031",
+  "part": 1,
+  "scene": "餐廳・擺好的餐桌",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A table set with plates, no diners\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"60.0\" y=\"122.0\" width=\"200.0\" height=\"8.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"76.0\" y1=\"130.0\" x2=\"76.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"244.0\" y1=\"130.0\" x2=\"244.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"104.0\" cy=\"118.0\" r=\"11.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"104.0\" cy=\"118.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"160.0\" cy=\"118.0\" r=\"11.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"160.0\" cy=\"118.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"216.0\" cy=\"118.0\" r=\"11.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"216.0\" cy=\"118.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"88.0\" y1=\"112.0\" x2=\"88.0\" y2=\"124.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"120.0\" y1=\"112.0\" x2=\"120.0\" y2=\"124.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"144.0\" y1=\"112.0\" x2=\"144.0\" y2=\"124.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"176.0\" y1=\"112.0\" x2=\"176.0\" y2=\"124.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "A table has been set for a meal.",
+   "Diners are being served.",
+   "A waiter is clearing the plates.",
+   "The plates have been stacked in a pile."
+  ],
+  "answer": 0,
+  "note": "★ set the table 是「擺餐具」的固定用法，考過很多次。\n★ (D) stacked in a pile（疊成一疊）與畫面「分開擺好」矛盾。"
+ },
+ {
+  "id": "p1-032",
+  "part": 1,
+  "scene": "餐廳・隔桌對坐的兩人",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two people seated across from each other at a table\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"112.0\" y=\"118.0\" width=\"96.0\" height=\"8.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"124.0\" y1=\"126.0\" x2=\"124.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"196.0\" y1=\"126.0\" x2=\"196.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"130.0\" cy=\"100.0\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"130.0\" y1=\"111.9\" x2=\"128.0\" y2=\"141.4\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"128.0,141.4 101.0,141.4 96.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"190.0\" cy=\"100.0\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"190.0\" y1=\"111.9\" x2=\"192.0\" y2=\"141.4\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"192.0,141.4 219.0,141.4 224.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"56.0\" y1=\"158.0\" x2=\"82.0\" y2=\"158.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"82.0\" y1=\"158.0\" x2=\"82.0\" y2=\"132.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"59.0\" y1=\"158.0\" x2=\"59.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"79.0\" y1=\"158.0\" x2=\"79.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"238.0\" y1=\"158.0\" x2=\"264.0\" y2=\"158.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"238.0\" y1=\"158.0\" x2=\"238.0\" y2=\"132.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"241.0\" y1=\"158.0\" x2=\"241.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"261.0\" y1=\"158.0\" x2=\"261.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "They're seated across from each other.",
+   "They're standing near a doorway.",
+   "One of them is serving food.",
+   "The chairs have been pushed under the table."
+  ],
+  "answer": 0,
+  "note": "★ 兩人 → They're。across from each other 面對面。\n★ 跟 p1-008（兩人站著握手）刻意對照：**站與坐是 Part 1 最常互換的一組陷阱**。"
+ },
+ {
+  "id": "p1-033",
+  "part": 1,
+  "scene": "超市・推購物車",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A shopper pushing a cart down an aisle\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><polyline points=\"178.0,128.0 184.0,152.0 238.0,152.0 244.0,128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"178.0\" y1=\"128.0\" x2=\"244.0\" y2=\"128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"190.0\" cy=\"162.0\" r=\"7.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"232.0\" cy=\"162.0\" r=\"7.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"178.0\" y1=\"128.0\" x2=\"164.0\" y2=\"126.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"127.5\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"126.0\" y1=\"108.2\" x2=\"120.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"126.0,108.2 149.9,121.1 164.0,122.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"126.0,108.2 143.9,125.1 164.0,130.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,137.7 106.0,157.7 97.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,137.7 131.0,159.7 138.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "A shopper is pushing a cart.",
+   "The cart has been left in an aisle.",
+   "She's lifting a basket onto a shelf.",
+   "Groceries are being bagged."
+  ],
+  "answer": 0,
+  "note": "★ 手在把手上 → 進行式。\n★ (B) has been left（被留下）需要「沒人」，但人就在車後面。"
+ },
+ {
+  "id": "p1-034",
+  "part": 1,
+  "scene": "超市・裝袋",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Items being placed into a bag at a checkout counter\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"88.0\" y=\"132.0\" width=\"152.0\" height=\"8.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"96.0\" y1=\"140.0\" x2=\"96.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"232.0\" y1=\"140.0\" x2=\"232.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"150.0,132.0 154.0,96.0 186.0,96.0 190.0,132.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"196.0\" y=\"112.0\" width=\"20.0\" height=\"20.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"220.0\" y=\"112.0\" width=\"20.0\" height=\"20.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"72.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72.0\" y1=\"108.2\" x2=\"72.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"72.0,108.2 122.3,110.1 158.0,100.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"72.0,108.2 61.0,122.2 58.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"72.0,137.7 66.0,159.7 63.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"72.0,137.7 79.0,159.7 82.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "Some items are being placed into a bag.",
+   "The bag has been left empty on the floor.",
+   "He's unloading a shopping cart.",
+   "Shelves are being restocked."
+  ],
+  "answer": 0,
+  "note": "★ 有人正在放 → 被動進行式，主詞是被處理的東西（items）。\n★ 分辨 be being V-ed 與 have been V-ed，看的永遠是**畫面裡有沒有人正在做**。"
+ },
+ {
+  "id": "p1-035",
+  "part": 1,
+  "scene": "商店・幾乎空掉的貨架",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Mostly empty shelves with a few items on top\"><line x1=\"56.0\" y1=\"44.0\" x2=\"56.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"264.0\" y1=\"44.0\" x2=\"264.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"56.0\" y1=\"60.0\" x2=\"264.0\" y2=\"60.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"56.0\" y1=\"100.0\" x2=\"264.0\" y2=\"100.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"56.0\" y1=\"140.0\" x2=\"264.0\" y2=\"140.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"56.0\" y1=\"180.0\" x2=\"264.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"66.0\" y=\"34.0\" width=\"22.0\" height=\"26.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"100.0\" y=\"34.0\" width=\"22.0\" height=\"26.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "Most of the shelves have been emptied.",
+   "The shelves are fully stocked.",
+   "A clerk is arranging merchandise.",
+   "Shoppers are browsing the aisles."
+  ],
+  "answer": 0,
+  "note": "★ **跟 p1-007 是刻意做的一對**：同一組貨架，滿的 vs 空的。\n★ (B) fully stocked 與畫面矛盾；(C)(D) 需要人。"
+ },
+ {
+  "id": "p1-036",
+  "part": 1,
+  "scene": "商店・結帳掃描",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A cashier scanning an item at a register\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"96.0\" y=\"132.0\" width=\"148.0\" height=\"8.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"104.0\" y1=\"140.0\" x2=\"104.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"236.0\" y1=\"140.0\" x2=\"236.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"196.0\" y=\"104.0\" width=\"34.0\" height=\"28.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"200.0\" y1=\"132.0\" x2=\"200.0\" y2=\"108.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"126.0\" y=\"112.0\" width=\"22.0\" height=\"20.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"84.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"84.0\" y1=\"108.2\" x2=\"84.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"84.0,108.2 112.3,114.1 130.0,108.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"84.0,108.2 73.0,122.2 70.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"84.0,137.7 78.0,159.7 75.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"84.0,137.7 91.0,159.7 94.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "An item is being scanned at a register.",
+   "The register has been left unattended.",
+   "She's counting money into a drawer.",
+   "Customers are lining up to pay."
+  ],
+  "answer": 0,
+  "note": "★ 有人正在掃 → 被動進行式。register 收銀機。\n★ (B) unattended 無人看管、(D) customers 都與畫面不合。"
+ },
+ {
+  "id": "p1-037",
+  "part": 1,
+  "scene": "車站・月台上等車的人",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two people standing on a platform, no train\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><line x1=\"6.0\" y1=\"148.0\" x2=\"314.0\" y2=\"148.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"40.0\" y1=\"148.0\" x2=\"40.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"280.0\" y1=\"148.0\" x2=\"280.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"120.0\" cy=\"65.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"120.0\" y1=\"76.2\" x2=\"120.0\" y2=\"105.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"120.0,76.2 109.0,90.2 106.0,106.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,76.2 131.0,90.2 134.0,106.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,105.7 114.0,127.7 111.0,147.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"120.0,105.7 127.0,127.7 130.0,147.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"196.0\" cy=\"65.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"196.0\" y1=\"76.2\" x2=\"196.0\" y2=\"105.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"196.0,76.2 185.0,90.2 182.0,106.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"196.0,76.2 207.0,90.2 210.0,106.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"196.0,105.7 190.0,127.7 187.0,147.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"196.0,105.7 203.0,127.7 206.0,147.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "Some people are waiting on a platform.",
+   "A train is pulling into the station.",
+   "Passengers are boarding a train.",
+   "The platform has been closed off."
+  ],
+  "answer": 0,
+  "note": "★ 兩人站著、沒有車 → 只能講人在等。\n★ (B)(C) 都預設「有一列車」，畫面裡沒有 —— **選項裡出現畫面上不存在的東西，直接刪**。"
+ },
+ {
+  "id": "p1-038",
+  "part": 1,
+  "scene": "車站・停靠的列車",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A train stopped alongside an empty platform\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><line x1=\"6.0\" y1=\"148.0\" x2=\"314.0\" y2=\"148.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"56.0\" y=\"94.0\" width=\"210.0\" height=\"54.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"72.0\" y=\"106.0\" width=\"30.0\" height=\"20.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"120.0\" y=\"106.0\" width=\"30.0\" height=\"20.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"168.0\" y=\"106.0\" width=\"30.0\" height=\"20.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><rect x=\"216.0\" y=\"106.0\" width=\"30.0\" height=\"20.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"90.0\" cy=\"156.0\" r=\"8.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"232.0\" cy=\"156.0\" r=\"8.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "A train has stopped alongside a platform.",
+   "Passengers are getting off the train.",
+   "The train is being cleaned.",
+   "A conductor is checking tickets."
+  ],
+  "answer": 0,
+  "note": "★ **跟 p1-037 成對**：那題有人沒車，這題有車沒人。\n★ 無人的交通工具，正解幾乎都是 has stopped／is parked 這類狀態描述。"
+ },
+ {
+  "id": "p1-039",
+  "part": 1,
+  "scene": "機場・排成一列的行李",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Suitcases lined up in a row, nobody around\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"60.0\" y=\"138.0\" width=\"30.0\" height=\"42.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"60.0\" y1=\"150.0\" x2=\"90.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"68.0,138.0 68.0,126.0 82.0,126.0 82.0,138.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"65.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"85.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"116.0\" y=\"138.0\" width=\"30.0\" height=\"42.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"116.0\" y1=\"150.0\" x2=\"146.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"124.0,138.0 124.0,126.0 138.0,126.0 138.0,138.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"121.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"141.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"172.0\" y=\"138.0\" width=\"30.0\" height=\"42.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"172.0\" y1=\"150.0\" x2=\"202.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"180.0,138.0 180.0,126.0 194.0,126.0 194.0,138.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"177.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"197.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"228.0\" y=\"138.0\" width=\"30.0\" height=\"42.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"228.0\" y1=\"150.0\" x2=\"258.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"236.0,138.0 236.0,126.0 250.0,126.0 250.0,138.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"233.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"253.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "Luggage has been lined up in a row.",
+   "A traveler is checking in her bags.",
+   "Suitcases are being loaded onto a cart.",
+   "The bags have been placed on a conveyor belt."
+  ],
+  "answer": 0,
+  "note": "★ luggage 是不可數名詞，動詞用單數 has —— Part 1 偶爾靠這個分辨。\n★ (D) 動詞形態沒錯，但畫面沒有輸送帶：**完成被動的陷阱常常錯在「地點」**。"
+ },
+ {
+  "id": "p1-040",
+  "part": 1,
+  "scene": "機場・拉著行李的旅客",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A traveler pulling a suitcase\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><rect x=\"196.0\" y=\"138.0\" width=\"30.0\" height=\"42.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"196.0\" y1=\"150.0\" x2=\"226.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"204.0,138.0 204.0,126.0 218.0,126.0 218.0,138.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"201.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"221.0\" cy=\"184.0\" r=\"4.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"140.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"140.0\" y1=\"108.2\" x2=\"140.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"140.0,108.2 178.2,121.1 204.0,122.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"140.0,108.2 129.0,122.2 126.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"140.0,137.7 134.0,159.7 131.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"140.0,137.7 147.0,159.7 150.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "A man is pulling a suitcase.",
+   "He's lifting a bag onto a rack.",
+   "The luggage has been left unattended.",
+   "Bags are being weighed at a counter."
+  ],
+  "answer": 0,
+  "note": "★ 手在拉桿上、箱子在地上 → pulling。\n★ (B) lifting 是「抬起來」，畫面裡箱子沒離地 —— 同樣是有人動作，**動詞挑錯一樣是錯**，不是有人就選。"
+ },
+ {
+  "id": "p1-041",
+  "part": 1,
+  "scene": "加油站・正在加油",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A man refueling a car at a pump\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><polyline points=\"46.0,152.0 46.0,128.0 72.0,104.0 134.0,104.0 156.0,128.0 180.0,128.0 180.0,152.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"46.0\" y1=\"152.0\" x2=\"180.0\" y2=\"152.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"74.0\" cy=\"158.0\" r=\"15.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"152.0\" cy=\"158.0\" r=\"15.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"72.0\" y1=\"104.0\" x2=\"78.0\" y2=\"128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"134.0\" y1=\"104.0\" x2=\"130.0\" y2=\"128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"46.0\" y1=\"128.0\" x2=\"180.0\" y2=\"128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"246.0\" y=\"92.0\" width=\"34.0\" height=\"78.0\" rx=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"246.0\" y1=\"110.0\" x2=\"198.0\" y2=\"134.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"224.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"224.0\" y1=\"108.2\" x2=\"224.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"224.0,108.2 212.7,127.1 198.0,134.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"224.0,108.2 213.0,122.2 210.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"224.0,137.7 218.0,159.7 215.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"224.0,137.7 231.0,159.7 234.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "A vehicle is being refueled.",
+   "The car has been left with no one nearby.",
+   "He's washing the windshield.",
+   "The pump has been shut off."
+  ],
+  "answer": 0,
+  "note": "★ **跟 p1-009 是刻意做的一對**：同一個加油站，那題沒人（is parked），這題有人在加油（is being refueled）。\n★ 同一張畫面該用主動還是被動，看你要把主詞放在人還是物，兩種都對；但 have been V-ed 一定要**沒人在動它**。"
+ },
+ {
+  "id": "p1-042",
+  "part": 1,
+  "scene": "戶外・洗車",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A person washing a car with a hose\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><polyline points=\"96.0,152.0 96.0,128.0 122.0,104.0 184.0,104.0 206.0,128.0 230.0,128.0 230.0,152.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"96.0\" y1=\"152.0\" x2=\"230.0\" y2=\"152.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"124.0\" cy=\"158.0\" r=\"15.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"202.0\" cy=\"158.0\" r=\"15.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"122.0\" y1=\"104.0\" x2=\"128.0\" y2=\"128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"184.0\" y1=\"104.0\" x2=\"180.0\" y2=\"128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"96.0\" y1=\"128.0\" x2=\"230.0\" y2=\"128.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"56.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"56.0\" y1=\"108.2\" x2=\"56.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"56.0,108.2 85.4,119.1 104.0,118.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56.0,108.2 45.0,122.2 42.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56.0,137.7 50.0,159.7 47.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56.0,137.7 63.0,159.7 66.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"104.0\" y1=\"118.0\" x2=\"128.0\" y2=\"126.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "A car is being washed.",
+   "The vehicle has been parked in a garage.",
+   "He's changing a tire.",
+   "The hood has been propped open."
+  ],
+  "answer": 0,
+  "note": "★ 有人拿水管對著車 → is being washed。\n★ (C) changing a tire、(D) hood propped open 都是「畫面上不存在的細節」。"
+ },
+ {
+  "id": "p1-043",
+  "part": 1,
+  "scene": "街道・候車亭的空長椅",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"An empty bench under a shelter\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><line x1=\"70.0\" y1=\"74.0\" x2=\"250.0\" y2=\"74.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"76.0\" y1=\"74.0\" x2=\"76.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"244.0\" y1=\"74.0\" x2=\"244.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"118.0\" y1=\"150.0\" x2=\"214.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"118.0\" y1=\"136.0\" x2=\"214.0\" y2=\"136.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"124.0\" y1=\"150.0\" x2=\"124.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"208.0\" y1=\"150.0\" x2=\"208.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"124.0\" y1=\"136.0\" x2=\"124.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"208.0\" y1=\"136.0\" x2=\"208.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "A bench has been placed under a shelter.",
+   "People are seated on a bench.",
+   "The bench is being repainted.",
+   "Someone is waiting for a bus."
+  ],
+  "answer": 0,
+  "note": "★ 空長椅 → 位置描述（under a shelter）。\n★ 位置介系詞是無人畫面的常見正解：under／beside／against／along。"
+ },
+ {
+  "id": "p1-044",
+  "part": 1,
+  "scene": "街道・坐在長椅上",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A man sitting on a bench looking at a phone\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><line x1=\"140.0\" y1=\"150.0\" x2=\"236.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"140.0\" y1=\"136.0\" x2=\"236.0\" y2=\"136.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"146.0\" y1=\"150.0\" x2=\"146.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"150.0\" x2=\"230.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"146.0\" y1=\"136.0\" x2=\"146.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"136.0\" x2=\"230.0\" y2=\"150.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"162.0\" cy=\"100.0\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"162.0\" y1=\"111.9\" x2=\"164.0\" y2=\"141.4\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"164.0,141.4 191.0,141.4 196.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"162.0,111.9 178.0,129.9 188.0,117.9\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "choices": [
+   "A man is sitting on a bench.",
+   "The bench is unoccupied.",
+   "He's getting up from his seat.",
+   "A bench is being moved onto a sidewalk."
+  ],
+  "answer": 0,
+  "note": "★ **跟 p1-043 成對**：同一張長椅，有沒有人坐。\n★ (B) unoccupied（沒人坐）正是 p1-043 的正解 —— 這組就是要你聽出這個差別。"
+ },
+ {
+  "id": "p1-045",
+  "part": 1,
+  "scene": "花園・修剪樹木",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A gardener trimming a tree with a tool\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><line x1=\"220.0\" y1=\"180.0\" x2=\"220.0\" y2=\"134.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"220.0\" cy=\"106.0\" r=\"26.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"197.0\" cy=\"120.0\" r=\"17.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"243.0\" cy=\"120.0\" r=\"17.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"146.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"146.0\" y1=\"108.2\" x2=\"146.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"146.0,108.2 163.3,122.1 172.0,124.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"146.0,108.2 135.0,122.2 132.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"146.0,137.7 140.0,159.7 137.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"146.0,137.7 153.0,159.7 156.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"172.0\" y1=\"124.0\" x2=\"188.0\" y2=\"116.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "A tree is being trimmed.",
+   "The branches have been piled up.",
+   "He's planting a tree.",
+   "Leaves are being raked into a bag."
+  ],
+  "answer": 0,
+  "note": "★ 工具碰到樹 → is being trimmed。trim 修剪。\n★ (B) piled up 地上沒有樹枝堆；(C) planting 樹已經長好了，不是在種。"
+ },
+ {
+  "id": "p1-046",
+  "part": 1,
+  "scene": "公園・草地上的灑水器",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Sprinklers set up on a lawn, no people\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><line x1=\"84.0\" y1=\"180.0\" x2=\"84.0\" y2=\"160.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"84.0\" cy=\"156.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"84.0,150.0 70.0,138.0 60.0,140.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"84.0,150.0 98.0,138.0 108.0,140.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"160.0\" y1=\"180.0\" x2=\"160.0\" y2=\"160.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"160.0\" cy=\"156.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"160.0,150.0 146.0,138.0 136.0,140.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"160.0,150.0 174.0,138.0 184.0,140.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"236.0\" y1=\"180.0\" x2=\"236.0\" y2=\"160.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"236.0\" cy=\"156.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"236.0,150.0 222.0,138.0 212.0,140.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"236.0,150.0 250.0,138.0 260.0,140.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"21.0,180.0 24.0,171.0 27.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"28.0,180.0 32.0,173.0 35.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"47.0,180.0 50.0,171.0 53.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"54.0,180.0 58.0,173.0 61.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"73.0,180.0 76.0,171.0 79.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"80.0,180.0 84.0,173.0 87.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"99.0,180.0 102.0,171.0 105.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"106.0,180.0 110.0,173.0 113.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"125.0,180.0 128.0,171.0 131.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"132.0,180.0 136.0,173.0 139.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"151.0,180.0 154.0,171.0 157.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"158.0,180.0 162.0,173.0 165.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"177.0,180.0 180.0,171.0 183.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"184.0,180.0 188.0,173.0 191.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"203.0,180.0 206.0,171.0 209.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"210.0,180.0 214.0,173.0 217.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"229.0,180.0 232.0,171.0 235.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"236.0,180.0 240.0,173.0 243.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"255.0,180.0 258.0,171.0 261.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"262.0,180.0 266.0,173.0 269.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"281.0,180.0 284.0,171.0 287.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"288.0,180.0 292.0,173.0 295.0,180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "Sprinklers have been set up on a lawn.",
+   "A worker is watering the grass.",
+   "The lawn is being mowed.",
+   "Hoses have been coiled beside a shed."
+  ],
+  "answer": 0,
+  "note": "★ 器材架好、沒有人 → have been set up。\n★ (D) 文法完全正確，但畫面沒有水管盤、也沒有小屋 —— **背景物件對不上就是錯**。"
+ },
+ {
+  "id": "p1-047",
+  "part": 1,
+  "scene": "戶外・掃落葉",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A man raking leaves on the ground\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><circle cx=\"196.0\" cy=\"175.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"218.0\" cy=\"175.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"240.0\" cy=\"175.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"262.0\" cy=\"175.0\" r=\"5.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><circle cx=\"128.0\" cy=\"97.2\" r=\"9.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"128.0\" y1=\"108.2\" x2=\"128.0\" y2=\"137.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/><polyline points=\"128.0,108.2 161.8,146.1 184.0,172.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"128.0,108.2 117.0,122.2 114.0,138.2\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"128.0,137.7 122.0,159.7 119.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"128.0,137.7 135.0,159.7 138.0,179.7\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"184.0\" y1=\"172.0\" x2=\"172.0\" y2=\"178.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"184.0\" y1=\"172.0\" x2=\"196.0\" y2=\"178.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "A man is raking leaves.",
+   "The leaves have all been cleared away.",
+   "He's sweeping a hallway.",
+   "A bag is being filled with grass."
+  ],
+  "answer": 0,
+  "note": "★ 地上還有葉子、耙子在動 → is raking。\n★ (B) have all been cleared away 說「已經清光」，但葉子還在 —— 狀態寫反。"
+ },
+ {
+  "id": "p1-048",
+  "part": 1,
+  "scene": "街道・路邊的垃圾桶",
+  "svg": "<svg viewBox=\"0 0 320 200\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Trash bins placed along a curb, nobody nearby\"><line x1=\"6.0\" y1=\"180.0\" x2=\"314.0\" y2=\"180.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.5\" opacity=\".45\"/><polyline points=\"67.0,142.0 70.0,180.0 86.0,180.0 89.0,142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"64.0\" y1=\"142.0\" x2=\"92.0\" y2=\"142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"119.0,142.0 122.0,180.0 138.0,180.0 141.0,142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"116.0\" y1=\"142.0\" x2=\"144.0\" y2=\"142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"171.0,142.0 174.0,180.0 190.0,180.0 193.0,142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"168.0\" y1=\"142.0\" x2=\"196.0\" y2=\"142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><polyline points=\"223.0,142.0 226.0,180.0 242.0,180.0 245.0,142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"220.0\" y1=\"142.0\" x2=\"248.0\" y2=\"142.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><line x1=\"6.0\" y1=\"166.0\" x2=\"314.0\" y2=\"166.0\" stroke=\"currentColor\" fill=\"none\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>",
+  "choices": [
+   "Some bins have been placed along a curb.",
+   "Trash is being collected.",
+   "A worker is emptying a container.",
+   "The bins have been knocked over."
+  ],
+  "answer": 0,
+  "note": "★ along a curb 沿著路緣，又一個位置介系詞的正解。\n★ (D) knocked over（被撞倒）與畫面「立得好好的」矛盾。"
+ }
+]
